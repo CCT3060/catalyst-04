@@ -38,7 +38,20 @@ export default function Nav({ go, darkHero, activeNav, mobileOpen, setMobileOpen
       </div>
 
       <div style={{ display: "flex", alignItems: "center", gap: 34 }} data-desktopnav>
-        <span className={`navlink${activeNav === "home" ? " active" : ""}`} onClick={() => go("home")}>Home</span>
+        <div className="sol-wrap" style={{ position: "relative", padding: "8px 0" }}>
+          <span className={`navlink${activeNav === "home" ? " active" : ""}`} onClick={() => go("home")} style={{ display: "flex", alignItems: "center", gap: 5, cursor: "pointer" }}>
+            Home <ChevronDown size={14} style={{ opacity: .8, transition: "transform .2s" }} />
+          </span>
+          <div style={{ position: "absolute", top: "100%", left: 0, right: 0, height: 14 }} />
+          <div className="sol-menu" style={{ position: "absolute", top: "100%", left: "50%", transform: "translateX(-50%)", marginTop: 14, width: 180, background: "rgba(255,255,255,.92)", backdropFilter: "blur(24px)", border: "1px solid rgba(25,25,25,.08)", borderRadius: 24, boxShadow: "0 24px 60px rgba(25,25,25,.18)", padding: 10 }}>
+            <div onClick={() => go("home")} className="solrow" style={{ display: "flex", alignItems: "center", padding: "12px 14px", borderRadius: 16, cursor: "pointer" }}>
+              <div style={{ fontWeight: 600, fontSize: 14, color: "#191919" }}>Home 1</div>
+            </div>
+            <a href="https://catalyst-chi-puce.vercel.app/" className="solrow" style={{ display: "flex", alignItems: "center", padding: "12px 14px", borderRadius: 16, cursor: "pointer", textDecoration: "none" }}>
+              <div style={{ fontWeight: 600, fontSize: 14, color: "#191919" }}>Home 2</div>
+            </a>
+          </div>
+        </div>
         <span className={`navlink${activeNav === "about" ? " active" : ""}`} onClick={() => go("about")}>About Us</span>
         <div className="sol-wrap" style={{ position: "relative", padding: "8px 0" }}>
           <span className={`navlink${activeNav === "solutions" ? " active" : ""}`} style={{ display: "flex", alignItems: "center", gap: 5, cursor: "pointer" }}>

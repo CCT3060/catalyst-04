@@ -92,6 +92,11 @@ export default function Nav({ go, darkHero, activeNav, mobileOpen, setMobileOpen
                 </div>
               );
             })}
+            <a href="https://cssgroup.ltd" target="_blank" rel="noreferrer" className="solrow" style={{ display: "flex", alignItems: "center", padding: "12px 14px", borderRadius: 16, cursor: "pointer", textDecoration: "none" }}>
+              <div>
+                <div style={{ fontWeight: 600, fontSize: 13, color: "#191919", lineHeight: 1.25 }}>CCS group</div>
+              </div>
+            </a>
           </div>
         </div>
         <span className={`navlink${activeNav === "technologies" ? " active" : ""}`} onClick={() => go("technologies")}>Technologies</span>

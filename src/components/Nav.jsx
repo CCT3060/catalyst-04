@@ -47,7 +47,7 @@ export default function Nav({ go, darkHero, activeNav, mobileOpen, setMobileOpen
             <div onClick={() => go("home")} className="solrow" style={{ display: "flex", alignItems: "center", padding: "12px 14px", borderRadius: 16, cursor: "pointer" }}>
               <div style={{ fontWeight: 600, fontSize: 14, color: "#191919" }}>Home 1</div>
             </div>
-            <a href="https://catalyst-04.vercel.app/" target="_blank" className="solrow" style={{ display: "flex", alignItems: "center", padding: "12px 14px", borderRadius: 16, cursor: "pointer", textDecoration: "none" }}>
+            <a href="https://catalyst-chi-puce.vercel.app/" target="_blank" className="solrow" style={{ display: "flex", alignItems: "center", padding: "12px 14px", borderRadius: 16, cursor: "pointer", textDecoration: "none" }}>
               <div style={{ fontWeight: 600, fontSize: 14, color: "#191919" }}>Home 2</div>
             </a>
           </div>

@@ -1,4 +1,4 @@
-import CTA from "../components/CTA";
+﻿import CTA from "../components/CTA";
 import { Kicker, SectionHead, NumberedIndex, IndustriesMarquee, PhoneFrame, CutoutArch } from "../components/SolutionsKit";
 import foodTeamImg from "../assets/2.png";
 import chefImg from "../assets/Gemini_Generated_Image_56k6u556k6u556k6.png";
@@ -51,10 +51,10 @@ export default function FoodServices({ go }) {
       {/* Hero */}
       <section style={{ position: "relative", backgroundColor: "#191919", backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.7)), url(${foodHeroBg})`, backgroundSize: "cover", backgroundPosition: "center", padding: "170px clamp(20px,4vw,56px) clamp(70px,8vw,110px)", overflow: "hidden", minHeight: "100vh", display: "flex", alignItems: "center" }}>
         <div style={{ position: "relative", maxWidth: 1240, margin: "0 auto", width: "100%" }}>
-          <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 9, fontFamily: "Caveat, cursive", color: "#FF7F00", fontWeight: 600, fontSize: 24, marginBottom: 22 }}>FOOD SERVICES</div>
+          <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 9, fontFamily: "Caveat, cursive", color: "#0373ff", fontWeight: 600, fontSize: 24, marginBottom: 22 }}>FOOD SERVICES</div>
           <h1 data-reveal data-delay="1" className="shown" style={{ fontSize: "clamp(36px,5.5vw,76px)", color: "#fff", maxWidth: 860, lineHeight: 1.1 }}>Nourishing Experiences.<br />Enabling <span className="gradtext">Performance.</span></h1>
           <p data-reveal data-delay="2" className="shown" style={{ marginTop: 24, fontSize: "clamp(17px,1.4vw,20px)", lineHeight: 1.7, color: "rgba(255,255,255,.78)", maxWidth: 620 }}>Food has the power to shape experiences far beyond the dining table — influencing wellbeing, productivity, and everyday engagement.</p>
-          <button data-reveal data-delay="3" className="shown mag" onClick={() => go("contact")} style={{ marginTop: 34, background: "#FF7F00", color: "#fff", fontWeight: 600, fontSize: 15, padding: "15px 30px", borderRadius: 999, display: "inline-flex", alignItems: "center", gap: 8 }}>Talk to our team <ArrowRight size={18} /></button>
+          <button data-reveal data-delay="3" className="shown mag" onClick={() => go("contact")} style={{ marginTop: 34, background: "#0373ff", color: "#fff", fontWeight: 600, fontSize: 15, padding: "15px 30px", borderRadius: 999, display: "inline-flex", alignItems: "center", gap: 8 }}>Talk to our team <ArrowRight size={18} /></button>
         </div>
       </section>
 
@@ -68,7 +68,7 @@ export default function FoodServices({ go }) {
             <p data-reveal data-delay="3" style={{ marginTop: 16, fontSize: 17, lineHeight: 1.75, color: "#6E6A61" }}>At Catalyst, we partner with organizations to design food environments that combine nutrition, hospitality, operational excellence, and innovation — from corporate workplaces and industrial facilities to hospitals, educational institutions, and guest houses.</p>
           </div>
           <div data-reveal data-delay="1">
-            <CutoutArch src={foodTeamImg} alt="The Catalyst culinary team" tint="rgba(255,127,0,.09)" />
+            <CutoutArch src={foodTeamImg} alt="The Catalyst culinary team" tint="rgba(3,115,255,.09)" />
           </div>
         </div>
       </section>
@@ -85,7 +85,7 @@ export default function FoodServices({ go }) {
           <div>
             {IMPACTS.map(([name, desc], i) => (
               <div key={i} data-reveal data-delay={String(i)} style={{ display: "grid", gridTemplateColumns: "56px 1fr", gap: 18, padding: "22px 0", borderTop: "1px solid rgba(25,25,25,.12)", borderBottom: i === IMPACTS.length - 1 ? "1px solid rgba(25,25,25,.12)" : "none", alignItems: "baseline" }}>
-                <span style={{ fontFamily: "Caveat, cursive", fontSize: 30, fontWeight: 600, color: "#D96D00" }}>{String(i + 1).padStart(2, "0")}</span>
+                <span style={{ fontFamily: "Caveat, cursive", fontSize: 30, fontWeight: 600, color: "#0258cc" }}>{String(i + 1).padStart(2, "0")}</span>
                 <div>
                   <div style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 600, fontSize: 19, color: "#191919" }}>{name}</div>
                   <p style={{ fontSize: 15, color: "#6E6A61", lineHeight: 1.6, marginTop: 6 }}>{desc}</p>
@@ -106,16 +106,16 @@ export default function FoodServices({ go }) {
 
       {/* JOI Food — product spotlight on dark */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#191919", color: "#fff", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(60% 70% at 85% 15%,rgba(255,127,0,.14),transparent 60%)" }}></div>
+        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(60% 70% at 85% 15%,rgba(3,115,255,.14),transparent 60%)" }}></div>
         <div style={{ position: "relative", maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: "clamp(40px,6vw,90px)", alignItems: "center" }} data-2col>
           <div>
-            <Kicker color="#FF7F00">JOI Foods</Kicker>
+            <Kicker color="#0373ff">JOI Foods</Kicker>
             <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)" }}>Smart Dining for Modern Workplaces</h2>
             <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.75, color: "rgba(255,255,255,.75)" }}>JOI Food brings together technology and hospitality to deliver a seamless dining experience — greater convenience, faster service, and more choice, transforming traditional cafeterias into vibrant dining destinations.</p>
             <div style={{ marginTop: 36 }}>
               {JOI_FEATURES.map(([name, desc], i) => (
                 <div key={i} data-reveal data-delay={String(i)} style={{ display: "grid", gridTemplateColumns: "52px 1fr", gap: 16, padding: "16px 0", borderTop: "1px solid rgba(255,255,255,.12)", alignItems: "baseline" }}>
-                  <span style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: ".08em", color: "#FF7F00" }}>{String(i + 1).padStart(2, "0")}</span>
+                  <span style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: ".08em", color: "#0373ff" }}>{String(i + 1).padStart(2, "0")}</span>
                   <div>
                     <div style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 600, fontSize: 17, color: "#fff" }}>{name}</div>
                     <p style={{ fontSize: 14.5, color: "rgba(255,255,255,.62)", lineHeight: 1.6, marginTop: 4 }}>{desc}</p>
@@ -165,7 +165,7 @@ export default function FoodServices({ go }) {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "clamp(28px,3.5vw,48px)", rowGap: 44 }} data-3col>
             {WHY_CATALYST.map(([name, desc], i) => (
               <div key={i} data-reveal data-delay={String(i % 3)} style={{ borderTop: "2px solid #191919", paddingTop: 20 }}>
-                <div style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: ".08em", color: "#D96D00", marginBottom: 10 }}>{String(i + 1).padStart(2, "0")}</div>
+                <div style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: ".08em", color: "#0258cc", marginBottom: 10 }}>{String(i + 1).padStart(2, "0")}</div>
                 <h4 style={{ fontSize: 19, fontWeight: 600, color: "#191919" }}>{name}</h4>
                 <p style={{ fontSize: 15, color: "#6E6A61", lineHeight: 1.65, marginTop: 10 }}>{desc}</p>
               </div>

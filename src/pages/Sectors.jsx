@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 
 const sectors = [
   {
-    num: "01", color: "#FF7F00", labelColor: "#D96D00", label: "CORPORATE", title: "Corporate & Commercial Spaces",
+    num: "01", color: "#0373ff", labelColor: "#0258cc", label: "CORPORATE", title: "Corporate & Commercial Spaces",
     desc: "Workplaces are more than buildings, they are where ideas grow, teams connect, and performance takes shape. We help organizations create engaging, high-performing environments that elevate employee experiences and support business success.",
     tags: ["Workplace Experience", "Employee Well-Being", "Operational Efficiency", "Smart Work Environments", "Future-Ready Campuses"],
     tagline: "Creating workplaces that empower individuals and strengthen organizations.",
@@ -23,7 +23,7 @@ const sectors = [
     img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1200"
   },
   {
-    num: "04", color: "#FF7F00", labelColor: "#D96D00", label: "EDUCATION", title: "Education",
+    num: "04", color: "#0373ff", labelColor: "#0258cc", label: "EDUCATION", title: "Education",
     desc: "Educational institutions are more than places of learning—they are environments that shape future generations. From schools and universities to student residences, Catalyst creates safe, hygienic, and inspiring campuses that foster academic excellence, student well-being, and seamless day-to-day operations. Our integrated solutions help educators focus on what matters most: empowering students to learn, grow, and thrive.",
     tags: ["Campus Experience", "Safety & Compliance", "Student Well-Being", "Operational Excellence", "Sustainable Campuses"],
     tagline: "Supporting environments where curiosity grows and futures take shape.",
@@ -81,7 +81,7 @@ export default function Sectors({ go, hash }) {
       {/* Hero */}
       <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", padding: "120px clamp(20px,4vw,56px) 60px", overflow: "hidden", backgroundImage: "linear-gradient(rgba(25, 25, 25, 0.74), rgba(25, 25, 25, 0.21)), url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000)", backgroundSize: "cover", backgroundPosition: "center" }}>
         <div style={{ position: "relative", maxWidth: 1240, width: "100%", margin: "0 auto" }}>
-          <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#FF7F00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 22 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Sectors</div>
+          <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0373ff", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 22 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Sectors</div>
           <h1 data-reveal data-delay="1" className="shown" style={{ fontSize: "clamp(32px,4.4vw,64px)", color: "#fff", maxWidth: 1080 }}>Every Environment Has a Purpose. Every Purpose Deserves the <span className="gradtext">Right Ecosystem.</span></h1>
           <p data-reveal data-delay="2" className="shown" style={{ marginTop: 26, maxWidth: 820, fontSize: "clamp(16px,1.3vw,19px)", lineHeight: 1.7, color: "rgba(255, 255, 255, 1)" }}>No two environments are alike. A corporate workplace seeks productivity and collaboration. A hospital prioritizes care and reliability. An educational campus nurtures growth and discovery. A residential community values comfort and belonging.</p>
           <p data-reveal data-delay="3" className="shown" style={{ marginTop: 18, maxWidth: 820, fontSize: 16, lineHeight: 1.7, color: "rgba(255, 255, 255, 1)" }}>At Catalyst, we understand that every sector has unique challenges, expectations, and opportunities. Because the environments we shape today influence how people learn, work, heal, connect, and thrive tomorrow.</p>
@@ -152,14 +152,14 @@ export default function Sectors({ go, hash }) {
 
       {/* Philosophy */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#191919", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(50% 60% at 20% 20%,rgba(255,127,0,.16),transparent 60%),radial-gradient(50% 60% at 85% 90%,rgba(67,147,74,.16),transparent 60%)" }}></div>
+        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(50% 60% at 20% 20%,rgba(3,115,255,.16),transparent 60%),radial-gradient(50% 60% at 85% 90%,rgba(67,147,74,.16),transparent 60%)" }}></div>
         <div style={{ position: "relative", maxWidth: 980, margin: "0 auto", textAlign: "center" }}>
-          <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#FF7F00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18, justifyContent: "center" }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Our Approach Across Sectors</div>
+          <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0373ff", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18, justifyContent: "center" }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Our Approach Across Sectors</div>
           <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.8vw,50px)", color: "#fff" }}>Different Environments. One Philosophy.</h2>
           <p data-reveal data-delay="2" style={{ marginTop: 24, fontSize: 18, lineHeight: 1.75, color: "rgba(255,255,255,.72)" }}>Every sector has its own challenges. Every environment has its own expectations. But one principle remains constant: <span style={{ color: "#fff", fontWeight: 600 }}>Great environments create better outcomes.</span></p>
           <p data-reveal data-delay="3" style={{ marginTop: 18, fontSize: 16, lineHeight: 1.7, color: "rgba(255,255,255,.55)" }}>By combining operational excellence, innovation, sustainability, and a deep understanding of sector-specific needs, Catalyst helps organizations create environments that perform better, adapt faster, and deliver meaningful value over the long term.</p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 16, justifyContent: "center", marginTop: 38 }}>
-            <button className="mag" onClick={() => go("contact")} style={{ background: "#FF7F00", color: "#fff", fontWeight: 600, fontSize: 16, padding: "17px 36px", borderRadius: 999 }}>Let's Create Impact Together! →</button>
+            <button className="mag" onClick={() => go("contact")} style={{ background: "#0373ff", color: "#fff", fontWeight: 600, fontSize: 16, padding: "17px 36px", borderRadius: 999 }}>Let's Create Impact Together! →</button>
             <button className="mag" onClick={() => go("careers")} style={{ background: "rgba(255,255,255,.08)", color: "#fff", fontWeight: 600, fontSize: 16, padding: "17px 36px", borderRadius: 999, border: "1px solid rgba(255,255,255,.2)" }}>Join Us</button>
           </div>
         </div>

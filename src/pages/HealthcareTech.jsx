@@ -1,4 +1,4 @@
-import CTA from "../components/CTA";
+﻿import CTA from "../components/CTA";
 import { Kicker, SectionHead, NumberedIndex, PhoneFrame, BrowserFrame, CutoutArch, StatStrip } from "../components/SolutionsKit";
 import healthcareBg from "../assets/Gemini_Generated_Image_sf1puasf1puasf1p.png";
 import clinicalImg from "../assets/4.png";
@@ -54,10 +54,10 @@ export default function HealthcareTech({ go }) {
       {/* Hero */}
       <section style={{ position: "relative", backgroundColor: "#191919", backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(25, 25, 25, 0.7)), url(${healthcareBg})`, backgroundSize: "cover", backgroundPosition: "center", padding: "170px clamp(20px,4vw,56px) clamp(70px,8vw,110px)", overflow: "hidden", minHeight: "100vh", display: "flex", alignItems: "center" }}>
         <div style={{ position: "relative", maxWidth: 1240, margin: "0 auto", width: "100%" }}>
-          <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 9, fontFamily: "Caveat, cursive", color: "#FF7F00", fontWeight: 600, fontSize: 24, marginBottom: 22 }}>HEALTHCARE TECHNOLOGY MANAGEMENT</div>
+          <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 9, fontFamily: "Caveat, cursive", color: "#0373ff", fontWeight: 600, fontSize: 24, marginBottom: 22 }}>HEALTHCARE TECHNOLOGY MANAGEMENT</div>
           <h1 data-reveal data-delay="1" className="shown" style={{ fontSize: "clamp(34px,5vw,72px)", color: "#fff", maxWidth: 1000, lineHeight: 1.1 }}>One Hospital. One Ecosystem. <span className="gradtext">Uninterrupted Care.</span></h1>
           <p data-reveal data-delay="2" className="shown" style={{ marginTop: 22, fontSize: "clamp(17px,1.6vw,20px)", lineHeight: 1.7, color: "rgba(255,255,255,.78)", maxWidth: 720 }}>Expertise that keeps healthcare moving — ensuring every medical device is available, safe, compliant, and performing whenever clinicians need it.</p>
-          <button data-reveal data-delay="3" className="shown mag" onClick={() => go("contact")} style={{ marginTop: 34, background: "#FF7F00", color: "#fff", fontWeight: 600, fontSize: 15, padding: "15px 30px", borderRadius: 999, display: "inline-flex", alignItems: "center", gap: 8 }}>Talk to our team <ArrowRight size={18} /></button>
+          <button data-reveal data-delay="3" className="shown mag" onClick={() => go("contact")} style={{ marginTop: 34, background: "#0373ff", color: "#fff", fontWeight: 600, fontSize: 15, padding: "15px 30px", borderRadius: 999, display: "inline-flex", alignItems: "center", gap: 8 }}>Talk to our team <ArrowRight size={18} /></button>
         </div>
       </section>
 
@@ -71,7 +71,7 @@ export default function HealthcareTech({ go }) {
             <p data-reveal data-delay="3" style={{ marginTop: 16, fontSize: 17, lineHeight: 1.75, color: "#6E6A61" }}>By bringing together people, processes, technology, and data, we help hospitals maximize equipment uptime, optimize lifecycle costs, simplify compliance, and enable uninterrupted patient care.</p>
           </div>
           <div data-reveal data-delay="1">
-            <CutoutArch src={clinicalImg} alt="Clinical care supported by reliable technology" tint="rgba(255,127,0,.09)" />
+            <CutoutArch src={clinicalImg} alt="Clinical care supported by reliable technology" tint="rgba(3,115,255,.09)" />
           </div>
         </div>
       </section>
@@ -93,11 +93,11 @@ export default function HealthcareTech({ go }) {
             <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>Managing hundreds of medical devices across multiple OEMs creates unnecessary complexity. Catalyst simplifies this through a centralized Healthcare Technology Management model that connects every clinical department with every equipment manufacturer through a single service partner.</p>
             <p data-reveal data-delay="3" style={{ marginTop: 16, fontSize: 17, fontWeight: 500, color: "#191919" }}>Instead of managing multiple vendors, hospitals manage one trusted HTM partner.</p>
           </div>
-          <div data-reveal data-delay="1" style={{ borderLeft: "2px solid #FF7F00", paddingLeft: "clamp(24px,3vw,40px)" }}>
-            <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: ".14em", textTransform: "uppercase", color: "#D96D00", marginBottom: 6 }}>This integrated approach delivers:</div>
+          <div data-reveal data-delay="1" style={{ borderLeft: "2px solid #0373ff", paddingLeft: "clamp(24px,3vw,40px)" }}>
+            <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: ".14em", textTransform: "uppercase", color: "#0258cc", marginBottom: 6 }}>This integrated approach delivers:</div>
             {DELIVERS.map((item, i) => (
               <div key={i} style={{ display: "grid", gridTemplateColumns: "40px 1fr", gap: 14, alignItems: "baseline", padding: "13px 0", borderBottom: i === DELIVERS.length - 1 ? "none" : "1px solid rgba(25,25,25,.1)" }}>
-                <span style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: ".06em", color: "#FF7F00" }}>{String(i + 1).padStart(2, "0")}</span>
+                <span style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: ".06em", color: "#0373ff" }}>{String(i + 1).padStart(2, "0")}</span>
                 <span style={{ fontSize: 16, color: "#46433C", lineHeight: 1.5, fontWeight: 500 }}>{item}</span>
               </div>
             ))}
@@ -107,12 +107,12 @@ export default function HealthcareTech({ go }) {
 
       {/* Product spotlight — CMMS dashboard + HTM mobile app */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#191919", color: "#fff", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(55% 65% at 12% 18%,rgba(255,127,0,.14),transparent 60%),radial-gradient(45% 55% at 92% 80%,rgba(67,147,74,.12),transparent 60%)" }}></div>
+        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(55% 65% at 12% 18%,rgba(3,115,255,.14),transparent 60%),radial-gradient(45% 55% at 92% 80%,rgba(67,147,74,.12),transparent 60%)" }}></div>
         <div style={{ position: "relative", maxWidth: 1240, margin: "0 auto" }}>
           <SectionHead
             dark
             kicker="Digital CMMS & Leadership Dashboards"
-            kickerColor="#FF7F00"
+            kickerColor="#0373ff"
             title="Digital Intelligence for Smarter Hospitals"
             sub="Real-time dashboards, service analytics, maintenance schedules, complaint tracking, and asset intelligence give hospital leadership a connected view of their technology ecosystem — while engineers raise, track, and resolve issues from the ward floor."
             maxWidth={820}
@@ -160,7 +160,7 @@ export default function HealthcareTech({ go }) {
             {BEYOND.map(([title, subtitle, desc], i) => (
               <div key={i} data-reveal data-delay={String(i)} style={{ borderTop: "2px solid #191919", paddingTop: 20 }}>
                 <h4 style={{ fontSize: 20, fontWeight: 600, color: "#191919" }}>{title}</h4>
-                <div style={{ fontSize: 15, fontWeight: 500, color: "#D96D00", margin: "8px 0 12px" }}>{subtitle}</div>
+                <div style={{ fontSize: 15, fontWeight: 500, color: "#0258cc", margin: "8px 0 12px" }}>{subtitle}</div>
                 <p style={{ fontSize: 15, color: "#6E6A61", lineHeight: 1.65 }}>{desc}</p>
               </div>
             ))}

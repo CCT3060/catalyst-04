@@ -1,4 +1,4 @@
-import CTA from "../components/CTA";
+﻿import CTA from "../components/CTA";
 import { Kicker, SectionHead, IndustriesMarquee, PhoneFrame, BrowserFrame, CutoutArch } from "../components/SolutionsKit";
 import fmImage from "../assets/fm.png";
 import ifmTeamImg from "../assets/3.png";
@@ -9,8 +9,8 @@ import { ArrowRight } from "lucide-react";
 
 const SERVICES = [
   {
-    accent: "#FF7F00",
-    kickerColor: "#D96D00",
+    accent: "#0373ff",
+    kickerColor: "#0258cc",
     label: "Engineering Services",
     title: "Ensuring Reliability. Maximizing Performance.",
     intro: "Our engineering teams maintain and optimize critical building infrastructure through preventive, predictive, and corrective maintenance strategies that improve asset life, minimize downtime, and ensure uninterrupted business operations.",
@@ -41,8 +41,8 @@ const SERVICES = [
     close: "With standardized processes, trained professionals, and quality-driven execution, we create environments that leave lasting impressions while supporting healthier workplaces.",
   },
   {
-    accent: "#FF7F00",
-    kickerColor: "#D96D00",
+    accent: "#0373ff",
+    kickerColor: "#0258cc",
     label: "Production Support Services",
     title: "Strengthening Operations Beyond Facility Management",
     intro: "Efficient production depends on seamless operational support behind the scenes. Catalyst extends beyond conventional facility management by delivering end-to-end production support services that improve workflow efficiency, optimize resources, and enhance operational continuity.",
@@ -72,10 +72,10 @@ export default function Facilities({ go }) {
         <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${fmImage})`, backgroundSize: "cover", backgroundPosition: "center", opacity: 0.4 }}></div>
         <div style={{ position: "relative", maxWidth: 1240, margin: "0 auto", width: "100%" }}>
           <div style={{ maxWidth: 820 }}>
-            <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 9, fontFamily: "Caveat, cursive", color: "#FF7F00", fontWeight: 600, fontSize: 24, marginBottom: 22 }}>INTEGRATED FACILITY MANAGEMENT</div>
+            <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 9, fontFamily: "Caveat, cursive", color: "#0373ff", fontWeight: 600, fontSize: 24, marginBottom: 22 }}>INTEGRATED FACILITY MANAGEMENT</div>
             <h1 data-reveal data-delay="1" className="shown" style={{ fontSize: "clamp(34px,5vw,72px)", color: "#fff", lineHeight: 1.1 }}>Creating Environments That <span className="gradtext">Perform Effortlessly</span></h1>
             <p data-reveal data-delay="2" className="shown" style={{ marginTop: 24, fontSize: "clamp(17px,1.4vw,20px)", lineHeight: 1.7, color: "rgba(255,255,255,.78)", maxWidth: 640 }}>Engineering excellence, workplace services, and operational support — integrated into one seamless ecosystem.</p>
-            <button data-reveal data-delay="3" className="shown mag" onClick={() => go("contact")} style={{ marginTop: 34, background: "#FF7F00", color: "#fff", fontWeight: 600, fontSize: 15, padding: "15px 30px", borderRadius: 999, display: "inline-flex", alignItems: "center", gap: 8 }}>Talk to our team <ArrowRight size={18} /></button>
+            <button data-reveal data-delay="3" className="shown mag" onClick={() => go("contact")} style={{ marginTop: 34, background: "#0373ff", color: "#fff", fontWeight: 600, fontSize: 15, padding: "15px 30px", borderRadius: 999, display: "inline-flex", alignItems: "center", gap: 8 }}>Talk to our team <ArrowRight size={18} /></button>
           </div>
         </div>
       </section>
@@ -132,7 +132,7 @@ export default function Facilities({ go }) {
 
       {/* Product spotlight — Company Portal + E-Cleaning app */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#191919", color: "#fff", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(55% 65% at 15% 20%,rgba(67,147,74,.16),transparent 60%),radial-gradient(45% 55% at 90% 85%,rgba(255,127,0,.12),transparent 60%)" }}></div>
+        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(55% 65% at 15% 20%,rgba(67,147,74,.16),transparent 60%),radial-gradient(45% 55% at 90% 85%,rgba(3,115,255,.12),transparent 60%)" }}></div>
         <div style={{ position: "relative", maxWidth: 1240, margin: "0 auto" }}>
           <SectionHead
             dark

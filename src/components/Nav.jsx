@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+﻿import { useState, useEffect, useRef } from "react";
 import { ChevronDown, Menu, X, UtensilsCrossed, Building2, Factory, Stethoscope, Users, Briefcase, Landmark, GraduationCap, Home } from "lucide-react";
 
 export default function Nav({ go, darkHero, activeNav, mobileOpen, setMobileOpen }) {
@@ -43,15 +43,13 @@ export default function Nav({ go, darkHero, activeNav, mobileOpen, setMobileOpen
             Home <ChevronDown size={14} style={{ opacity: .8, transition: "transform .2s" }} />
           </span>
           <div style={{ position: "absolute", top: "100%", left: 0, right: 0, height: 14 }} />
-          
           <div className="sol-menu" style={{ position: "absolute", top: "100%", left: "50%", transform: "translateX(-50%)", marginTop: 14, width: 180, background: "rgba(255,255,255,.92)", backdropFilter: "blur(24px)", border: "1px solid rgba(25,25,25,.08)", borderRadius: 24, boxShadow: "0 24px 60px rgba(25,25,25,.18)", padding: 10 }}>
-             <a href="https://catalyst-chi-puce.vercel.app/" className="solrow" style={{ display: "flex", alignItems: "center", padding: "12px 14px", borderRadius: 16, cursor: "pointer", textDecoration: "none" }}>
-              <div style={{ fontWeight: 600, fontSize: 14, color: "#191919" }}>Home 1</div>
-            </a>
             <div onClick={() => go("home")} className="solrow" style={{ display: "flex", alignItems: "center", padding: "12px 14px", borderRadius: 16, cursor: "pointer" }}>
-              <div style={{ fontWeight: 600, fontSize: 14, color: "#191919" }}>Home 2</div>
+              <div style={{ fontWeight: 600, fontSize: 14, color: "#191919" }}>Home 1</div>
             </div>
-           
+            <a href="https://catalyst-04.vercel.app/" target="_blank" className="solrow" style={{ display: "flex", alignItems: "center", padding: "12px 14px", borderRadius: 16, cursor: "pointer", textDecoration: "none" }}>
+              <div style={{ fontWeight: 600, fontSize: 14, color: "#191919" }}>Home 2</div>
+            </a>
           </div>
         </div>
         <span className={`navlink${activeNav === "about" ? " active" : ""}`} onClick={() => go("about")}>About Us</span>
@@ -61,7 +59,7 @@ export default function Nav({ go, darkHero, activeNav, mobileOpen, setMobileOpen
           </span>
           <div style={{ position: "absolute", top: "100%", left: 0, right: 0, height: 14 }} />
           <div className="sol-menu" style={{ position: "absolute", top: "100%", left: "50%", transform: "translateX(-50%)", marginTop: 14, width: 330, background: "rgba(255,255,255,.92)", backdropFilter: "blur(24px)", border: "1px solid rgba(25,25,25,.08)", borderRadius: 24, boxShadow: "0 24px 60px rgba(25,25,25,.18)", padding: 10 }}>
-            {[["food", "Food Services"], ["ifm", "INTEGRATED FACILITY MANAGEMENT"], ["infra", "Infrastructure Solutions"], ["htm", "Healthcare Solutions"], ["workforce", "WORKFORCE SOLUTIONS"]].map(([p, name]) => {
+            {[["food", "Food Services"], ["ifm", "IFM"], ["infra", "Infrastructure "], ["htm", "Healthcare "], ["workforce", "WorkForce "]].map(([p, name]) => {
               return (
                 <div key={p} onClick={() => go(p)} className="solrow" style={{ display: "flex", alignItems: "center", padding: "12px 14px", borderRadius: 16, cursor: "pointer" }}>
                   <div>
@@ -96,7 +94,7 @@ export default function Nav({ go, darkHero, activeNav, mobileOpen, setMobileOpen
             })}
             <a href="https://cssgroup.ltd" target="_blank" rel="noreferrer" className="solrow" style={{ display: "flex", alignItems: "center", padding: "12px 14px", borderRadius: 16, cursor: "pointer", textDecoration: "none" }}>
               <div>
-                <div style={{ fontWeight: 600, fontSize: 13, color: "#191919", lineHeight: 1.25 }}>CCS group</div>
+                <div style={{ fontWeight: 600, fontSize: 13, color: "#191919", lineHeight: 1.25 }}>Energy</div>
               </div>
             </a>
           </div>
@@ -107,7 +105,7 @@ export default function Nav({ go, darkHero, activeNav, mobileOpen, setMobileOpen
       </div>
 
       <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-        <button className="mag" data-navcta onClick={() => go("contact")} style={{ background: "#FF7F00", color: "#fff", fontWeight: 600, fontSize: 14, padding: "12px 22px", borderRadius: 999, boxShadow: "0 8px 24px rgba(255,127,0,.35)", whiteSpace: "nowrap" }}>Partner With Us</button>
+        <button className="mag" data-navcta onClick={() => go("contact")} style={{ background: "#0373ff", color: "#fff", fontWeight: 600, fontSize: 14, padding: "12px 22px", borderRadius: 999, boxShadow: "0 8px 24px rgba(3,115,255,.35)", whiteSpace: "nowrap" }}>Partner With Us</button>
         <button onClick={() => setMobileOpen(m => !m)} data-burger style={{ display: "none", background: "transparent", width: 42, height: 42, borderRadius: 999, border: "1px solid rgba(25,25,25,.12)", color: "#191919", alignItems: "center", justifyContent: "center" }}>
           {mobileOpen ? <X size={20} /> : <Menu size={20} />}
         </button>

@@ -1,4 +1,4 @@
-import CTA from "../components/CTA";
+﻿import CTA from "../components/CTA";
 import { Kicker, SectionHead, NumberedIndex, CutoutArch } from "../components/SolutionsKit";
 import staffingBg from "../assets/12.png";
 import workforceImg from "../assets/1.png";
@@ -7,8 +7,8 @@ import { ArrowRight } from "lucide-react";
 
 const SOLUTIONS = [
   {
-    accent: "#FF7F00",
-    kickerColor: "#D96D00",
+    accent: "#0373ff",
+    kickerColor: "#0258cc",
     label: "Manpower Staffing & Deployment",
     paras: [
       "From workforce planning to timely deployment, we help organizations access the right talent for their operational requirements.",
@@ -38,8 +38,8 @@ const SOLUTIONS = [
     ],
   },
   {
-    accent: "#FF7F00",
-    kickerColor: "#D96D00",
+    accent: "#0373ff",
+    kickerColor: "#0258cc",
     label: "Payroll Management",
     paras: [
       "Payroll is more than processing salaries. It is about accuracy, timeliness, trust, and peace of mind. Our technology-enabled payroll solutions help streamline payroll processing, attendance integration, and employee lifecycle management through centralized systems.",
@@ -64,8 +64,8 @@ const SOLUTIONS = [
     quote: "Because compliance is not just a requirement. It is a responsibility towards every person who works with you.",
   },
   {
-    accent: "#FF7F00",
-    kickerColor: "#D96D00",
+    accent: "#0373ff",
+    kickerColor: "#0258cc",
     label: "Workforce MIS & Reporting",
     paras: [
       "Better workforce decisions begin with better visibility.",
@@ -116,10 +116,10 @@ export default function Workforce({ go }) {
       <section style={{ position: "relative", backgroundColor: "#191919", backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.48), rgba(25, 25, 25, 0.7)), url(${staffingBg})`, backgroundSize: "cover", backgroundPosition: "center", padding: "170px clamp(20px,4vw,56px) clamp(70px,8vw,110px)", overflow: "hidden", minHeight: "100vh", display: "flex", alignItems: "center" }}>
         <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px)", backgroundSize: "60px 60px", maskImage: "radial-gradient(circle at 55% 30%,#000,transparent 75%)" }}></div>
         <div style={{ position: "relative", maxWidth: 1240, margin: "0 auto", width: "100%" }}>
-          <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 9, fontFamily: "Caveat, cursive", color: "#FF7F00", fontWeight: 600, fontSize: 24, marginBottom: 22 }}>WORKFORCE SOLUTIONS</div>
+          <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 9, fontFamily: "Caveat, cursive", color: "#0373ff", fontWeight: 600, fontSize: 24, marginBottom: 22 }}>WORKFORCE SOLUTIONS</div>
           <h1 data-reveal data-delay="1" className="shown" style={{ fontSize: "clamp(34px,5vw,72px)", color: "#fff", maxWidth: 1000, lineHeight: 1.1 }}>The Right People. The Right Support. The Right <span className="gradtext">Impact.</span></h1>
           <p data-reveal data-delay="2" className="shown" style={{ marginTop: 24, fontSize: "clamp(17px,1.4vw,20px)", lineHeight: 1.7, color: "rgba(255,255,255,.78)", maxWidth: 640 }}>End-to-end staffing and workforce solutions — sourcing, deployment, payroll, compliance, and visibility, managed as one.</p>
-          <button data-reveal data-delay="3" className="shown mag" onClick={() => go("contact")} style={{ marginTop: 34, background: "#FF7F00", color: "#fff", fontWeight: 600, fontSize: 15, padding: "15px 30px", borderRadius: 999, display: "inline-flex", alignItems: "center", gap: 8 }}>Build Your Workforce with Catalyst <ArrowRight size={18} /></button>
+          <button data-reveal data-delay="3" className="shown mag" onClick={() => go("contact")} style={{ marginTop: 34, background: "#0373ff", color: "#fff", fontWeight: 600, fontSize: 15, padding: "15px 30px", borderRadius: 999, display: "inline-flex", alignItems: "center", gap: 8 }}>Build Your Workforce with Catalyst <ArrowRight size={18} /></button>
         </div>
       </section>
 
@@ -127,7 +127,7 @@ export default function Workforce({ go }) {
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#fff" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1.05fr", gap: "clamp(40px,6vw,80px)", alignItems: "center" }} data-2col>
           <div data-reveal>
-            <CutoutArch src={workforceImg} alt="The people behind every Catalyst workforce" tint="rgba(255,127,0,.09)" />
+            <CutoutArch src={workforceImg} alt="The people behind every Catalyst workforce" tint="rgba(3,115,255,.09)" />
           </div>
           <div>
             <Kicker>About Staffing</Kicker>
@@ -184,7 +184,7 @@ export default function Workforce({ go }) {
 
       {/* Technology — dark band, ruled columns */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#191919", color: "#fff", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(50% 60% at 88% 15%,rgba(255,127,0,.12),transparent 60%)" }}></div>
+        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(50% 60% at 88% 15%,rgba(3,115,255,.12),transparent 60%)" }}></div>
         <div style={{ position: "relative", maxWidth: 1240, margin: "0 auto" }}>
           <SectionHead
             dark
@@ -196,7 +196,7 @@ export default function Workforce({ go }) {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(230px,1fr))", gap: "clamp(28px,3.5vw,48px)" }} data-4col>
             {TECH.map(([name, desc], i) => (
               <div key={i} data-reveal data-delay={String(Math.min(i, 3))} style={{ borderTop: "2px solid rgba(255,255,255,.9)", paddingTop: 20 }}>
-                <div style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: ".08em", color: "#FF7F00", marginBottom: 10 }}>{String(i + 1).padStart(2, "0")}</div>
+                <div style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: ".08em", color: "#0373ff", marginBottom: 10 }}>{String(i + 1).padStart(2, "0")}</div>
                 <h4 style={{ fontSize: 19, fontWeight: 600, color: "#fff" }}>{name}</h4>
                 <p style={{ fontSize: 14.5, color: "rgba(255,255,255,.65)", lineHeight: 1.65, marginTop: 10 }}>{desc}</p>
               </div>
@@ -228,7 +228,7 @@ export default function Workforce({ go }) {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "clamp(28px,3.5vw,48px)", rowGap: 44 }} data-3col>
             {WHY.map(([title, desc], i) => (
               <div key={i} data-reveal data-delay={String(i % 3)} style={{ borderTop: "2px solid #191919", paddingTop: 20 }}>
-                <div style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: ".08em", color: "#D96D00", marginBottom: 10 }}>{String(i + 1).padStart(2, "0")}</div>
+                <div style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: ".08em", color: "#0258cc", marginBottom: 10 }}>{String(i + 1).padStart(2, "0")}</div>
                 <h4 style={{ fontSize: 19, fontWeight: 600, color: "#191919" }}>{title}</h4>
                 <p style={{ fontSize: 15, color: "#6E6A61", lineHeight: 1.65, marginTop: 10 }}>{desc}</p>
               </div>
@@ -250,7 +250,7 @@ export default function Workforce({ go }) {
             <img src={futureImg} alt="" data-no-reveal style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.15 }} />
             <div style={{ position: "relative" }}>
               <div style={{ fontSize: "clamp(22px,2.6vw,32px)", lineHeight: 1.4, fontWeight: 600 }}>You bring the vision.</div>
-              <div style={{ fontSize: "clamp(22px,2.6vw,32px)", lineHeight: 1.4, fontWeight: 600, color: "#FF7F00" }}>We bring the workforce.</div>
+              <div style={{ fontSize: "clamp(22px,2.6vw,32px)", lineHeight: 1.4, fontWeight: 600, color: "#0373ff" }}>We bring the workforce.</div>
               <div style={{ fontSize: "clamp(22px,2.6vw,32px)", lineHeight: 1.4, fontWeight: 600 }}>Together, we create the momentum to move forward.</div>
             </div>
           </div>

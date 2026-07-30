@@ -1,13 +1,13 @@
-// Simplified India silhouette (public-domain outline via the mapsicon project)
+﻿// Simplified India silhouette (public-domain outline via the mapsicon project)
 // with Catalyst office locations plotted at their real geographic positions.
 
 import India from "@svg-maps/india";
 
 const CITIES = [
-  { name: "Pune", x: 130, y: 455, c: "#FF7F00", anchor: "start" },
+  { name: "Pune", x: 130, y: 455, c: "#0373ff", anchor: "start" },
   { name: "Mumbai", x: 100, y: 450, c: "#FFB800", anchor: "end", hub: true },
   { name: "Hyderabad", x: 260, y: 434, c: "#43934A", anchor: "start" },
-  { name: "Bengaluru", x: 247, y: 530, c: "#FF7F00", anchor: "end" },
+  { name: "Bengaluru", x: 247, y: 530, c: "#0373ff", anchor: "end" },
   { name: "Chennai", x: 285, y: 527, c: "#43934A", anchor: "start" },
 ];
 

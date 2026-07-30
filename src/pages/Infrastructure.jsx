@@ -1,4 +1,4 @@
-import CTA from "../components/CTA";
+﻿import CTA from "../components/CTA";
 import { NumberedIndex, IndustriesMarquee, CutoutArch } from "../components/SolutionsKit";
 import infrastructureBg from "../assets/INFRASTRUCTURE SOLUTIONS.png";
 import whyInfrastructureBg from "../assets/Why Infrastructure Matters.webp";
@@ -13,10 +13,10 @@ export default function Infrastructure({ go }) {
       <section style={{ position: "relative", backgroundColor: "#191919", backgroundImage: `linear-gradient(  rgba(0, 0, 0, 0.57), rgba(25, 25, 25, 0.7)), url(${infrastructureBg})`, backgroundSize: "cover", backgroundPosition: "center", padding: "170px clamp(20px,4vw,56px) clamp(70px,8vw,110px)", overflow: "hidden", minHeight: "100vh", display: "flex", alignItems: "center" }}>
         <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px)", backgroundSize: "60px 60px", maskImage: "radial-gradient(circle at 55% 30%,#000,transparent 75%)" }}></div>
         <div style={{ position: "relative", maxWidth: 1240, margin: "0 auto", width: "100%" }}>
-          <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 9, fontFamily: "Caveat, cursive", color: "#FF7F00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 22 }}>INFRASTRUCTURE</div>
+          <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 9, fontFamily: "Caveat, cursive", color: "#0373ff", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 22 }}>INFRASTRUCTURE</div>
           <h1 data-reveal data-delay="1" className="shown" style={{ fontSize: "clamp(36px,5.2vw,74px)", color: "#fff", maxWidth: 1000 }}>Building the Foundations for <span className="gradtext">Better Experiences</span></h1>
           <p data-reveal data-delay="2" className="shown" style={{ marginTop: 24, fontSize: "clamp(17px,1.4vw,20px)", lineHeight: 1.7, color: "rgba(255,255,255,.78)", maxWidth: 640 }}>Creating resilient environments that support growth, inspire confidence, and deliver lasting value through thoughtful infrastructure solutions.</p>
-          <button data-reveal data-delay="3" className="shown mag" onClick={() => go("contact")} style={{ marginTop: 34, background: "#FF7F00", color: "#fff", fontWeight: 600, fontSize: 15, padding: "15px 30px", borderRadius: 999, display: "inline-flex", alignItems: "center", gap: 8 }}>Talk to Our Infrastructure Team <ArrowRight size={18} /></button>
+          <button data-reveal data-delay="3" className="shown mag" onClick={() => go("contact")} style={{ marginTop: 34, background: "#0373ff", color: "#fff", fontWeight: 600, fontSize: 15, padding: "15px 30px", borderRadius: 999, display: "inline-flex", alignItems: "center", gap: 8 }}>Talk to Our Infrastructure Team <ArrowRight size={18} /></button>
         </div>
       </section>
 
@@ -37,7 +37,7 @@ export default function Infrastructure({ go }) {
             <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.15)" }}></div>
           </div>
           <div>
-            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>The Bigger Picture</div>
+            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>The Bigger Picture</div>
             <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>One Partner Across Every Discipline</h2>
             <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>Our integrated approach brings a broad range of infrastructure capabilities under a single framework—from civil and structural works to PEB, MEP, HVAC, electrical systems, fire protection, water treatment, STP, and landscaping—designed to work together rather than operate as disconnected services.</p>
             <p data-reveal data-delay="3" style={{ marginTop: 16, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>This single-window model gives clients greater visibility, coordination, and control throughout the project lifecycle. The objective is not simply to complete individual scopes of work, but to ensure the entire infrastructure ecosystem works together to support operational and business goals.</p>
@@ -48,7 +48,7 @@ export default function Infrastructure({ go }) {
       {/* Our Infrastructure Solutions */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
-          <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Our Capabilities</div>
+          <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Our Capabilities</div>
           <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919", marginBottom: 20 }}>Bringing Every Critical Element Together</h2>
           <p data-reveal data-delay="2" style={{ maxWidth: 820, fontSize: 17, lineHeight: 1.7, color: "#6E6A61", marginBottom: 44 }}>Our integrated infrastructure model spans civil and interior works, structural and architectural works, PEB, MEP, HVAC, electrical systems, firefighting, plumbing and sanitary works, fabrication and piping, water treatment, STP and ETP solutions, industrial factory works, and external development—coordinated within a single connected framework.</p>
           <NumberedIndex items={[
@@ -71,7 +71,7 @@ export default function Infrastructure({ go }) {
             <img src={constructionImg} alt="Construction" style={{ width: "100%", maxHeight: 520, objectFit: "contain" }} />
           </div>
           <div>
-            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Integrated Execution</div>
+            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Integrated Execution</div>
             <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>From Engineering Complexity to Integrated Execution</h2>
             <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>Large-scale infrastructure rarely involves a single discipline. Civil and structural works, building systems, mechanical and electrical services, safety infrastructure, and water management all come together. When these are managed through fragmented partnerships, projects gain more interfaces, more dependencies, and greater potential for delays.</p>
             <p data-reveal data-delay="3" style={{ marginTop: 16, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>Our Industrial &amp; Infrastructure Projects Division was established to solve exactly this. Instead of treating every scope as a separate assignment, we look at the project as one connected ecosystem—understanding how each discipline influences the others and coordinating a seamless journey from planning and engineering to execution and completion.</p>
@@ -106,7 +106,7 @@ export default function Infrastructure({ go }) {
             <img src={innovation} alt="Construction" style={{ width: "130%", maxHeight: 520, objectFit: "contain" }} />
           </div>
           <div>
-            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><ShieldCheck size={20} color="#FF7F00" />Safety & Responsible Execution</div>
+            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><ShieldCheck size={20} color="#0373ff" />Safety & Responsible Execution</div>
             <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>Every Project Has People Depending on It</h2>
             <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>Infrastructure is ultimately created for people, and the safety of those delivering and using it must remain central to every project. Our approach is built around an integrated view of health, safety, and environmental responsibility.</p>
             <p data-reveal data-delay="3" style={{ marginTop: 16, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>We work to create safe working environments through responsible contract practices, first-aid and medical preparedness, hygiene practices, and continuous awareness across project sites.</p>
@@ -156,7 +156,7 @@ export default function Infrastructure({ go }) {
       {/* Building Infrastructure That Creates Lasting Value */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#fff" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto", textAlign: "center" }}>
-          <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>A Partner for the Journey</div>
+          <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>A Partner for the Journey</div>
           <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919", marginBottom: 20 }}>From Project Complexity to Operational Confidence</h2>
           <p data-reveal data-delay="2" style={{ marginTop: 8, fontSize: 18, lineHeight: 1.7, color: "#6E6A61", marginBottom: 16 }}>Every infrastructure project represents an investment of capital, time, and organisational focus—and creates the physical environment in which people will work and businesses will operate for years to come. By combining multiple disciplines, experienced teams, and integrated thinking, we help clients navigate complexity with greater confidence.</p>
           <p data-reveal data-delay="3" style={{ fontSize: 18, lineHeight: 1.7, color: "#191919", fontWeight: 500 }}>Because the best outcome is not simply a completed structure. It is an environment that performs as intended, supports the people within it, and continues to create value for the organisation that built it.</p>

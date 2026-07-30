@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { MapPin, Mail, Handshake, CheckCircle2, Plus, ArrowRight } from "lucide-react";
 
 export default function Contact({ go }) {
@@ -23,7 +23,7 @@ export default function Contact({ go }) {
     <div data-screen-label="Contact">
       <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", padding: "120px clamp(20px,4vw,56px) 60px", overflow: "hidden", backgroundImage: "linear-gradient(rgba(25, 25, 25, 0.19), rgba(25, 25, 25, 0.24)), url(https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=2000)", backgroundSize: "cover", backgroundPosition: "center" }}>
         <div style={{ position: "relative", maxWidth: 1240, width: "100%", margin: "0 auto" }}>
-          <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#FF7F00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 22 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Contact</div>
+          <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0373ff", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 22 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Contact</div>
           <h1 data-reveal data-delay="1" className="shown" style={{ fontSize: "clamp(36px,5.4vw,76px)", color: "#fff", maxWidth: 1000 }}>Let's <span className="gradtext">Create Impact</span> Together</h1>
           <p data-reveal data-delay="2" className="shown" style={{ marginTop: 26, maxWidth: 760, fontSize: "clamp(16px,1.3vw,19px)", lineHeight: 1.7, color: "rgba(255,255,255,.7)" }}>Ready to transform your environments? Our team is here to explore how Catalyst can create meaningful outcomes for your organization.</p>
         </div>
@@ -32,14 +32,14 @@ export default function Contact({ go }) {
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#fff" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(40px,6vw,80px)" }} data-2col>
           <div>
-            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Business Inquiries</div>
+            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Business Inquiries</div>
             <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>Partner with Catalyst</h2>
             <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>Whether you are looking to optimize your facilities, enhance food services, implement healthcare technology, or build your workforce, our team is ready to help.</p>
 
             <div data-reveal data-delay="3" style={{ marginTop: 36, display: "flex", flexDirection: "column", gap: 20 }}>
               {[[MapPin, "Office Locations", "India — National Footprint"], [Mail, "Business Inquiries", "Connect with our solutions team"], [Handshake, "Partnerships", "Building long-term relationships"]].map(([Icon, label, val], i) => (
                 <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 16 }}>
-                  <div style={{ width: 46, height: 46, borderRadius: 16, background: "rgba(255,127,0,0.1)", border: "1px solid rgba(255,127,0,0.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "#FF7F00", flexShrink: 0 }}>
+                  <div style={{ width: 46, height: 46, borderRadius: 16, background: "rgba(3,115,255,0.1)", border: "1px solid rgba(3,115,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "#0373ff", flexShrink: 0 }}>
                     <Icon size={20} />
                   </div>
                   <div>
@@ -51,7 +51,7 @@ export default function Contact({ go }) {
             </div>
 
             <div data-reveal data-delay="4" style={{ marginTop: 40, padding: 28, borderRadius: 28, background: "linear-gradient(135deg,#191919,#242424)", position: "relative", overflow: "hidden" }}>
-              <div style={{ position: "absolute", inset: 0, background: "radial-gradient(60% 60% at 80% 20%,rgba(255,127,0,.2),transparent 60%)" }}></div>
+              <div style={{ position: "absolute", inset: 0, background: "radial-gradient(60% 60% at 80% 20%,rgba(3,115,255,.2),transparent 60%)" }}></div>
               <div style={{ position: "relative" }}>
                 <div style={{ fontFamily: "Inter Tight", fontSize: 18, fontWeight: 600, color: "#fff" }}>Wherever you operate,<br />we can help you thrive.</div>
                 <div style={{ marginTop: 12, fontSize: 14, color: "rgba(255,255,255,.65)", lineHeight: 1.6 }}>ISO 9001 · ISO 14001 · ISO 45001 · FSSAI · NABH-Aligned</div>
@@ -74,14 +74,14 @@ export default function Contact({ go }) {
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
                   {[["name", "Full Name", "text"], ["company", "Company Name", "text"]].map(([field, placeholder, type]) => (
                     <div key={field}>
-                      <input type={type} placeholder={placeholder} value={form[field]} onChange={e => setForm(f => ({ ...f, [field]: e.target.value }))} required style={{ width: "100%", padding: "14px 18px", borderRadius: 16, border: "1px solid rgba(25,25,25,.12)", fontSize: 15, fontFamily: "inherit", outline: "none", boxSizing: "border-box", transition: "border-color .2s" }} onFocus={e => e.target.style.borderColor = "#FF7F00"} onBlur={e => e.target.style.borderColor = "rgba(25,25,25,.12)"} />
+                      <input type={type} placeholder={placeholder} value={form[field]} onChange={e => setForm(f => ({ ...f, [field]: e.target.value }))} required style={{ width: "100%", padding: "14px 18px", borderRadius: 16, border: "1px solid rgba(25,25,25,.12)", fontSize: 15, fontFamily: "inherit", outline: "none", boxSizing: "border-box", transition: "border-color .2s" }} onFocus={e => e.target.style.borderColor = "#0373ff"} onBlur={e => e.target.style.borderColor = "rgba(25,25,25,.12)"} />
                     </div>
                   ))}
                 </div>
                 {[["email", "Business Email", "email"], ["phone", "Phone Number", "tel"]].map(([field, placeholder, type]) => (
-                  <input key={field} type={type} placeholder={placeholder} value={form[field]} onChange={e => setForm(f => ({ ...f, [field]: e.target.value }))} required={field === "email"} style={{ width: "100%", padding: "14px 18px", borderRadius: 16, border: "1px solid rgba(25,25,25,.12)", fontSize: 15, fontFamily: "inherit", outline: "none", boxSizing: "border-box", transition: "border-color .2s" }} onFocus={e => e.target.style.borderColor = "#FF7F00"} onBlur={e => e.target.style.borderColor = "rgba(25,25,25,.12)"} />
+                  <input key={field} type={type} placeholder={placeholder} value={form[field]} onChange={e => setForm(f => ({ ...f, [field]: e.target.value }))} required={field === "email"} style={{ width: "100%", padding: "14px 18px", borderRadius: 16, border: "1px solid rgba(25,25,25,.12)", fontSize: 15, fontFamily: "inherit", outline: "none", boxSizing: "border-box", transition: "border-color .2s" }} onFocus={e => e.target.style.borderColor = "#0373ff"} onBlur={e => e.target.style.borderColor = "rgba(25,25,25,.12)"} />
                 ))}
-                <select value={form.service} onChange={e => setForm(f => ({ ...f, service: e.target.value }))} style={{ width: "100%", padding: "14px 18px", borderRadius: 16, border: "1px solid rgba(25,25,25,.12)", fontSize: 15, fontFamily: "inherit", outline: "none", boxSizing: "border-box", background: "#fff", transition: "border-color .2s" }} onFocus={e => e.target.style.borderColor = "#FF7F00"} onBlur={e => e.target.style.borderColor = "rgba(25,25,25,.12)"}>
+                <select value={form.service} onChange={e => setForm(f => ({ ...f, service: e.target.value }))} style={{ width: "100%", padding: "14px 18px", borderRadius: 16, border: "1px solid rgba(25,25,25,.12)", fontSize: 15, fontFamily: "inherit", outline: "none", boxSizing: "border-box", background: "#fff", transition: "border-color .2s" }} onFocus={e => e.target.style.borderColor = "#0373ff"} onBlur={e => e.target.style.borderColor = "rgba(25,25,25,.12)"}>
                   <option value="">Select a Service Area</option>
                   <option value="food">Food Services</option>
                   <option value="ifm">Integrated Facilities Management</option>
@@ -90,8 +90,8 @@ export default function Contact({ go }) {
                   <option value="workforce">Workforce Solutions</option>
                   <option value="general">General Inquiry</option>
                 </select>
-                <textarea placeholder="Tell us about your requirements..." value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))} rows={5} style={{ width: "100%", padding: "14px 18px", borderRadius: 16, border: "1px solid rgba(25,25,25,.12)", fontSize: 15, fontFamily: "inherit", outline: "none", resize: "vertical", boxSizing: "border-box", transition: "border-color .2s" }} onFocus={e => e.target.style.borderColor = "#FF7F00"} onBlur={e => e.target.style.borderColor = "rgba(25,25,25,.12)"}></textarea>
-                <button type="submit" className="mag" style={{ background: "#FF7F00", color: "#fff", fontWeight: 600, fontSize: 16, padding: "16px 32px", borderRadius: 999, boxShadow: "0 8px 24px rgba(255,127,0,.35)", display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8 }}>
+                <textarea placeholder="Tell us about your requirements..." value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))} rows={5} style={{ width: "100%", padding: "14px 18px", borderRadius: 16, border: "1px solid rgba(25,25,25,.12)", fontSize: 15, fontFamily: "inherit", outline: "none", resize: "vertical", boxSizing: "border-box", transition: "border-color .2s" }} onFocus={e => e.target.style.borderColor = "#0373ff"} onBlur={e => e.target.style.borderColor = "rgba(25,25,25,.12)"}></textarea>
+                <button type="submit" className="mag" style={{ background: "#0373ff", color: "#fff", fontWeight: 600, fontSize: 16, padding: "16px 32px", borderRadius: 999, boxShadow: "0 8px 24px rgba(3,115,255,.35)", display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8 }}>
                   Send Message <ArrowRight size={18} />
                 </button>
               </form>
@@ -103,7 +103,7 @@ export default function Contact({ go }) {
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 50 }}>
-            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 14, justifyContent: "center" }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>FAQs</div>
+            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 14, justifyContent: "center" }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>FAQs</div>
             <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,44px)", color: "#191919" }}>Frequently Asked Questions</h2>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
@@ -111,7 +111,7 @@ export default function Contact({ go }) {
               <div key={i} className="faqq" onClick={() => setOpenFaq(openFaq === i ? -1 : i)} style={{ border: "1px solid rgba(25,25,25,.08)", borderRadius: 20, overflow: "hidden", cursor: "pointer" }}>
                 <div style={{ padding: "20px 24px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16 }}>
                   <div style={{ fontFamily: "Inter Tight", fontWeight: 600, fontSize: 16, color: "#191919" }}>{faq[0]}</div>
-                  <div style={{ color: "#D96D00", flexShrink: 0, transition: "transform .3s", transform: openFaq === i ? "rotate(45deg)" : "none", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <div style={{ color: "#0258cc", flexShrink: 0, transition: "transform .3s", transform: openFaq === i ? "rotate(45deg)" : "none", display: "flex", alignItems: "center", justifyContent: "center" }}>
                     <Plus size={20} />
                   </div>
                 </div>

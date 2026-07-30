@@ -45,7 +45,7 @@ const sectors = [
   },
 ];
 
-export default function Sectors({ go }) {
+export default function Sectors({ go, hash }) {
   const [active, setActive] = useState(0);
   const blocksRef = useRef([]);
 
@@ -64,6 +64,17 @@ export default function Sectors({ go }) {
   }, []);
 
   const jumpTo = (i) => blocksRef.current[i]?.scrollIntoView({ behavior: "smooth", block: "center" });
+
+  useEffect(() => {
+    if (hash && hash.includes("?section=")) {
+      const idx = parseInt(hash.split("?section=")[1]);
+      if (!isNaN(idx) && idx >= 0 && idx < sectors.length) {
+        setTimeout(() => jumpTo(idx), 200);
+      }
+    } else {
+      try { window.scrollTo({ top: 0, behavior: "auto" }); } catch(e){}
+    }
+  }, [hash]);
 
   return (
     <div data-screen-label="Sectors">

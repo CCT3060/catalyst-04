@@ -1,28 +1,32 @@
 import CTA from "../components/CTA";
+import { NumberedIndex, IndustriesMarquee, CutoutArch } from "../components/SolutionsKit";
 import infrastructureBg from "../assets/INFRASTRUCTURE SOLUTIONS.png";
 import whyInfrastructureBg from "../assets/Why Infrastructure Matters.webp";
 import constructionImg from "../assets/residential-building-under-construction-on-transparent-background-png.png";
-import projectmanagementImg from "../assets/1c52bb738447fe1f3b8f8e001976c713.jpg";
+import siteEngineersImg from "../assets/5.png";
 import innovation from "../assets/86de25bf5b2b497bb8be816e43e60bc0.webp";
-import { i } from "framer-motion/client";
+import { ShieldCheck, Leaf, ArrowRight } from "lucide-react";
+
 export default function Infrastructure({ go }) {
   return (
     <div data-screen-label="Infrastructure Solutions">
       <section style={{ position: "relative", backgroundColor: "#191919", backgroundImage: `linear-gradient(  rgba(0, 0, 0, 0.57), rgba(25, 25, 25, 0.7)), url(${infrastructureBg})`, backgroundSize: "cover", backgroundPosition: "center", padding: "170px clamp(20px,4vw,56px) clamp(70px,8vw,110px)", overflow: "hidden", minHeight: "100vh", display: "flex", alignItems: "center" }}>
         <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px)", backgroundSize: "60px 60px", maskImage: "radial-gradient(circle at 55% 30%,#000,transparent 75%)" }}></div>
         <div style={{ position: "relative", maxWidth: 1240, margin: "0 auto", width: "100%" }}>
-          <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 9, fontFamily: "Caveat, cursive", color: "#FF7F00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 22 }}><span style={{ fontSize: 18 }}></span> INFRASTRUCTURE SOLUTIONS</div>
-          <h1 data-reveal data-delay="1" className="shown" style={{ fontSize: "clamp(36px,5.2vw,74px)", color: "#fff", maxWidth: 1000 }}>Building Foundations for <span className="gradtext">Progress</span></h1>
-          <button data-reveal data-delay="2" className="shown mag" onClick={() => go("contact")} style={{ marginTop: 34, background: "#FF7F00", color: "#fff", fontWeight: 600, fontSize: 15, padding: "15px 30px", borderRadius: 999 }}>Talk to our team →</button>
+          <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 9, fontFamily: "Caveat, cursive", color: "#FF7F00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 22 }}>INFRASTRUCTURE</div>
+          <h1 data-reveal data-delay="1" className="shown" style={{ fontSize: "clamp(36px,5.2vw,74px)", color: "#fff", maxWidth: 1000 }}>Building the Foundations for <span className="gradtext">Better Experiences</span></h1>
+          <p data-reveal data-delay="2" className="shown" style={{ marginTop: 24, fontSize: "clamp(17px,1.4vw,20px)", lineHeight: 1.7, color: "rgba(255,255,255,.78)", maxWidth: 640 }}>Creating resilient environments that support growth, inspire confidence, and deliver lasting value through thoughtful infrastructure solutions.</p>
+          <button data-reveal data-delay="3" className="shown mag" onClick={() => go("contact")} style={{ marginTop: 34, background: "#FF7F00", color: "#fff", fontWeight: 600, fontSize: 15, padding: "15px 30px", borderRadius: 999, display: "inline-flex", alignItems: "center", gap: 8 }}>Talk to Our Infrastructure Team <ArrowRight size={18} /></button>
         </div>
       </section>
 
       {/* Intro Description */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto", textAlign: "center" }}>
-          <h3 data-reveal style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919", marginBottom: 24 }}>Delivering Infrastructure That Endures.</h3>
-          <p data-reveal data-delay="1" style={{ fontSize: 18, lineHeight: 1.7, color: "#6E6A61", marginBottom: 16 }}>Infrastructure is more than construction—it is the foundation of growth, operational excellence, and long-term success. Every project has the potential to shape how organizations operate, collaborate, and evolve. At Catalyst, we bring together engineering expertise, disciplined project execution, and practical insight to develop infrastructure that is functional, resilient, and built for the future.</p>
-          <p data-reveal data-delay="2" style={{ fontSize: 18, lineHeight: 1.7, color: "#6E6A61" }}>From industrial facilities and commercial developments to healthcare institutions and corporate campuses, our integrated approach ensures every project is delivered with precision, quality, and a clear focus on operational readiness.</p>
+          <h3 data-reveal style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919", marginBottom: 24 }}>Infrastructure Built to Serve Its Purpose.</h3>
+          <p data-reveal data-delay="1" style={{ fontSize: 18, lineHeight: 1.7, color: "#6E6A61", marginBottom: 16 }}>Infrastructure is the foundation on which businesses operate, industries grow, and people thrive. Today, it goes beyond physical assets—it must support operations, empower people, enable technology, and drive sustainability.</p>
+          <p data-reveal data-delay="2" style={{ fontSize: 18, lineHeight: 1.7, color: "#6E6A61", marginBottom: 16 }}>At Catalyst Service Solutions, our Industrial &amp; Infrastructure Projects Division brings together experience, engineering capabilities, and project execution expertise to deliver solutions designed around these realities. Across diverse industrial and commercial environments, we help organisations create facilities that are functional, efficient, safe, and built for long-term performance.</p>
+          <p data-reveal data-delay="3" style={{ fontSize: 18, lineHeight: 1.7, color: "#6E6A61" }}>Our approach is rooted in the belief that infrastructure should do more than meet specifications—it should serve its purpose. By understanding each project's operational needs, challenges, and aspirations, we bring together the right expertise and resources to create high-performing environments that deliver lasting value to our clients and the people they serve.</p>
         </div>
       </section>
 
@@ -33,10 +37,10 @@ export default function Infrastructure({ go }) {
             <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.15)" }}></div>
           </div>
           <div>
-            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Why Infrastructure Matters</div>
-            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>Enabling Productivity and Continuity</h2>
-            <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>Strong infrastructure creates more than physical spaces—it enables productivity, supports business continuity, and enhances the way organizations function every day.</p>
-            <p data-reveal data-delay="3" style={{ marginTop: 16, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>Thoughtfully executed projects improve efficiency, strengthen operational performance, and provide the flexibility to meet future demands with confidence.</p>
+            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>The Bigger Picture</div>
+            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>One Partner Across Every Discipline</h2>
+            <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>Our integrated approach brings a broad range of infrastructure capabilities under a single framework—from civil and structural works to PEB, MEP, HVAC, electrical systems, fire protection, water treatment, STP, and landscaping—designed to work together rather than operate as disconnected services.</p>
+            <p data-reveal data-delay="3" style={{ marginTop: 16, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>This single-window model gives clients greater visibility, coordination, and control throughout the project lifecycle. The objective is not simply to complete individual scopes of work, but to ensure the entire infrastructure ecosystem works together to support operational and business goals.</p>
           </div>
         </div>
       </section>
@@ -44,25 +48,19 @@ export default function Infrastructure({ go }) {
       {/* Our Infrastructure Solutions */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
-          <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Our Solutions</div>
-          <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919", marginBottom: 40 }}>Our Infrastructure Solutions</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))", gap: 24 }}>
-            {[
-              ["Construction Services", "Comprehensive construction solutions that combine engineering expertise, quality craftsmanship, and disciplined execution to deliver projects that are built to perform from day one.", "🏗️"],
-              ["Industrial Infrastructure", "Infrastructure designed for manufacturing plants, heavy engineering, automobile, pharmaceutical, chemical, and power industries, supporting operational efficiency and long-term growth.", "🏭"],
-              ["Commercial Infrastructure", "Modern office buildings, business parks, commercial spaces, and mixed-use developments designed to deliver functionality, efficiency, and exceptional user experiences.", "🏢"],
-              ["Healthcare Infrastructure", "Specialized infrastructure for hospitals and healthcare facilities that supports clinical workflows, patient safety, and operational excellence.", "🏥"],
-              ["Institutional Infrastructure", "Functional environments for educational institutions, research centres, and public facilities that encourage learning, collaboration, and community engagement.", "🏛️"],
-              ["Interior Fit-outs & Renovation", "Transforming existing spaces through thoughtful renovations, interior development, and modernization that improve both functionality and aesthetics.", "🛋️"],
-              ["Project Management", "End-to-end project coordination covering planning, execution, quality control, scheduling, and stakeholder management to ensure timely and efficient delivery.", "📋"]
-            ].map(([title, desc, icon], i) => (
-              <div key={i} data-reveal data-delay={String(Math.min(i % 3, 3))} className="lift" style={{ background: "#fff", border: "1px solid rgba(25,25,25,.07)", borderRadius: 24, padding: 32 }}>
-                <div style={{ fontSize: 32, marginBottom: 16 }}>{icon}</div>
-                <h4 style={{ fontSize: 18, fontWeight: 600, color: "#191919", marginBottom: 12 }}>{title}</h4>
-                <p style={{ fontSize: 15, color: "#6E6A61", lineHeight: 1.6 }}>{desc}</p>
-              </div>
-            ))}
-          </div>
+          <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Our Capabilities</div>
+          <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919", marginBottom: 20 }}>Bringing Every Critical Element Together</h2>
+          <p data-reveal data-delay="2" style={{ maxWidth: 820, fontSize: 17, lineHeight: 1.7, color: "#6E6A61", marginBottom: 44 }}>Our integrated infrastructure model spans civil and interior works, structural and architectural works, PEB, MEP, HVAC, electrical systems, firefighting, plumbing and sanitary works, fabrication and piping, water treatment, STP and ETP solutions, industrial factory works, and external development—coordinated within a single connected framework.</p>
+          <NumberedIndex items={[
+            ["EPC & Contracting", "Coordinated engineering, procurement, and construction expertise that brings diverse project requirements together under a structured execution approach—helping clients manage complexity while maintaining focus on quality, timelines, and performance."],
+            ["Turnkey Projects", "A single-partner model for complex infrastructure requirements, coordinating multiple disciplines within one project framework to create a more streamlined journey from initial planning through completion."],
+            ["Civil, Structural & Architectural Works", "The physical foundation of every successful project—functional, durable, and purpose-driven environments developed around the specific requirements of each site and operation."],
+            ["PEB Solutions", "Efficient, flexible pre-engineered building solutions for industrial and commercial environments, designed around project requirements, functionality, and execution efficiency."],
+            ["MEP, HVAC & Electrical Systems", "Integrated building systems that function reliably and efficiently, creating the essential technical environment facilities need to operate effectively and support the people and processes within them."],
+            ["Fire & Life Safety", "Fire fighting and life safety solutions designed to protect people, assets, and operations while contributing to safer and more resilient environments."],
+            ["Water & Wastewater Infrastructure", "Water treatment, STP, and ETP capabilities that support responsible water management and help organisations meet their infrastructure needs with greater resource efficiency."],
+            ["Fabrication, Piping & Industrial Works", "Specialised fabrication, piping, and industrial factory capabilities that respond to the specific processes and operating conditions of technically demanding environments."]
+          ]} />
         </div>
       </section>
 
@@ -73,11 +71,11 @@ export default function Infrastructure({ go }) {
             <img src={constructionImg} alt="Construction" style={{ width: "100%", maxHeight: 520, objectFit: "contain" }} />
           </div>
           <div>
-            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Construction</div>
-            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>Built with Precision. Delivered with Purpose.</h2>
-            <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>Every successful project begins with careful planning and disciplined execution. Catalyst approaches construction with a focus on quality, safety, coordination, and operational readiness, ensuring each development is completed to the highest standards while meeting project timelines and business objectives.</p>
-            <p data-reveal data-delay="3" style={{ marginTop: 16, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>By bringing together experienced professionals, structured processes, and collaborative project management, we create infrastructure that is ready to support operations from the moment it is handed over.</p>
-            <p data-reveal data-delay="4" style={{ marginTop: 16, fontSize: 17, fontWeight: 500, color: "#191919" }}>Every structure is built not only to stand strong, but to perform with purpose.</p>
+            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Integrated Execution</div>
+            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>From Engineering Complexity to Integrated Execution</h2>
+            <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>Large-scale infrastructure rarely involves a single discipline. Civil and structural works, building systems, mechanical and electrical services, safety infrastructure, and water management all come together. When these are managed through fragmented partnerships, projects gain more interfaces, more dependencies, and greater potential for delays.</p>
+            <p data-reveal data-delay="3" style={{ marginTop: 16, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>Our Industrial &amp; Infrastructure Projects Division was established to solve exactly this. Instead of treating every scope as a separate assignment, we look at the project as one connected ecosystem—understanding how each discipline influences the others and coordinating a seamless journey from planning and engineering to execution and completion.</p>
+            <p data-reveal data-delay="4" style={{ marginTop: 16, fontSize: 17, fontWeight: 500, color: "#191919" }}>The structure supports the services. The services support the operations. Every element works together to serve the purpose of the facility.</p>
           </div>
         </div>
       </section>
@@ -86,13 +84,17 @@ export default function Infrastructure({ go }) {
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(40px,6vw,80px)", alignItems: "center" }} data-2col>
           <div style={{ order: 2 }} data-reveal>
-            <img src={projectmanagementImg} alt="Construction" style={{ width: "100%", maxHeight: 520, objectFit: "contain" }} />
+            <CutoutArch src={siteEngineersImg} alt="Catalyst engineers reviewing plans on site" tint="rgba(67,147,74,.1)" />
           </div>
           <div style={{ order: 1 }}>
-            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#377B3D", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#43934A" }}></span>Engineering & Project Management</div>
-            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>Planning Every Detail. Managing Every Milestone.</h2>
-            <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>Successful infrastructure is shaped long before construction begins. Our project management approach integrates engineering coordination, design reviews, scheduling, vendor management, quality assurance, and progress monitoring into a seamless delivery framework.</p>
-            <p data-reveal data-delay="3" style={{ marginTop: 16, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>Through proactive planning and continuous collaboration, projects move forward with greater efficiency, improved visibility, and consistent execution at every stage.</p>
+            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#377B3D", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#43934A" }}></span>Project Experience</div>
+            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>Experience From Being Where Complexity Happens</h2>
+            <div data-reveal data-delay="2" style={{ marginTop: 26, display: "flex", alignItems: "baseline", gap: 14 }}>
+              <span style={{ fontSize: "clamp(48px,6vw,72px)", fontWeight: 700, color: "#191919", lineHeight: 1 }}>100<span style={{ color: "#43934A" }}>+</span></span>
+              <span style={{ fontSize: 17, color: "#6E6A61", lineHeight: 1.5, maxWidth: 240 }}>industrial &amp; commercial projects delivered across India and overseas</span>
+            </div>
+            <p data-reveal data-delay="3" style={{ marginTop: 24, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>Our portfolio spans specialised and large-scale environments—industrial facilities, specialised infrastructure, large-scale kitchens, data centre environments, and other complex developments where infrastructure must perform reliably under demanding conditions.</p>
+            <p data-reveal data-delay="4" style={{ marginTop: 16, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>Each project deepens our understanding of what it takes to coordinate multiple disciplines, manage site realities, and deliver infrastructure that meets the requirements of the organisation it serves.</p>
           </div>
         </div>
       </section>
@@ -104,55 +106,46 @@ export default function Infrastructure({ go }) {
             <img src={innovation} alt="Construction" style={{ width: "130%", maxHeight: 520, objectFit: "contain" }} />
           </div>
           <div>
-            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Innovation</div>
-            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>Engineering Smarter Infrastructure</h2>
-            <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>Progress is driven by continuous improvement. Catalyst embraces modern construction methodologies, digital project monitoring, advanced planning tools, and efficient engineering practices to enhance project delivery and operational performance.</p>
-            <p data-reveal data-delay="3" style={{ marginTop: 16, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>Innovation is reflected in streamlined workflows, collaborative execution, and practical solutions that improve quality, optimize resources, and create infrastructure capable of adapting to evolving business needs.</p>
-            <p data-reveal data-delay="4" style={{ marginTop: 16, fontSize: 17, fontWeight: 500, color: "#191919" }}>Innovation transforms projects into infrastructure that delivers lasting value.</p>
+            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><ShieldCheck size={20} color="#FF7F00" />Safety & Responsible Execution</div>
+            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>Every Project Has People Depending on It</h2>
+            <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>Infrastructure is ultimately created for people, and the safety of those delivering and using it must remain central to every project. Our approach is built around an integrated view of health, safety, and environmental responsibility.</p>
+            <p data-reveal data-delay="3" style={{ marginTop: 16, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>We work to create safe working environments through responsible contract practices, first-aid and medical preparedness, hygiene practices, and continuous awareness across project sites.</p>
+            <p data-reveal data-delay="4" style={{ marginTop: 16, fontSize: 17, fontWeight: 500, color: "#191919" }}>Safety is not simply a compliance requirement—it is a way of life, driving a strong safety culture and our ultimate goal of Zero Harm.</p>
           </div>
         </div>
       </section>
 
-      {/* Industries We Support */}
-      <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#191919", color: "#fff" }}>
-        <div style={{ maxWidth: 1240, margin: "0 auto", textAlign: "center" }}>
-          <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#FF7F00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Industries We Support</div>
-          <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)" }}>Tailored for Every Sector</h2>
-          <p data-reveal data-delay="2" style={{ maxWidth: 700, margin: "22px auto 40px", fontSize: 17, lineHeight: 1.7, color: "rgba(255,255,255,.7)" }}>Every industry presents unique infrastructure requirements. Our expertise spans a diverse range of sectors, delivering projects tailored to operational priorities and future growth.</p>
-
-          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 12 }}>
-            {[
-              "Healthcare & Hospitals", "Commercial Offices", "Corporate Campuses", "Industrial Facilities", "Manufacturing",
-              "Automobiles", "Heavy Engineering", "Pharmaceuticals", "Chemical & Ceramics", "Power & Energy",
-              "Educational Institutions", "Hospitality", "Mixed-Use Developments", "Institutional Projects"
-            ].map((industry, i) => (
-              <div key={i} data-reveal data-delay={String(Math.min(i % 5, 5))} className="lift" style={{ padding: "12px 24px", background: "rgba(255,255,255,.05)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 999, fontSize: 15, fontWeight: 500 }}>
-                {industry}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Where We Work */}
+      <IndustriesMarquee
+        kicker="Where We Work"
+        title="Environments That Keep the World Moving"
+        sub="Infrastructure requirements change from one industry to another. Our cross-sector experience helps us approach each project with context—understanding that the right solution responds to operational reality, not just a technical specification."
+        industries={[
+          "Chemical", "Food", "Pharma", "Automotive", "Data Centres",
+          "Steel Plants", "Refineries", "Airports", "Warehouses", "Commercial Developments",
+          "IT Parks", "Railways", "Roads & Flyovers"
+        ]}
+      />
 
       {/* Why Catalyst */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: 60 }}>
-            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#377B3D", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#43934A" }}></span>Why Catalyst</div>
-            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>The Catalyst Advantage</h2>
+          <div style={{ textAlign: "center", marginBottom: 48, maxWidth: 820, marginInline: "auto" }}>
+            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#377B3D", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><Leaf size={20} color="#43934A" />Sustainable Infrastructure</div>
+            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>Building for Performance. Thinking Beyond the Project.</h2>
+            <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>The energy a facility consumes, the water it uses, and the resources it needs to operate all shape its long-term footprint. As organisations focus on sustainability and ESG performance, we help integrate resource efficiency, technology-enabled operations, and responsible solutions into the environments we create.</p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(340px,1fr))", gap: 24 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 24 }}>
             {[
-              ["Integrated Project Delivery", "From concept to completion, every stage is managed through a coordinated approach that ensures consistency, transparency, and accountability."],
-              ["Engineering Expertise", "Experienced teams combine technical knowledge with practical execution to deliver infrastructure that performs reliably for years to come."],
-              ["Quality & Safety", "Every project follows rigorous quality standards and safety practices, ensuring dependable outcomes without compromising execution."],
-              ["Efficient Project Management", "Structured planning, proactive coordination, and disciplined monitoring keep projects aligned with timelines, budgets, and operational goals."],
-              ["Collaborative Partnerships", "We work closely with stakeholders, consultants, and project teams to build lasting relationships founded on trust, communication, and shared success."],
-              ["Future-Ready Thinking", "Our infrastructure is planned with adaptability in mind, supporting evolving operational requirements and long-term organizational growth."]
+              ["Water Management", "Water treatment, STP, and ETP solutions that support responsible use and reduce operational impact."],
+              ["Energy Efficiency", "Infrastructure designed to balance operational performance with lower energy consumption over its lifecycle."],
+              ["Technology & Resource Optimisation", "Technology-enabled operations and resource-conscious design that improve efficiency across the facility."],
+              ["Renewable & Green Initiatives", "Broader sustainable solutions including renewable energy, EV charging, and composting."]
             ].map(([title, desc], i) => (
-              <div key={i} data-reveal data-delay={String(Math.min(i % 3, 3))} className="lift" style={{ background: "#fff", border: "1px solid rgba(25,25,25,.07)", borderRadius: 24, padding: 32 }}>
-                <h4 style={{ fontSize: 18, fontWeight: 600, color: "#191919", marginBottom: 12 }}>{title}</h4>
+              <div key={i} data-reveal data-delay={String(Math.min(i % 3, 3))} style={{ borderTop: "2px solid #43934A", paddingTop: 20 }}>
+                <div style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: ".08em", color: "#377B3D", marginBottom: 10 }}>{String(i + 1).padStart(2, "0")}</div>
+                <h4 style={{ fontSize: 19, fontWeight: 600, color: "#191919", marginBottom: 12 }}>{title}</h4>
                 <p style={{ fontSize: 15, color: "#6E6A61", lineHeight: 1.6 }}>{desc}</p>
               </div>
             ))}
@@ -163,18 +156,20 @@ export default function Infrastructure({ go }) {
       {/* Building Infrastructure That Creates Lasting Value */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#fff" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto", textAlign: "center" }}>
-          <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Building Infrastructure That Creates Lasting Value</div>
-          <p data-reveal data-delay="1" style={{ marginTop: 24, fontSize: 18, lineHeight: 1.7, color: "#6E6A61" }}>Great infrastructure is measured by the opportunities it enables long after construction is complete. Whether developing industrial facilities, commercial spaces, healthcare environments, or institutional campuses, Catalyst partners with organizations to deliver infrastructure that combines engineering excellence, operational efficiency, and enduring value.</p>
+          <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>A Partner for the Journey</div>
+          <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919", marginBottom: 20 }}>From Project Complexity to Operational Confidence</h2>
+          <p data-reveal data-delay="2" style={{ marginTop: 8, fontSize: 18, lineHeight: 1.7, color: "#6E6A61", marginBottom: 16 }}>Every infrastructure project represents an investment of capital, time, and organisational focus—and creates the physical environment in which people will work and businesses will operate for years to come. By combining multiple disciplines, experienced teams, and integrated thinking, we help clients navigate complexity with greater confidence.</p>
+          <p data-reveal data-delay="3" style={{ fontSize: 18, lineHeight: 1.7, color: "#191919", fontWeight: 500 }}>Because the best outcome is not simply a completed structure. It is an environment that performs as intended, supports the people within it, and continues to create value for the organisation that built it.</p>
         </div>
       </section>
 
       <CTA
         go={go}
-        title="Transforming Vision into Lasting Infrastructure"
-        subtitle="INFRASTRUCTURE SOLUTIONS"
-        primaryLabel="Explore Infrastructure Solutions"
+        title="What Will You Build Next?"
+        subtitle="INFRASTRUCTURE"
+        primaryLabel="Talk to Our Infrastructure Team"
         primaryPage="contact"
-        secondaryLabel="Start Your Next Project"
+        secondaryLabel="Start With Your Vision"
         secondaryPage="contact"
       />
     </div>

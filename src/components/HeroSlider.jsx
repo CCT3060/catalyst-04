@@ -1,110 +1,91 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import "./HeroSlider.css";
-import img3 from "../assets/3.png";
-import img2 from "../assets/2.png";
-import img1 from "../assets/1.png";
-import img4 from "../assets/4.png";
-import img5 from "../assets/5.png";
 
+const AUTO_MS = 7000;
 
-const AUTO_MS = 6500;
-
-// accent = headline highlight (brand hues), blob = the big circle behind the images
+// Full-bleed cinematic hero. Each slide is one service line: a photographic
+// environment (remote imagery), the slide's brand accent, and the client copy.
 const SLIDES = [
   {
     id: "food",
     kicker: "Food Services",
-    accent: "#FF7F00",
-    blob: "#FF7F00",
-    wash: "#FBF4EA",
+    accent: "#FF8F2A",
     lines: [
-      [{ t: "Food" },
-      { t: " Experiences", a: true }],
-      [{ t: "That " }, { t: "Elevate", a: true }],
+      [{ t: "Food experiences" }],
+      [{ t: "that " }, { t: "elevate.", a: true }],
     ],
     para: "Food has the power to shape experiences far beyond the dining table. We design dining environments that combine nutrition, hospitality, and innovation — from workplaces to healthcare institutions and educational campuses.",
-    img: img2,
-    alt: "Fresh, colourful healthy food bowl",
+    img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2400&q=80",
+    alt: "Elegant restaurant dining room prepared for evening service",
   },
   {
     id: "facilities",
     kicker: "Facility Management",
-    accent: "#43934A",
-    blob: "#43934A",
-    wash: "#F3F7F1",
+    accent: "#7CC584",
     lines: [
-      [{ t: "Spaces That " }, { t: "Perform.", a: true }]
+      [{ t: "Spaces that" }],
+      [{ t: "perform.", a: true }],
     ],
     para: "We deliver integrated facility management solutions that create safe, efficient and sustainable environments, enhancing occupant experience while maximizing operational performance.",
-    img: img3,
-    alt: "Wind turbines and sustainable energy in a green field",
+    img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=80",
+    alt: "Modern glass office towers seen from below",
   },
   {
     id: "people",
     kicker: "Staffing Solutions",
-    accent: "#D99000",
-    blob: "#FFB800",
-    wash: "#FBF5E6",
+    accent: "#FFC14A",
     lines: [
-
-      [{ t: " People who " }, { t: "Make", a: true }],
-      [{ t: "The " }, { t: " Difference", a: true }],
+      [{ t: "People who make" }],
+      [{ t: "the " }, { t: "difference.", a: true }],
     ],
     para: "We provide skilled workforce solutions that empower organizations with the right talent to deliver exceptional service, operational excellence and sustainable growth.",
-    img: img1,
-    alt: "Team of professionals collaborating",
+    img: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=2400&q=80",
+    alt: "Team of professionals collaborating around a table",
   },
   {
     id: "infra",
     kicker: "Infrastructure Solutions",
-    accent: "#D96D00",
-    blob: "#D96D00",
-    wash: "#F9F2EA",
+    accent: "#F5913D",
     lines: [
-
-      [{ t: "Infrastructures that " }],
-      [{ t: "are " }, { t: "Resilient.", a: true }],
+      [{ t: "Infrastructure that" }],
+      [{ t: "stands " }, { t: "resilient.", a: true }],
     ],
     para: "We design, build and maintain resilient infrastructure that supports business continuity, enables growth and delivers long-term value through future-ready solutions.",
-    img: img5,
-    alt: "Construction site with modern infrastructure taking shape",
+    img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2400&q=80",
+    alt: "Construction site with steel framework rising",
   },
   {
     id: "healthcare",
     kicker: "Healthcare Solutions",
-    accent: "#43934A",
-    blob: "#43934A",
-    wash: "#F1F6F2",
+    accent: "#7CC584",
     lines: [
-      [{ t: "One hospital one " }, { t: "Ecosystem", a: true }],
-      [{ t: "Uninterrupted " }, { t: "Care", a: true }],
+      [{ t: "One ecosystem." }],
+      [{ t: "Uninterrupted " }, { t: "care.", a: true }],
     ],
     para: "We manage the complete lifecycle of biomedical equipment across every department through a single point of accountability, maximizing equipment uptime and enabling uninterrupted patient care.",
-    img: img4,
-    alt: "Modern healthcare environment with medical professionals",
+    img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=2400&q=80",
+    alt: "Surgical team at work in a modern operating theatre",
   },
 ];
 
 const N = SLIDES.length;
-const STEP = 360 / N; // degrees the wheel turns per slide
 
 export default function HeroSlider({ go }) {
-  // rotation accumulates so the orbit wheel always keeps spinning the same way
-  const [state, setState] = useState({ current: 0, rotation: 0, leaving: null });
-  const { current, rotation, leaving } = state;
+  const [state, setState] = useState({ current: 0, leaving: null });
+  const { current, leaving } = state;
   const leaveTimer = useRef(null);
+  const booted = useRef(false);
 
   const goTo = useCallback((i) => {
     setState(s => {
       const next = ((i % N) + N) % N;
       if (next === s.current) return s;
-      let d = next - s.current;
-      if (d > N / 2) d -= N;
-      if (d < -N / 2) d += N;
-      return { current: next, rotation: s.rotation - d * STEP, leaving: s.current };
+      booted.current = true;
+      return { current: next, leaving: s.current };
     });
     clearTimeout(leaveTimer.current);
-    leaveTimer.current = setTimeout(() => setState(s => ({ ...s, leaving: null })), 750);
+    leaveTimer.current = setTimeout(() => setState(s => ({ ...s, leaving: null })), 1150);
   }, []);
 
   // auto-advance, restarts whenever the slide changes (manual or automatic)
@@ -119,67 +100,54 @@ export default function HeroSlider({ go }) {
 
   return (
     <section
-      className="hs-section"
-      style={{ background: slide.wash, "--hs-dur": `${AUTO_MS}ms`, "--hs-blob-color": slide.blob }}
+      className={`hx-hero${booted.current ? "" : " hx-boot"}`}
+      style={{ "--hx-dur": `${AUTO_MS}ms` }}
       aria-roledescription="carousel"
-      aria-label="Catalyst highlights"
+      aria-label="Catalyst service lines"
     >
-      {/* shared visual: persistent blob + orbiting image wheel */}
-      <div className="hs-visual" aria-hidden="true">
-        <div className="hs-blob-par">
-          <div className="hs-blob-wrap">
-            <div className="hs-blob" style={{ background: slide.blob }}></div>
+      {/* photographic layers — the leaving image sits below while the
+          incoming one wipes over it and slowly settles */}
+      <div className="hx-stack" aria-hidden="true">
+        {SLIDES.map((s, i) => (
+          <div
+            key={s.id}
+            className={`hx-layer${i === current ? " on" : ""}${i === leaving ? " out" : ""}`}
+          >
+            <img
+              src={s.img}
+              alt=""
+              loading={i === 0 ? "eager" : "lazy"}
+              fetchPriority={i === 0 ? "high" : undefined}
+            />
+            <div className="hx-scrim"></div>
           </div>
-        </div>
-        <div className="hs-img-par">
-          <div className="hs-orbit-box">
-            <div className="hs-orbit" style={{ transform: `rotate(${rotation}deg)` }}>
-              {SLIDES.map((s, i) => {
-                const slotAngle = 270 + i * STEP; // active slot rests to the left of the blob centre
-                return (
-                  <div
-                    key={s.id}
-                    className={`hs-slot${i === current ? " on" : ""}${s.photo ? " hs-slot-photo" : ""}`}
-                    style={{ transform: `rotate(${slotAngle}deg) translateY(calc(-1 * var(--hs-r)))` }}
-                  >
-                    {/* counter-rotates so the photo stays upright while it orbits */}
-                    <div className="hs-slot-in" style={{ transform: `rotate(${-(rotation + slotAngle)}deg)` }}>
-                      <div className="hs-slot-scale">
-                        <div className="hs-img-float">
-                          <img src={s.img} alt="" loading={i === 0 ? "eager" : "lazy"} />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
 
       {SLIDES.map((s, i) => {
-        const st = i === current ? "hs-enter" : i === leaving ? "hs-leave" : "";
+        const st = i === current ? "hx-enter" : i === leaving ? "hx-leave" : "";
         return (
-          <div key={s.id} className={`hs-slide ${st}`} style={{ "--hsa": s.accent }} aria-hidden={i !== current}>
-            <div className="hs-inner">
-              <div className="hs-copy">
-                <div className="hs-kicker"><span className="hs-kicker-dash"></span>{s.kicker}</div>
-                <h1 className="hs-title">
+          <div key={s.id} className={`hx-slide ${st}`} style={{ "--hxa": s.accent }} aria-hidden={i !== current}>
+            <div className="hx-inner">
+              <div className="hx-copy">
+                <div className="hx-kicker"><span className="hx-kicker-dash"></span>{s.kicker}</div>
+                <h1 className="hx-title">
                   {s.lines.map((line, li) => (
-                    <span className="hs-line" key={li} style={{ "--ld": `${0.16 + li * 0.08}s` }}>
-                      <span className="hs-line-in">
+                    <span className="hx-line" key={li} style={{ "--ld": `${0.5 + li * 0.1}s` }}>
+                      <span className="hx-line-in">
                         {line.map((seg, si) => (
-                          <span key={si} className={seg.a ? "hs-accent" : undefined}>{seg.t}</span>
+                          <span key={si} className={seg.a ? "hx-accent" : undefined}>{seg.t}</span>
                         ))}
                       </span>
                     </span>
                   ))}
                 </h1>
-                <p className="hs-para">{s.para}</p>
-                <div className="hs-btns">
-                  <button className="hs-btn-fill mag" onClick={() => go("solutions")}>Explore Solutions →</button>
-                  <button className="hs-btn-ghost mag" onClick={() => go("contact")}>Partner With Us</button>
+                <p className="hx-para">{s.para}</p>
+                <div className="hx-btns">
+                  <button className="hx-btn-fill mag" onClick={() => go("solutions")}>
+                    Explore solutions <ArrowRight size={16} />
+                  </button>
+                  <button className="hx-btn-ghost mag" onClick={() => go("contact")}>Partner with us</button>
                 </div>
               </div>
             </div>
@@ -187,29 +155,41 @@ export default function HeroSlider({ go }) {
         );
       })}
 
-      <div className="hs-controls" style={{ "--hsa": slide.accent }}>
-        <div className="hs-dots" role="tablist" aria-label="Slides">
-          {SLIDES.map((s, i) => (
-            <button
-              key={s.id}
-              role="tab"
-              aria-selected={i === current}
-              aria-label={`Slide ${i + 1}`}
-              className={`hs-dot${i === current ? " on" : ""}`}
-              onClick={() => goTo(i)}
-            >
-              {i === current && <span key={`fill-${rotation}`} className="hs-dot-fill"></span>}
-            </button>
-          ))}
-        </div>
-        <div className="hs-arrows">
-          <button className="hs-arrow" aria-label="Previous slide" onClick={() => goTo(current - 1)}>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6" /></svg>
+      {/* service index rail — navigation, position and autoplay progress in one */}
+      <div className="hx-rail" role="tablist" aria-label="Service lines">
+        {SLIDES.map((s, i) => (
+          <button
+            key={s.id}
+            role="tab"
+            aria-selected={i === current}
+            aria-label={s.kicker}
+            className={`hx-rail-item${i === current ? " on" : ""}`}
+            style={{ "--hxa": s.accent }}
+            onClick={() => goTo(i)}
+          >
+            <span className="hx-rail-name">{s.kicker}</span>
+            <span className="hx-rail-track">
+              {i === current && <span key={`fill-${current}`} className="hx-rail-fill"></span>}
+            </span>
           </button>
-          <button className="hs-arrow" aria-label="Next slide" onClick={() => goTo(current + 1)}>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 6l6 6-6 6" /></svg>
-          </button>
-        </div>
+        ))}
+      </div>
+
+      <div className="hx-foot" style={{ "--hxa": slide.accent }}>
+        <button className="hx-arrow" aria-label="Previous slide" onClick={() => goTo(current - 1)}>
+          <ChevronLeft size={16} />
+        </button>
+        <button className="hx-arrow" aria-label="Next slide" onClick={() => goTo(current + 1)}>
+          <ChevronRight size={16} />
+        </button>
+        <span className="hx-count" aria-hidden="true">
+          {String(current + 1).padStart(2, "0")}<em>/ {String(N).padStart(2, "0")}</em>
+        </span>
+      </div>
+
+      <div className="hx-cue" aria-hidden="true">
+        <span className="hx-cue-line"><span className="hx-cue-dot"></span></span>
+        <span className="hx-cue-txt">Scroll</span>
       </div>
     </section>
   );

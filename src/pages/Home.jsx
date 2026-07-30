@@ -4,6 +4,7 @@ import HeroSlider from "../components/HeroSlider";
 import partnerImg from "../assets/Partnerwithus.png";
 import { Globe } from "@/components/ui/cobe-globe";
 import aboutusImg from "../assets/aboutus.png";
+import { UtensilsCrossed, Building2, Factory, Stethoscope, Users, ArrowRight } from "lucide-react";
 
 
 const SECTORS = [
@@ -15,23 +16,19 @@ const SECTORS = [
   { num: "06", name: "Healthcare Technology Management", desc: "Supporting better care through people, technology, and operational excellence. We support hospitals, healthcare institutions, and life sciences organizations enhance patient experiences, optimize clinical operations, and maximize the performance of critical healthcare technologies while maintaining the highest standards of safety, compliance, and care quality.", bg: "#2E5D33", img: "healthcare.jpg", page: "htm" },
 ];
 
-const PRESENCE_DATA = [
-  {
-    id: "india", name: "India", region: "South Asia", flag: "🇮🇳", color: "#FF7F00", mx: 415, my: 276,
-    desc: "Our primary operations hub — the largest team, widest service coverage, and deepest expertise across sectors.",
-    offices: ["Mumbai", "Delhi NCR", "Bengaluru", "Chennai", "Hyderabad"]
-  },
-  {
-    id: "dubai", name: "Dubai, UAE", region: "Middle East", flag: "🇦🇪", color: "#43934A", mx: 179, my: 240,
-    desc: "Strategic Middle East presence enabling Catalyst to serve diverse organizations across the Gulf region.",
-    offices: ["Dubai"]
-  },
-  {
-    id: "singapore", name: "Singapore", region: "Southeast Asia", flag: "🇸🇬", color: "#FFB800", mx: 683, my: 524,
-    desc: "Southeast Asia hub connecting regional partnerships and expanding our footprint across ASEAN markets.",
-    offices: ["Singapore"]
-  },
-];
+
+
+const HexCard = ({ p, name, img, go }) => {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <div onClick={() => go(p)} style={{ width: "clamp(200px,22vw,310px)", aspectRatio: "240/277", clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)", backgroundImage: `linear-gradient(rgba(0,0,0,.52),rgba(0,0,0,.52)),url(${img})`, backgroundSize: "cover", backgroundPosition: "center", position: "relative", overflow: "hidden", cursor: "pointer", flexShrink: 0, transition: "filter .3s", filter: hovered ? "brightness(1.2)" : "" }} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+      <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "28% 10%", textAlign: "center" }}>
+        <span style={{ color: "#fff", fontFamily: "Inter Tight", fontWeight: 700, fontSize: "clamp(16px,1.8vw,22px)", lineHeight: 1.25, transform: hovered ? "translateY(-14px)" : "translateY(0)", transition: "transform 0.3s ease" }}>{name}</span>
+        <span style={{ position: "absolute", bottom: "35%", padding: "6px 16px", border: "1px solid rgba(255,255,255,.6)", borderRadius: 3, color: "#fff", fontSize: "clamp(9px,0.7vw,11px)", fontWeight: 700, letterSpacing: ".12em", opacity: hovered ? 1 : 0, transform: hovered ? "translateY(0)" : "translateY(10px)", transition: "all 0.3s ease" }}>LEARN MORE</span>
+      </div>
+    </div>
+  );
+};
 
 const CERTS = [
   { name: "ISO 9001:2015", sub: "Quality Management Systems", color: "#FF7F00", image: "/certs/iso-9001.webp", detail: "Certified Quality Management System ensuring consistent service delivery, process efficiency, and continuous improvement across all operations." },
@@ -46,7 +43,6 @@ const CERTS = [
 
 export default function Home({ go }) {
   const [activeSector, setActiveSector] = useState(0);
-  const [activePresence, setActivePresence] = useState("india");
   const sectorWrapRef = useRef(null);
 
   useEffect(() => {
@@ -82,7 +78,7 @@ export default function Home({ go }) {
       <HeroSlider go={go} />
 
       {/* About snippet */}
-      <section style={{ padding: "clamp(90px,11vw,150px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
+      <section style={{ padding: "clamp(50px,7vw,90px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(40px,6vw,90px)", alignItems: "center" }} data-split>
           <div style={{ position: "relative", height: 520 }}>
             {/* Box 1 (Top Left) */}
@@ -107,13 +103,13 @@ export default function Home({ go }) {
             <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(30px,3.6vw,50px)", color: "#191919" }}>An integrated services partner built around people</h2>
             <p data-reveal data-delay="2" style={{ marginTop: 24, fontSize: 18, lineHeight: 1.7, color: "#46433C" }}>Catalyst delivers an integrated portfolio of services dedicated to enhancing the environments where people work, heal, learn, live, and connect. </p>
             <p data-reveal data-delay="3" style={{ marginTop: 18, fontSize: 18, lineHeight: 1.7, color: "#6E6A61" }}>By combining operational excellence, technology, and human-centered solutions, we help organizations improve performance, elevate experiences, and create lasting value.</p>
-            <button data-reveal data-delay="4" className="mag" onClick={() => go("about")} style={{ marginTop: 34, background: "#191919", color: "#fff", fontWeight: 600, fontSize: 15, padding: "15px 30px", borderRadius: 999 }}>Discover our story →</button>
+            <button data-reveal data-delay="4" className="mag" onClick={() => go("about")} style={{ marginTop: 34, background: "#191919", color: "#fff", fontWeight: 600, fontSize: 15, padding: "15px 30px", borderRadius: 999, display: "inline-flex", alignItems: "center", gap: 8 }}>Discover our story <ArrowRight size={18} /></button>
           </div>
         </div>
       </section>
 
       {/* Solutions Ecosystem */}
-      <section style={{ padding: "clamp(90px,11vw,150px) clamp(20px,4vw,56px)", background: "rgb(249, 247, 243)", overflow: "hidden" }}>
+      <section style={{ padding: "clamp(50px,7vw,90px) clamp(20px,4vw,56px)", background: "rgb(249, 247, 243)", overflow: "hidden" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
           <div style={{ textAlign: "center", maxWidth: 760, margin: "0 auto 70px" }}>
             <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#FF7F00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18, justifyContent: "center" }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Solutions Ecosystem<span style={{ width: 26, height: 2, background: "#43934A" }}></span></div>
@@ -125,26 +121,14 @@ export default function Home({ go }) {
           <div data-reveal data-hexwrap style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
             {/* Row 1 — 3 hexagons */}
             <div style={{ display: "flex", gap: 18 }}>
-              {[["food", "", "Food Services", "/food-service-hero.png"], ["ifm", "", "Integrated Facilities Management", "/sectors/corporate.jpg"], ["infra", "", "Infrastructure Solutions", "/sectors/infrastructure.jpg"]].map(([p, icon, name, img]) => (
-                <div key={p} onClick={() => go(p)} style={{ width: "clamp(200px,22vw,310px)", aspectRatio: "240/277", clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)", backgroundImage: `linear-gradient(rgba(0,0,0,.52),rgba(0,0,0,.52)),url(${img})`, backgroundSize: "cover", backgroundPosition: "center", position: "relative", overflow: "hidden", cursor: "pointer", flexShrink: 0, transition: "filter .3s" }} onMouseEnter={e => e.currentTarget.style.filter = "brightness(1.2)"} onMouseLeave={e => e.currentTarget.style.filter = ""}>
-                  <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 12, padding: "28% 10%", textAlign: "center" }}>
-                    <span style={{ fontSize: "clamp(26px,3.2vw,46px)" }}>{icon}</span>
-                    <span style={{ color: "#fff", fontFamily: "Inter Tight", fontWeight: 700, fontSize: "clamp(12px,1.3vw,17px)", lineHeight: 1.25 }}>{name}</span>
-                    <span style={{ padding: "6px 14px", border: "1px solid rgba(255,255,255,.6)", borderRadius: 3, color: "#fff", fontSize: "clamp(9px,0.7vw,11px)", fontWeight: 700, letterSpacing: ".12em" }}>LEARN MORE</span>
-                  </div>
-                </div>
+              {[[ "food", "Food Services", "/food-service-hero.png" ], [ "ifm", "Integrated Facilities Management", "/sectors/corporate.jpg" ], [ "infra", "Infrastructure Solutions", "/sectors/infrastructure.jpg" ]].map(([p, name, img]) => (
+                <HexCard key={p} p={p} name={name} img={img} go={go} />
               ))}
             </div>
             {/* Row 2 — 2 hexagons, naturally centred by flex; negative margin creates honeycomb overlap */}
             <div style={{ display: "flex", gap: 18, marginTop: "clamp(-58px,-6.35vw,-90px)" }}>
-              {[["htm", "", "Healthcare Technology Management", "/sectors/healthcare.jpg"], ["workforce", "", "Workforce Solutions", "/sectors/education.jpg"]].map(([p, icon, name, img]) => (
-                <div key={p} onClick={() => go(p)} style={{ width: "clamp(200px,22vw,310px)", aspectRatio: "240/277", clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)", backgroundImage: `linear-gradient(rgba(0,0,0,.52),rgba(0,0,0,.52)),url(${img})`, backgroundSize: "cover", backgroundPosition: "center", position: "relative", overflow: "hidden", cursor: "pointer", flexShrink: 0, transition: "filter .3s" }} onMouseEnter={e => e.currentTarget.style.filter = "brightness(1.2)"} onMouseLeave={e => e.currentTarget.style.filter = ""}>
-                  <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 12, padding: "28% 10%", textAlign: "center" }}>
-                    <span style={{ fontSize: "clamp(26px,3.2vw,46px)" }}>{icon}</span>
-                    <span style={{ color: "#fff", fontFamily: "Inter Tight", fontWeight: 700, fontSize: "clamp(12px,1.3vw,17px)", lineHeight: 1.25 }}>{name}</span>
-                    <span style={{ padding: "6px 14px", border: "1px solid rgba(255,255,255,.6)", borderRadius: 3, color: "#fff", fontSize: "clamp(9px,0.7vw,11px)", fontWeight: 700, letterSpacing: ".12em" }}>LEARN MORE</span>
-                  </div>
-                </div>
+              {[[ "htm", "Healthcare Technology Management", "/sectors/healthcare.jpg" ], [ "workforce", "Workforce Solutions", "/sectors/education.jpg" ]].map(([p, name, img]) => (
+                <HexCard key={p} p={p} name={name} img={img} go={go} />
               ))}
             </div>
           </div>
@@ -157,7 +141,9 @@ export default function Home({ go }) {
                   <div style={{ color: "#fff", fontFamily: "Inter Tight", fontWeight: 600, fontSize: 17, lineHeight: 1.3, maxWidth: 230 }}>{name}</div>
                   <div style={{ color: "rgba(255,255,255,.65)", fontSize: 11.5, fontWeight: 600, letterSpacing: ".14em", marginTop: 6 }}>LEARN MORE</div>
                 </div>
-                <span style={{ width: 40, height: 40, borderRadius: 999, background: "rgba(255,255,255,.14)", border: "1px solid rgba(255,255,255,.35)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 17, flexShrink: 0 }}>→</span>
+                <span style={{ width: 40, height: 40, borderRadius: 999, background: "rgba(255,255,255,.14)", border: "1px solid rgba(255,255,255,.35)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <ArrowRight size={18} />
+                </span>
               </div>
             ))}
           </div>
@@ -166,7 +152,7 @@ export default function Home({ go }) {
 
       {/* Sectors — full-screen scroll reveal */}
       <section style={{ background: "#F9F7F3", position: "relative" }}>
-        <div style={{ padding: "clamp(90px,11vw,150px) clamp(20px,4vw,56px) clamp(40px,5vw,70px)" }}>
+        <div style={{ padding: "clamp(50px,7vw,90px) clamp(20px,4vw,56px) clamp(40px,5vw,70px)" }}>
           <div style={{ maxWidth: 1240, margin: "0 auto" }}>
             <div style={{ maxWidth: 720 }}>
               <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Sectors We Serve</div>
@@ -205,7 +191,7 @@ export default function Home({ go }) {
       </section>
 
       {/* Foundations / Metrics */}
-      <section style={{ padding: "clamp(90px,11vw,150px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
+      <section style={{ padding: "clamp(50px,7vw,90px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
           <div style={{ maxWidth: 760, marginBottom: 60 }}>
             <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Our Foundations</div>
@@ -225,7 +211,7 @@ export default function Home({ go }) {
       </section>
 
       {/* Certifications */}
-      <section style={{ padding: "clamp(80px,9vw,120px) 0", background: "#fff", borderTop: "1px solid rgba(25,25,25,.06)" }}>
+      <section style={{ padding: "clamp(50px,7vw,90px) 0", background: "#fff", borderTop: "1px solid rgba(25,25,25,.06)" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 clamp(20px,4vw,56px)" }}>
           <div style={{ textAlign: "center", marginBottom: "clamp(44px,5vw,64px)" }}>
             <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 14, justifyContent: "center" }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>CERTIFICATIONS &amp; ACCREDITATIONS<span style={{ width: 26, height: 2, background: "#43934A" }}></span></div>
@@ -255,7 +241,7 @@ export default function Home({ go }) {
       </section>
 
       {/* Our Presence */}
-      <section style={{ padding: "clamp(80px,10vw,130px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
+      <section style={{ padding: "clamp(50px,7vw,90px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
           <div style={{ maxWidth: 680, marginBottom: 56 }}>
             <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Our Presence</div>
@@ -263,22 +249,17 @@ export default function Home({ go }) {
             <p data-reveal data-delay="2" style={{ marginTop: 20, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>Present across India, the Middle East, and Southeast Asia, Catalyst brings integrated expertise to diverse environments worldwide.</p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1.3fr 0.7fr", gap: "clamp(30px,5vw,60px)", alignItems: "start" }} data-2col>
-
-            {/* LEFT — Interactive Cobe Globe */}
-            <div data-reveal style={{ borderRadius: 24, overflow: "hidden", background: "#fff", boxShadow: "0 20px 60px rgba(0,0,0,.08)", display: "flex", alignItems: "center", justifyContent: "center", padding: "clamp(16px,3vw,40px)" }}>
-              <div style={{ width: "100%", maxWidth: 550, aspectRatio: "1" }}>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            {/* Center — Interactive Cobe Globe */}
+            <div data-reveal style={{ width: "100%", maxWidth: 800, borderRadius: 24, overflow: "hidden", background: "#fff", boxShadow: "0 20px 60px rgba(0,0,0,.08)", display: "flex", alignItems: "center", justifyContent: "center", padding: "clamp(16px,3vw,40px)" }}>
+              <div style={{ width: "100%", maxWidth: 450, aspectRatio: "1" }}>
                 <Globe
                   markers={[
                     { id: "india", location: [20.6, 78.96], label: "India" },
                     { id: "dubai", location: [25.2, 55.27], label: "Dubai, UAE" },
                     { id: "singapore", location: [1.35, 103.82], label: "Singapore" },
                   ]}
-                  focusLocation={
-                    activePresence === "india" ? [20.6, 78.96] :
-                    activePresence === "dubai" ? [25.2, 55.27] :
-                    activePresence === "singapore" ? [1.35, 103.82] : null
-                  }
+                  focusLocation={null}
                   markerColor={[1, 0.498, 0]}
                   baseColor={[1, 1, 1]}
                   glowColor={[0.9, 0.9, 0.9]}
@@ -294,48 +275,6 @@ export default function Home({ go }) {
                 />
               </div>
             </div>
-
-            {/* RIGHT — Country cards */}
-            <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-              {PRESENCE_DATA.map((country) => {
-                const active = activePresence === country.id;
-                return (
-                  <div key={country.id} onClick={() => setActivePresence(country.id)} style={{ background: "#fff", border: `2px solid ${active ? country.color : "rgba(25,25,25,.08)"}`, borderRadius: 22, padding: "20px 22px", cursor: "pointer", transition: "border-color .25s, box-shadow .25s", boxShadow: active ? `0 6px 24px ${country.color}28` : "0 2px 8px rgba(0,0,0,.04)" }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                      <span style={{ fontSize: 30 }}>{country.flag}</span>
-                      <div style={{ flex: 1 }}>
-                        <div style={{ fontFamily: "Inter Tight", fontWeight: 700, fontSize: 17, color: "#191919" }}>{country.name}</div>
-                        <div style={{ fontSize: 12, color: "#6E6A61", marginTop: 2, letterSpacing: ".06em" }}>{country.region}</div>
-                      </div>
-                      <div style={{ width: 10, height: 10, borderRadius: "50%", background: active ? country.color : "rgba(25,25,25,.15)", transition: "background .25s" }}></div>
-                    </div>
-                    {active && (
-                      <div style={{ marginTop: 14, paddingTop: 14, borderTop: "1px solid rgba(25,25,25,.07)" }}>
-                        <p style={{ fontSize: 14, lineHeight: 1.65, color: "#46433C", margin: 0 }}>{country.desc}</p>
-                        <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 12 }}>
-                          {country.offices.map((city, i) => (
-                            <span key={i} style={{ padding: "4px 12px", borderRadius: 20, background: `${country.color}14`, border: `1px solid ${country.color}44`, fontSize: 12, fontWeight: 500, color: country.color }}>{city}</span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-
-              {/* Summary stat */}
-              <div style={{ background: "#191919", borderRadius: 22, padding: "20px 22px", marginTop: 4 }}>
-                <div style={{ display: "flex", gap: 20, justifyContent: "space-around" }}>
-                  {[["3", "Countries"], ["2", "Continents"], ["6+", "Key Cities"]].map(([num, label], i) => (
-                    <div key={i} style={{ textAlign: "center" }}>
-                      <div style={{ fontFamily: "Inter Tight", fontWeight: 700, fontSize: 28, color: "#FF7F00" }}>{num}</div>
-                      <div style={{ fontSize: 11, color: "rgba(255,255,255,.55)", marginTop: 2, letterSpacing: ".08em" }}>{label}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </section>

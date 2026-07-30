@@ -1,183 +1,269 @@
 import CTA from "../components/CTA";
+import { Kicker, SectionHead, NumberedIndex, CutoutArch } from "../components/SolutionsKit";
 import staffingBg from "../assets/12.png";
-import strategyImg from "../assets/workforce_strategy_1784028590821.png";
-import planningImg from "../assets/workforce_planning_1784028602430.png";
-import payrollImg from "../assets/workforce_payroll_1784028619619.png";
+import workforceImg from "../assets/1.png";
 import futureImg from "../assets/workforce_future_1784028629761.png";
+import { ArrowRight } from "lucide-react";
+
+const SOLUTIONS = [
+  {
+    accent: "#FF7F00",
+    kickerColor: "#D96D00",
+    label: "Manpower Staffing & Deployment",
+    paras: [
+      "From workforce planning to timely deployment, we help organizations access the right talent for their operational requirements.",
+      "Our structured approach enables businesses to manage workforce needs efficiently across locations while maintaining continuity and performance.",
+    ],
+    items: [
+      "Workforce planning and manpower deployment",
+      "Multi-location staffing support",
+      "Scalable workforce models",
+      "Operational manpower management",
+      "Workforce continuity and support",
+    ],
+  },
+  {
+    accent: "#43934A",
+    kickerColor: "#377B3D",
+    label: "Field Force Management",
+    paras: [
+      "For businesses where performance happens on the ground, visibility and accountability matter. Our field-force solutions help organizations manage distributed teams with greater control through structured attendance, location tracking, real-time updates, and performance reporting.",
+    ],
+    items: [
+      "Field-force deployment",
+      "Attendance and workforce tracking",
+      "Geo-tagging and geo-fencing",
+      "Real-time workforce monitoring",
+      "Productivity and performance reporting",
+    ],
+  },
+  {
+    accent: "#FF7F00",
+    kickerColor: "#D96D00",
+    label: "Payroll Management",
+    paras: [
+      "Payroll is more than processing salaries. It is about accuracy, timeliness, trust, and peace of mind. Our technology-enabled payroll solutions help streamline payroll processing, attendance integration, and employee lifecycle management through centralized systems.",
+    ],
+    items: [
+      "End-to-end payroll processing",
+      "Attendance management",
+      "Employee lifecycle tracking",
+      "Centralized workforce records",
+      "Payroll reporting and MIS",
+    ],
+    close: "We help organizations make every payroll cycle more accurate, transparent, and dependable.",
+  },
+  {
+    accent: "#43934A",
+    kickerColor: "#377B3D",
+    label: "Compliance Management",
+    paras: [
+      "A reliable workforce requires a strong compliance foundation. Catalyst supports organizations with structured processes and compliance checks designed to help maintain statutory discipline and reduce operational risks.",
+      "Our approach focuses on ensuring workforce processes are aligned with applicable statutory norms, documentation requirements, and organizational policies.",
+    ],
+    quote: "Because compliance is not just a requirement. It is a responsibility towards every person who works with you.",
+  },
+  {
+    accent: "#FF7F00",
+    kickerColor: "#D96D00",
+    label: "Workforce MIS & Reporting",
+    paras: [
+      "Better workforce decisions begin with better visibility.",
+      "Our reporting systems provide organizations with structured insights into attendance, deployment, workforce performance, and operational metrics—helping decision-makers move from assumptions to informed action.",
+    ],
+    items: [
+      "Daily, weekly, and monthly MIS",
+      "Attendance reports",
+      "Deployment status",
+      "Workforce performance metrics",
+      "Operational updates",
+      "Centralized reporting",
+    ],
+  },
+];
+
+const TECH = [
+  ["HRMS Platform", "Centralized management of payroll, attendance, and employee lifecycle processes."],
+  ["Client Dashboard", "Real-time MIS and reports that give clients greater transparency and support data-driven decision-making."],
+  ["Mobile Applications", "Field-force tracking, attendance capture, and real-time reporting from the ground."],
+  ["Admin & Control Panel", "Centralized monitoring, location and dealer mapping, and operational oversight across distributed teams."],
+];
+
+const INDUSTRIES = [
+  ["FMCG", "Supporting distributed teams and fast-moving operations with scalable manpower and field-force solutions."],
+  ["Beverages", "Helping businesses manage on-ground teams and operational workforce requirements across locations."],
+  ["FMCD", "Providing structured workforce support for sales, retail, and field operations."],
+  ["Telecom", "Enabling distributed workforce management with technology-backed monitoring and reporting."],
+  ["Logistics", "Supporting execution-driven operations with reliable manpower deployment and workforce visibility."],
+  ["Retail", "Helping organizations build consistent teams across stores, markets, and customer-facing environments."],
+  ["Allied Sectors", "Flexible workforce solutions designed around unique operational requirements."],
+];
+
+const WHY = [
+  ["Pan-India Capability", "A distributed service capability that enables workforce support across multiple locations with centralized control."],
+  ["Reliable Deployment", "A structured approach to manpower planning and deployment aligned with operational timelines."],
+  ["Technology-Enabled Visibility", "Digital tools and dashboards that bring greater transparency to workforce operations."],
+  ["Compliance-Led Processes", "Defined processes and regular checks designed to support statutory and operational compliance."],
+  ["Scalable Workforce Solutions", "Flexible solutions that can adapt as your workforce requirements evolve."],
+  ["Operational Consistency", "Regular reporting, monitoring, and process discipline that help maintain continuity across locations."],
+  ["Human-Centric Approach", "Because every workforce is made up of people—not just positions, numbers, or attendance records."],
+];
 
 export default function Workforce({ go }) {
   return (
-    <div data-screen-label="Staffing Solutions">
+    <div data-screen-label="Workforce Solutions">
+      {/* Hero */}
       <section style={{ position: "relative", backgroundColor: "#191919", backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.48), rgba(25, 25, 25, 0.7)), url(${staffingBg})`, backgroundSize: "cover", backgroundPosition: "center", padding: "170px clamp(20px,4vw,56px) clamp(70px,8vw,110px)", overflow: "hidden", minHeight: "100vh", display: "flex", alignItems: "center" }}>
         <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px)", backgroundSize: "60px 60px", maskImage: "radial-gradient(circle at 55% 30%,#000,transparent 75%)" }}></div>
         <div style={{ position: "relative", maxWidth: 1240, margin: "0 auto", width: "100%" }}>
-          <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 9, fontFamily: "Caveat, cursive", color: "#FF7F00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 22 }}><span style={{ fontSize: 18 }}></span> STAFFING SOLUTIONS</div>
-          <h1 data-reveal data-delay="1" className="shown" style={{ fontSize: "clamp(36px,5.4vw,76px)", color: "#fff", maxWidth: 1000 }}>Building Capable <span className="gradtext">Teams</span></h1>
-          <button data-reveal data-delay="2" className="shown mag" onClick={() => go("contact")} style={{ marginTop: 34, background: "#FF7F00", color: "#fff", fontWeight: 600, fontSize: 15, padding: "15px 30px", borderRadius: 999 }}>Talk to our team →</button>
+          <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 9, fontFamily: "Caveat, cursive", color: "#FF7F00", fontWeight: 600, fontSize: 24, marginBottom: 22 }}>WORKFORCE SOLUTIONS</div>
+          <h1 data-reveal data-delay="1" className="shown" style={{ fontSize: "clamp(34px,5vw,72px)", color: "#fff", maxWidth: 1000, lineHeight: 1.1 }}>The Right People. The Right Support. The Right <span className="gradtext">Impact.</span></h1>
+          <p data-reveal data-delay="2" className="shown" style={{ marginTop: 24, fontSize: "clamp(17px,1.4vw,20px)", lineHeight: 1.7, color: "rgba(255,255,255,.78)", maxWidth: 640 }}>End-to-end staffing and workforce solutions — sourcing, deployment, payroll, compliance, and visibility, managed as one.</p>
+          <button data-reveal data-delay="3" className="shown mag" onClick={() => go("contact")} style={{ marginTop: 34, background: "#FF7F00", color: "#fff", fontWeight: 600, fontSize: 15, padding: "15px 30px", borderRadius: 999, display: "inline-flex", alignItems: "center", gap: 8 }}>Build Your Workforce with Catalyst <ArrowRight size={18} /></button>
         </div>
       </section>
 
-      {/* Intro Description */}
-      <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto", textAlign: "center" }}>
-          <h3 data-reveal style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919", marginBottom: 24 }}>Strengthening Business Performance.</h3>
-          <p data-reveal data-delay="1" style={{ fontSize: 18, lineHeight: 1.7, color: "#6E6A61", marginBottom: 16 }}>Behind every successful organization is a workforce equipped to adapt, perform, and grow. As businesses evolve, finding the right talent is only part of the equation. Sustaining productivity, ensuring compliance, and building workforce resilience require a strategic approach that goes beyond traditional staffing.</p>
-          <p data-reveal data-delay="2" style={{ fontSize: 18, lineHeight: 1.7, color: "#6E6A61" }}>At Catalyst, we partner with organizations to develop workforce solutions that align with business objectives, operational demands, and long-term growth. From sourcing skilled professionals to managing workforce administration and compliance, every engagement is designed to help organizations remain agile, productive, and ready for the future.</p>
-        </div>
-      </section>
-
-      {/* Why Workforce Strategy Matters */}
+      {/* About Staffing — people cutout on arch */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#fff" }}>
-        <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(40px,6vw,80px)", alignItems: "center" }} data-2col>
-          <div data-reveal style={{position:"relative",borderRadius:36,overflow:"hidden",minHeight:420,background:"linear-gradient(160deg,#FF7F00,#191919)"}}>
-            <img src={strategyImg} alt="Workforce Strategy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
-            <div style={{position:"absolute",left:24,bottom:24,right:24,padding:"18px 22px",borderRadius:22,background:"rgba(25,25,25,.5)",backdropFilter:"blur(12px)",color:"#fff",fontSize:14,fontWeight:500}}>Strategy · Productivity · Resilience</div>
+        <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1.05fr", gap: "clamp(40px,6vw,80px)", alignItems: "center" }} data-2col>
+          <div data-reveal>
+            <CutoutArch src={workforceImg} alt="The people behind every Catalyst workforce" tint="rgba(255,127,0,.09)" />
           </div>
           <div>
-            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Why Workforce Strategy Matters</div>
-            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>A Competitive Advantage</h2>
-            <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>A strong workforce is one of an organization's greatest competitive advantages. The right skills, deployed at the right time, improve operational efficiency, strengthen customer experiences, and support sustainable growth.</p>
-            <p data-reveal data-delay="3" style={{ marginTop: 16, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>Strategic workforce planning creates stability, reduces business risk, and enables organizations to respond confidently to changing market demands.</p>
+            <Kicker>About Staffing</Kicker>
+            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>More Than Manpower. A Workforce You Can Rely On.</h2>
+            <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 16.5, lineHeight: 1.7, color: "#46433C" }}>A workforce is more than a number on a roster. It is the people who represent your organization, serve your customers, execute your operations, and keep your business moving every day.</p>
+            <p data-reveal data-delay="3" style={{ marginTop: 14, fontSize: 16.5, lineHeight: 1.7, color: "#6E6A61" }}>With a pan-India service capability, we support businesses across locations and sectors with structured manpower deployment, field-force solutions, payroll management, and statutory compliance.</p>
+            <p data-reveal data-delay="4" style={{ marginTop: 14, fontSize: 16.5, lineHeight: 1.7, color: "#6E6A61" }}>Our approach combines human understanding, operational discipline, and technology-enabled control to create a workforce ecosystem that is efficient for businesses and supportive for people.</p>
+            <p data-reveal data-delay="5" style={{ marginTop: 14, fontSize: 16.5, lineHeight: 1.7, color: "#191919", fontWeight: 500 }}>Because when your people are supported, your business moves forward.</p>
           </div>
         </div>
       </section>
 
-      {/* Our Staffing Solutions */}
-      <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
-        <div style={{ maxWidth: 1240, margin: "0 auto" }}>
-          <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Our Solutions</div>
-          <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919", marginBottom: 40 }}>Our Staffing Solutions</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))", gap: 24 }}>
-            {[
-              ["Permanent Staffing", "Connecting organizations with skilled professionals who align with business goals, culture, and long-term growth strategies.", "👤"],
-              ["Temporary & Contract Staffing", "Flexible workforce solutions that help businesses scale operations, manage seasonal demand, and support project-based requirements with confidence.", "📋"],
-              ["Industrial Staffing", "Reliable staffing support for manufacturing, engineering, pharmaceuticals, automotive, chemical, and power industries where operational continuity is critical.", "🏭"],
-              ["Corporate Staffing", "Professional talent for administrative, technical, operational, and leadership functions across diverse business environments.", "🏢"],
-              ["Workforce Planning", "Strategic resource planning that aligns workforce capabilities with evolving business priorities, ensuring the right skills are available at the right time.", "📈"],
-              ["Payroll & Compliance Management", "Comprehensive payroll administration and statutory compliance services that simplify workforce management while reducing administrative complexity.", "✅"],
-              ["Recruitment Process Support", "Structured hiring processes that streamline talent acquisition, improve candidate experience, and accelerate workforce onboarding.", "🔍"]
-            ].map(([title, desc, icon], i) => (
-              <div key={i} data-reveal data-delay={String(Math.min(i % 4, 3))} className="lift" style={{ background: "#fff", border: "1px solid rgba(25,25,25,.07)", borderRadius: 24, padding: 32 }}>
-                <div style={{ fontSize: 32, marginBottom: 16 }}>{icon}</div>
-                <h4 style={{ fontSize: 18, fontWeight: 600, color: "#191919", marginBottom: 12 }}>{title}</h4>
-                <p style={{ fontSize: 15, color: "#6E6A61", lineHeight: 1.6 }}>{desc}</p>
-              </div>
-            ))}
-          </div>
+      {/* Solutions intro */}
+      <section style={{ padding: "clamp(70px,9vw,120px) clamp(20px,4vw,56px) 0", background: "#F9F7F3" }}>
+        <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
+          <Kicker color="#377B3D" dash="#43934A">Our Solutions</Kicker>
+          <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919", marginBottom: 20 }}>One Workforce Partner. Multiple Solutions.</h2>
+          <p data-reveal data-delay="2" style={{ fontSize: 17, lineHeight: 1.75, color: "#6E6A61" }}>Whether you need people on the ground, payroll managed with precision, or real-time visibility into your workforce, Catalyst brings together the capabilities you need under one integrated solution.</p>
         </div>
       </section>
 
-      {/* Workforce Planning */}
-      <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#fff" }}>
-        <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(40px,6vw,80px)", alignItems: "center" }} data-2col>
-          <div data-reveal style={{position:"relative",borderRadius:36,overflow:"hidden",minHeight:420,background:"linear-gradient(160deg,#191919,#282828)"}}>
-            <img src={planningImg} alt="Workforce Planning" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
-          </div>
-          <div>
-            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Workforce Planning</div>
-            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>Planning Today for Tomorrow's Workforce</h2>
-            <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>Business priorities change, markets evolve, and workforce requirements continue to grow more specialized. Catalyst helps organizations anticipate these changes through strategic workforce planning that combines skill mapping, resource forecasting, and deployment strategies with long-term business objectives.</p>
-            <p data-reveal data-delay="3" style={{ marginTop: 16, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>Rather than reacting to workforce gaps, organizations gain the confidence to build capable teams that support operational continuity and sustainable growth.</p>
-            <p data-reveal data-delay="4" style={{ marginTop: 16, fontSize: 17, fontWeight: 500, color: "#191919" }}>The strongest organizations don't simply hire talent—they plan for capability.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Payroll & Compliance */}
-      <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
-        <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(40px,6vw,80px)", alignItems: "center" }} data-2col>
-          <div style={{ order: 2 }} data-reveal>
-            <div style={{position:"relative",borderRadius:36,overflow:"hidden",minHeight:420,background:"linear-gradient(160deg,#43934A,#2b6330)"}}>
-              <img src={payrollImg} alt="Payroll & Compliance" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+      {/* Solution blocks — alternating, ruled lists */}
+      {SOLUTIONS.map((s, idx) => (
+        <section key={s.label} style={{ padding: "clamp(50px,7vw,90px) clamp(20px,4vw,56px)", background: idx % 2 === 0 ? "#F9F7F3" : "#fff" }}>
+          <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(40px,6vw,80px)", alignItems: "center" }} data-2col>
+            <div style={{ order: idx % 2 === 0 ? 1 : 2 }}>
+              <Kicker color={s.kickerColor} dash={s.accent}>{s.label}</Kicker>
+              {s.paras.map((p, i) => (
+                <p key={i} data-reveal data-delay={String(i + 1)} style={{ marginTop: i === 0 ? 4 : 14, fontSize: 16.5, lineHeight: 1.7, color: i === 0 ? "#46433C" : "#6E6A61" }}>{p}</p>
+              ))}
+              {s.close && <p data-reveal data-delay="4" style={{ marginTop: 16, fontSize: 16, fontWeight: 500, color: "#191919" }}>{s.close}</p>}
+            </div>
+            <div style={{ order: idx % 2 === 0 ? 2 : 1 }} data-reveal data-delay="1">
+              {s.items ? (
+                <div style={{ borderLeft: `2px solid ${s.accent}`, paddingLeft: "clamp(24px,3vw,40px)" }}>
+                  <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: ".14em", textTransform: "uppercase", color: s.kickerColor, marginBottom: 6 }}>Solution includes:</div>
+                  {s.items.map((item, i) => (
+                    <div key={i} style={{ display: "grid", gridTemplateColumns: "40px 1fr", gap: 14, alignItems: "baseline", padding: "13px 0", borderBottom: i === s.items.length - 1 ? "none" : "1px solid rgba(25,25,25,.1)" }}>
+                      <span style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: ".06em", color: s.accent }}>{String(i + 1).padStart(2, "0")}</span>
+                      <span style={{ fontSize: 16, color: "#46433C", lineHeight: 1.5, fontWeight: 500 }}>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div style={{ background: "linear-gradient(160deg,#191919,#2b2b2b)", borderRadius: 32, padding: "clamp(30px,4vw,48px)", color: "#fff", boxShadow: "0 20px 50px rgba(0,0,0,.12)" }}>
+                  <div style={{ fontFamily: "Caveat, cursive", fontSize: 56, lineHeight: 1, color: s.accent, marginBottom: 12 }}>&ldquo;</div>
+                  <p style={{ fontSize: "clamp(18px,2vw,24px)", lineHeight: 1.5, fontWeight: 500 }}>{s.quote}</p>
+                </div>
+              )}
             </div>
           </div>
-          <div style={{ order: 1 }}>
-            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#377B3D", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#43934A" }}></span>Payroll & Compliance</div>
-            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>Confidence in Every Process</h2>
-            <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>Managing a workforce extends far beyond recruitment. Accurate payroll, statutory compliance, documentation, and regulatory requirements all contribute to a well-governed organization.</p>
-            <p data-reveal data-delay="3" style={{ marginTop: 16, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>Catalyst simplifies workforce administration through structured payroll management and compliance support, helping businesses reduce risk, improve accuracy, and maintain confidence in every stage of the employee lifecycle.</p>
-          </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
-      {/* Building Future-Ready Teams */}
-      <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#fff" }}>
-        <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(40px,6vw,80px)", alignItems: "center" }} data-2col>
-          <div data-reveal style={{position:"relative",borderRadius:36,overflow:"hidden",minHeight:420,background:"#191919"}}>
-            <img src={futureImg} alt="Future-Ready Teams" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
-          </div>
-          <div>
-            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Building Future-Ready Teams</div>
-            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>Preparing Organizations for the Future of Work</h2>
-            <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>Workplaces continue to evolve, bringing new expectations, emerging skill requirements, and changing ways of working. Catalyst embraces modern recruitment practices, skill-based assessments, workforce insights, and continuous capability development to help organizations remain prepared for tomorrow's challenges.</p>
-            <p data-reveal data-delay="3" style={{ marginTop: 16, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>By combining industry expertise with a forward-looking approach, we help businesses build adaptable teams that are ready to perform in a dynamic and competitive environment.</p>
-            <p data-reveal data-delay="4" style={{ marginTop: 16, fontSize: 17, fontWeight: 500, color: "#191919" }}>Future-ready organizations begin with future-ready teams.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Industries We Support */}
-      <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#191919", color: "#fff" }}>
-        <div style={{ maxWidth: 1240, margin: "0 auto", textAlign: "center" }}>
-          <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#FF7F00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Industries We Support</div>
-          <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)" }}>Tailored for Every Sector</h2>
-          <p data-reveal data-delay="2" style={{ maxWidth: 700, margin: "22px auto 40px", fontSize: 17, lineHeight: 1.7, color: "rgba(255,255,255,.7)" }}>Every industry has unique workforce challenges. Our staffing solutions are tailored to meet the operational, technical, and compliance requirements of diverse sectors.</p>
-
-          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 12 }}>
-            {[
-              "Corporate Offices", "IT & ITeS", "Healthcare", "Manufacturing", "Automobiles",
-              "Heavy Engineering", "Pharmaceuticals", "Chemical & Ceramics", "Power & Energy",
-              "Educational Institutions", "Commercial Facilities", "Infrastructure Projects", "Industrial Operations"
-            ].map((industry, i) => (
-              <div key={i} data-reveal data-delay={String(Math.min(i % 5, 5))} className="lift" style={{ padding: "12px 24px", background: "rgba(255,255,255,.05)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 999, fontSize: 15, fontWeight: 500 }}>
-                {industry}
+      {/* Technology — dark band, ruled columns */}
+      <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#191919", color: "#fff", position: "relative", overflow: "hidden" }}>
+        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(50% 60% at 88% 15%,rgba(255,127,0,.12),transparent 60%)" }}></div>
+        <div style={{ position: "relative", maxWidth: 1240, margin: "0 auto" }}>
+          <SectionHead
+            dark
+            kicker="Technology-Enabled Workforce Management"
+            title="Technology That Keeps Your Workforce Connected"
+            sub="Managing a distributed workforce requires more than spreadsheets and phone calls. Catalyst combines human-led workforce management with technology-enabled solutions for greater visibility, faster reporting, and better operational control."
+            maxWidth={780}
+          />
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(230px,1fr))", gap: "clamp(28px,3.5vw,48px)" }} data-4col>
+            {TECH.map(([name, desc], i) => (
+              <div key={i} data-reveal data-delay={String(Math.min(i, 3))} style={{ borderTop: "2px solid rgba(255,255,255,.9)", paddingTop: 20 }}>
+                <div style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: ".08em", color: "#FF7F00", marginBottom: 10 }}>{String(i + 1).padStart(2, "0")}</div>
+                <h4 style={{ fontSize: 19, fontWeight: 600, color: "#fff" }}>{name}</h4>
+                <p style={{ fontSize: 14.5, color: "rgba(255,255,255,.65)", lineHeight: 1.65, marginTop: 10 }}>{desc}</p>
               </div>
             ))}
           </div>
+          <p data-reveal style={{ maxWidth: 700, margin: "56px auto 0", textAlign: "center", fontFamily: "Caveat, cursive", fontSize: "clamp(24px,2.4vw,32px)", lineHeight: 1.45, color: "rgba(255,255,255,.9)" }}>Technology gives us the visibility. People bring the understanding. Together, they create a smarter workforce solution.</p>
         </div>
       </section>
 
-      {/* Why Catalyst */}
+      {/* Industries — editorial numbered rows */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: 60 }}>
-            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#377B3D", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#43934A" }}></span>Why Catalyst</div>
-            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>The Catalyst Advantage</h2>
-          </div>
+          <SectionHead
+            kicker="Industries We Serve"
+            kickerColor="#377B3D"
+            dashColor="#43934A"
+            title="Workforce Solutions Built Around Your Industry"
+            sub="Every industry works differently. Every workforce has different demands. Catalyst brings sector understanding and operational experience to help organizations manage workforce requirements with greater confidence."
+            maxWidth={760}
+          />
+          <NumberedIndex items={INDUSTRIES} />
+        </div>
+      </section>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(340px,1fr))", gap: 24 }}>
-            {[
-              ["Strategic Workforce Partnership", "We work alongside organizations to understand business priorities and build workforce strategies that support long-term success."],
-              ["Industry-Focused Expertise", "Our understanding of diverse industries enables us to identify professionals with the skills and experience required for specialized operational environments."],
-              ["Compliance with Confidence", "Robust payroll administration and statutory compliance processes help organizations manage workforce responsibilities with accuracy and transparency."],
-              ["Flexible Workforce Models", "Scalable staffing solutions adapt to changing business needs, supporting everything from project-based hiring to long-term workforce expansion."],
-              ["Quality-Driven Talent Acquisition", "A structured recruitment approach emphasizes capability, cultural alignment, and long-term value rather than simply filling vacancies."],
-              ["Long-Term Workforce Value", "Every engagement is built around strengthening workforce capability, supporting business continuity, and creating lasting organizational impact."]
-            ].map(([title, desc], i) => (
-              <div key={i} data-reveal data-delay={String(Math.min(i % 3, 3))} className="lift" style={{ background: "#fff", border: "1px solid rgba(25,25,25,.07)", borderRadius: 24, padding: 32 }}>
-                <h4 style={{ fontSize: 18, fontWeight: 600, color: "#191919", marginBottom: 12 }}>{title}</h4>
-                <p style={{ fontSize: 15, color: "#6E6A61", lineHeight: 1.6 }}>{desc}</p>
+      {/* Why Catalyst — ruled columns */}
+      <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#fff" }}>
+        <div style={{ maxWidth: 1240, margin: "0 auto" }}>
+          <SectionHead kicker="Why Catalyst" title="Why Organizations Choose Catalyst" maxWidth={680} />
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "clamp(28px,3.5vw,48px)", rowGap: 44 }} data-3col>
+            {WHY.map(([title, desc], i) => (
+              <div key={i} data-reveal data-delay={String(i % 3)} style={{ borderTop: "2px solid #191919", paddingTop: 20 }}>
+                <div style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: ".08em", color: "#D96D00", marginBottom: 10 }}>{String(i + 1).padStart(2, "0")}</div>
+                <h4 style={{ fontSize: 19, fontWeight: 600, color: "#191919" }}>{title}</h4>
+                <p style={{ fontSize: 15, color: "#6E6A61", lineHeight: 1.65, marginTop: 10 }}>{desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Building Workforces That Drive Progress */}
-      <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#fff" }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto", textAlign: "center" }}>
-          <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#D96D00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Building Workforces That Drive Progress</div>
-          <p data-reveal data-delay="1" style={{ marginTop: 24, fontSize: 18, lineHeight: 1.7, color: "#6E6A61" }}>The strength of an organization lies in the capability of its workforce. Whether supporting large industrial operations, expanding corporate teams, or managing specialized talent requirements, Catalyst partners with organizations to build skilled, dependable, and future-ready workforces that contribute to sustained business performance and long-term success.</p>
+      {/* The Catalyst Difference */}
+      <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
+        <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(40px,6vw,80px)", alignItems: "center" }} data-2col>
+          <div>
+            <Kicker color="#377B3D" dash="#43934A">The Catalyst Difference</Kicker>
+            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(26px,3.2vw,42px)", color: "#191919" }}>We Manage the Workforce. You Focus on What Moves Your Business Forward.</h2>
+            <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>Managing people at scale comes with complexity—recruitment, deployment, attendance, payroll, compliance, reporting, and performance. Catalyst brings these moving parts together through an integrated workforce management approach.</p>
+            <p data-reveal data-delay="3" style={{ marginTop: 16, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>With Catalyst as your workforce partner, your organization gains the ability to focus on its core business while we help manage the operational complexities of your workforce.</p>
+          </div>
+          <div data-reveal data-delay="1" style={{ background: "linear-gradient(160deg,#191919,#2b2b2b)", borderRadius: 32, padding: "clamp(36px,5vw,56px)", color: "#fff", position: "relative", overflow: "hidden" }}>
+            <img src={futureImg} alt="" data-no-reveal style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.15 }} />
+            <div style={{ position: "relative" }}>
+              <div style={{ fontSize: "clamp(22px,2.6vw,32px)", lineHeight: 1.4, fontWeight: 600 }}>You bring the vision.</div>
+              <div style={{ fontSize: "clamp(22px,2.6vw,32px)", lineHeight: 1.4, fontWeight: 600, color: "#FF7F00" }}>We bring the workforce.</div>
+              <div style={{ fontSize: "clamp(22px,2.6vw,32px)", lineHeight: 1.4, fontWeight: 600 }}>Together, we create the momentum to move forward.</div>
+            </div>
+          </div>
         </div>
       </section>
 
       <CTA
         go={go}
-        title="Build Teams Ready for What's Next"
-        subtitle="STAFFING SOLUTIONS"
-        primaryLabel="Explore Staffing Solutions"
+        title="Your Workforce Is Your Business in Motion."
+        subtitle="Whether you are expanding into new locations, managing a distributed field force, or looking to simplify your workforce operations, we bring together the people, processes, and technology to make it happen."
+        primaryLabel="Let's Build a Workforce That Moves You Forward"
         primaryPage="contact"
-        secondaryLabel="Connect with Our Workforce Experts"
+        secondaryLabel="Talk to Our Workforce Solutions Team"
         secondaryPage="contact"
       />
     </div>

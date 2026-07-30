@@ -124,6 +124,44 @@ button { font-family: inherit; border: none; cursor: pointer }
 .cert-marquee:hover .cert-track { animation-play-state: paused }
 @keyframes certscroll { to { transform: translateX(-50%) } }
 
+/* ── Solutions kit: editorial numbered index ── */
+.svc-row {
+  display: grid;
+  grid-template-columns: 64px 1fr 1.15fr 40px;
+  gap: clamp(14px, 2.5vw, 36px);
+  align-items: start;
+  padding: 28px clamp(2px, 1vw, 12px);
+  border-top: 1px solid rgba(25,25,25,.12);
+  transition: background .4s, padding .4s;
+}
+.svc-row:last-of-type { border-bottom: 1px solid rgba(25,25,25,.12) }
+.svc-num {
+  font-family: "Inter Tight", sans-serif;
+  font-weight: 600; font-size: 14px;
+  letter-spacing: .06em; color: #A8A296;
+  padding-top: 6px;
+  transition: color .3s;
+}
+.svc-arrow {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid rgba(25,25,25,.15);
+  display: flex; align-items: center; justify-content: center;
+  color: #191919; opacity: 0; transform: translateY(6px);
+  transition: opacity .35s, transform .35s, background .35s, border-color .35s, color .35s;
+  align-self: center;
+}
+.svc-row:hover { background: rgba(255,127,0,.045); padding-left: 22px; padding-right: 22px }
+.svc-row:hover .svc-num { color: #FF7F00 }
+.svc-row:hover .svc-arrow { opacity: 1; transform: none; background: #FF7F00; border-color: #FF7F00; color: #fff }
+@media(max-width:860px){
+  .svc-row { grid-template-columns: 44px 1fr }
+  .svc-row p { grid-column: 2 }
+  .svc-arrow { display: none }
+}
+
+/* ── Solutions kit: marquee reverse direction ── */
+.cert-track.rev { animation-direction: reverse }
+
 /* ── Sectors pinned reveal ── */
 @keyframes sectorIn { from { opacity: 0; transform: translateY(16px) } to { opacity: 1; transform: none } }
 .sector-swap { animation: sectorIn .55s cubic-bezier(.16,.84,.44,1) both }

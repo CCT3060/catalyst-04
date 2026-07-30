@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 export function FloatingPaths({ position }: { position: number }) {
     const paths = Array.from({ length: 36 }, (_, i) => ({
@@ -26,7 +27,7 @@ export function FloatingPaths({ position }: { position: number }) {
             >
                 <title>Background Paths</title>
                 {paths.map((path) => (
-                    <motion.path
+                    <motion.path    
                         key={path.id}
                         d={path.d}
                         stroke="currentColor"
@@ -119,9 +120,9 @@ export function BackgroundPaths({
                             </span>
                             <span
                                 className="ml-3 opacity-70 group-hover:opacity-100 group-hover:translate-x-1.5 
-                                transition-all duration-300"
+                                transition-all duration-300 inline-flex items-center"
                             >
-                                →
+                                <ArrowRight size={18} />
                             </span>
                         </Button>
                     </div>

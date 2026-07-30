@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { MapPin, Mail, Handshake, CheckCircle2, Plus, ArrowRight } from "lucide-react";
 
 export default function Contact({ go }) {
   const [form, setForm] = useState({ name: "", company: "", email: "", phone: "", service: "", message: "" });
@@ -36,9 +37,11 @@ export default function Contact({ go }) {
             <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>Whether you are looking to optimize your facilities, enhance food services, implement healthcare technology, or build your workforce, our team is ready to help.</p>
 
             <div data-reveal data-delay="3" style={{ marginTop: 36, display: "flex", flexDirection: "column", gap: 20 }}>
-              {[["📍", "Office Locations", "India — National Footprint"], ["📧", "Business Inquiries", "Connect with our solutions team"], ["🤝", "Partnerships", "Building long-term relationships"]].map(([icon, label, val], i) => (
+              {[[MapPin, "Office Locations", "India — National Footprint"], [Mail, "Business Inquiries", "Connect with our solutions team"], [Handshake, "Partnerships", "Building long-term relationships"]].map(([Icon, label, val], i) => (
                 <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 16 }}>
-                  <div style={{ width: 46, height: 46, borderRadius: 16, background: "#F9F7F3", border: "1px solid rgba(25,25,25,.07)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0 }}>{icon}</div>
+                  <div style={{ width: 46, height: 46, borderRadius: 16, background: "rgba(255,127,0,0.1)", border: "1px solid rgba(255,127,0,0.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "#FF7F00", flexShrink: 0 }}>
+                    <Icon size={20} />
+                  </div>
                   <div>
                     <div style={{ fontWeight: 600, fontSize: 15, color: "#191919" }}>{label}</div>
                     <div style={{ fontSize: 14, color: "#6E6A61", marginTop: 2 }}>{val}</div>
@@ -59,7 +62,9 @@ export default function Contact({ go }) {
           <div data-reveal data-delay="1">
             {sent ? (
               <div style={{ background: "#F9F7F3", border: "1px solid rgba(25,25,25,.08)", borderRadius: 32, padding: "clamp(30px,4vw,50px)", textAlign: "center" }}>
-                <div style={{ fontSize: 54, marginBottom: 16 }}>✅</div>
+                <div style={{ display: "flex", justifyContent: "center", marginBottom: 16, color: "#43934A" }}>
+                  <CheckCircle2 size={56} />
+                </div>
                 <h3 style={{ fontSize: 24, color: "#191919" }}>Message Sent!</h3>
                 <p style={{ fontSize: 16, color: "#6E6A61", marginTop: 12, lineHeight: 1.7 }}>Thank you for reaching out. Our team will get back to you shortly.</p>
                 <button className="mag" onClick={() => setSent(false)} style={{ marginTop: 24, background: "#191919", color: "#fff", fontWeight: 600, fontSize: 14, padding: "12px 26px", borderRadius: 999 }}>Send Another Message</button>
@@ -86,7 +91,9 @@ export default function Contact({ go }) {
                   <option value="general">General Inquiry</option>
                 </select>
                 <textarea placeholder="Tell us about your requirements..." value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))} rows={5} style={{ width: "100%", padding: "14px 18px", borderRadius: 16, border: "1px solid rgba(25,25,25,.12)", fontSize: 15, fontFamily: "inherit", outline: "none", resize: "vertical", boxSizing: "border-box", transition: "border-color .2s" }} onFocus={e => e.target.style.borderColor = "#FF7F00"} onBlur={e => e.target.style.borderColor = "rgba(25,25,25,.12)"}></textarea>
-                <button type="submit" className="mag" style={{ background: "#FF7F00", color: "#fff", fontWeight: 600, fontSize: 16, padding: "16px 32px", borderRadius: 999, boxShadow: "0 8px 24px rgba(255,127,0,.35)" }}>Send Message →</button>
+                <button type="submit" className="mag" style={{ background: "#FF7F00", color: "#fff", fontWeight: 600, fontSize: 16, padding: "16px 32px", borderRadius: 999, boxShadow: "0 8px 24px rgba(255,127,0,.35)", display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8 }}>
+                  Send Message <ArrowRight size={18} />
+                </button>
               </form>
             )}
           </div>
@@ -104,7 +111,9 @@ export default function Contact({ go }) {
               <div key={i} className="faqq" onClick={() => setOpenFaq(openFaq === i ? -1 : i)} style={{ border: "1px solid rgba(25,25,25,.08)", borderRadius: 20, overflow: "hidden", cursor: "pointer" }}>
                 <div style={{ padding: "20px 24px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16 }}>
                   <div style={{ fontFamily: "Inter Tight", fontWeight: 600, fontSize: 16, color: "#191919" }}>{faq[0]}</div>
-                  <div style={{ color: "#D96D00", fontSize: 20, fontWeight: 300, flexShrink: 0, transition: "transform .3s", transform: openFaq === i ? "rotate(45deg)" : "none" }}>+</div>
+                  <div style={{ color: "#D96D00", flexShrink: 0, transition: "transform .3s", transform: openFaq === i ? "rotate(45deg)" : "none", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <Plus size={20} />
+                  </div>
                 </div>
                 {openFaq === i && <div style={{ padding: "0 24px 20px", fontSize: 15, color: "#6E6A61", lineHeight: 1.7 }}>{faq[1]}</div>}
               </div>

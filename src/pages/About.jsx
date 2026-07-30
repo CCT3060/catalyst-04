@@ -7,6 +7,7 @@ import partnerImg from "../assets/Partnerwithus.png";
 import { ProfileCard } from "@/components/ui/profile-card";
 import IndiaMap from "../components/IndiaMap";
 import sankar from "../assets/sankar.png";
+import { ShieldCheck, Heart, Star, Lightbulb, Leaf, MapPin } from "lucide-react";
 
 function initTilt(card) {
   let rx = 0, ry = 0, trx = 0, tryV = 0, raf;
@@ -192,10 +193,12 @@ export default function About({ go }) {
             <p data-reveal data-delay="2" style={{ marginTop: 20, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>At Catalyst, our values are more than guiding principles—they shape our culture, influence our decisions, and define the way we work with clients, employees, partners, and communities.</p>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(5,1fr)", gap: 16 }} data-4col>
-            {[["🛡️", "Integrity", "Drives us to act with honesty, transparency, and accountability in everything we do.", ""], ["💚", "Care", "Inspires us to prioritize the well-being of people and create experiences that make a meaningful difference.", "1"], ["⭐", "Excellence", "Motivates us to continuously improve our services, processes, and performance standards.", "2"], ["💡", "Innovation", "Encourages us to embrace new ideas, technologies, and approaches that create better outcomes.", "3"], ["♻️", "Responsibility", "Reminds us of our commitment to sustainability, ethical business practices, and positive impact for future generations.", "4"]].map(([icon, name, desc, delay], i) => (
+            {[[ShieldCheck, "Integrity", "Drives us to act with honesty, transparency, and accountability in everything we do.", ""], [Heart, "Care", "Inspires us to prioritize the well-being of people and create experiences that make a meaningful difference.", "1"], [Star, "Excellence", "Motivates us to continuously improve our services, processes, and performance standards.", "2"], [Lightbulb, "Innovation", "Encourages us to embrace new ideas, technologies, and approaches that create better outcomes.", "3"], [Leaf, "Responsibility", "Reminds us of our commitment to sustainability, ethical business practices, and positive impact for future generations.", "4"]].map(([Icon, name, desc, delay], i) => (
               <div key={i} data-reveal data-delay={delay || undefined} className="lift" style={{ background: "#fff", border: "1px solid rgba(25,25,25,.07)", borderRadius: 28, padding: 28 }}>
-                <div style={{ fontSize: 26 }}>{icon}</div>
-                <h4 style={{ fontSize: 19, color: "#191919", marginTop: 16 }}>{name}</h4>
+                <div style={{ width: 44, height: 44, borderRadius: 14, background: "rgba(255,127,0,0.1)", display: "flex", alignItems: "center", justifyContent: "center", color: "#FF7F00", marginBottom: 14 }}>
+                  <Icon size={22} />
+                </div>
+                <h4 style={{ fontSize: 19, color: "#191919", marginTop: 8 }}>{name}</h4>
                 <p style={{ fontSize: "13.5px", color: "#6E6A61", lineHeight: 1.6, marginTop: 8 }}>{desc}</p>
               </div>
             ))}
@@ -222,6 +225,53 @@ export default function About({ go }) {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Offices */}
+      <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#fff" }}>
+        <div style={{ maxWidth: 1240, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: "clamp(44px,5vw,70px)" }}>
+            <h2 data-reveal style={{ fontSize: "clamp(36px,4.5vw,56px)", color: "#1E3B24", fontFamily: "Inter Tight", fontWeight: 500 }}>
+              Our <span style={{ color: "#D96D00", fontFamily: "Caveat, cursive", borderBottom: "3px solid #D96D00", paddingBottom: 6 }}>Offices</span>
+            </h2>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "clamp(20px,3vw,34px)" }}>
+            {[
+              {
+                region: "Middle East",
+                company: "Catalyst Catering Services LLC (CCS)",
+                address: "Darwish Compound, Warehouse No.4,\nBuilding No: 3, DIP-2,\nDubai",
+                email: "info@catalystgroupme.com"
+              },
+              {
+                region: "India Office",
+                company: "Catalyst Service Solutions Partners Private\nLimited",
+                address: "401/402, Yash Tower, Opp. D.A.V Public\nSchool, Aundh, Pune – 411007",
+                email: "sales@catalystsolutions.eco"
+              },
+              {
+                region: "Singapore Office",
+                company: "Comprehensive Support Services Pte. Ltd",
+                address: "12 Woodlands Square, #02-75, Woods\nSquare Tower 1, Singapore – 737715",
+                email: "sales@catalystsolutions.eco"
+              }
+            ].map((office, i) => (
+              <div key={i} data-reveal data-delay={String(i)} className="lift" style={{ background: "#FDFBF8", border: "1px solid rgba(25,25,25,.06)", borderRadius: 16, padding: "clamp(30px,4vw,44px)", display: "flex", flexDirection: "column", gap: 16, boxShadow: "0 10px 40px rgba(0,0,0,0.03)" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+                  <MapPin size={22} color="#E91E63" fill="#E91E63" />
+                  <h3 style={{ fontSize: 20, color: "#1E3B24", fontFamily: "Inter Tight", fontWeight: 500 }}>{office.region}</h3>
+                </div>
+                <div style={{ fontSize: 14, color: "#6E6A61", lineHeight: 1.7, flex: 1, display: "flex", flexDirection: "column" }}>
+                  <p style={{ marginBottom: 20, whiteSpace: "pre-line" }}>{office.company}</p>
+                  <p style={{ whiteSpace: "pre-line", marginBottom: 24 }}>{office.address}</p>
+                  <div style={{ borderTop: "1px solid rgba(25,25,25,.08)", paddingTop: 18, marginTop: "auto" }}>
+                    <p style={{ fontWeight: 600, color: "#191919" }}>Email: <span style={{ fontWeight: 400 }}>{office.email}</span></p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

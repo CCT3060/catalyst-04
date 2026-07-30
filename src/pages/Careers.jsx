@@ -1,4 +1,5 @@
 import CTA from "../components/CTA";
+import { Sprout, Users, Award, Search, Lightbulb, Globe, TrendingUp, ArrowRight } from "lucide-react";
 
 export default function Careers({ go }) {
   return (
@@ -21,10 +22,12 @@ export default function Careers({ go }) {
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 22 }} data-3col>
-            {[["🌱", "Grow with Purpose", "Shape your career while making a meaningful difference in communities and organizations.", ""], ["🤝", "Collaborate & Innovate", "Work alongside passionate colleagues who bring diverse expertise and perspectives.", "1"], ["⭐", "Be Recognized", "Contribute meaningfully and be valued for the impact you create.", "2"]].map(([icon, name, desc, delay], i) => (
+            {[[Sprout, "Grow with Purpose", "Shape your career while making a meaningful difference in communities and organizations.", ""], [Users, "Collaborate & Innovate", "Work alongside passionate colleagues who bring diverse expertise and perspectives.", "1"], [Award, "Be Recognized", "Contribute meaningfully and be valued for the impact you create.", "2"]].map(([Icon, name, desc, delay], i) => (
               <div key={i} data-reveal data-delay={delay || undefined} className="lift" style={{ background: "#F9F7F3", border: "1px solid rgba(25,25,25,.07)", borderRadius: 30, padding: 34 }}>
-                <div style={{ fontSize: 30 }}>{icon}</div>
-                <h3 style={{ fontSize: 22, color: "#191919", marginTop: 16 }}>{name}</h3>
+                <div style={{ width: 48, height: 48, borderRadius: 16, background: "rgba(255,127,0,0.1)", display: "flex", alignItems: "center", justifyContent: "center", color: "#FF7F00" }}>
+                  <Icon size={24} />
+                </div>
+                <h3 style={{ fontSize: 22, color: "#191919", marginTop: 18 }}>{name}</h3>
                 <p style={{ fontSize: "14.5px", color: "#6E6A61", lineHeight: 1.65, marginTop: 10 }}>{desc}</p>
               </div>
             ))}
@@ -41,10 +44,12 @@ export default function Careers({ go }) {
           </div>
 
           <div data-reveal style={{ background: "#fff", border: "1px solid rgba(25,25,25,.08)", borderRadius: 32, padding: "clamp(30px,4vw,50px)", textAlign: "center" }}>
-            <div style={{ fontSize: 48, marginBottom: 20 }}>🔍</div>
+            <div style={{ width: 64, height: 64, borderRadius: 20, background: "rgba(255,127,0,0.1)", display: "flex", alignItems: "center", justifyContent: "center", color: "#FF7F00", margin: "0 auto 20px" }}>
+              <Search size={32} />
+            </div>
             <h3 style={{ fontSize: 24, color: "#191919" }}>Open Positions Coming Soon</h3>
             <p style={{ fontSize: 16, color: "#6E6A61", marginTop: 12, maxWidth: 480, margin: "12px auto 0", lineHeight: 1.7 }}>We are always looking for exceptional talent. Send us your profile and we will reach out when opportunities that match your skills become available.</p>
-            <button className="mag" onClick={() => go("contact")} style={{ marginTop: 30, background: "#FF7F00", color: "#fff", fontWeight: 600, fontSize: 15, padding: "15px 30px", borderRadius: 999 }}>Express Your Interest →</button>
+            <button className="mag" onClick={() => go("contact")} style={{ marginTop: 30, background: "#FF7F00", color: "#fff", fontWeight: 600, fontSize: 15, padding: "15px 30px", borderRadius: 999, display: "inline-flex", alignItems: "center", gap: 8 }}>Express Your Interest <ArrowRight size={18} /></button>
           </div>
         </div>
       </section>
@@ -55,10 +60,12 @@ export default function Careers({ go }) {
           <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#FF7F00", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18, justifyContent: "center" }}><span style={{ width: 26, height: 2, background: "#FF7F00" }}></span>Our Culture</div>
           <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.8vw,50px)", color: "#fff" }}>Where People Come First</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 18, marginTop: 50, textAlign: "left" }} data-3col>
-            {[["💡", "Innovation", "We embrace new ideas, challenge conventions, and continuously seek better ways to serve our clients and communities.", ""], ["🌍", "Diversity", "Our strength comes from diverse perspectives and backgrounds that drive richer solutions and stronger outcomes.", "1"], ["📈", "Growth", "We invest in developing our people, providing pathways for continuous learning, advancement, and meaningful impact.", "2"]].map(([icon, name, desc, delay], i) => (
+            {[[Lightbulb, "Innovation", "We embrace new ideas, challenge conventions, and continuously seek better ways to serve our clients and communities.", ""], [Globe, "Diversity", "Our strength comes from diverse perspectives and backgrounds that drive richer solutions and stronger outcomes.", "1"], [TrendingUp, "Growth", "We invest in developing our people, providing pathways for continuous learning, advancement, and meaningful impact.", "2"]].map(([Icon, name, desc, delay], i) => (
               <div key={i} data-reveal data-delay={delay || undefined} className="lift" style={{ background: "rgba(255,255,255,.05)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 24, padding: 28 }}>
-                <div style={{ fontSize: 26 }}>{icon}</div>
-                <h4 style={{ fontSize: 18, color: "#fff", marginTop: 14 }}>{name}</h4>
+                <div style={{ width: 44, height: 44, borderRadius: 14, background: "rgba(255,127,0,0.15)", display: "flex", alignItems: "center", justifyContent: "center", color: "#FF7F00", marginBottom: 14 }}>
+                  <Icon size={22} />
+                </div>
+                <h4 style={{ fontSize: 18, color: "#fff", marginTop: 8 }}>{name}</h4>
                 <p style={{ fontSize: "13.5px", color: "rgba(255,255,255,.6)", lineHeight: 1.6, marginTop: 8 }}>{desc}</p>
               </div>
             ))}

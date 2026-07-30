@@ -1,4 +1,18 @@
+import { ArrowRight } from "lucide-react";
+
 export default function CTA({ go, title, subtitle, primaryLabel = "Partner With Us →", primaryPage = "contact", secondaryLabel, secondaryPage, image }) {
+  const renderLabel = (label) => {
+    if (!label) return null;
+    const cleanLabel = label.replace(" →", "").replace("→", "").trim();
+    const hasArrow = label.includes("→");
+    return (
+      <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
+        {cleanLabel}
+        {hasArrow && <ArrowRight size={18} />}
+      </span>
+    );
+  };
+
   return (
     <section style={{padding:"clamp(20px,4vw,56px)"}}>
       <div data-reveal style={{maxWidth:1300,margin:"0 auto",position:"relative",borderRadius:40,overflow:"hidden",background:"linear-gradient(135deg,#191919,#242424)",padding:"clamp(60px,9vw,120px) clamp(28px,5vw,80px)",textAlign:"center"}}>
@@ -9,8 +23,8 @@ export default function CTA({ go, title, subtitle, primaryLabel = "Partner With 
           {subtitle && <div style={{fontFamily:"Inter Tight",fontSize:"clamp(22px,2.6vw,32px)",fontWeight:500,color:"rgba(255,255,255,.85)",marginBottom:10}}>{subtitle}</div>}
           <h2 style={{fontSize:"clamp(34px,5vw,64px)",color:"#fff"}}>{title}</h2>
           <div style={{display:"flex",flexWrap:"wrap",gap:16,justifyContent:"center",marginTop:38}}>
-            <button className="mag" onClick={() => go(primaryPage)} style={{background:"#FF7F00",color:"#fff",fontWeight:600,fontSize:16,padding:"17px 36px",borderRadius:999,boxShadow:"0 12px 34px rgba(255,127,0,.4)"}}>{primaryLabel}</button>
-            {secondaryLabel && <button className="mag" onClick={() => go(secondaryPage)} style={{background:"rgba(255,255,255,.08)",color:"#fff",fontWeight:600,fontSize:16,padding:"17px 36px",borderRadius:999,border:"1px solid rgba(255,255,255,.2)"}}>{secondaryLabel}</button>}
+            <button className="mag" onClick={() => go(primaryPage)} style={{background:"#FF7F00",color:"#fff",fontWeight:600,fontSize:16,padding:"17px 36px",borderRadius:999,boxShadow:"0 12px 34px rgba(255,127,0,.4)",cursor:"pointer"}}>{renderLabel(primaryLabel)}</button>
+            {secondaryLabel && <button className="mag" onClick={() => go(secondaryPage)} style={{background:"rgba(255,255,255,.08)",color:"#fff",fontWeight:600,fontSize:16,padding:"17px 36px",borderRadius:999,border:"1px solid rgba(255,255,255,.2)",cursor:"pointer"}}>{renderLabel(secondaryLabel)}</button>}
           </div>
         </div>
       </div>

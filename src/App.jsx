@@ -15,7 +15,7 @@ import Technologies from "./pages/Technologies";
 import { initImageReveal, killImageReveal } from "./lib/imageReveal";
 
 function useDarkHero(page) {
-  return ["home","about","food","ifm","infra","htm","workforce","sectors","careers","contact","technologies"].includes(page);
+  return ["home","sectors","careers","contact","technologies"].includes(page);
 }
 
 export default function App() {

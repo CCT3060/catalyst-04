@@ -1,24 +1,27 @@
 ﻿import CTA from "../components/CTA";
-import { NumberedIndex, IndustriesMarquee, CutoutArch } from "../components/SolutionsKit";
+import { NumberedIndex, ServiceHero, IndustriesMarquee, CutoutArch } from "../components/SolutionsKit";
 import infrastructureBg from "../assets/INFRASTRUCTURE SOLUTIONS.png";
 import whyInfrastructureBg from "../assets/Why Infrastructure Matters.webp";
 import constructionImg from "../assets/residential-building-under-construction-on-transparent-background-png.png";
 import siteEngineersImg from "../assets/5.png";
 import innovation from "../assets/86de25bf5b2b497bb8be816e43e60bc0.webp";
-import { ShieldCheck, Leaf, ArrowRight } from "lucide-react";
+import { ShieldCheck, Leaf, Building2 } from "lucide-react";
 
 export default function Infrastructure({ go }) {
   return (
     <div data-screen-label="Infrastructure Solutions">
-      <section style={{ position: "relative", backgroundColor: "#191919", backgroundImage: `linear-gradient(  rgba(0, 0, 0, 0.57), rgba(25, 25, 25, 0.7)), url(${infrastructureBg})`, backgroundSize: "cover", backgroundPosition: "center", padding: "170px clamp(20px,4vw,56px) clamp(70px,8vw,110px)", overflow: "hidden", minHeight: "100vh", display: "flex", alignItems: "center" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px)", backgroundSize: "60px 60px", maskImage: "radial-gradient(circle at 55% 30%,#000,transparent 75%)" }}></div>
-        <div style={{ position: "relative", maxWidth: 1240, margin: "0 auto", width: "100%" }}>
-          <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 9, fontFamily: "Caveat, cursive", color: "#0373ff", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 22 }}>INFRASTRUCTURE</div>
-          <h1 data-reveal data-delay="1" className="shown" style={{ fontSize: "clamp(36px,5.2vw,74px)", color: "#fff", maxWidth: 1000 }}>Building the Foundations for <span className="gradtext">Better Experiences</span></h1>
-          <p data-reveal data-delay="2" className="shown" style={{ marginTop: 24, fontSize: "clamp(17px,1.4vw,20px)", lineHeight: 1.7, color: "rgba(255,255,255,.78)", maxWidth: 640 }}>Creating resilient environments that support growth, inspire confidence, and deliver lasting value through thoughtful infrastructure solutions.</p>
-          <button data-reveal data-delay="3" className="shown mag" onClick={() => go("contact")} style={{ marginTop: 34, background: "#0373ff", color: "#fff", fontWeight: 600, fontSize: 15, padding: "15px 30px", borderRadius: 999, display: "inline-flex", alignItems: "center", gap: 8 }}>Talk to Our Infrastructure Team <ArrowRight size={18} /></button>
-        </div>
-      </section>
+      {/* Hero — light editorial */}
+      <ServiceHero
+        go={go}
+        kicker="Infrastructure Solutions"
+        title="Building the foundations for better experiences"
+        sub="Creating resilient environments that support growth, inspire confidence, and deliver lasting value through thoughtful infrastructure solutions."
+        ctaLabel="Talk to our infrastructure team"
+        img={infrastructureBg}
+        imgAlt="Infrastructure projects delivered by Catalyst"
+        note="built to serve its purpose"
+        chips={[[Building2, "100+ projects delivered"], [ShieldCheck, "Zero Harm safety culture"]]}
+      />
 
       {/* Intro Description */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
@@ -143,8 +146,7 @@ export default function Infrastructure({ go }) {
               ["Technology & Resource Optimisation", "Technology-enabled operations and resource-conscious design that improve efficiency across the facility."],
               ["Renewable & Green Initiatives", "Broader sustainable solutions including renewable energy, EV charging, and composting."]
             ].map(([title, desc], i) => (
-              <div key={i} data-reveal data-delay={String(Math.min(i % 3, 3))} style={{ borderTop: "2px solid #43934A", paddingTop: 20 }}>
-                <div style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: ".08em", color: "#377B3D", marginBottom: 10 }}>{String(i + 1).padStart(2, "0")}</div>
+              <div key={i} data-reveal data-delay={String(Math.min(i % 3, 3))} className="fs-why-card">
                 <h4 style={{ fontSize: 19, fontWeight: 600, color: "#191919", marginBottom: 12 }}>{title}</h4>
                 <p style={{ fontSize: 15, color: "#6E6A61", lineHeight: 1.6 }}>{desc}</p>
               </div>

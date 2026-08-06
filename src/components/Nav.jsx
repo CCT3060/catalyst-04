@@ -1,5 +1,5 @@
 ﻿import { useState, useEffect, useRef } from "react";
-import { ChevronDown, Menu, X, UtensilsCrossed, Building2, Factory, Stethoscope, Users, Briefcase, Landmark, GraduationCap, Home } from "lucide-react";
+import { ChevronDown, Menu, X, UtensilsCrossed, Building2, Factory, Stethoscope, Users, Briefcase, Landmark, GraduationCap, Home, Zap, ArrowUpRight } from "lucide-react";
 
 export default function Nav({ go, darkHero, activeNav, mobileOpen, setMobileOpen }) {
   const navRef = useRef(null);
@@ -43,15 +43,19 @@ export default function Nav({ go, darkHero, activeNav, mobileOpen, setMobileOpen
             Home <ChevronDown size={14} style={{ opacity: .8, transition: "transform .2s" }} />
           </span>
           <div style={{ position: "absolute", top: "100%", left: 0, right: 0, height: 14 }} />
-          <div className="sol-menu" style={{ position: "absolute", top: "100%", left: "50%", transform: "translateX(-50%)", marginTop: 14, width: 180, background: "rgba(255,255,255,.92)", backdropFilter: "blur(24px)", border: "1px solid rgba(25,25,25,.08)", borderRadius: 24, boxShadow: "0 24px 60px rgba(25,25,25,.18)", padding: 10 }}>
-            <a href="https://catalyst-chi-puce.vercel.app/" target="_blank" className="solrow" style={{ display: "flex", alignItems: "center", padding: "12px 14px", borderRadius: 16, cursor: "pointer", textDecoration: "none" }}>
-              <div style={{ fontWeight: 600, fontSize: 14, color: "#191919" }}>Home 1</div>
+          <div className="sol-menu" style={{ position: "absolute", top: "100%", left: "50%", transform: "translateX(-50%)", marginTop: 14, width: 200, background: "rgba(255,255,255,.96)", backdropFilter: "blur(24px)", border: "1px solid rgba(25,25,25,.08)", borderRadius: 20, boxShadow: "0 24px 60px rgba(25,25,25,.16)", padding: 8 }}>
+            <div className="menu-cap">VERSIONS</div>
+            <a href="https://catalyst-chi-puce.vercel.app/" target="_blank" className="menu-item">
+              <div><div className="menu-name">Home 1</div></div>
+              <ArrowUpRight className="menu-arr" size={14} />
             </a>
-            <div onClick={() => go("home")} className="solrow" style={{ display: "flex", alignItems: "center", padding: "12px 14px", borderRadius: 16, cursor: "pointer" }}>
-              <div style={{ fontWeight: 600, fontSize: 14, color: "#191919" }}>Home 2</div>
+            <div onClick={() => go("home")} className="menu-item">
+              <div><div className="menu-name">Home 2</div></div>
+              <ArrowUpRight className="menu-arr" size={14} />
             </div>
-             <a href="https://catalyst-03.vercel.app/" target="_blank" className="solrow" style={{ display: "flex", alignItems: "center", padding: "12px 14px", borderRadius: 16, cursor: "pointer", textDecoration: "none" }}>
-              <div style={{ fontWeight: 600, fontSize: 14, color: "#191919" }}>Home 3</div>
+            <a href="https://catalyst-03.vercel.app/" target="_blank" className="menu-item">
+              <div><div className="menu-name">Home 3</div></div>
+              <ArrowUpRight className="menu-arr" size={14} />
             </a>
           </div>
         </div>
@@ -61,16 +65,24 @@ export default function Nav({ go, darkHero, activeNav, mobileOpen, setMobileOpen
             Solutions <ChevronDown size={14} style={{ opacity: .8, transition: "transform .2s" }} />
           </span>
           <div style={{ position: "absolute", top: "100%", left: 0, right: 0, height: 14 }} />
-          <div className="sol-menu" style={{ position: "absolute", top: "100%", left: "50%", transform: "translateX(-50%)", marginTop: 14, width: 330, background: "rgba(255,255,255,.92)", backdropFilter: "blur(24px)", border: "1px solid rgba(25,25,25,.08)", borderRadius: 24, boxShadow: "0 24px 60px rgba(25,25,25,.18)", padding: 10 }}>
-            {[["food", "Food Services"], ["ifm", "IFM"], ["infra", "Infrastructure "], ["htm", "Healthcare "], ["workforce", "WorkForce "]].map(([p, name]) => {
-              return (
-                <div key={p} onClick={() => go(p)} className="solrow" style={{ display: "flex", alignItems: "center", padding: "12px 14px", borderRadius: 16, cursor: "pointer" }}>
-                  <div>
-                    <div style={{ fontWeight: 600, fontSize: 14, color: "#191919" }}>{name}</div>
-                  </div>
+          <div className="sol-menu" style={{ position: "absolute", top: "100%", left: "50%", transform: "translateX(-50%)", marginTop: 14, width: 330, background: "rgba(255,255,255,.96)", backdropFilter: "blur(24px)", border: "1px solid rgba(25,25,25,.08)", borderRadius: 20, boxShadow: "0 24px 60px rgba(25,25,25,.16)", padding: 8 }}>
+            <div className="menu-cap">SOLUTIONS</div>
+            {[
+              ["food", UtensilsCrossed, "Food Services", "Dining programs designed at scale"],
+              ["ifm", Building2, "Integrated Facilities Management", "Engineering, soft & support services"],
+              ["infra", Factory, "Infrastructure Solutions", "Projects from plan to handover"],
+              ["htm", Stethoscope, "Healthcare Technology", "Biomedical & clinical engineering"],
+              ["workforce", Users, "Workforce Solutions", "Staffing, payroll & compliance"],
+            ].map(([p, Icon, name, sub]) => (
+              <div key={p} onClick={() => go(p)} className="menu-item">
+                <span className="menu-ico"><Icon size={17} /></span>
+                <div>
+                  <div className="menu-name">{name}</div>
+                  <div className="menu-sub">{sub}</div>
                 </div>
-              );
-            })}
+                <ArrowUpRight className="menu-arr" size={14} />
+              </div>
+            ))}
           </div>
         </div>
         <div className="sol-wrap" style={{ position: "relative", padding: "8px 0" }}>
@@ -78,27 +90,26 @@ export default function Nav({ go, darkHero, activeNav, mobileOpen, setMobileOpen
             Sectors <ChevronDown size={14} style={{ opacity: .8, transition: "transform .2s" }} />
           </span>
           <div style={{ position: "absolute", top: "100%", left: 0, right: 0, height: 14 }} />
-          <div className="sol-menu" style={{ position: "absolute", top: "100%", left: "50%", transform: "translateX(-50%)", marginTop: 14, width: 340, background: "rgba(255,255,255,.92)", backdropFilter: "blur(24px)", border: "1px solid rgba(25,25,25,.08)", borderRadius: 24, boxShadow: "0 24px 60px rgba(25,25,25,.18)", padding: 10 }}>
+          <div className="sol-menu" style={{ position: "absolute", top: "100%", left: "50%", transform: "translateX(-50%)", marginTop: 14, width: 350, background: "rgba(255,255,255,.96)", backdropFilter: "blur(24px)", border: "1px solid rgba(25,25,25,.08)", borderRadius: 20, boxShadow: "0 24px 60px rgba(25,25,25,.16)", padding: 8 }}>
+            <div className="menu-cap">SECTORS WE SERVE</div>
             {[
-              { id: "sectors?section=0", name: "Corporate & Commercial Spaces" },
-              { id: "sectors?section=1", name: "Manufacturing, Industrial & Infrastructure" },
-              { id: "sectors?section=2", name: "Infrastructure, Public Sector & Smart Cities" },
-              { id: "sectors?section=3", name: "Education" },
-              { id: "sectors?section=4", name: "Community Living" },
-              { id: "htm", name: "Healthcare Technology Management" }
-            ].map((s, i) => {
-              return (
-                <div key={i} onClick={() => go(s.id)} className="solrow" style={{ display: "flex", alignItems: "center", padding: "12px 14px", borderRadius: 16, cursor: "pointer" }}>
-                  <div>
-                    <div style={{ fontWeight: 600, fontSize: 13, color: "#191919", lineHeight: 1.25 }}>{s.name}</div>
-                  </div>
-                </div>
-              );
-            })}
-            <a href="https://cssgroup.ltd" target="_blank" rel="noreferrer" className="solrow" style={{ display: "flex", alignItems: "center", padding: "12px 14px", borderRadius: 16, cursor: "pointer", textDecoration: "none" }}>
-              <div>
-                <div style={{ fontWeight: 600, fontSize: 13, color: "#191919", lineHeight: 1.25 }}>Energy</div>
+              ["sectors?section=0", Briefcase, "Corporate & Commercial Spaces"],
+              ["sectors?section=1", Factory, "Manufacturing, Industrial & Infrastructure"],
+              ["sectors?section=2", Landmark, "Infrastructure, Public Sector & Smart Cities"],
+              ["sectors?section=3", GraduationCap, "Education"],
+              ["sectors?section=4", Home, "Community Living"],
+              ["htm", Stethoscope, "Healthcare Technology Management"],
+            ].map(([id, Icon, name]) => (
+              <div key={id} onClick={() => go(id)} className="menu-item">
+                <span className="menu-ico"><Icon size={16} /></span>
+                <div><div className="menu-name" style={{ fontSize: 13.5 }}>{name}</div></div>
+                <ArrowUpRight className="menu-arr" size={14} />
               </div>
+            ))}
+            <a href="https://cssgroup.ltd" target="_blank" rel="noreferrer" className="menu-item">
+              <span className="menu-ico"><Zap size={16} /></span>
+              <div><div className="menu-name" style={{ fontSize: 13.5 }}>Energy</div></div>
+              <ArrowUpRight className="menu-arr" size={14} />
             </a>
           </div>
         </div>
@@ -108,7 +119,7 @@ export default function Nav({ go, darkHero, activeNav, mobileOpen, setMobileOpen
       </div>
 
       <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-        <button className="mag" data-navcta onClick={() => go("contact")} style={{ background: "#0373ff", color: "#fff", fontWeight: 600, fontSize: 14, padding: "12px 22px", borderRadius: 999, boxShadow: "0 8px 24px rgba(3,115,255,.35)", whiteSpace: "nowrap" }}>Partner With Us</button>
+        <button className="nav-cta" data-navcta onClick={() => go("contact")}>Partner With Us <ArrowUpRight size={15} /></button>
         <button onClick={() => setMobileOpen(m => !m)} data-burger style={{ display: "none", background: "transparent", width: 42, height: 42, borderRadius: 999, border: "1px solid rgba(25,25,25,.12)", color: "#191919", alignItems: "center", justifyContent: "center" }}>
           {mobileOpen ? <X size={20} /> : <Menu size={20} />}
         </button>

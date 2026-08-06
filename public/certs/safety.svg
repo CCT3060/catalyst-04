@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 180" role="img" aria-labelledby="title desc">
+  <title>Safety Protocols</title>
+  <desc>Safety badge with shield icon.</desc>
+  <rect width="420" height="180" fill="#fff"/>
+  <path d="M90 42l44 16v34c0 28-17 48-44 62-27-14-44-34-44-62V58z" fill="#0373ff" opacity=".12" stroke="#0373ff" stroke-width="6"/>
+  <path d="M90 66v38l18 14" fill="none" stroke="#0373ff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="258" y="78" font-size="34" font-weight="800" fill="#666">SAFETY</text>
+    <text x="258" y="112" font-size="18" font-weight="700" fill="#A8A39B" letter-spacing="1">PROTOCOLS</text>
+  </g>
+</svg>

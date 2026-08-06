@@ -1,11 +1,11 @@
 ﻿import CTA from "../components/CTA";
-import { Kicker, SectionHead, IndustriesMarquee, PhoneFrame, BrowserFrame, CutoutArch } from "../components/SolutionsKit";
+import { Kicker, SectionHead, ServiceHero, IndustriesMarquee, PhoneFrame, BrowserFrame, CutoutArch } from "../components/SolutionsKit";
 import fmImage from "../assets/fm.png";
 import ifmTeamImg from "../assets/3.png";
 import ecleanAppImg from "../assets/image copy.png";
 import portalImg from "../assets/image copy 2.png";
 import innovationImg from "../assets/Gemini_Generated_Image_e5koqpe5koqpe5ko.png";
-import { ArrowRight } from "lucide-react";
+import { ShieldCheck, Building2 } from "lucide-react";
 
 const SERVICES = [
   {
@@ -67,18 +67,17 @@ const INDUSTRIES = [
 export default function Facilities({ go }) {
   return (
     <div data-screen-label="Integrated Facility Management">
-      {/* Hero */}
-      <section style={{ position: "relative", background: "#191919", minHeight: "100vh", display: "flex", alignItems: "center", padding: "160px clamp(20px,4vw,56px) clamp(80px,10vw,140px)", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${fmImage})`, backgroundSize: "cover", backgroundPosition: "center", opacity: 0.4 }}></div>
-        <div style={{ position: "relative", maxWidth: 1240, margin: "0 auto", width: "100%" }}>
-          <div style={{ maxWidth: 820 }}>
-            <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 9, fontFamily: "Caveat, cursive", color: "#0373ff", fontWeight: 600, fontSize: 24, marginBottom: 22 }}>INTEGRATED FACILITY MANAGEMENT</div>
-            <h1 data-reveal data-delay="1" className="shown" style={{ fontSize: "clamp(34px,5vw,72px)", color: "#fff", lineHeight: 1.1 }}>Creating Environments That <span className="gradtext">Perform Effortlessly</span></h1>
-            <p data-reveal data-delay="2" className="shown" style={{ marginTop: 24, fontSize: "clamp(17px,1.4vw,20px)", lineHeight: 1.7, color: "rgba(255,255,255,.78)", maxWidth: 640 }}>Engineering excellence, workplace services, and operational support — integrated into one seamless ecosystem.</p>
-            <button data-reveal data-delay="3" className="shown mag" onClick={() => go("contact")} style={{ marginTop: 34, background: "#0373ff", color: "#fff", fontWeight: 600, fontSize: 15, padding: "15px 30px", borderRadius: 999, display: "inline-flex", alignItems: "center", gap: 8 }}>Talk to our team <ArrowRight size={18} /></button>
-          </div>
-        </div>
-      </section>
+      {/* Hero — light editorial */}
+      <ServiceHero
+        go={go}
+        kicker="Integrated Facility Management"
+        title="Creating environments that perform effortlessly"
+        sub="Engineering excellence, workplace services, and operational support — integrated into one seamless ecosystem."
+        img={fmImage}
+        imgAlt="Catalyst facility teams keeping environments running"
+        note="one team, every service"
+        chips={[[ShieldCheck, "ISO-certified operations"], [Building2, "XX M+ sq. ft. managed"]]}
+      />
 
       {/* Overview — cutout crew on arch */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#fff" }}>

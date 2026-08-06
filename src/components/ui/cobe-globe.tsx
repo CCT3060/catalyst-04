@@ -7,6 +7,7 @@ interface Marker {
   id: string
   location: [number, number]
   label: string
+  details?: React.ReactNode
 }
 
 interface Arc {
@@ -35,6 +36,7 @@ interface GlobeProps {
   diffuse?: number
   mapSamples?: number
   focusLocation?: [number, number] | null
+  initialPhi?: number
 }
 
 export function Globe({
@@ -56,6 +58,7 @@ export function Globe({
   diffuse = 1.5,
   mapSamples = 16000,
   focusLocation = null,
+  initialPhi = 0,
 }: GlobeProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const pointerInteracting = useRef<{ x: number; y: number } | null>(null)
@@ -141,7 +144,7 @@ export function Globe({
     const canvas = canvasRef.current
     let globe: ReturnType<typeof createGlobe> | null = null
     let animationId: number
-    let phi = 0
+    let phi = initialPhi
     let currentTheta = theta
     const doublePi = Math.PI * 2
 
@@ -278,6 +281,7 @@ export function Globe({
       {markers.map((m) => (
         <div
           key={m.id}
+          className="group z-10"
           style={{
             position: "absolute",
             positionAnchor: `--cobe-${m.id}`,
@@ -293,13 +297,50 @@ export function Globe({
             letterSpacing: "0.08em",
             textTransform: "uppercase" as const,
             whiteSpace: "nowrap" as const,
-            pointerEvents: "none" as const,
+            pointerEvents: "auto" as const,
             opacity: `var(--cobe-visible-${m.id}, 0)`,
             filter: `blur(calc((1 - var(--cobe-visible-${m.id}, 0)) * 8px))`,
             transition: "opacity 0.8s, filter 0.8s",
           }}
         >
           {m.label}
+          
+          {m.details && (
+            <div className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"
+              style={{
+                bottom: "calc(100% + 12px)",
+                left: "50%",
+                transform: "translateX(-50%)",
+                background: "#fff",
+                color: "#191919",
+                padding: "14px",
+                borderRadius: "10px",
+                boxShadow: "0 10px 40px rgba(0,0,0,0.15)",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "0.75rem",
+                lineHeight: "1.5",
+                textTransform: "none",
+                letterSpacing: "normal",
+                whiteSpace: "pre-wrap",
+                minWidth: "260px",
+                textAlign: "left",
+              }}
+            >
+              {m.details}
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "-6px",
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  borderLeft: "6px solid transparent",
+                  borderRight: "6px solid transparent",
+                  borderTop: "6px solid #fff",
+                }}
+              />
+            </div>
+          )}
+
           <span
             style={{
               position: "absolute",

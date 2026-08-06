@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" role="img" aria-labelledby="title desc">
+  <title>NABH Accredited</title>
+  <desc>NABH accreditation badge with red ring and blue center mark.</desc>
+  <rect width="420" height="420" fill="#fff"/>
+  <circle cx="210" cy="210" r="176" fill="none" stroke="#C63535" stroke-width="30"/>
+  <circle cx="210" cy="208" r="102" fill="#1592D3"/>
+  <circle cx="210" cy="208" r="64" fill="#fff"/>
+  <path d="M118 308h184L210 188z" fill="#C63535"/>
+  <rect x="156" y="132" width="20" height="102" fill="#74C1E8"/>
+  <rect x="244" y="132" width="20" height="102" fill="#74C1E8"/>
+  <path d="M210 106c18 0 32 14 32 32s-14 32-32 32-32-14-32-32 14-32 32-32zm0 12a20 20 0 1 0 0 40 20 20 0 0 0 0-40z" fill="#3140A6"/>
+  <path d="M210 170v94m0 0l22 20m-22-20l-22 20" fill="none" stroke="#3140A6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#1592D3" font-family="Arial, Helvetica, sans-serif" font-weight="800" text-anchor="middle">
+    <text x="210" y="398" font-size="56" letter-spacing="10">NABH</text>
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 420" role="img" aria-labelledby="title desc">
+  <title>FSSAI Certified</title>
+  <desc>FSSAI logo inspired badge with tricolor accents.</desc>
+  <rect width="680" height="420" fill="#fff"/>
+  <rect x="78" y="154" width="524" height="14" fill="#F57C20"/>
+  <rect x="78" y="306" width="524" height="14" fill="#0A8F3C"/>
+  <g fill="#2E3192" font-family="Georgia, Times New Roman, serif" font-style="italic" text-anchor="middle">
+    <text x="320" y="265" font-size="170">fssai</text>
+  </g>
+  <circle cx="544" cy="132" r="15" fill="#8B4D1F"/>
+  <path d="M540 123c25-6 39-28 46-59-25 3-47 20-58 43z" fill="#19914A"/>
+  <rect x="60" y="152" width="160" height="10" fill="#2E3192"/>
+  <g fill="#2E3192" font-family="Arial, Helvetica, sans-serif" font-size="42" text-anchor="middle">
+    <text x="340" y="368">FSSAI</text>
+  </g>
+</svg>

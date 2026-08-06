@@ -1,4 +1,4 @@
-﻿import { ArrowUpRight } from "lucide-react";
+﻿import { ArrowUpRight, ArrowRight } from "lucide-react";
 
 /* Shared building blocks for the five solution pages.
    Everything follows the site tokens: ink #191919, cream #F9F7F3,
@@ -19,6 +19,39 @@ export function SectionHead({ kicker, kickerColor, dashColor, title, sub, center
       <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: dark ? "#fff" : "#191919" }}>{title}</h2>
       {sub && <p data-reveal data-delay="2" style={{ marginTop: 20, fontSize: 17, lineHeight: 1.7, color: dark ? "rgba(255,255,255,.7)" : "#6E6A61" }}>{sub}</p>}
     </div>
+  );
+}
+
+/* Light editorial hero shared by the service pages — cream canvas,
+   arch-cropped imagery, handwritten note, proof chips */
+export function ServiceHero({ go, kicker, kickerColor = "#0258cc", dash = "#0373ff", glow = "rgba(3,115,255,.08)", title, sub, ctaLabel = "Talk to our team", ctaPage = "contact", img, imgAlt = "", note, noteColor = "#0258cc", chips = [] }) {
+  return (
+    <section style={{ position: "relative", background: "#F9F7F3", padding: "clamp(140px,16vh,180px) clamp(20px,4vw,56px) clamp(50px,6vw,80px)", overflow: "hidden" }}>
+      <div style={{ position: "absolute", inset: 0, background: `radial-gradient(50% 60% at 96% 10%, ${glow}, transparent 70%)` }}></div>
+      <div style={{ position: "relative", maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1.05fr 1fr", gap: "clamp(40px,6vw,90px)", alignItems: "center" }} data-2col>
+        <div>
+          <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: kickerColor, fontWeight: 600, fontSize: 24, marginBottom: 20 }}><span style={{ width: 26, height: 2, background: dash }}></span>{kicker}</div>
+          <h1 data-reveal data-delay="1" className="shown" style={{ fontSize: "clamp(36px,4.8vw,68px)", color: "#191919", lineHeight: 1.05 }}>{title}</h1>
+          <p data-reveal data-delay="2" className="shown" style={{ marginTop: 24, fontSize: "clamp(16px,1.35vw,19px)", lineHeight: 1.7, color: "#46433C", maxWidth: 540 }}>{sub}</p>
+          <div data-reveal data-delay="3" className="shown" style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "14px 26px", marginTop: 32 }}>
+            <button className="mag" onClick={() => go(ctaPage)} style={{ background: "#191919", color: "#fff", fontWeight: 600, fontSize: 15.5, padding: "16px 32px", borderRadius: 999, display: "inline-flex", alignItems: "center", gap: 9 }}>{ctaLabel} <ArrowRight size={17} /></button>
+          </div>
+          {chips.length > 0 && (
+            <div data-reveal data-delay="4" className="shown" style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 34 }}>
+              {chips.map(([Icon, label], i) => (
+                <span key={i} className={`fs-chip${dash === "#43934A" ? "" : " blue"}`}><Icon size={15} /> {label}</span>
+              ))}
+            </div>
+          )}
+        </div>
+        <div data-reveal data-delay="2" className="shown" style={{ position: "relative" }}>
+          <div className="fs-arch" style={{ height: "clamp(380px,52vh,540px)", boxShadow: "0 30px 80px rgba(25,25,25,.16)" }}>
+            <img src={img} alt={imgAlt} data-no-reveal style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+          </div>
+          {note && <div style={{ position: "absolute", right: "clamp(0px,2vw,18px)", bottom: -14, fontFamily: "Caveat, cursive", fontWeight: 600, fontSize: 23, color: noteColor, transform: "rotate(-3deg)" }}>{note}</div>}
+        </div>
+      </div>
+    </section>
   );
 }
 

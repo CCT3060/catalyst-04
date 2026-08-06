@@ -1,10 +1,10 @@
 ﻿import CTA from "../components/CTA";
-import { Kicker, SectionHead, NumberedIndex, PhoneFrame, BrowserFrame, CutoutArch, StatStrip } from "../components/SolutionsKit";
+import { Kicker, SectionHead, NumberedIndex, ServiceHero, PhoneFrame, BrowserFrame, CutoutArch, StatStrip } from "../components/SolutionsKit";
 import healthcareBg from "../assets/Gemini_Generated_Image_sf1puasf1puasf1p.png";
 import clinicalImg from "../assets/4.png";
 import dashboardImg from "../assets/Screenshot 2026-07-13 161017.png";
 import htmAppImg from "../assets/image.png";
-import { ArrowRight } from "lucide-react";
+import { ShieldCheck, Activity } from "lucide-react";
 
 const CAPABILITIES = [
   ["Biomedical Engineering Talent", "Dedicated on-site biomedical engineers manage equipment performance, troubleshoot issues, coordinate with OEMs, and support clinical teams across the hospital."],
@@ -51,15 +51,17 @@ const WHY = [
 export default function HealthcareTech({ go }) {
   return (
     <div data-screen-label="Healthcare Technology Management">
-      {/* Hero */}
-      <section style={{ position: "relative", backgroundColor: "#191919", backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(25, 25, 25, 0.7)), url(${healthcareBg})`, backgroundSize: "cover", backgroundPosition: "center", padding: "170px clamp(20px,4vw,56px) clamp(70px,8vw,110px)", overflow: "hidden", minHeight: "100vh", display: "flex", alignItems: "center" }}>
-        <div style={{ position: "relative", maxWidth: 1240, margin: "0 auto", width: "100%" }}>
-          <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 9, fontFamily: "Caveat, cursive", color: "#0373ff", fontWeight: 600, fontSize: 24, marginBottom: 22 }}>HEALTHCARE TECHNOLOGY MANAGEMENT</div>
-          <h1 data-reveal data-delay="1" className="shown" style={{ fontSize: "clamp(34px,5vw,72px)", color: "#fff", maxWidth: 1000, lineHeight: 1.1 }}>One Hospital. One Ecosystem. <span className="gradtext">Uninterrupted Care.</span></h1>
-          <p data-reveal data-delay="2" className="shown" style={{ marginTop: 22, fontSize: "clamp(17px,1.6vw,20px)", lineHeight: 1.7, color: "rgba(255,255,255,.78)", maxWidth: 720 }}>Expertise that keeps healthcare moving — ensuring every medical device is available, safe, compliant, and performing whenever clinicians need it.</p>
-          <button data-reveal data-delay="3" className="shown mag" onClick={() => go("contact")} style={{ marginTop: 34, background: "#0373ff", color: "#fff", fontWeight: 600, fontSize: 15, padding: "15px 30px", borderRadius: 999, display: "inline-flex", alignItems: "center", gap: 8 }}>Talk to our team <ArrowRight size={18} /></button>
-        </div>
-      </section>
+      {/* Hero — light editorial */}
+      <ServiceHero
+        go={go}
+        kicker="Healthcare Technology Management"
+        title="One hospital. One ecosystem. Uninterrupted care."
+        sub="Expertise that keeps healthcare moving — ensuring every medical device is available, safe, compliant, and performing whenever clinicians need it."
+        img={healthcareBg}
+        imgAlt="Clinical technology managed by Catalyst"
+        note="every device, ready when care needs it"
+        chips={[[Activity, "95–98% equipment availability"], [ShieldCheck, "NABH · JCI · NABL compliance support"]]}
+      />
 
       {/* Intro — clinical cutout */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
@@ -158,7 +160,7 @@ export default function HealthcareTech({ go }) {
           />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "clamp(28px,3.5vw,48px)" }} data-3col>
             {BEYOND.map(([title, subtitle, desc], i) => (
-              <div key={i} data-reveal data-delay={String(i)} style={{ borderTop: "2px solid #191919", paddingTop: 20 }}>
+              <div key={i} data-reveal data-delay={String(i)} className="fs-why-card blue">
                 <h4 style={{ fontSize: 20, fontWeight: 600, color: "#191919" }}>{title}</h4>
                 <div style={{ fontSize: 15, fontWeight: 500, color: "#0258cc", margin: "8px 0 12px" }}>{subtitle}</div>
                 <p style={{ fontSize: 15, color: "#6E6A61", lineHeight: 1.65 }}>{desc}</p>
@@ -174,8 +176,7 @@ export default function HealthcareTech({ go }) {
           <SectionHead kicker="Why Catalyst" kickerColor="#377B3D" dashColor="#43934A" title="The Catalyst Advantage" maxWidth={680} />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "clamp(28px,3.5vw,48px)", rowGap: 44 }} data-3col>
             {WHY.map(([title, desc], i) => (
-              <div key={i} data-reveal data-delay={String(i % 3)} style={{ borderTop: "2px solid #191919", paddingTop: 20 }}>
-                <div style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: ".08em", color: "#377B3D", marginBottom: 10 }}>{String(i + 1).padStart(2, "0")}</div>
+              <div key={i} data-reveal data-delay={String(i % 3)} className="fs-why-card blue">
                 <h4 style={{ fontSize: 19, fontWeight: 600, color: "#191919" }}>{title}</h4>
                 <p style={{ fontSize: 15, color: "#6E6A61", lineHeight: 1.65, marginTop: 10 }}>{desc}</p>
               </div>

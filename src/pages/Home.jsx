@@ -1,11 +1,20 @@
-﻿import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import CTA from "../components/CTA";
 import HeroSlider from "../components/HeroSlider";
 import partnerImg from "../assets/Partnerwithus.png";
 import { Globe } from "@/components/ui/cobe-globe";
 import aboutusImg from "../assets/aboutus.png";
-import { UtensilsCrossed, Building2, Factory, Stethoscope, Users, ArrowRight } from "lucide-react";
-
+import iso14001Img from "../assets/certificate/iso14001.jpg";
+import iso45001Img from "../assets/certificate/ISO45001.png";
+import fssaiImg from "../assets/certificate/fssai.png";
+import nabhImg from "../assets/certificate/nabh-accreditation-consultants-service-500x500.webp";
+import esgImg from "../assets/certificate/ESG.jpg";
+import iso9001Img from "../assets/certificate/ISO9001.jpg";
+import regulatoryComplianceImg from "../assets/certificate/Regulatory.png";
+import { UtensilsCrossed, Building2, Factory, Stethoscope, Users, ArrowRight, ArrowUpRight } from "lucide-react";
+import foodServiceImg from "../assets/food_services_gen.png";
+import fmImg from "../assets/ifm_gen.png";
+import workforceImg from "../assets/workforce_gen.png";
 
 const SECTORS = [
   { num: "01", name: "Corporate & Commercial Spaces", desc: "Workplaces are more than buildings, they are where ideas grow, teams connect, and performance takes shape. We help organizations create engaging, high-performing environments that elevate employee experiences and support business success.", bg: "#191919", img: "corporate.jpg", page: null },
@@ -18,34 +27,30 @@ const SECTORS = [
 
 
 
-const HexCard = ({ p, name, img, go }) => {
-  const [hovered, setHovered] = useState(false);
-  return (
-    <div onClick={() => go(p)} style={{ width: "clamp(200px,22vw,310px)", aspectRatio: "240/277", clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)", backgroundImage: `linear-gradient(rgba(0,0,0,.52),rgba(0,0,0,.52)),url(${img})`, backgroundSize: "cover", backgroundPosition: "center", position: "relative", overflow: "hidden", cursor: "pointer", flexShrink: 0, transition: "filter .3s", filter: hovered ? "brightness(1.2)" : "" }} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
-      <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "28% 10%", textAlign: "center" }}>
-        <span style={{ color: "#fff", fontFamily: "Inter Tight", fontWeight: 700, fontSize: "clamp(16px,1.8vw,22px)", lineHeight: 1.25, transform: hovered ? "translateY(-14px)" : "translateY(0)", transition: "transform 0.3s ease" }}>{name}</span>
-        <span style={{ position: "absolute", bottom: "35%", padding: "6px 16px", border: "1px solid rgba(255,255,255,.6)", borderRadius: 3, color: "#fff", fontSize: "clamp(9px,0.7vw,11px)", fontWeight: 700, letterSpacing: ".12em", opacity: hovered ? 1 : 0, transform: hovered ? "translateY(0)" : "translateY(10px)", transition: "all 0.3s ease" }}>LEARN MORE</span>
-      </div>
-    </div>
-  );
-};
+const SOLUTIONS = [
+  { page: "food", name: "Food Services", icon: UtensilsCrossed, img: foodServiceImg, tagline: "Safe, nutritious, and memorable dining experiences — crafted for workplaces, hospitals, campuses, and communities, delivered at scale." },
+  { page: "ifm", name: "Integrated Facilities Management", icon: Building2, img: fmImg, tagline: "Technical, soft, and business support services working as one system, so every environment performs seamlessly, every day." },
+  { page: "infra", name: "Infrastructure Solutions", icon: Factory, img: "/sectors/infrastructure.jpg", tagline: "Design, build, and upkeep of the physical backbone that keeps organizations moving — reliably, safely, and sustainably." },
+  { page: "htm", name: "Healthcare Technology Management", icon: Stethoscope, img: "/sectors/healthcare.jpg", tagline: "Lifecycle management of critical medical technology — maximizing uptime, compliance, and the quality of patient care." },
+  { page: "workforce", name: "Workforce Solutions", icon: Users, img: workforceImg, tagline: "Trained, verified, and dependable teams that bring service excellence to every environment we serve." },
+];
 
 const CERTS = [
-  { name: "ISO 9001:2015", sub: "Quality Management Systems", color: "#0373ff", image: "/certs/iso-9001.webp", detail: "Certified Quality Management System ensuring consistent service delivery, process efficiency, and continuous improvement across all operations." },
-  { name: "ISO 14001:2015", sub: "Environmental Management Systems", color: "#43934A", detail: "Environmental management framework guiding responsible stewardship, sustainability practices, and minimized ecological impact." },
-  { name: "ISO 45001:2018", sub: "Occupational Health & Safety", color: "#0373ff", detail: "Occupational health and safety management system ensuring safe work environments and a zero-harm culture across all sites." },
-  { name: "FSSAI Certified", sub: "Food Safety & Regulatory Compliance", color: "#FFB800", detail: "Food Safety and Standards Authority of India certified operations ensuring the highest standards in food safety and hygiene." },
-  { name: "NABH-Aligned", sub: "Healthcare Support Practices", color: "#43934A", detail: "Aligned with National Accreditation Board for Hospitals standards, supporting clinical environments with precision and compliance." },
-  { name: "ESG Commitment", sub: "Responsible, Long-Term Stewardship", color: "#0373ff", detail: "Commitment to Environmental, Social, and Governance principles—driving responsible business and sustainable long-term value creation." },
-  { name: "Regulatory Compliance", sub: "Statutory Standards & Governance", color: "#43934A", detail: "Comprehensive regulatory compliance framework aligned to statutory requirements, industry standards, and governance best practices." },
-  { name: "Safety Protocols", sub: "Industry-Specific Governance", color: "#0373ff", detail: "Robust safety protocols tailored to each environment—healthcare, hospitality, corporate, and industrial—ensuring protection and accountability." },
+  {name: "ISO 9001",image: iso9001Img, detail: "Certified Quality Management System ensuring consistent service delivery, process efficiency, and continuous improvement across all operations." },
+  {name: "ISO 14001",image: iso14001Img, detail: "Environmental management framework guiding responsible stewardship, sustainability practices, and minimized ecological impact." },
+  {name: "ISO 45001",image: iso45001Img, detail: "Occupational health and safety management system ensuring safe work environments and a zero-harm culture across all sites." },
+  {name: "FSSAI",image: fssaiImg, detail: "Food Safety and Standards Authority of India certified operations ensuring the highest standards in food safety and hygiene." },
+  {name: "NABH",image: nabhImg, detail: "Aligned with National Accreditation Board for Hospitals standards, supporting clinical environments with precision and compliance." },
+  {name: "ESG",image: esgImg, detail: "Commitment to Environmental, Social, and Governance principles—driving responsible business and sustainable long-term value creation." },
+  {name: "Regulatory",image: regulatoryComplianceImg, detail: "Comprehensive regulatory compliance framework aligned to statutory requirements, industry standards, and governance best practices." },
+  {name: "Safety",image: iso45001Img, detail: "Robust safety protocols tailored to each environment—healthcare, hospitality, corporate, and industrial—ensuring protection and accountability." },
 ];
 
 export default function Home({ go }) {
   const [activeSector, setActiveSector] = useState(0);
-  const sectorWrapRef = useRef(null);
+  const [activeSolution, setActiveSolution] = useState(0);
 
-  useEffect(() => {
+  useEffect(() => { 
     const onMove = e => {
       document.querySelectorAll('[data-glow-card]').forEach(card => {
         card.style.setProperty('--x', e.clientX);
@@ -54,22 +59,6 @@ export default function Home({ go }) {
     };
     document.addEventListener('pointermove', onMove);
     return () => document.removeEventListener('pointermove', onMove);
-  }, []);
-
-
-  useEffect(() => {
-    const onScroll = () => {
-      const el = sectorWrapRef.current;
-      if (!el) return;
-      const runway = el.offsetHeight - window.innerHeight;
-      if (runway <= 0) return;
-      const progress = Math.min(1, Math.max(0, -el.getBoundingClientRect().top / runway));
-      const idx = Math.min(SECTORS.length - 1, Math.floor(progress * SECTORS.length));
-      setActiveSector(prev => (prev === idx ? prev : idx));
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
   }, []);
   return (
     <div data-screen-label="Home">
@@ -108,78 +97,117 @@ export default function Home({ go }) {
         </div>
       </section>
 
-      {/* Solutions Ecosystem */}
-      <section style={{ padding: "clamp(50px,7vw,90px) clamp(20px,4vw,56px)", background: "rgb(249, 247, 243)", overflow: "hidden" }}>
+      {/* Solutions Ecosystem — expanding capability strip */}
+      <section style={{ padding: "clamp(50px,7vw,90px) clamp(20px,4vw,56px)", background: "#F9F7F3", overflow: "hidden" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", maxWidth: 760, margin: "0 auto 70px" }}>
-            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0373ff", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18, justifyContent: "center" }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Solutions Ecosystem<span style={{ width: 26, height: 2, background: "#43934A" }}></span></div>
-            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(30px,4vw,54px)", color: "#060606" }}>Five capabilities. One integrated system.</h2>
-            <p data-reveal data-delay="2" style={{ marginTop: 20, fontSize: 18, lineHeight: 1.7, color: "rgba(0, 0, 0, 0.76)" }}>When specialized expertise works in harmony, performance improves and meaningful outcomes follow.</p>
+          <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: "28px 60px", flexWrap: "wrap", marginBottom: "clamp(36px,4.5vw,60px)" }}>
+            <div style={{ maxWidth: 620 }}>
+              <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Solutions Ecosystem</div>
+              <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(30px,4vw,52px)", color: "#191919" }}>Five capabilities. One integrated system.</h2>
+            </div>
+            <p data-reveal data-delay="2" style={{ maxWidth: 400, fontSize: 16.5, lineHeight: 1.7, color: "#6E6A61", paddingBottom: 8 }}>When specialized expertise works in harmony, performance improves and meaningful outcomes follow — explore each capability to see how.</p>
           </div>
 
-          {/* Hexagonal honeycomb grid (desktop / tablet) */}
-          <div data-reveal data-hexwrap style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-            {/* Row 1 — 3 hexagons */}
-            <div style={{ display: "flex", gap: 18 }}>
-              {[[ "food", "Food Services", "/food-service-hero.png" ], [ "ifm", "Integrated Facilities Management", "/sectors/corporate.jpg" ], [ "infra", "Infrastructure Solutions", "/sectors/infrastructure.jpg" ]].map(([p, name, img]) => (
-                <HexCard key={p} p={p} name={name} img={img} go={go} />
-              ))}
-            </div>
-            {/* Row 2 — 2 hexagons, naturally centred by flex; negative margin creates honeycomb overlap */}
-            <div style={{ display: "flex", gap: 18, marginTop: "clamp(-58px,-6.35vw,-90px)" }}>
-              {[[ "htm", "Healthcare Technology Management", "/sectors/healthcare.jpg" ], [ "workforce", "Workforce Solutions", "/sectors/education.jpg" ]].map(([p, name, img]) => (
-                <HexCard key={p} p={p} name={name} img={img} go={go} />
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile — stacked capability cards (hexagons overflow small screens) */}
-          <div data-reveal data-solutions-mobile style={{ display: "none", flexDirection: "column", gap: 14 }}>
-            {[["food", "Food Services", "/food-service-hero.png"], ["ifm", "Integrated Facilities Management", "/sectors/corporate.jpg"], ["infra", "Infrastructure Solutions", "/sectors/infrastructure.jpg"], ["htm", "Healthcare Technology Management", "/sectors/healthcare.jpg"], ["workforce", "Workforce Solutions", "/sectors/education.jpg"]].map(([p, name, img]) => (
-              <div key={p} onClick={() => go(p)} style={{ position: "relative", minHeight: 116, borderRadius: 22, overflow: "hidden", backgroundImage: `linear-gradient(90deg, rgba(10,10,10,.74) 34%, rgba(10,10,10,.28)), url(${img})`, backgroundSize: "cover", backgroundPosition: "center", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 14, padding: "18px 18px" }}>
-                <div>
-                  <div style={{ color: "#fff", fontFamily: "Inter Tight", fontWeight: 600, fontSize: 17, lineHeight: 1.3, maxWidth: 230 }}>{name}</div>
-                  <div style={{ color: "rgba(255,255,255,.65)", fontSize: 11.5, fontWeight: 600, letterSpacing: ".14em", marginTop: 6 }}>LEARN MORE</div>
+          {/* Desktop / tablet — interactive expanding panels */}
+          <div data-reveal data-ecostrip className="eco-strip">
+            {SOLUTIONS.map((s, i) => {
+              const Icon = s.icon;
+              return (
+                <div
+                  key={s.page}
+                  className={`eco-panel${activeSolution === i ? " on" : ""}`}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={s.name}
+                  onMouseEnter={() => setActiveSolution(i)}
+                  onFocus={() => setActiveSolution(i)}
+                  onClick={() => go(s.page)}
+                  onKeyDown={e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(s.page); } }}
+                >
+                  <div className="eco-bg" style={{ backgroundImage: `url(${s.img})` }}></div>
+                  <div className="eco-shade"></div>
+                  <div className="eco-top">
+                    <span className="eco-ico"><Icon size={19} /></span>
+                    <span className="eco-idx">{String(i + 1).padStart(2, "0")}</span>
+                  </div>
+                  <div className="eco-vtitle">{s.name}</div>
+                  <div className="eco-body">
+                    <h3 className="eco-name">{s.name}</h3>
+                    <p className="eco-tag">{s.tagline}</p>
+                    <span className="eco-cta">EXPLORE <ArrowUpRight size={15} /></span>
+                  </div>
                 </div>
-                <span style={{ width: 40, height: 40, borderRadius: 999, background: "rgba(255,255,255,.14)", border: "1px solid rgba(255,255,255,.35)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  <ArrowRight size={18} />
-                </span>
-              </div>
-            ))}
+              );
+            })}
+          </div>
+
+          {/* Mobile — stacked capability cards */}
+          <div data-reveal data-solutions-mobile style={{ display: "none", flexDirection: "column", gap: 14 }}>
+            {SOLUTIONS.map(s => {
+              const Icon = s.icon;
+              return (
+                <div key={s.page} onClick={() => go(s.page)} style={{ position: "relative", minHeight: 120, borderRadius: 22, overflow: "hidden", backgroundImage: `linear-gradient(90deg, rgba(10,10,10,.78) 40%, rgba(10,10,10,.3)), url(${s.img})`, backgroundSize: "cover", backgroundPosition: "center", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 14, padding: "18px 18px" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                    <span style={{ width: 42, height: 42, borderRadius: 999, background: "rgba(255,255,255,.13)", border: "1px solid rgba(255,255,255,.32)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><Icon size={18} /></span>
+                    <div>
+                      <div style={{ color: "#fff", fontFamily: "Inter Tight", fontWeight: 600, fontSize: 17, lineHeight: 1.3, maxWidth: 220 }}>{s.name}</div>
+                      <div style={{ color: "rgba(255,255,255,.65)", fontSize: 11.5, fontWeight: 600, letterSpacing: ".14em", marginTop: 6 }}>LEARN MORE</div>
+                    </div>
+                  </div>
+                  <span style={{ width: 40, height: 40, borderRadius: 999, background: "rgba(255,255,255,.14)", border: "1px solid rgba(255,255,255,.35)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <ArrowRight size={18} />
+                  </span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Sectors — full-screen scroll reveal */}
+      {/* Sectors — editorial index + sticky visual */}
       <section style={{ background: "#F9F7F3", position: "relative" }}>
-        <div style={{ padding: "clamp(50px,7vw,90px) clamp(20px,4vw,56px) clamp(40px,5vw,70px)" }}>
+        <div style={{ padding: "clamp(50px,7vw,90px) clamp(20px,4vw,56px) 0" }}>
           <div style={{ maxWidth: 1240, margin: "0 auto" }}>
-            <div style={{ maxWidth: 720 }}>
-              <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Sectors We Serve</div>
-              <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(30px,4vw,52px)", color: "#191919" }}>Every environment presents unique challenges and opportunities</h2>
-              <p data-reveal data-delay="2" style={{ marginTop: 20, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>Catalyst combines industry expertise, integrated services, and technology-driven solutions to create healthier, safer, and more efficient environments that enhance experiences and deliver lasting value.</p>
+            <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: "28px 60px", flexWrap: "wrap", marginBottom: "clamp(36px,4.5vw,60px)" }}>
+              <div style={{ maxWidth: 620 }}>
+                <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Sectors We Serve</div>
+                <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(30px,4vw,52px)", color: "#191919" }}>Every environment presents unique challenges and opportunities</h2>
+              </div>
+              <p data-reveal data-delay="2" style={{ maxWidth: 400, fontSize: 16.5, lineHeight: 1.7, color: "#6E6A61", paddingBottom: 8 }}>Catalyst combines industry expertise, integrated services, and technology-driven solutions to create healthier, safer, and more efficient environments.</p>
             </div>
-          </div>
-        </div>
-        <div ref={sectorWrapRef} style={{ position: "relative", height: `${SECTORS.length * 100}vh` }}>
-          <div style={{ position: "sticky", top: 0, height: "100vh", overflow: "hidden" }}>
-            {SECTORS.map((s, i) => (
-              <div key={i} aria-hidden={activeSector !== i} style={{ position: "absolute", inset: 0, backgroundColor: s.bg, backgroundImage: `linear-gradient(rgba(15,15,15,.42),rgba(15,15,15,.42)),url(/sectors/${s.img})`, backgroundSize: "cover", backgroundPosition: "center", clipPath: i <= activeSector ? "inset(0% 0 0 0)" : "inset(100% 0 0 0)", transition: "clip-path .9s cubic-bezier(.77,0,.18,1)", willChange: "clip-path" }}></div>
-            ))}
-            <div aria-hidden key={`num-${activeSector}`} className="sector-swap" style={{ position: "absolute", right: "-2vw", bottom: "-6vw", fontFamily: "Inter Tight", fontWeight: 600, fontSize: "clamp(200px,30vw,420px)", lineHeight: 1, color: "rgba(255,255,255,.12)", userSelect: "none" }}>{SECTORS[activeSector].num}</div>
-            <div style={{ position: "relative", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", padding: "100px clamp(20px,4vw,56px) 40px" }}>
-              <div onClick={SECTORS[activeSector].page ? () => go(SECTORS[activeSector].page) : undefined} style={{ background: "#fff", borderRadius: 36, padding: "clamp(28px,3.5vw,52px)", maxWidth: 640, width: "100%", textAlign: "center", boxShadow: "0 40px 100px rgba(0,0,0,.35)", cursor: SECTORS[activeSector].page ? "pointer" : "default" }}>
-                <div key={`head-${activeSector}`} className="sector-swap">
-                  <div style={{ fontFamily: "Caveat, cursive", fontSize: 24, fontWeight: 600, color: "#0258cc" }}>Sector {SECTORS[activeSector].num}</div>
-                  <h3 style={{ fontFamily: "Inter Tight", fontWeight: 600, fontSize: "clamp(26px,3vw,40px)", letterSpacing: "-.02em", color: "#191919", marginTop: 8, lineHeight: 1.15 }}>{SECTORS[activeSector].name}</h3>
-                </div>
-                <div style={{ marginTop: "clamp(18px,2.5vw,30px)", height: "clamp(160px,24vh,240px)", borderRadius: 24, border: "1px solid rgba(25,25,25,.06)", overflow: "hidden", position: "relative" }}>
+
+            <div className="sec-grid" data-reveal data-delay="2">
+              {/* Left — sector index */}
+              <div>
+                {SECTORS.map((s, i) => (
+                  <div key={i} className={`sec-row${activeSector === i ? " on" : ""}`}>
+                    <button className="sec-head" onMouseEnter={() => setActiveSector(i)} onClick={() => setActiveSector(i)} aria-expanded={activeSector === i}>
+                      <span className="sec-num">{s.num}</span>
+                      <span className="sec-name">{s.name}</span>
+                      <span className="sec-arr"><ArrowUpRight size={16} /></span>
+                    </button>
+                    <div className="sec-body">
+                      <div className="sec-body-in">
+                        <div data-sector-inline-img style={{ display: "none", height: 180, borderRadius: 16, overflow: "hidden", marginBottom: 16, backgroundColor: s.bg, backgroundImage: `url(/sectors/${s.img})`, backgroundSize: "cover", backgroundPosition: "center" }}></div>
+                        <p>{s.desc}</p>
+                        {s.page && <span className="sec-link" onClick={() => go(s.page)}>Explore this sector <ArrowRight size={15} /></span>}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Right — sticky crossfading visual */}
+              <div data-sector-sticky style={{ position: "sticky", top: 96 }}>
+                <div style={{ position: "relative", height: "clamp(460px,60vh,580px)", borderRadius: 28, overflow: "hidden", boxShadow: "0 30px 80px rgba(25,25,25,.16)" }}>
                   {SECTORS.map((s, i) => (
-                    <div key={i} style={{ position: "absolute", inset: 0, backgroundColor: `${s.bg}14`, backgroundImage: `url(/sectors/${s.img})`, backgroundSize: "cover", backgroundPosition: "center", clipPath: i <= activeSector ? "inset(0% 0 0 0)" : "inset(100% 0 0 0)", transition: "clip-path .85s cubic-bezier(.77,0,.18,1) .22s", willChange: "clip-path" }}></div>
+                    <div key={i} aria-hidden={activeSector !== i} style={{ position: "absolute", inset: 0, backgroundColor: s.bg, backgroundImage: `linear-gradient(to top, rgba(10,10,10,.52) 0%, rgba(10,10,10,.08) 45%), url(/sectors/${s.img})`, backgroundSize: "cover", backgroundPosition: "center", opacity: activeSector === i ? 1 : 0, transform: activeSector === i ? "scale(1)" : "scale(1.06)", transition: "opacity .7s ease, transform 1.2s cubic-bezier(.16,.84,.44,1)" }}></div>
                   ))}
-                </div>
-                <div key={`desc-${activeSector}`} className="sector-swap">
-                  <p style={{ marginTop: "clamp(18px,2.5vw,28px)", fontSize: "clamp(14px,1.2vw,16px)", lineHeight: 1.7, color: "#6E6A61", maxWidth: 520, marginLeft: "auto", marginRight: "auto" }}>{SECTORS[activeSector].desc}</p>
+                  <div aria-hidden key={`num-${activeSector}`} className="sector-swap" style={{ position: "absolute", top: 20, right: 28, fontFamily: "Inter Tight", fontWeight: 600, fontSize: "clamp(72px,7vw,104px)", lineHeight: 1, color: "rgba(255,255,255,.22)", userSelect: "none" }}>{SECTORS[activeSector].num}</div>
+                  <div key={`cap-${activeSector}`} className="sector-swap" style={{ position: "absolute", left: 26, right: 26, bottom: 24 }}>
+                    <div style={{ display: "inline-flex", padding: "7px 14px", borderRadius: 999, background: "rgba(255,255,255,.14)", border: "1px solid rgba(255,255,255,.3)", backdropFilter: "blur(8px)", color: "#fff", fontSize: 12, fontWeight: 600, letterSpacing: ".12em" }}>SECTOR {SECTORS[activeSector].num}</div>
+                    <div style={{ marginTop: 12, fontFamily: "Inter Tight", fontWeight: 600, fontSize: "clamp(20px,1.9vw,26px)", letterSpacing: "-.01em", lineHeight: 1.2, color: "#fff" }}>{SECTORS[activeSector].name}</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -190,22 +218,43 @@ export default function Home({ go }) {
         </div>
       </section>
 
-      {/* Foundations / Metrics */}
+      {/* Foundations — dark metrics board */}
       <section style={{ padding: "clamp(50px,7vw,90px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
-          <div style={{ maxWidth: 760, marginBottom: 60 }}>
-            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Our Foundations</div>
-            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(30px,4vw,52px)", color: "#191919" }}>People are at the heart of every great experience</h2>
-            <p data-reveal data-delay="2" style={{ marginTop: 20, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>At Catalyst, our foundations define how we create value and deliver impact. This belief drives our commitment to operational excellence, inspires our approach to innovation, and shapes our responsibility towards people, communities, and the environment.</p>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 18 }} data-metricgrid>
-            {[["XX+", "Years", "Delivering integrated solutions across diverse industries.", "1"], ["XX+", "Locations", "Supporting organizations across India.", "2"], ["XX,XXX+", "Workforce", "Driving excellence through skilled and dedicated professionals.", "3"], ["XX+", "Client Partnerships", "Built on trust, performance, and long-term collaboration.", "4"], ["XX M+", "Meals Served Annually", "Nourishing workplaces, communities, and institutions every day.", ""], ["XX M+", "Sq. Ft. Managed", "Maintaining safe, efficient, and high-performing environments.", "1"], ["XX+", "Healthcare Assets Managed", "Supporting reliable healthcare operations and patient care.", "2"], ["XX+", "Infrastructure & Community Projects", "Contributing to sustainable growth and resilient ecosystems.", "3"]].map(([num, label, desc, delay], i) => (
-              <div key={i} data-reveal data-delay={delay || undefined} className="lift" style={{ background: "#fff", border: "1px solid rgba(25,25,25,.07)", borderRadius: 28, padding: 30, boxShadow: "0 8px 30px rgba(25,25,25,.04)" }}>
-                <div className="counter" style={{ fontFamily: "Inter Tight", fontSize: 42, fontWeight: 600, background: "#0373ff", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>{num}</div>
-                <div style={{ fontWeight: 600, fontSize: 15, color: "#191919", marginTop: 8 }}>{label}</div>
-                <div style={{ fontSize: 13, color: "#6E6A61", marginTop: 4, lineHeight: 1.5 }}>{desc}</div>
+          <div data-reveal className="fdn-panel">
+            <div style={{ position: "relative", display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: "24px 60px", flexWrap: "wrap", marginBottom: "clamp(30px,4vw,52px)" }}>
+              <div style={{ maxWidth: 600 }}>
+                <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#8FBCFF", fontWeight: 600, fontSize: 24, marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Our Foundations</div>
+                <h2 style={{ fontSize: "clamp(28px,3.6vw,46px)", color: "#fff" }}>People are at the heart of every great experience</h2>
               </div>
-            ))}
+              <p style={{ maxWidth: 400, fontSize: 15.5, lineHeight: 1.7, color: "rgba(255,255,255,.62)", paddingBottom: 6 }}>Our foundations define how we create value — a commitment to operational excellence, innovation, and responsibility towards people, communities, and the environment.</p>
+            </div>
+
+            <div style={{ position: "relative" }}>
+              <div className="fdn-cap">THE SCALE WE OPERATE AT</div>
+              <div className="fdn-grid">
+                {[["XX+", "Years", "Delivering integrated solutions across diverse industries."], ["XX+", "Locations", "Supporting organizations across India."], ["XX,XXX+", "Workforce", "Driving excellence through skilled and dedicated professionals."], ["XX+", "Client Partnerships", "Built on trust, performance, and long-term collaboration."]].map(([num, label, desc], i) => (
+                  <div key={i} className="fdn-cell">
+                    <div className="fdn-tick"></div>
+                    <div className="fdn-num">{num}</div>
+                    <div className="fdn-lbl">{label}</div>
+                    <div className="fdn-dsc">{desc}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="fdn-cap" style={{ marginTop: "clamp(26px,3vw,40px)" }}>THE IMPACT WE DELIVER, EVERY YEAR</div>
+              <div className="fdn-grid">
+                {[["XX M+", "Meals Served", "Nourishing workplaces, communities, and institutions every day."], ["XX M+", "Sq. Ft. Managed", "Maintaining safe, efficient, and high-performing environments."], ["XX+", "Healthcare Assets Managed", "Supporting reliable healthcare operations and patient care."], ["XX+", "Infrastructure & Community Projects", "Contributing to sustainable growth and resilient ecosystems."]].map(([num, label, desc], i) => (
+                  <div key={i} className="fdn-cell">
+                    <div className="fdn-tick"></div>
+                    <div className="fdn-num">{num}</div>
+                    <div className="fdn-lbl">{label}</div>
+                    <div className="fdn-dsc">{desc}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -213,26 +262,21 @@ export default function Home({ go }) {
       {/* Certifications */}
       <section style={{ padding: "clamp(50px,7vw,90px) 0", background: "#fff", borderTop: "1px solid rgba(25,25,25,.06)" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 clamp(20px,4vw,56px)" }}>
-          <div style={{ textAlign: "center", marginBottom: "clamp(44px,5vw,64px)" }}>
-            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 14, justifyContent: "center" }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>CERTIFICATIONS &amp; ACCREDITATIONS<span style={{ width: 26, height: 2, background: "#43934A" }}></span></div>
-            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,44px)", color: "#191919" }}>Built on standards you can trust</h2>
+          <div style={{ textAlign: "center", marginBottom: "clamp(30px,4vw,48px)" }}>
+            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 10, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 10, justifyContent: "center" }}><span style={{ width: 28, height: 2, background: "#0373ff" }}></span>CERTIFICATIONS &amp; ACCREDITATIONS<span style={{ width: 28, height: 2, background: "#43934A" }}></span></div>
+            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.6vw,46px)", color: "#191919", lineHeight: 1.05 }}>Built on standards you can trust</h2>
           </div>
         </div>
-        <div className="cert-marquee" data-reveal>
-          <div className="cert-track">
+        <div className="cert-marquee" data-reveal style={{ padding: "10px 0 4px" }}>
+          <div className="cert-track" style={{ gap: 26, paddingLeft: 12 }}>
             {[...CERTS, ...CERTS].map((cert, i) => (
-              <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 20, padding: "0 clamp(25px,3vw,45px)", flex: "none", width: "clamp(230px,22vw,280px)" }}>
-                {cert.image ? (
-                  <img src={cert.image} alt={cert.name} style={{ height: 135, width: "auto", objectFit: "contain" }} />
-                ) : (
-                  <div style={{ width: 135, height: 135, borderRadius: "50%", border: `2px solid ${cert.color}`, background: `${cert.color}14`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 4, padding: 16, textAlign: "center", flex: "none" }}>
-                    <span style={{ fontFamily: "Inter Tight", fontWeight: 600, fontSize: 16, lineHeight: 1.15, color: "#191919" }}>{cert.name.split(":")[0]}</span>
-                    <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: ".12em", color: cert.color }}>CERTIFIED</span>
-                  </div>
-                )}
-                <div style={{ textAlign: "center" }}>
-                  <div style={{ fontFamily: "Inter Tight", fontWeight: 600, fontSize: 17, color: "#191919" }}>{cert.name}</div>
-                  <div style={{ fontSize: 13, color: "#6E6A61", marginTop: 4 }}>{cert.sub}</div>
+              <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 18, padding: "18px 18px 16px", flex: "none", width: "clamp(215px,18vw,260px)", height: 160, borderRadius: 24, border: "1px solid rgba(25,25,25,.12)", background: "#fff", boxShadow: "0 1px 0 rgba(25,25,25,.02)" }}>
+                <div style={{ height: 74, width: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <img src={cert.image} alt={cert.name} style={{ maxWidth: "100%", maxHeight: 74, width: "auto", objectFit: "contain", display: "block" }} />
+                </div>
+                <div style={{ textAlign: "center", width: "100%" }}>
+                  <div style={{ fontFamily: "Inter Tight", fontWeight: 600, fontSize: 16, color: "#666", lineHeight: 1.15 }}>{cert.name}</div>
+                  <div style={{ fontSize: 12, color: "#A8A39B", marginTop: 6, lineHeight: 1.3 }}>{cert.sub}</div>
                 </div>
               </div>
             ))}
@@ -255,9 +299,24 @@ export default function Home({ go }) {
               <div style={{ width: "100%", maxWidth: 450, aspectRatio: "1" }}>
                 <Globe
                   markers={[
-                    { id: "india", location: [20.6, 78.96], label: "India" },
-                    { id: "dubai", location: [25.2, 55.27], label: "Dubai, UAE" },
-                    { id: "singapore", location: [1.35, 103.82], label: "Singapore" },
+                    { 
+                      id: "india", 
+                      location: [20.6, 78.96], 
+                      label: "India",
+                      details: `India Office\nCatalyst Service Solutions Partners Private Limited\n\n401/402, Yash Tower, Opp. D.A.V Public\nSchool, Aundh, Pune – 411007\n\nEmail: sales@catalystsolutions.eco`
+                    },
+                    { 
+                      id: "dubai", 
+                      location: [25.2, 55.27], 
+                      label: "Dubai, UAE",
+                      details: `Middle East\nCatalyst Catering Services LLC (CCS)\n\nDarwish Compound, Warehouse No.4,\nBuilding No: 3, DIP-2,\nDubai\n\nEmail: info@catalystgroupme.com`
+                    },
+                    { 
+                      id: "singapore", 
+                      location: [1.35, 103.82], 
+                      label: "Singapore",
+                      details: `Singapore Office\nComprehensive Support Services Pte. Ltd\n\n12 Woodlands Square, #02-75, Woods\nSquare Tower 1, Singapore – 737715\n\nEmail: sales@catalystsolutions.eco`
+                    },
                   ]}
                   focusLocation={null}
                   markerColor={[1, 0.498, 0]}
@@ -267,8 +326,8 @@ export default function Home({ go }) {
                   mapBrightness={10}
                   markerSize={0.07}
                   markerElevation={0.01}
-                  speed={0.002}
-                  initialPhi={1.5}
+                  speed={0}
+                  initialPhi={3.33}
                   theta={0.3}
                   diffuse={1.2}
                   mapSamples={16000}

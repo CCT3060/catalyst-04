@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ChevronDown, Menu, X, UtensilsCrossed, Building2, Factory, Stethoscope, Users, Briefcase, Landmark, GraduationCap, Home, Zap, ArrowUpRight } from "lucide-react";
 
 export default function Nav({ go, darkHero, activeNav, mobileOpen, setMobileOpen }) {

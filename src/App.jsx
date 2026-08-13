@@ -84,7 +84,7 @@ export default function App() {
       {mobileOpen && (
         <div style={{position:"fixed",inset:0,zIndex:99,background:"rgba(25,25,25,.97)",backdropFilter:"blur(20px)",display:"flex",flexDirection:"column",justifyContent:"center",gap:6,padding:"0 40px"}}>
           {["home","about","sectors","technologies","careers","contact"].map(p => (
-            <span key={p} className="navlink nav-dark" onClick={() => go(p)} style={{fontSize:30,fontWeight:600,fontFamily:"Inter Tight",padding:"10px 0",textTransform:"capitalize"}}>{p === "home" ? "Home" : p.charAt(0).toUpperCase() + p.slice(1).replace(/([A-Z])/g,' $1')}</span>
+            <span key={p} className="navlink nav-dark" onClick={() => go(p)} style={{fontSize:30,fontWeight:600,fontFamily:"Outfit",padding:"10px 0",textTransform:"capitalize"}}>{p === "home" ? "Home" : p.charAt(0).toUpperCase() + p.slice(1).replace(/([A-Z])/g,' $1')}</span>
           ))}
           <button onClick={() => setMobileOpen(false)} style={{position:"absolute",top:24,right:28,background:"transparent",color:"#fff",fontSize:30,border:"none",cursor:"pointer"}}>✕</button>
         </div>

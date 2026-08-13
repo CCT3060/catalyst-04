@@ -1,4 +1,4 @@
-ï»¿import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 
 /* Shared building blocks for the five solution pages.
    Everything follows the site tokens: ink #191919, cream #F9F7F3,
@@ -22,7 +22,7 @@ export function SectionHead({ kicker, kickerColor, dashColor, title, sub, center
   );
 }
 
-/* Light editorial hero shared by the service pages â€” cream canvas,
+/* Light editorial hero shared by the service pages — cream canvas,
    arch-cropped imagery, handwritten note, proof chips */
 export function ServiceHero({ go, kicker, kickerColor = "#0258cc", dash = "#0373ff", glow = "rgba(3,115,255,.08)", title, sub, ctaLabel = "Talk to our team", ctaPage = "contact", img, imgAlt = "", note, noteColor = "#0258cc", chips = [] }) {
   return (
@@ -55,7 +55,7 @@ export function ServiceHero({ go, kicker, kickerColor = "#0258cc", dash = "#0373
   );
 }
 
-/* Editorial numbered service index â€” replaces icon-card grids */
+/* Editorial numbered service index — replaces icon-card grids */
 export function NumberedIndex({ items }) {
   return (
     <div>
@@ -71,7 +71,7 @@ export function NumberedIndex({ items }) {
   );
 }
 
-/* Kinetic industries band â€” replaces static chip clouds */
+/* Kinetic industries band — replaces static chip clouds */
 export function IndustriesMarquee({ kicker = "Industries We Serve", title, sub, industries }) {
   const half = Math.ceil(industries.length / 2);
   const rows = industries.length > 6 ? [industries.slice(0, half), industries.slice(half)] : [industries];
@@ -87,7 +87,7 @@ export function IndustriesMarquee({ kicker = "Industries We Serve", title, sub, 
           <div className={`cert-track${r % 2 ? " rev" : ""}`}>
             {[...row, ...row].map((name, i) => (
               <div key={i} style={{ display: "flex", alignItems: "center", gap: 28, paddingRight: 28, whiteSpace: "nowrap" }}>
-                <span style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 600, fontSize: "clamp(22px,2.6vw,34px)", letterSpacing: "-.02em", color: r % 2 ? "rgba(255,255,255,.35)" : "rgba(255,255,255,.9)" }}>{name}</span>
+                <span style={{ fontFamily: "Outfit, sans-serif", fontWeight: 600, fontSize: "clamp(22px,2.6vw,34px)", letterSpacing: "-.02em", color: r % 2 ? "rgba(255,255,255,.35)" : "rgba(255,255,255,.9)" }}>{name}</span>
                 <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#0373ff", flexShrink: 0 }}></span>
               </div>
             ))}
@@ -98,7 +98,7 @@ export function IndustriesMarquee({ kicker = "Industries We Serve", title, sub, 
   );
 }
 
-/* Device frame for real product screenshots â€” phone */
+/* Device frame for real product screenshots — phone */
 export function PhoneFrame({ src, alt = "", width = "clamp(210px,22vw,260px)", style }) {
   return (
     <div style={{ width, aspectRatio: "9/19", borderRadius: 44, background: "#111", border: "9px solid #191919", boxShadow: "0 30px 70px rgba(0,0,0,.28)", position: "relative", overflow: "hidden", flexShrink: 0, ...style }}>
@@ -108,7 +108,7 @@ export function PhoneFrame({ src, alt = "", width = "clamp(210px,22vw,260px)", s
   );
 }
 
-/* Device frame for real product screenshots â€” browser window */
+/* Device frame for real product screenshots — browser window */
 export function BrowserFrame({ src, alt = "", url = "portal.catalystsolutions.eco", style }) {
   return (
     <div style={{ borderRadius: 18, overflow: "hidden", background: "#fff", border: "1px solid rgba(25,25,25,.1)", boxShadow: "0 30px 70px rgba(0,0,0,.18)", ...style }}>
@@ -140,7 +140,7 @@ export function StatStrip({ stats, dark }) {
     <div style={{ display: "grid", gridTemplateColumns: `repeat(auto-fit,minmax(200px,1fr))`, gap: 1, background: dark ? "rgba(255,255,255,.12)" : "rgba(25,25,25,.1)", border: `1px solid ${dark ? "rgba(255,255,255,.12)" : "rgba(25,25,25,.1)"}`, borderRadius: 24, overflow: "hidden" }}>
       {stats.map(([value, label, note], i) => (
         <div key={i} data-reveal data-delay={String(Math.min(i, 4))} style={{ background: dark ? "#191919" : "#fff", padding: "clamp(24px,3vw,38px) clamp(20px,2.4vw,32px)" }}>
-          <div style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 700, fontSize: "clamp(30px,3.2vw,44px)", letterSpacing: "-.02em", lineHeight: 1, color: dark ? "#0373ff" : "#191919" }}>{value}</div>
+          <div style={{ fontFamily: "Outfit, sans-serif", fontWeight: 700, fontSize: "clamp(30px,3.2vw,44px)", letterSpacing: "-.02em", lineHeight: 1, color: dark ? "#0373ff" : "#191919" }}>{value}</div>
           <div style={{ fontSize: 15.5, fontWeight: 600, marginTop: 12, color: dark ? "#fff" : "#191919" }}>{label}</div>
           {note && <p style={{ fontSize: 13.5, lineHeight: 1.55, marginTop: 6, color: dark ? "rgba(255,255,255,.6)" : "#6E6A61" }}>{note}</p>}
         </div>

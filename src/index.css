@@ -1,11 +1,11 @@
-﻿@import "tailwindcss";
+@import "tailwindcss";
 @config "../tailwind.config.js";
 
 * { box-sizing: border-box }
 
 body {
   margin: 0;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: "Outfit", system-ui, sans-serif;
   color: #191919;
   background: #fff;
   -webkit-font-smoothing: antialiased;
@@ -13,7 +13,7 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: "Inter Tight", sans-serif;
+  font-family: "Outfit", sans-serif;
   margin: 0;
   font-weight: 600;
   letter-spacing: -.02em;
@@ -109,7 +109,7 @@ button { font-family: inherit; border: none; cursor: pointer }
 
 .gradtext { color: #0373ff }
 
-/* ── Certifications marquee ── */
+/* -- Certifications marquee -- */
 .cert-marquee {
   overflow: hidden;
   width: 100%;
@@ -124,7 +124,7 @@ button { font-family: inherit; border: none; cursor: pointer }
 .cert-marquee:hover .cert-track { animation-play-state: paused }
 @keyframes certscroll { to { transform: translateX(-50%) } }
 
-/* ── Solutions kit: editorial numbered index ── */
+/* -- Solutions kit: editorial numbered index -- */
 .svc-row {
   display: grid;
   grid-template-columns: 64px 1fr 1.15fr 40px;
@@ -136,7 +136,7 @@ button { font-family: inherit; border: none; cursor: pointer }
 }
 .svc-row:last-of-type { border-bottom: 1px solid rgba(25,25,25,.12) }
 .svc-num {
-  font-family: "Inter Tight", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-weight: 600; font-size: 14px;
   letter-spacing: .06em; color: #A8A296;
   padding-top: 6px;
@@ -159,10 +159,10 @@ button { font-family: inherit; border: none; cursor: pointer }
   .svc-arrow { display: none }
 }
 
-/* ── Solutions kit: marquee reverse direction ── */
+/* -- Solutions kit: marquee reverse direction -- */
 .cert-track.rev { animation-direction: reverse }
 
-/* ── Sectors pinned reveal ── */
+/* -- Sectors pinned reveal -- */
 @keyframes sectorIn { from { opacity: 0; transform: translateY(16px) } to { opacity: 1; transform: none } }
 .sector-swap { animation: sectorIn .55s cubic-bezier(.16,.84,.44,1) both }
 
@@ -200,7 +200,7 @@ button { font-family: inherit; border: none; cursor: pointer }
 }
 .ldr-header { display: flex; justify-content: space-between; align-items: flex-start }
 .ldr-title {
-  font-family: "Inter Tight",sans-serif; font-size: 22px; font-weight: 600;
+  font-family: "Outfit", sans-serif; font-size: 22px; font-weight: 600;
   line-height: 1.15; transform: translateZ(30px);
 }
 .ldr-role {
@@ -220,7 +220,7 @@ button { font-family: inherit; border: none; cursor: pointer }
   width: 100%; padding: 12px; border-radius: 999px;
   background: rgba(255,255,255,.12); backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,.2); color: #fff;
-  font-family: "Inter Tight",sans-serif; font-weight: 500; font-size: 13.5px;
+  font-family: "Outfit", sans-serif; font-weight: 500; font-size: 13.5px;
   text-align: center; cursor: pointer; transition: background .3s,transform .2s;
   transform: translateZ(28px); letter-spacing: .02em;
 }
@@ -233,7 +233,7 @@ button { font-family: inherit; border: none; cursor: pointer }
   box-shadow: 0 20px 50px rgba(25,25,25,.25); height: 26rem;
 }
 .ldr-quote-text {
-  font-family: "Inter Tight",sans-serif; font-size: clamp(18px,1.6vw,22px);
+  font-family: "Outfit", sans-serif; font-size: clamp(18px,1.6vw,22px);
   font-weight: 500; line-height: 1.45; color: rgba(255,255,255,.92);
 }
 .ldr-quote-mark {
@@ -242,7 +242,7 @@ button { font-family: inherit; border: none; cursor: pointer }
   display: block; margin-bottom: 10px; opacity: .85;
 }
 
-/* ── Solutions Ecosystem: expanding capability strip ── */
+/* -- Solutions Ecosystem: expanding capability strip -- */
 .eco-strip {
   display: flex;
   gap: 12px;
@@ -284,14 +284,14 @@ button { font-family: inherit; border: none; cursor: pointer }
   flex-shrink: 0;
 }
 .eco-idx {
-  font-family: "Inter Tight", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 12.5px; font-weight: 600; letter-spacing: .14em;
   color: rgba(255,255,255,.62);
 }
 .eco-vtitle {
   position: absolute; left: 22px; bottom: 26px; z-index: 2;
   writing-mode: vertical-rl; transform: rotate(180deg);
-  font-family: "Inter Tight", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-weight: 600; font-size: 17px; letter-spacing: .01em;
   color: #fff; white-space: nowrap;
   max-height: 72%; overflow: hidden;
@@ -310,7 +310,7 @@ button { font-family: inherit; border: none; cursor: pointer }
   transition-delay: .28s;
 }
 .eco-name {
-  font-family: "Inter Tight", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-weight: 600; font-size: clamp(22px,2vw,29px);
   letter-spacing: -.02em; line-height: 1.12; color: #fff;
 }
@@ -327,7 +327,7 @@ button { font-family: inherit; border: none; cursor: pointer }
 }
 .eco-panel.on .eco-cta:hover { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.7) }
 
-/* ── Sectors: editorial index + sticky visual ── */
+/* -- Sectors: editorial index + sticky visual -- */
 .sec-grid {
   display: grid;
   grid-template-columns: 1.05fr 1fr;
@@ -344,12 +344,12 @@ button { font-family: inherit; border: none; cursor: pointer }
 }
 .sec-head:focus-visible { outline: 2px solid #0373ff; outline-offset: -2px; border-radius: 8px }
 .sec-num {
-  font-family: "Inter Tight", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 13px; font-weight: 600; letter-spacing: .08em;
   color: #A8A296; transition: color .3s;
 }
 .sec-name {
-  font-family: "Inter Tight", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-weight: 600; font-size: clamp(17px,1.55vw,21px);
   letter-spacing: -.01em; line-height: 1.25;
   color: #191919; transition: color .3s;
@@ -374,13 +374,13 @@ button { font-family: inherit; border: none; cursor: pointer }
 }
 .sec-link {
   display: inline-flex; align-items: center; gap: 7px;
-  margin-top: 16px; font-family: "Inter Tight", sans-serif;
+  margin-top: 16px; font-family: "Outfit", sans-serif;
   font-weight: 600; font-size: 13.5px; color: #0258cc;
   cursor: pointer; transition: gap .25s;
 }
 .sec-link:hover { gap: 11px }
 
-/* ── Foundations: dark metrics board ── */
+/* -- Foundations: dark metrics board -- */
 .fdn-panel {
   position: relative; overflow: hidden;
   background: #161616; border-radius: 36px;
@@ -394,7 +394,7 @@ button { font-family: inherit; border: none; cursor: pointer }
 }
 .fdn-cap {
   display: flex; align-items: center; gap: 16px;
-  font-family: "Inter Tight", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 11.5px; font-weight: 600; letter-spacing: .18em;
   color: rgba(255,255,255,.45);
 }
@@ -408,7 +408,7 @@ button { font-family: inherit; border: none; cursor: pointer }
 }
 .fdn-cell:hover .fdn-tick { width: 46px; background: #43934A }
 .fdn-num {
-  font-family: "Inter Tight", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-weight: 600; font-size: clamp(30px,2.6vw,40px);
   letter-spacing: -.02em; line-height: 1; color: #fff;
 }
@@ -425,13 +425,13 @@ button { font-family: inherit; border: none; cursor: pointer }
   .fdn-grid .fdn-cell:first-child { border-top: none }
 }
 
-/* ── Food Services page ── */
+/* -- Food Services page -- */
 .fs-arch { border-radius: 999px 999px 32px 32px; overflow: hidden }
 .fs-chip {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 9px 16px; border-radius: 999px;
   border: 1px solid rgba(25,25,25,.14); background: #fff;
-  font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 13px; color: #46433C;
+  font-family: "Outfit", sans-serif; font-weight: 600; font-size: 13px; color: #46433C;
 }
 .fs-chip svg { color: #377B3D }
 .fs-chip.blue svg { color: #0258cc }
@@ -444,7 +444,7 @@ button { font-family: inherit; border: none; cursor: pointer }
 .fs-menu-row:hover { background: #fff; padding-left: 22px; padding-right: 22px }
 .fs-menu-top { display: flex; align-items: baseline; gap: 16px }
 .fs-menu-name {
-  font-family: "Inter Tight", sans-serif; font-weight: 600;
+  font-family: "Outfit", sans-serif; font-weight: 600;
   font-size: clamp(19px,1.9vw,24px); letter-spacing: -.01em;
   color: #191919; transition: color .3s; white-space: nowrap;
 }
@@ -452,7 +452,7 @@ button { font-family: inherit; border: none; cursor: pointer }
 .fs-menu-note { font-family: "Caveat", cursive; font-weight: 600; font-size: 20px; color: #377B3D; margin-left: 12px; white-space: nowrap }
 .fs-menu-dots { flex: 1; border-bottom: 2px dotted rgba(25,25,25,.28); transform: translateY(-5px); min-width: 40px }
 .fs-menu-tag {
-  font-family: "Inter Tight", sans-serif; font-weight: 600;
+  font-family: "Outfit", sans-serif; font-weight: 600;
   font-size: 11.5px; letter-spacing: .14em; color: #8A857B; white-space: nowrap;
 }
 .fs-menu-desc { margin-top: 8px; font-size: 15px; line-height: 1.65; color: #6E6A61; max-width: 640px }
@@ -478,18 +478,18 @@ button { font-family: inherit; border: none; cursor: pointer }
 .fs-why-card:hover::before { width: 100% }
 .fs-why-card.blue::before { background: #0373ff }
 
-/* ── Nav: CTA pill + dropdown menus ── */
+/* -- Nav: CTA pill + dropdown menus -- */
 .nav-cta {
   display: inline-flex; align-items: center; gap: 8px;
   background: #191919; color: #fff;
-  font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 14px;
+  font-family: "Outfit", sans-serif; font-weight: 600; font-size: 14px;
   padding: 12px 24px; border-radius: 999px; white-space: nowrap;
   transition: transform .25s cubic-bezier(.16,.84,.44,1), box-shadow .25s, background .3s, color .3s;
 }
 .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(25,25,25,.25) }
 .nav-dark .nav-cta { background: #fff; color: #191919 }
 .menu-cap {
-  font-family: "Inter Tight", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 10.5px; font-weight: 600; letter-spacing: .18em;
   color: #A8A296; padding: 8px 14px 6px;
 }
@@ -507,7 +507,7 @@ button { font-family: inherit; border: none; cursor: pointer }
   transition: background .25s, color .25s;
 }
 .menu-item:hover .menu-ico { background: #0373ff; color: #fff }
-.menu-name { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 14px; color: #191919; line-height: 1.2 }
+.menu-name { font-family: "Outfit", sans-serif; font-weight: 600; font-size: 14px; color: #191919; line-height: 1.2 }
 .menu-sub { font-size: 11.5px; color: #8A857B; margin-top: 2px }
 .menu-arr { margin-left: auto; color: #191919; opacity: 0; transform: translate(-4px,4px); transition: opacity .25s, transform .25s; flex-shrink: 0 }
 .menu-item:hover .menu-arr { opacity: 1; transform: none }
@@ -517,7 +517,7 @@ button { font-family: inherit; border: none; cursor: pointer }
   .fs-menu-name { white-space: normal }
 }
 
-/* ── About: hero with inline image chips + vision/mission panel ── */
+/* -- About: hero with inline image chips + vision/mission panel -- */
 .abt-chip {
   display: inline-block;
   height: .74em; width: 1.35em;
@@ -532,7 +532,7 @@ button { font-family: inherit; border: none; cursor: pointer }
 .abt-chip.r2 { transform: rotate(2.5deg) }
 .abt-chip:hover { transform: rotate(0deg) scale(1.12) }
 .ovw-cap {
-  font-family: "Inter Tight", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 11.5px; font-weight: 600; letter-spacing: .18em;
   color: #A8A296; margin-bottom: 4px;
 }
@@ -552,7 +552,7 @@ button { font-family: inherit; border: none; cursor: pointer }
   transition: background .25s, color .25s;
 }
 .ovw-row:hover .ovw-ico { background: #0373ff; color: #fff }
-.ovw-name { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 15.5px; color: #191919; line-height: 1.25 }
+.ovw-name { font-family: "Outfit", sans-serif; font-weight: 600; font-size: 15.5px; color: #191919; line-height: 1.25 }
 .ovw-sub { font-size: 12.5px; color: #8A857B; margin-top: 2px }
 .ovw-arr { margin-left: auto; color: #191919; opacity: 0; transform: translate(-4px,4px); transition: opacity .25s, transform .25s; flex-shrink: 0 }
 .ovw-row:hover .ovw-arr { opacity: 1; transform: none }
@@ -565,7 +565,7 @@ button { font-family: inherit; border: none; cursor: pointer }
   .vm-cell + .vm-cell { border-left: none; border-top: 1px solid rgba(255,255,255,.12) }
 }
 
-/* ── Core Values: editorial ledger ── */
+/* -- Core Values: editorial ledger -- */
 .val-row {
   display: grid; grid-template-columns: 56px minmax(200px,300px) 1fr;
   gap: clamp(16px,3vw,40px); align-items: center;
@@ -583,7 +583,7 @@ button { font-family: inherit; border: none; cursor: pointer }
 }
 .val-row:hover .val-ico { background: #0373ff; color: #fff; transform: rotate(-6deg) scale(1.05) }
 .val-name {
-  font-family: "Inter Tight", sans-serif; font-weight: 600;
+  font-family: "Outfit", sans-serif; font-weight: 600;
   font-size: clamp(22px,2.4vw,34px); letter-spacing: -.02em;
   color: #191919; line-height: 1.1;
 }
@@ -594,7 +594,7 @@ button { font-family: inherit; border: none; cursor: pointer }
   .val-row:hover { padding-left: clamp(4px,1vw,14px); padding-right: clamp(4px,1vw,14px) }
 }
 
-/* ── What sets us apart: checklist ledger ── */
+/* -- What sets us apart: checklist ledger -- */
 .apart-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: clamp(24px,3vw,48px) }
 .apart-cell {
   display: flex; gap: 16px; align-items: flex-start;
@@ -612,7 +612,7 @@ button { font-family: inherit; border: none; cursor: pointer }
   transition: background .35s, border-color .35s, color .35s, transform .45s cubic-bezier(.16,.84,.44,1);
 }
 .apart-cell:hover .apart-mark { background: #0373ff; border-color: #0373ff; color: #fff; transform: rotate(90deg) }
-.apart-t { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 16.5px; color: #191919; line-height: 1.3 }
+.apart-t { font-family: "Outfit", sans-serif; font-weight: 600; font-size: 16.5px; color: #191919; line-height: 1.3 }
 .apart-d { font-size: 13.5px; line-height: 1.55; color: #6E6A61; margin-top: 5px }
 @media(max-width:860px){
   .apart-grid { grid-template-columns: 1fr }
@@ -620,7 +620,7 @@ button { font-family: inherit; border: none; cursor: pointer }
   .apart-cell:last-child { border-bottom: 1px solid rgba(25,25,25,.12) }
 }
 
-/* ── Journey: dated spine timeline ── */
+/* -- Journey: dated spine timeline -- */
 .jny-wrap { position: relative; padding-top: 10px }
 .jny-spine {
   position: absolute; left: 50%; top: 0; bottom: 6px;
@@ -645,7 +645,7 @@ button { font-family: inherit; border: none; cursor: pointer }
 .jny-row.flip .jny-img { margin-left: auto }
 .jny-row.flip .jny-content p { margin-left: auto }
 .jny-year {
-  font-family: "Inter Tight", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-weight: 700; font-size: clamp(40px,4.4vw,62px);
   line-height: 1; letter-spacing: -.02em;
   color: transparent; -webkit-text-stroke: 1.5px rgba(25,25,25,.32);
@@ -689,11 +689,11 @@ button { font-family: inherit; border: none; cursor: pointer }
   .jny-note { display: inline-block; margin-top: 4px; margin-left: 10px }
 }
 
-/* ── CTA: pill button + text link ── */
+/* -- CTA: pill button + text link -- */
 .cta-btn {
   display: inline-flex; align-items: center; gap: 16px;
   background: #fff; color: #191919;
-  font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 16px;
+  font-family: "Outfit", sans-serif; font-weight: 600; font-size: 16px;
   padding: 8px 8px 8px 26px; border-radius: 999px;
   transition: transform .35s cubic-bezier(.16,.84,.44,1), box-shadow .35s;
 }
@@ -709,7 +709,7 @@ button { font-family: inherit; border: none; cursor: pointer }
 .cta-ghost {
   display: inline-flex; align-items: center; gap: 8px;
   background: none; color: rgba(255,255,255,.85);
-  font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 15.5px;
+  font-family: "Outfit", sans-serif; font-weight: 600; font-size: 15.5px;
   padding: 14px 4px; position: relative;
   transition: color .3s;
 }
@@ -728,7 +728,7 @@ button { font-family: inherit; border: none; cursor: pointer }
   .eco-panel, .eco-bg, .eco-body, .eco-vtitle, .sec-body, .sec-arr, .fdn-tick, .cta-btn, .cta-chip { transition: none !important }
 }
 
-/* ── Spotlight / glow card ── */
+/* -- Spotlight / glow card -- */
 [data-glow-card] {
   --x: -9999; --y: -9999; --glow-hue: 28;
   background-color: #fff;

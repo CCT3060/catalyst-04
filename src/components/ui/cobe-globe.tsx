@@ -316,7 +316,7 @@ export function Globe({
                 padding: "14px",
                 borderRadius: "10px",
                 boxShadow: "0 10px 40px rgba(0,0,0,0.15)",
-                fontFamily: "Inter, sans-serif",
+                fontFamily: "Outfit, sans-serif",
                 fontSize: "0.75rem",
                 lineHeight: "1.5",
                 textTransform: "none",

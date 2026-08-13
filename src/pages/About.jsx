@@ -1,7 +1,7 @@
 ﻿import { useEffect, useRef, useState } from "react";
 import CTA from "../components/CTA";
 import { StatStrip } from "../components/SolutionsKit";
-import { FloatingPaths } from "@/components/ui/background-paths";
+import { BeamsBackground } from "@/components/ui/beams-background";
 import partnerImg from "../assets/Partnerwithus.png";
 import { ProfileCard } from "@/components/ui/profile-card";
 import IndiaMap from "../components/IndiaMap";
@@ -126,7 +126,7 @@ export default function About({ go }) {
           <div data-reveal data-delay="1" style={{ position: "relative", borderRadius: 36, overflow: "hidden", background: "#161616", padding: "clamp(26px,3vw,38px)", display: "flex", flexDirection: "column", minHeight: 520 }}>
             <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(46% 55% at 88% 4%, rgba(3,115,255,.15), transparent 70%), radial-gradient(45% 45% at 8% 96%, rgba(67,147,74,.16), transparent 65%)" }}></div>
             <div style={{ position: "relative", display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 16, flexWrap: "wrap" }}>
-              <div style={{ fontFamily: "Inter Tight", fontSize: 11.5, letterSpacing: ".18em", fontWeight: 600, color: "rgba(255,255,255,.55)" }}>OUR PRESENCE · INDIA</div>
+              <div style={{ fontFamily: "Outfit", fontSize: 11.5, letterSpacing: ".18em", fontWeight: 600, color: "rgba(255,255,255,.55)" }}>OUR PRESENCE · INDIA</div>
               <div style={{ fontFamily: "Caveat, cursive", fontWeight: 600, fontSize: 21, color: "#8FBCFF", transform: "rotate(-2deg)" }}>and growing</div>
             </div>
             <div style={{ position: "relative", flex: 1, marginTop: 14, display: "flex", justifyContent: "center", minHeight: 340 }}>
@@ -134,13 +134,13 @@ export default function About({ go }) {
             </div>
             <div style={{ position: "relative", marginTop: 16, borderTop: "1px solid rgba(255,255,255,.12)", paddingTop: 16, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 14, flexWrap: "wrap" }}>
               <span style={{ fontSize: 13.5, color: "rgba(255,255,255,.66)" }}>Five offices, one shared standard — wherever we operate.</span>
-              <span style={{ display: "inline-flex", alignItems: "center", gap: 7, fontFamily: "Inter Tight", fontSize: 12, fontWeight: 600, letterSpacing: ".1em", color: "#fff" }}><MapPin size={13} /> 5 CITIES</span>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 7, fontFamily: "Outfit", fontSize: 12, fontWeight: 600, letterSpacing: ".1em", color: "#fff" }}><MapPin size={13} /> 5 CITIES</span>
             </div>
           </div>
         </div>
 
         <div style={{ maxWidth: 1240, margin: "70px auto 0" }}>
-          <StatStrip stats={[["XX+", "Locations", "Supporting diverse industries through integrated service excellence."], ["XX,XXX+", "Workforce", "Delivering expertise, care, and commitment every day."], ["XX+", "Client Partnerships", "Built on trust, performance, and shared success."], ["XX M+", "Meals Served", "Nourishing communities and workplaces."], ["XX M+", "Sq. Ft. Managed", "Creating safe, efficient, and future-ready spaces."]]} />
+          <StatStrip stats={[["100+", "Locations", "Supporting diverse industries through integrated service excellence."], ["6500+", "Workforce", "Delivering expertise, care, and commitment every day."], ["100+", "Client Partnerships", "Built on trust, performance, and shared success."], ["2Lakhs+", "Meals Served", "Nourishing communities and workplaces."], ["75+", "Sq. Ft. Managed", "Creating safe, efficient, and future-ready spaces."]]} />
         </div>
       </section>
 
@@ -185,18 +185,16 @@ export default function About({ go }) {
       </section>
 
       {/* What Drives Us */}
-      <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "rgb(249, 247, 243)", position: "relative", overflow: "hidden" }}>
-        <div className="absolute inset-0">
-          <FloatingPaths position={1} />
-          <FloatingPaths position={-1} />
-        </div>
-        <div style={{ position: "relative", maxWidth: 1000, margin: "0 auto", textAlign: "center" }}>
-          <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0373ff", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18, justifyContent: "center" }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>What Drives Us</div>
-          <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(30px,4vw,52px)", color: "#191919" }}>Building Better Futures Through Better Environments</h2>
-          <p data-reveal data-delay="2" style={{ marginTop: 24, fontSize: 18, lineHeight: 1.75, color: "#6E6A61" }}>The world is changing rapidly. Organizations need partners who can help them navigate complexity while keeping people at the center of every decision. Catalyst's leadership team is committed to creating integrated ecosystems that connect food, facilities, infrastructure, healthcare technology, and workforce solutions into experiences that improve everyday life.</p>
-          <p data-reveal data-delay="3" style={{ marginTop: 28, fontFamily: "Inter Tight", fontSize: "clamp(20px,2.4vw,30px)", fontWeight: 600, color: "#191919", lineHeight: 1.4 }}>Because leadership is not measured by what we build for ourselves.<br /><span className="gradtext">It is measured by the impact we create for others.</span></p>
-        </div>
-      </section>
+      <BeamsBackground intensity="medium" className="!min-h-0">
+        <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", position: "relative", overflow: "hidden" }}>
+          <div style={{ position: "relative", maxWidth: 1000, margin: "0 auto", textAlign: "center" }}>
+            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#8FBCFF", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18, justifyContent: "center" }}><span style={{ width: 26, height: 2, background: "#8FBCFF" }}></span>What Drives Us</div>
+            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(30px,4vw,52px)", color: "#FFFFFF" }}>Building Better Futures Through Better Environments</h2>
+            <p data-reveal data-delay="2" style={{ marginTop: 24, fontSize: 18, lineHeight: 1.75, color: "rgba(255,255,255,0.7)" }}>The world is changing rapidly. Organizations need partners who can help them navigate complexity while keeping people at the center of every decision. Catalyst's leadership team is committed to creating integrated ecosystems that connect food, facilities, infrastructure, healthcare technology, and workforce solutions into experiences that improve everyday life.</p>
+            <p data-reveal data-delay="3" style={{ marginTop: 28, fontFamily: "Outfit", fontSize: "clamp(20px,2.4vw,30px)", fontWeight: 600, color: "#FFFFFF", lineHeight: 1.4 }}>Because leadership is not measured by what we build for ourselves.<br /><span className="gradtext">It is measured by the impact we create for others.</span></p>
+          </div>
+        </section>
+      </BeamsBackground>
 
       {/* Journey — dated spine timeline */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#fff" }}>
@@ -227,7 +225,7 @@ export default function About({ go }) {
             ))}
           </div>
 
-          <div data-reveal style={{ marginTop: "clamp(50px,6vw,80px)", textAlign: "center", fontFamily: "Inter Tight", fontSize: "clamp(20px,2.4vw,30px)", fontWeight: 500, color: "#191919" }}>Creating a better everyday experience for people everywhere.</div>
+          <div data-reveal style={{ marginTop: "clamp(50px,6vw,80px)", textAlign: "center", fontFamily: "Outfit", fontSize: "clamp(20px,2.4vw,30px)", fontWeight: 500, color: "#191919" }}>Creating a better everyday experience for people everywhere.</div>
         </div>
       </section>
 
@@ -260,7 +258,7 @@ export default function About({ go }) {
               <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>Because every environment shapes an outcome</h2>
               <p data-reveal data-delay="2" style={{ marginTop: 20, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>The spaces we experience every day influence how we perform, connect, recover, grow, and succeed. Yet most organizations manage these environments through fragmented solutions.<br /><br />We believe the greatest impact happens when everything works together — expertise, innovation, and operational excellence under one integrated approach.</p>
               <div data-reveal data-delay="3" style={{ marginTop: 28, paddingLeft: 20, borderLeft: "3px solid #0373ff" }}>
-                <p style={{ fontFamily: "Inter Tight", fontWeight: 500, fontSize: "clamp(17px,1.5vw,20px)", lineHeight: 1.55, color: "#191919" }}>Our role goes beyond delivering services — we help organizations unlock the full potential of their environments.</p>
+                <p style={{ fontFamily: "Outfit", fontWeight: 500, fontSize: "clamp(17px,1.5vw,20px)", lineHeight: 1.55, color: "#191919" }}>Our role goes beyond delivering services — we help organizations unlock the full potential of their environments.</p>
               </div>
             </div>
             <div>
@@ -285,7 +283,7 @@ export default function About({ go }) {
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#fff" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "clamp(44px,5vw,70px)" }}>
-            <h2 data-reveal style={{ fontSize: "clamp(36px,4.5vw,56px)", color: "#1E3B24", fontFamily: "Inter Tight", fontWeight: 500 }}>
+            <h2 data-reveal style={{ fontSize: "clamp(36px,4.5vw,56px)", color: "#1E3B24", fontFamily: "Outfit", fontWeight: 500 }}>
               Our <span style={{ color: "#0258cc", fontFamily: "Caveat, cursive", borderBottom: "3px solid #0258cc", paddingBottom: 6 }}>Offices</span>
             </h2>
           </div>
@@ -313,7 +311,7 @@ export default function About({ go }) {
               <div key={i} data-reveal data-delay={String(i)} className="lift" style={{ background: "#FDFBF8", border: "1px solid rgba(25,25,25,.06)", borderRadius: 16, padding: "clamp(30px,4vw,44px)", display: "flex", flexDirection: "column", gap: 16, boxShadow: "0 10px 40px rgba(0,0,0,0.03)" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
                   <MapPin size={22} color="#E91E63" fill="#E91E63" />
-                  <h3 style={{ fontSize: 20, color: "#1E3B24", fontFamily: "Inter Tight", fontWeight: 500 }}>{office.region}</h3>
+                  <h3 style={{ fontSize: 20, color: "#1E3B24", fontFamily: "Outfit", fontWeight: 500 }}>{office.region}</h3>
                 </div>
                 <div style={{ fontSize: 14, color: "#6E6A61", lineHeight: 1.7, flex: 1, display: "flex", flexDirection: "column" }}>
                   <p style={{ marginBottom: 20, whiteSpace: "pre-line" }}>{office.company}</p>

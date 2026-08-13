@@ -58,7 +58,7 @@ export default function FoodServices({ go }) {
             <p data-reveal data-delay="2" className="shown" style={{ marginTop: 24, fontSize: "clamp(16px,1.35vw,19px)", lineHeight: 1.7, color: "#46433C", maxWidth: 540 }}>Food shapes experiences far beyond the dining table — influencing wellbeing, productivity, and everyday engagement. We design and run the food programs behind India's workplaces, hospitals, and campuses.</p>
             <div data-reveal data-delay="3" className="shown" style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "14px 26px", marginTop: 32 }}>
               <button className="mag" onClick={() => go("contact")} style={{ background: "#191919", color: "#fff", fontWeight: 600, fontSize: 15.5, padding: "16px 32px", borderRadius: 999, display: "inline-flex", alignItems: "center", gap: 9 }}>Talk to our team <ArrowRight size={17} /></button>
-              <button onClick={() => document.getElementById("food-menu")?.scrollIntoView({ behavior: "smooth" })} style={{ background: "none", color: "#191919", fontFamily: "Inter Tight", fontWeight: 600, fontSize: 15, display: "inline-flex", alignItems: "center", gap: 7, padding: "14px 2px", borderBottom: "1px solid rgba(25,25,25,.3)" }}>See the menu <ArrowUpRight size={15} /></button>
+              <button onClick={() => document.getElementById("food-menu")?.scrollIntoView({ behavior: "smooth" })} style={{ background: "none", color: "#191919", fontFamily: "Outfit", fontWeight: 600, fontSize: 15, display: "inline-flex", alignItems: "center", gap: 7, padding: "14px 2px", borderBottom: "1px solid rgba(25,25,25,.3)" }}>See the menu <ArrowUpRight size={15} /></button>
             </div>
             <div data-reveal data-delay="4" className="shown" style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 34 }}>
               <span className="fs-chip"><BadgeCheck size={15} /> FSSAI-certified kitchens</span>
@@ -102,7 +102,7 @@ export default function FoodServices({ go }) {
               <div key={i} className="fs-imp-row">
                 <div className="fs-imp-ico"><Icon size={21} /></div>
                 <div>
-                  <div style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 600, fontSize: 19, color: "#191919" }}>{name}</div>
+                  <div style={{ fontFamily: "Outfit, sans-serif", fontWeight: 600, fontSize: 19, color: "#191919" }}>{name}</div>
                   <p style={{ fontSize: 15, color: "#6E6A61", lineHeight: 1.6, marginTop: 6 }}>{desc}</p>
                 </div>
               </div>
@@ -147,7 +147,7 @@ export default function FoodServices({ go }) {
             <div data-reveal data-delay="3" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "26px 32px", marginTop: 38 }} data-2col>
               {JOI_FEATURES.map(([name, desc], i) => (
                 <div key={i} style={{ borderTop: "1px solid rgba(255,255,255,.14)", paddingTop: 16 }}>
-                  <div style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 600, fontSize: 16.5, color: "#fff" }}>{name}</div>
+                  <div style={{ fontFamily: "Outfit, sans-serif", fontWeight: 600, fontSize: 16.5, color: "#fff" }}>{name}</div>
                   <p style={{ fontSize: 14, color: "rgba(255,255,255,.6)", lineHeight: 1.6, marginTop: 6 }}>{desc}</p>
                 </div>
               ))}

@@ -1,4 +1,4 @@
-﻿import CTA from "../components/CTA";
+import CTA from "../components/CTA";
 import { Sprout, Users, Award, Search, Lightbulb, Globe, TrendingUp, ArrowRight } from "lucide-react";
 
 export default function Careers({ go }) {
@@ -8,7 +8,7 @@ export default function Careers({ go }) {
         <div style={{ position: "relative", maxWidth: 1240, width: "100%", margin: "0 auto" }}>
           <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0373ff", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 22 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Careers</div>
           <h1 data-reveal data-delay="1" className="shown" style={{ fontSize: "clamp(36px,5.4vw,76px)", color: "#fff", maxWidth: 1000 }}>Life at <span className="gradtext">Catalyst</span></h1>
-          <p data-reveal data-delay="2" className="shown" style={{ marginTop: 26, maxWidth: 800, fontSize: "clamp(16px,1.3vw,19px)", lineHeight: 1.7, color: "rgba(255,255,255,.7)" }}>Catalyst is more than a workplace—it's a community of thinkers, creators, and problem-solvers united by a shared purpose: enhancing everyday well-being.</p>
+          <p data-reveal data-delay="2" className="shown" style={{ marginTop: 26, maxWidth: 800, fontSize: "clamp(16px,1.3vw,19px)", lineHeight: 1.7, color: "rgba(255,255,255,.7)" }}>Catalyst is more than a workplace�it's a community of thinkers, creators, and problem-solvers united by a shared purpose: enhancing everyday well-being.</p>
         </div>
       </section>
 
@@ -17,7 +17,7 @@ export default function Careers({ go }) {
           <div style={{ maxWidth: 760, marginBottom: 60 }}>
             <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Who We Are</div>
             <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(30px,3.8vw,50px)", color: "#191919" }}>A community united by purpose</h2>
-            <p data-reveal data-delay="2" style={{ marginTop: 20, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>Catalyst is more than a workplace—it's a community of thinkers, creators, and problem-solvers united by a shared purpose: enhancing everyday well-being. We empower our people to challenge conventions, embrace new ideas, and grow through meaningful opportunities.</p>
+            <p data-reveal data-delay="2" style={{ marginTop: 20, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>Catalyst is more than a workplace�it's a community of thinkers, creators, and problem-solvers united by a shared purpose: enhancing everyday well-being. We empower our people to challenge conventions, embrace new ideas, and grow through meaningful opportunities.</p>
             <p data-reveal data-delay="3" style={{ marginTop: 16, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>By fostering a culture of trust, innovation, and belonging, we create an environment where talent flourishes, careers evolve, and every contribution helps build a lasting impact.</p>
           </div>
 
@@ -73,7 +73,7 @@ export default function Careers({ go }) {
         </div>
       </section>
 
-      <CTA go={go} title="Ready to Make an Impact?" primaryLabel="Explore Opportunities →" primaryPage="contact" secondaryLabel="Learn About Us" secondaryPage="about" />
+      <CTA go={go} title="Ready to Make an Impact?" primaryLabel="Explore Opportunities ?" primaryPage="contact" secondaryLabel="Learn About Us" secondaryPage="about" />
     </div>
   );
 }

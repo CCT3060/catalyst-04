@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import CTA from "../components/CTA";
 import heroBg from "../assets/12.png";
 import partnerImg from "../assets/Partnerwithus.png";
@@ -89,7 +89,7 @@ export default function Technologies({ go }) {
                       {prod.category}
                     </div>
                   </div>
-                  <h3 style={{ fontSize: 24, color: "#1E3B24", fontFamily: "Inter Tight", fontWeight: 600, marginBottom: 12 }}>{prod.name}</h3>
+                  <h3 style={{ fontSize: 24, color: "#1E3B24", fontFamily: "Outfit", fontWeight: 600, marginBottom: 12 }}>{prod.name}</h3>
                   <p style={{ fontSize: 15, color: "#6E6A61", lineHeight: 1.6, flex: 1, marginBottom: 24 }}>
                     {prod.description}
                   </p>
@@ -111,7 +111,7 @@ export default function Technologies({ go }) {
                       {prod.process.map((step, si) => (
                         <React.Fragment key={si}>
                           <span style={{ fontWeight: 500, color: "#46433C" }}>{step}</span>
-                          {si < prod.process.length - 1 && <span style={{ color: "#0373ff" }}>→</span>}
+                          {si < prod.process.length - 1 && <span style={{ color: "#0373ff" }}>?</span>}
                         </React.Fragment>
                       ))}
                     </div>

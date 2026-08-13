@@ -1,4 +1,4 @@
-﻿// Simplified India silhouette (public-domain outline via the mapsicon project)
+// Simplified India silhouette (public-domain outline via the mapsicon project)
 // with Catalyst office locations plotted at their real geographic positions.
 
 import India from "@svg-maps/india";
@@ -34,7 +34,7 @@ export default function IndiaMap({ style }) {
             textAnchor={city.anchor}
             fill="rgba(255,255,255,.82)"
             fontSize="34"
-            fontFamily="Inter, sans-serif"
+            fontFamily="Outfit, sans-serif"
             fontWeight="500"
           >{city.name}</text>
         </g>

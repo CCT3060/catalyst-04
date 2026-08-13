@@ -4,9 +4,23 @@ import "./HeroSlider.css";
 
 const AUTO_MS = 7000;
 
+import hero1Img from "../assets/ChatGPT Image Aug 11, 2026, 11_44_50 AM.png";
+
 // Full-bleed cinematic hero. Each slide is one service line: a photographic
 // environment (remote imagery), the slide's brand accent, and the client copy.
 const SLIDES = [
+  {
+    id: "overview",
+    kicker: "Catalyst",
+    accent: "#0373ff",
+    lines: [
+      [{ t: "People at the Heart of" }],
+      [{ t: "Everything We " }, { t: "Do.", a: true }],
+    ],
+    para: "We partner organizations build healthier workplaces, safer communities, smarter infrastructure, and exceptional everyday experiences through integrated solutions that enhance well-being and drive performance.",
+    img: hero1Img,
+    alt: "People at the heart of everything we do",
+  },
   {
     id: "food",
     kicker: "Food Services",
@@ -33,7 +47,7 @@ const SLIDES = [
   },
   {
     id: "people",
-    kicker: "Staffing Solutions",
+    kicker: "Workforce Solutions",
     accent: "#FFC14A",
     lines: [
       [{ t: "People who make" }],
@@ -57,7 +71,7 @@ const SLIDES = [
   },
   {
     id: "healthcare",
-    kicker: "Healthcare Solutions",
+    kicker: "Healthcare Technology",
     accent: "#7CC584",
     lines: [
       [{ t: "One ecosystem." }],

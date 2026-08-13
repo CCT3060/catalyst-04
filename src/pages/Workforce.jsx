@@ -1,4 +1,4 @@
-ï»¿import CTA from "../components/CTA";
+import CTA from "../components/CTA";
 import { Kicker, SectionHead, NumberedIndex, ServiceHero, CutoutArch } from "../components/SolutionsKit";
 import staffingBg from "../assets/12.png";
 import workforceImg from "../assets/1.png";
@@ -69,7 +69,7 @@ const SOLUTIONS = [
     label: "Workforce MIS & Reporting",
     paras: [
       "Better workforce decisions begin with better visibility.",
-      "Our reporting systems provide organizations with structured insights into attendance, deployment, workforce performance, and operational metricsâ€”helping decision-makers move from assumptions to informed action.",
+      "Our reporting systems provide organizations with structured insights into attendance, deployment, workforce performance, and operational metrics—helping decision-makers move from assumptions to informed action.",
     ],
     items: [
       "Daily, weekly, and monthly MIS",
@@ -106,18 +106,18 @@ const WHY = [
   ["Compliance-Led Processes", "Defined processes and regular checks designed to support statutory and operational compliance."],
   ["Scalable Workforce Solutions", "Flexible solutions that can adapt as your workforce requirements evolve."],
   ["Operational Consistency", "Regular reporting, monitoring, and process discipline that help maintain continuity across locations."],
-  ["Human-Centric Approach", "Because every workforce is made up of peopleâ€”not just positions, numbers, or attendance records."],
+  ["Human-Centric Approach", "Because every workforce is made up of people—not just positions, numbers, or attendance records."],
 ];
 
 export default function Workforce({ go }) {
   return (
     <div data-screen-label="Workforce Solutions">
-      {/* Hero â€” light editorial */}
+      {/* Hero — light editorial */}
       <ServiceHero
         go={go}
         kicker="Workforce Solutions"
         title="The right people. The right support. The right impact."
-        sub="End-to-end staffing and workforce solutions â€” sourcing, deployment, payroll, compliance, and visibility, managed as one."
+        sub="End-to-end staffing and workforce solutions — sourcing, deployment, payroll, compliance, and visibility, managed as one."
         ctaLabel="Build your workforce with Catalyst"
         img={staffingBg}
         imgAlt="The people behind every Catalyst workforce"
@@ -125,7 +125,7 @@ export default function Workforce({ go }) {
         chips={[[Users, "XX,XXX+ workforce nationwide"], [MapPin, "Pan-India deployment"]]}
       />
 
-      {/* About Staffing â€” people cutout on arch */}
+      {/* About Staffing — people cutout on arch */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#fff" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1.05fr", gap: "clamp(40px,6vw,80px)", alignItems: "center" }} data-2col>
           <div data-reveal>
@@ -151,7 +151,7 @@ export default function Workforce({ go }) {
         </div>
       </section>
 
-      {/* Solution blocks â€” alternating, ruled lists */}
+      {/* Solution blocks — alternating, ruled lists */}
       {SOLUTIONS.map((s, idx) => (
         <section key={s.label} style={{ padding: "clamp(50px,7vw,90px) clamp(20px,4vw,56px)", background: idx % 2 === 0 ? "#F9F7F3" : "#fff" }}>
           <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(40px,6vw,80px)", alignItems: "center" }} data-2col>
@@ -168,7 +168,7 @@ export default function Workforce({ go }) {
                   <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: ".14em", textTransform: "uppercase", color: s.kickerColor, marginBottom: 6 }}>Solution includes:</div>
                   {s.items.map((item, i) => (
                     <div key={i} style={{ display: "grid", gridTemplateColumns: "40px 1fr", gap: 14, alignItems: "baseline", padding: "13px 0", borderBottom: i === s.items.length - 1 ? "none" : "1px solid rgba(25,25,25,.1)" }}>
-                      <span style={{ fontFamily: "Inter Tight, sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: ".06em", color: s.accent }}>{String(i + 1).padStart(2, "0")}</span>
+                      <span style={{ fontFamily: "Outfit, sans-serif", fontWeight: 600, fontSize: 13, letterSpacing: ".06em", color: s.accent }}>{String(i + 1).padStart(2, "0")}</span>
                       <span style={{ fontSize: 16, color: "#46433C", lineHeight: 1.5, fontWeight: 500 }}>{item}</span>
                     </div>
                   ))}
@@ -184,7 +184,7 @@ export default function Workforce({ go }) {
         </section>
       ))}
 
-      {/* Technology â€” dark band, ruled columns */}
+      {/* Technology — dark band, ruled columns */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#191919", color: "#fff", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(50% 60% at 88% 15%,rgba(3,115,255,.12),transparent 60%)" }}></div>
         <div style={{ position: "relative", maxWidth: 1240, margin: "0 auto" }}>
@@ -207,7 +207,7 @@ export default function Workforce({ go }) {
         </div>
       </section>
 
-      {/* Industries â€” editorial numbered rows */}
+      {/* Industries — editorial numbered rows */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
           <SectionHead
@@ -222,7 +222,7 @@ export default function Workforce({ go }) {
         </div>
       </section>
 
-      {/* Why Catalyst â€” ruled columns */}
+      {/* Why Catalyst — ruled columns */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#fff" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
           <SectionHead kicker="Why Catalyst" title="Why Organizations Choose Catalyst" maxWidth={680} />
@@ -243,7 +243,7 @@ export default function Workforce({ go }) {
           <div>
             <Kicker color="#377B3D" dash="#43934A">The Catalyst Difference</Kicker>
             <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(26px,3.2vw,42px)", color: "#191919" }}>We Manage the Workforce. You Focus on What Moves Your Business Forward.</h2>
-            <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>Managing people at scale comes with complexityâ€”recruitment, deployment, attendance, payroll, compliance, reporting, and performance. Catalyst brings these moving parts together through an integrated workforce management approach.</p>
+            <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>Managing people at scale comes with complexity—recruitment, deployment, attendance, payroll, compliance, reporting, and performance. Catalyst brings these moving parts together through an integrated workforce management approach.</p>
             <p data-reveal data-delay="3" style={{ marginTop: 16, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>With Catalyst as your workforce partner, your organization gains the ability to focus on its core business while we help manage the operational complexities of your workforce.</p>
           </div>
           <div data-reveal data-delay="1" style={{ background: "linear-gradient(160deg,#191919,#2b2b2b)", borderRadius: 32, padding: "clamp(36px,5vw,56px)", color: "#fff", position: "relative", overflow: "hidden" }}>

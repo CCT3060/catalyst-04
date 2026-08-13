@@ -1,4 +1,4 @@
-ï»¿import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const sectors = [
   {
@@ -24,7 +24,7 @@ const sectors = [
   },
   {
     num: "04", color: "#0373ff", labelColor: "#0258cc", label: "EDUCATION", title: "Education",
-    desc: "Educational institutions are more than places of learningâ€”they are environments that shape future generations. From schools and universities to student residences, Catalyst creates safe, hygienic, and inspiring campuses that foster academic excellence, student well-being, and seamless day-to-day operations. Our integrated solutions help educators focus on what matters most: empowering students to learn, grow, and thrive.",
+    desc: "Educational institutions are more than places of learning—they are environments that shape future generations. From schools and universities to student residences, Catalyst creates safe, hygienic, and inspiring campuses that foster academic excellence, student well-being, and seamless day-to-day operations. Our integrated solutions help educators focus on what matters most: empowering students to learn, grow, and thrive.",
     tags: ["Campus Experience", "Safety & Compliance", "Student Well-Being", "Operational Excellence", "Sustainable Campuses"],
     tagline: "Supporting environments where curiosity grows and futures take shape.",
     img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=1200"
@@ -88,7 +88,7 @@ export default function Sectors({ go, hash }) {
         </div>
       </section>
 
-      {/* Sectors â€” sticky visual scrollytelling */}
+      {/* Sectors — sticky visual scrollytelling */}
       <section style={{ padding: "clamp(70px,9vw,120px) clamp(20px,4vw,56px)", background: "#fff" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
 
@@ -96,7 +96,7 @@ export default function Sectors({ go, hash }) {
           <div data-reveal style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: "clamp(44px,5vw,70px)" }}>
             {sectors.map((s, i) => (
               <button key={i} onClick={() => jumpTo(i)} style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "10px 18px", borderRadius: 999, background: active === i ? "#191919" : "#F9F7F3", border: "1px solid rgba(25,25,25,.08)", cursor: "pointer", transition: "background .35s, color .35s" }}>
-                <span style={{ fontFamily: "Inter Tight", fontSize: 13, fontWeight: 600, color: s.color }}>{s.num}</span>
+                <span style={{ fontFamily: "Outfit", fontSize: 13, fontWeight: 600, color: s.color }}>{s.num}</span>
                 <span style={{ fontSize: 12, letterSpacing: ".14em", fontWeight: 600, color: active === i ? "#fff" : "#191919", transition: "color .35s" }}>{s.label}</span>
               </button>
             ))}
@@ -104,12 +104,12 @@ export default function Sectors({ go, hash }) {
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(40px,6vw,80px)", alignItems: "start" }} data-2col>
 
-            {/* left â€” content blocks, consistently aligned */}
+            {/* left — content blocks, consistently aligned */}
             <div>
               {sectors.map((s, i) => (
                 <article key={i} ref={el => { blocksRef.current[i] = el; }} style={{ minHeight: "58vh", display: "flex", flexDirection: "column", justifyContent: "center", padding: "clamp(36px,5vh,60px) 0", borderBottom: i < sectors.length - 1 ? "1px solid rgba(25,25,25,.07)" : "none", opacity: active === i ? 1 : 0.35, transition: "opacity .5s ease" }}>
                   <div style={{ display: "flex", alignItems: "baseline", gap: 14 }}>
-                    <span style={{ fontFamily: "Inter Tight", fontSize: 15, fontWeight: 600, color: s.color }}>{s.num}</span>
+                    <span style={{ fontFamily: "Outfit", fontSize: 15, fontWeight: 600, color: s.color }}>{s.num}</span>
                     <span style={{ fontSize: 13, letterSpacing: ".18em", color: s.labelColor, fontWeight: 600 }}>{s.label}</span>
                   </div>
                   <h2 style={{ fontSize: "clamp(26px,3vw,40px)", color: "#191919", marginTop: 14 }}>{s.title}</h2>
@@ -130,18 +130,18 @@ export default function Sectors({ go, hash }) {
               ))}
             </div>
 
-            {/* right â€” sticky image stage with the sitewide curtain wipe */}
+            {/* right — sticky image stage with the sitewide curtain wipe */}
             <div data-sector-sticky style={{ position: "sticky", top: 104, height: "calc(100vh - 170px)", minHeight: 440, borderRadius: 36, overflow: "hidden", background: "#191919" }}>
               {sectors.map((s, i) => (
                 <div key={i} aria-hidden={active !== i} style={{ position: "absolute", inset: 0, clipPath: i <= active ? "inset(0% 0 0 0)" : "inset(100% 0 0 0)", transition: "clip-path .9s cubic-bezier(.77,0,.18,1)", willChange: "clip-path" }}>
                   <img src={s.img} alt="" loading={i === 0 ? "eager" : "lazy"} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(15,15,15,.55) 0%, transparent 40%)" }}></div>
-                  <div style={{ position: "absolute", top: 22, right: 30, fontFamily: "Inter Tight", fontWeight: 600, fontSize: "clamp(64px,7vw,110px)", lineHeight: 1, color: "rgba(255,255,255,.22)", userSelect: "none" }}>{s.num}</div>
+                  <div style={{ position: "absolute", top: 22, right: 30, fontFamily: "Outfit", fontWeight: 600, fontSize: "clamp(64px,7vw,110px)", lineHeight: 1, color: "rgba(255,255,255,.22)", userSelect: "none" }}>{s.num}</div>
                   <div style={{ position: "absolute", left: 26, bottom: 24, display: "flex", alignItems: "center", gap: 12 }}>
                     <span style={{ width: 10, height: 10, borderRadius: "50%", background: s.color }}></span>
                     <span style={{ color: "#fff", fontSize: 13, letterSpacing: ".18em", fontWeight: 600 }}>{s.label}</span>
                   </div>
-                  <div style={{ position: "absolute", right: 28, bottom: 24, color: "rgba(255,255,255,.7)", fontFamily: "Inter Tight", fontSize: 14, fontWeight: 600 }}>{s.num} / 0{sectors.length}</div>
+                  <div style={{ position: "absolute", right: 28, bottom: 24, color: "rgba(255,255,255,.7)", fontFamily: "Outfit", fontSize: 14, fontWeight: 600 }}>{s.num} / 0{sectors.length}</div>
                 </div>
               ))}
             </div>
@@ -159,7 +159,7 @@ export default function Sectors({ go, hash }) {
           <p data-reveal data-delay="2" style={{ marginTop: 24, fontSize: 18, lineHeight: 1.75, color: "rgba(255,255,255,.72)" }}>Every sector has its own challenges. Every environment has its own expectations. But one principle remains constant: <span style={{ color: "#fff", fontWeight: 600 }}>Great environments create better outcomes.</span></p>
           <p data-reveal data-delay="3" style={{ marginTop: 18, fontSize: 16, lineHeight: 1.7, color: "rgba(255,255,255,.55)" }}>By combining operational excellence, innovation, sustainability, and a deep understanding of sector-specific needs, Catalyst helps organizations create environments that perform better, adapt faster, and deliver meaningful value over the long term.</p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 16, justifyContent: "center", marginTop: 38 }}>
-            <button className="mag" onClick={() => go("contact")} style={{ background: "#0373ff", color: "#fff", fontWeight: 600, fontSize: 16, padding: "17px 36px", borderRadius: 999 }}>Let's Create Impact Together! â†’</button>
+            <button className="mag" onClick={() => go("contact")} style={{ background: "#0373ff", color: "#fff", fontWeight: 600, fontSize: 16, padding: "17px 36px", borderRadius: 999 }}>Let's Create Impact Together! ?</button>
             <button className="mag" onClick={() => go("careers")} style={{ background: "rgba(255,255,255,.08)", color: "#fff", fontWeight: 600, fontSize: 16, padding: "17px 36px", borderRadius: 999, border: "1px solid rgba(255,255,255,.2)" }}>Join Us</button>
           </div>
         </div>

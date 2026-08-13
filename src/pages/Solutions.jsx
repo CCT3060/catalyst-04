@@ -1,4 +1,4 @@
-﻿import CTA from "../components/CTA";
+import CTA from "../components/CTA";
 import { UtensilsCrossed, Building2, Factory, Stethoscope, Users, Puzzle, Star, Lightbulb, Leaf, TrendingUp, Target, ArrowRight } from "lucide-react";
 
 export default function Solutions({ go }) {
@@ -16,8 +16,8 @@ export default function Solutions({ go }) {
 
       <section style={{padding:"clamp(70px,8vw,110px) clamp(20px,4vw,56px)",background:"#fff"}}>
         <div style={{maxWidth:1240,margin:"0 auto"}}>
-          <p data-reveal style={{maxWidth:900,fontSize:"clamp(18px,2vw,26px)",fontFamily:"Inter Tight",fontWeight:500,lineHeight:1.5,color:"#191919"}}>Catalyst brings together specialized expertise, operational excellence, and innovation to create integrated solutions that strengthen organizations, elevate experiences, and enable sustainable growth.</p>
-          <p data-reveal data-delay="1" style={{marginTop:18,fontSize:17,color:"#6E6A61",maxWidth:760,lineHeight:1.7}}>Because the true measure of a solution is not what it delivers—it's the impact it creates.</p>
+          <p data-reveal style={{maxWidth:900,fontSize:"clamp(18px,2vw,26px)",fontFamily:"Outfit",fontWeight:500,lineHeight:1.5,color:"#191919"}}>Catalyst brings together specialized expertise, operational excellence, and innovation to create integrated solutions that strengthen organizations, elevate experiences, and enable sustainable growth.</p>
+          <p data-reveal data-delay="1" style={{marginTop:18,fontSize:17,color:"#6E6A61",maxWidth:760,lineHeight:1.7}}>Because the true measure of a solution is not what it delivers�it's the impact it creates.</p>
 
           <div style={{display:"grid",gridTemplateColumns:"repeat(6,1fr)",gap:20,marginTop:60}} data-3col>
             <div data-reveal onClick={() => go("food")} className="lift" style={{gridColumn:"span 4",position:"relative",minHeight:300,borderRadius:32,overflow:"hidden",background:"linear-gradient(135deg,#191919,#242424)",padding:36,display:"flex",flexDirection:"column",justifyContent:"space-between",cursor:"pointer"}}>
@@ -26,7 +26,7 @@ export default function Solutions({ go }) {
                 <div style={{width:48,height:48,borderRadius:16,background:"rgba(3,115,255,0.2)",display:"flex",alignItems:"center",justifyContent:"center",color:"#0373ff"}}>
                   <UtensilsCrossed size={24} />
                 </div>
-                <span style={{fontFamily:"Inter Tight",fontWeight:600,color:"rgba(255,255,255,.25)",fontSize:34}}>01</span>
+                <span style={{fontFamily:"Outfit",fontWeight:600,color:"rgba(255,255,255,.25)",fontSize:34}}>01</span>
               </div>
               <div style={{position:"relative"}}>
                 <h3 style={{color:"#fff",fontSize:28}}>Food Services</h3>
@@ -41,7 +41,7 @@ export default function Solutions({ go }) {
                 <div style={{width:48,height:48,borderRadius:16,background:"rgba(67,147,74,0.2)",display:"flex",alignItems:"center",justifyContent:"center",color:"#43934A"}}>
                   <Building2 size={24} />
                 </div>
-                <span style={{fontFamily:"Inter Tight",fontWeight:600,color:"rgba(255,255,255,.25)",fontSize:34}}>02</span>
+                <span style={{fontFamily:"Outfit",fontWeight:600,color:"rgba(255,255,255,.25)",fontSize:34}}>02</span>
               </div>
               <div style={{position:"relative"}}>
                 <h3 style={{color:"#fff",fontSize:23}}>Integrated Facilities Management</h3>
@@ -55,7 +55,7 @@ export default function Solutions({ go }) {
                 <div style={{width:48,height:48,borderRadius:16,background:"rgba(255,184,0,0.2)",display:"flex",alignItems:"center",justifyContent:"center",color:"#FFB800"}}>
                   <Factory size={24} />
                 </div>
-                <span style={{fontFamily:"Inter Tight",fontWeight:600,color:"rgba(255,255,255,.25)",fontSize:34}}>03</span>
+                <span style={{fontFamily:"Outfit",fontWeight:600,color:"rgba(255,255,255,.25)",fontSize:34}}>03</span>
               </div>
               <div style={{position:"relative"}}>
                 <h3 style={{color:"#fff",fontSize:23}}>Infrastructure Solutions</h3>
@@ -69,7 +69,7 @@ export default function Solutions({ go }) {
                 <div style={{width:48,height:48,borderRadius:16,background:"rgba(67,147,74,0.2)",display:"flex",alignItems:"center",justifyContent:"center",color:"#43934A"}}>
                   <Stethoscope size={24} />
                 </div>
-                <span style={{fontFamily:"Inter Tight",fontWeight:600,color:"rgba(255,255,255,.25)",fontSize:34}}>04</span>
+                <span style={{fontFamily:"Outfit",fontWeight:600,color:"rgba(255,255,255,.25)",fontSize:34}}>04</span>
               </div>
               <div style={{position:"relative"}}>
                 <h3 style={{color:"#fff",fontSize:23}}>Healthcare Technology Management</h3>
@@ -83,7 +83,7 @@ export default function Solutions({ go }) {
                 <div style={{width:48,height:48,borderRadius:16,background:"rgba(3,115,255,0.2)",display:"flex",alignItems:"center",justifyContent:"center",color:"#0373ff"}}>
                   <Users size={24} />
                 </div>
-                <span style={{fontFamily:"Inter Tight",fontWeight:600,color:"rgba(255,255,255,.25)",fontSize:34}}>05</span>
+                <span style={{fontFamily:"Outfit",fontWeight:600,color:"rgba(255,255,255,.25)",fontSize:34}}>05</span>
               </div>
               <div style={{position:"relative"}}>
                 <h3 style={{color:"#fff",fontSize:23}}>Workforce Solutions</h3>
@@ -118,7 +118,7 @@ export default function Solutions({ go }) {
         <div data-reveal style={{maxWidth:1300,margin:"0 auto",position:"relative",borderRadius:40,overflow:"hidden",background:"linear-gradient(135deg,#191919,#242424)",padding:"clamp(60px,9vw,120px) clamp(28px,5vw,80px)",textAlign:"center"}}>
           <div style={{position:"absolute",inset:0,background:"radial-gradient(50% 70% at 20% 20%,rgba(3,115,255,.25),transparent 60%),radial-gradient(50% 70% at 80% 80%,rgba(67,147,74,.25),transparent 60%)"}}></div>
           <div style={{position:"relative"}}>
-            <div style={{fontFamily:"Inter Tight",fontSize:"clamp(22px,2.6vw,32px)",fontWeight:500,color:"rgba(255,255,255,.85)"}}>Every environment has the potential to achieve more.</div>
+            <div style={{fontFamily:"Outfit",fontSize:"clamp(22px,2.6vw,32px)",fontWeight:500,color:"rgba(255,255,255,.85)"}}>Every environment has the potential to achieve more.</div>
             <h2 style={{fontSize:"clamp(34px,5vw,64px)",color:"#fff",marginTop:10}}>We help unlock it.</h2>
             <div style={{display:"flex",flexWrap:"wrap",gap:16,justifyContent:"center",marginTop:36}}>
               <button className="mag" onClick={() => go("contact")} style={{background:"#0373ff",color:"#fff",fontWeight:600,fontSize:16,padding:"17px 36px",borderRadius:999,display:"inline-flex",alignItems:"center",gap:8}}>Partner With Us <ArrowRight size={18} /></button>

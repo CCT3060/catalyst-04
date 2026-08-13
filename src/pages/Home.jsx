@@ -15,6 +15,7 @@ import { UtensilsCrossed, Building2, Factory, Stethoscope, Users, ArrowRight, Ar
 import foodServiceImg from "../assets/food_services_gen.png";
 import fmImg from "../assets/ifm_gen.png";
 import workforceImg from "../assets/workforce_gen.png";
+import AnimatedNumber from "../components/AnimatedNumber";
 
 const SECTORS = [
   { num: "01", name: "Corporate & Commercial Spaces", desc: "Workplaces are more than buildings, they are where ideas grow, teams connect, and performance takes shape. We help organizations create engaging, high-performing environments that elevate employee experiences and support business success.", bg: "#191919", img: "corporate.jpg", page: null },
@@ -36,21 +37,21 @@ const SOLUTIONS = [
 ];
 
 const CERTS = [
-  {name: "ISO 9001",image: iso9001Img, detail: "Certified Quality Management System ensuring consistent service delivery, process efficiency, and continuous improvement across all operations." },
-  {name: "ISO 14001",image: iso14001Img, detail: "Environmental management framework guiding responsible stewardship, sustainability practices, and minimized ecological impact." },
-  {name: "ISO 45001",image: iso45001Img, detail: "Occupational health and safety management system ensuring safe work environments and a zero-harm culture across all sites." },
-  {name: "FSSAI",image: fssaiImg, detail: "Food Safety and Standards Authority of India certified operations ensuring the highest standards in food safety and hygiene." },
-  {name: "NABH",image: nabhImg, detail: "Aligned with National Accreditation Board for Hospitals standards, supporting clinical environments with precision and compliance." },
-  {name: "ESG",image: esgImg, detail: "Commitment to Environmental, Social, and Governance principles—driving responsible business and sustainable long-term value creation." },
-  {name: "Regulatory",image: regulatoryComplianceImg, detail: "Comprehensive regulatory compliance framework aligned to statutory requirements, industry standards, and governance best practices." },
-  {name: "Safety",image: iso45001Img, detail: "Robust safety protocols tailored to each environment—healthcare, hospitality, corporate, and industrial—ensuring protection and accountability." },
+  { name: "ISO 9001", image: iso9001Img, detail: "Certified Quality Management System ensuring consistent service delivery, process efficiency, and continuous improvement across all operations." },
+  { name: "ISO 14001", image: iso14001Img, detail: "Environmental management framework guiding responsible stewardship, sustainability practices, and minimized ecological impact." },
+  { name: "ISO 45001", image: iso45001Img, detail: "Occupational health and safety management system ensuring safe work environments and a zero-harm culture across all sites." },
+  { name: "FSSAI", image: fssaiImg, detail: "Food Safety and Standards Authority of India certified operations ensuring the highest standards in food safety and hygiene." },
+  { name: "NABH", image: nabhImg, detail: "Aligned with National Accreditation Board for Hospitals standards, supporting clinical environments with precision and compliance." },
+  { name: "ESG", image: esgImg, detail: "Commitment to Environmental, Social, and Governance principles—driving responsible business and sustainable long-term value creation." },
+  { name: "Regulatory", image: regulatoryComplianceImg, detail: "Comprehensive regulatory compliance framework aligned to statutory requirements, industry standards, and governance best practices." },
+  { name: "Safety", image: iso45001Img, detail: "Robust safety protocols tailored to each environment—healthcare, hospitality, corporate, and industrial—ensuring protection and accountability." },
 ];
 
 export default function Home({ go }) {
   const [activeSector, setActiveSector] = useState(0);
   const [activeSolution, setActiveSolution] = useState(0);
 
-  useEffect(() => { 
+  useEffect(() => {
     const onMove = e => {
       document.querySelectorAll('[data-glow-card]').forEach(card => {
         card.style.setProperty('--x', e.clientX);
@@ -150,7 +151,7 @@ export default function Home({ go }) {
                   <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
                     <span style={{ width: 42, height: 42, borderRadius: 999, background: "rgba(255,255,255,.13)", border: "1px solid rgba(255,255,255,.32)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><Icon size={18} /></span>
                     <div>
-                      <div style={{ color: "#fff", fontFamily: "Inter Tight", fontWeight: 600, fontSize: 17, lineHeight: 1.3, maxWidth: 220 }}>{s.name}</div>
+                      <div style={{ color: "#fff", fontFamily: "Outfit", fontWeight: 600, fontSize: 17, lineHeight: 1.3, maxWidth: 220 }}>{s.name}</div>
                       <div style={{ color: "rgba(255,255,255,.65)", fontSize: 11.5, fontWeight: 600, letterSpacing: ".14em", marginTop: 6 }}>LEARN MORE</div>
                     </div>
                   </div>
@@ -203,10 +204,10 @@ export default function Home({ go }) {
                   {SECTORS.map((s, i) => (
                     <div key={i} aria-hidden={activeSector !== i} style={{ position: "absolute", inset: 0, backgroundColor: s.bg, backgroundImage: `linear-gradient(to top, rgba(10,10,10,.52) 0%, rgba(10,10,10,.08) 45%), url(/sectors/${s.img})`, backgroundSize: "cover", backgroundPosition: "center", opacity: activeSector === i ? 1 : 0, transform: activeSector === i ? "scale(1)" : "scale(1.06)", transition: "opacity .7s ease, transform 1.2s cubic-bezier(.16,.84,.44,1)" }}></div>
                   ))}
-                  <div aria-hidden key={`num-${activeSector}`} className="sector-swap" style={{ position: "absolute", top: 20, right: 28, fontFamily: "Inter Tight", fontWeight: 600, fontSize: "clamp(72px,7vw,104px)", lineHeight: 1, color: "rgba(255,255,255,.22)", userSelect: "none" }}>{SECTORS[activeSector].num}</div>
+                  <div aria-hidden key={`num-${activeSector}`} className="sector-swap" style={{ position: "absolute", top: 20, right: 28, fontFamily: "Outfit", fontWeight: 600, fontSize: "clamp(72px,7vw,104px)", lineHeight: 1, color: "rgba(255,255,255,.22)", userSelect: "none" }}>{SECTORS[activeSector].num}</div>
                   <div key={`cap-${activeSector}`} className="sector-swap" style={{ position: "absolute", left: 26, right: 26, bottom: 24 }}>
                     <div style={{ display: "inline-flex", padding: "7px 14px", borderRadius: 999, background: "rgba(255,255,255,.14)", border: "1px solid rgba(255,255,255,.3)", backdropFilter: "blur(8px)", color: "#fff", fontSize: 12, fontWeight: 600, letterSpacing: ".12em" }}>SECTOR {SECTORS[activeSector].num}</div>
-                    <div style={{ marginTop: 12, fontFamily: "Inter Tight", fontWeight: 600, fontSize: "clamp(20px,1.9vw,26px)", letterSpacing: "-.01em", lineHeight: 1.2, color: "#fff" }}>{SECTORS[activeSector].name}</div>
+                    <div style={{ marginTop: 12, fontFamily: "Outfit", fontWeight: 600, fontSize: "clamp(20px,1.9vw,26px)", letterSpacing: "-.01em", lineHeight: 1.2, color: "#fff" }}>{SECTORS[activeSector].name}</div>
                   </div>
                 </div>
               </div>
@@ -214,7 +215,7 @@ export default function Home({ go }) {
           </div>
         </div>
         <div style={{ padding: "clamp(50px,6vw,80px) clamp(20px,4vw,56px)" }}>
-          <div data-reveal style={{ textAlign: "center", fontSize: "clamp(18px,2vw,26px)", fontFamily: "Inter Tight", fontWeight: 500, color: "#46433C", maxWidth: 900, margin: "0 auto", lineHeight: 1.5 }}>Wherever people work, learn, heal, live, or connect, Catalyst creates environments that enable well-being, inspire performance, and deliver lasting value.</div>
+          <div data-reveal style={{ textAlign: "center", fontSize: "clamp(18px,2vw,26px)", fontFamily: "Outfit", fontWeight: 500, color: "#46433C", maxWidth: 900, margin: "0 auto", lineHeight: 1.5 }}>Wherever people work, learn, heal, live, or connect, Catalyst creates environments that enable well-being, inspire performance, and deliver lasting value.</div>
         </div>
       </section>
 
@@ -233,10 +234,10 @@ export default function Home({ go }) {
             <div style={{ position: "relative" }}>
               <div className="fdn-cap">THE SCALE WE OPERATE AT</div>
               <div className="fdn-grid">
-                {[["XX+", "Years", "Delivering integrated solutions across diverse industries."], ["XX+", "Locations", "Supporting organizations across India."], ["XX,XXX+", "Workforce", "Driving excellence through skilled and dedicated professionals."], ["XX+", "Client Partnerships", "Built on trust, performance, and long-term collaboration."]].map(([num, label, desc], i) => (
+                {[["13+", "Years", "Delivering integrated solutions across diverse industries."], ["100+", "Locations", "Supporting organizations across India."], ["6,500+", "Workforce", "Driving excellence through skilled and dedicated professionals."], ["100+", "Client Partnerships", "Built on trust, performance, and long-term collaboration."]].map(([num, label, desc], i) => (
                   <div key={i} className="fdn-cell">
                     <div className="fdn-tick"></div>
-                    <div className="fdn-num">{num}</div>
+                    <div className="fdn-num"><AnimatedNumber value={num} /></div>
                     <div className="fdn-lbl">{label}</div>
                     <div className="fdn-dsc">{desc}</div>
                   </div>
@@ -245,10 +246,10 @@ export default function Home({ go }) {
 
               <div className="fdn-cap" style={{ marginTop: "clamp(26px,3vw,40px)" }}>THE IMPACT WE DELIVER, EVERY YEAR</div>
               <div className="fdn-grid">
-                {[["XX M+", "Meals Served", "Nourishing workplaces, communities, and institutions every day."], ["XX M+", "Sq. Ft. Managed", "Maintaining safe, efficient, and high-performing environments."], ["XX+", "Healthcare Assets Managed", "Supporting reliable healthcare operations and patient care."], ["XX+", "Infrastructure & Community Projects", "Contributing to sustainable growth and resilient ecosystems."]].map(([num, label, desc], i) => (
-                  <div key={i} className="fdn-cell">
+                {[["2Lakhs+", "Meals Served", "Nourishing workplaces, communities, and institutions every day."], ["75+", "Sq. Ft. Managed", "Maintaining safe, efficient, and high-performing environments."]].map(([num, label, desc], i) => (
+                  <div key={i} className={`fdn-cell ${i === 0 ? "lg:col-start-2" : ""}`}>
                     <div className="fdn-tick"></div>
-                    <div className="fdn-num">{num}</div>
+                    <div className="fdn-num"><AnimatedNumber value={num} /></div>
                     <div className="fdn-lbl">{label}</div>
                     <div className="fdn-dsc">{desc}</div>
                   </div>
@@ -275,7 +276,7 @@ export default function Home({ go }) {
                   <img src={cert.image} alt={cert.name} style={{ maxWidth: "100%", maxHeight: 74, width: "auto", objectFit: "contain", display: "block" }} />
                 </div>
                 <div style={{ textAlign: "center", width: "100%" }}>
-                  <div style={{ fontFamily: "Inter Tight", fontWeight: 600, fontSize: 16, color: "#666", lineHeight: 1.15 }}>{cert.name}</div>
+                  <div style={{ fontFamily: "Outfit", fontWeight: 600, fontSize: 16, color: "#666", lineHeight: 1.15 }}>{cert.name}</div>
                   <div style={{ fontSize: 12, color: "#A8A39B", marginTop: 6, lineHeight: 1.3 }}>{cert.sub}</div>
                 </div>
               </div>
@@ -299,21 +300,21 @@ export default function Home({ go }) {
               <div style={{ width: "100%", maxWidth: 450, aspectRatio: "1" }}>
                 <Globe
                   markers={[
-                    { 
-                      id: "india", 
-                      location: [20.6, 78.96], 
+                    {
+                      id: "india",
+                      location: [20.6, 78.96],
                       label: "India",
                       details: `India Office\nCatalyst Service Solutions Partners Private Limited\n\n401/402, Yash Tower, Opp. D.A.V Public\nSchool, Aundh, Pune – 411007\n\nEmail: sales@catalystsolutions.eco`
                     },
-                    { 
-                      id: "dubai", 
-                      location: [25.2, 55.27], 
+                    {
+                      id: "dubai",
+                      location: [25.2, 55.27],
                       label: "Dubai, UAE",
                       details: `Middle East\nCatalyst Catering Services LLC (CCS)\n\nDarwish Compound, Warehouse No.4,\nBuilding No: 3, DIP-2,\nDubai\n\nEmail: info@catalystgroupme.com`
                     },
-                    { 
-                      id: "singapore", 
-                      location: [1.35, 103.82], 
+                    {
+                      id: "singapore",
+                      location: [1.35, 103.82],
                       label: "Singapore",
                       details: `Singapore Office\nComprehensive Support Services Pte. Ltd\n\n12 Woodlands Square, #02-75, Woods\nSquare Tower 1, Singapore – 737715\n\nEmail: sales@catalystsolutions.eco`
                     },

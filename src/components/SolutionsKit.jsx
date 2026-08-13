@@ -1,4 +1,4 @@
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+ï»¿import { ArrowUpRight, ArrowRight } from "lucide-react";
 
 /* Shared building blocks for the five solution pages.
    Everything follows the site tokens: ink #191919, cream #F9F7F3,
@@ -22,7 +22,7 @@ export function SectionHead({ kicker, kickerColor, dashColor, title, sub, center
   );
 }
 
-/* Light editorial hero shared by the service pages — cream canvas,
+/* Light editorial hero shared by the service pages â€” cream canvas,
    arch-cropped imagery, handwritten note, proof chips */
 export function ServiceHero({ go, kicker, kickerColor = "#0258cc", dash = "#0373ff", glow = "rgba(3,115,255,.08)", title, sub, ctaLabel = "Talk to our team", ctaPage = "contact", img, imgAlt = "", note, noteColor = "#0258cc", chips = [] }) {
   return (
@@ -55,7 +55,7 @@ export function ServiceHero({ go, kicker, kickerColor = "#0258cc", dash = "#0373
   );
 }
 
-/* Editorial numbered service index — replaces icon-card grids */
+/* Editorial numbered service index â€” replaces icon-card grids */
 export function NumberedIndex({ items }) {
   return (
     <div>
@@ -71,7 +71,7 @@ export function NumberedIndex({ items }) {
   );
 }
 
-/* Kinetic industries band — replaces static chip clouds */
+/* Kinetic industries band â€” replaces static chip clouds */
 export function IndustriesMarquee({ kicker = "Industries We Serve", title, sub, industries }) {
   const half = Math.ceil(industries.length / 2);
   const rows = industries.length > 6 ? [industries.slice(0, half), industries.slice(half)] : [industries];
@@ -98,7 +98,7 @@ export function IndustriesMarquee({ kicker = "Industries We Serve", title, sub, 
   );
 }
 
-/* Device frame for real product screenshots — phone */
+/* Device frame for real product screenshots â€” phone */
 export function PhoneFrame({ src, alt = "", width = "clamp(210px,22vw,260px)", style }) {
   return (
     <div style={{ width, aspectRatio: "9/19", borderRadius: 44, background: "#111", border: "9px solid #191919", boxShadow: "0 30px 70px rgba(0,0,0,.28)", position: "relative", overflow: "hidden", flexShrink: 0, ...style }}>
@@ -108,7 +108,7 @@ export function PhoneFrame({ src, alt = "", width = "clamp(210px,22vw,260px)", s
   );
 }
 
-/* Device frame for real product screenshots — browser window */
+/* Device frame for real product screenshots â€” browser window */
 export function BrowserFrame({ src, alt = "", url = "portal.catalystsolutions.eco", style }) {
   return (
     <div style={{ borderRadius: 18, overflow: "hidden", background: "#fff", border: "1px solid rgba(25,25,25,.1)", boxShadow: "0 30px 70px rgba(0,0,0,.18)", ...style }}>

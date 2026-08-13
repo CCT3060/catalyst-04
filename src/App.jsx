@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+﻿import { useState, useEffect, useRef, useCallback } from "react";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -86,7 +86,7 @@ export default function App() {
           {["home","about","sectors","technologies","careers","contact"].map(p => (
             <span key={p} className="navlink nav-dark" onClick={() => go(p)} style={{fontSize:30,fontWeight:600,fontFamily:"Outfit",padding:"10px 0",textTransform:"capitalize"}}>{p === "home" ? "Home" : p.charAt(0).toUpperCase() + p.slice(1).replace(/([A-Z])/g,' $1')}</span>
           ))}
-          <button onClick={() => setMobileOpen(false)} style={{position:"absolute",top:24,right:28,background:"transparent",color:"#fff",fontSize:30,border:"none",cursor:"pointer"}}>✕</button>
+          <button onClick={() => setMobileOpen(false)} style={{position:"absolute",top:24,right:28,background:"transparent",color:"#fff",fontSize:30,border:"none",cursor:"pointer"}}>âœ•</button>
         </div>
       )}
       <main>

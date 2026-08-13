@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+﻿import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import "./HeroSlider.css";
 
@@ -29,7 +29,7 @@ const SLIDES = [
       [{ t: "Food experiences" }],
       [{ t: "that " }, { t: "elevate.", a: true }],
     ],
-    para: "Food has the power to shape experiences far beyond the dining table. We design dining environments that combine nutrition, hospitality, and innovation — from workplaces to healthcare institutions and educational campuses.",
+    para: "Food has the power to shape experiences far beyond the dining table. We design dining environments that combine nutrition, hospitality, and innovation â€” from workplaces to healthcare institutions and educational campuses.",
     img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2400&q=80",
     alt: "Elegant restaurant dining room prepared for evening service",
   },
@@ -119,7 +119,7 @@ export default function HeroSlider({ go }) {
       aria-roledescription="carousel"
       aria-label="Catalyst service lines"
     >
-      {/* photographic layers — the leaving image sits below while the
+      {/* photographic layers â€” the leaving image sits below while the
           incoming one wipes over it and slowly settles */}
       <div className="hx-stack" aria-hidden="true">
         {SLIDES.map((s, i) => (
@@ -169,7 +169,7 @@ export default function HeroSlider({ go }) {
         );
       })}
 
-      {/* service index rail — navigation, position and autoplay progress in one */}
+      {/* service index rail â€” navigation, position and autoplay progress in one */}
       <div className="hx-rail" role="tablist" aria-label="Service lines">
         {SLIDES.map((s, i) => (
           <button

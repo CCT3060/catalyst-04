@@ -1,4 +1,4 @@
-import { useState } from "react";
+ï»¿import { useState } from "react";
 import { MapPin, Mail, Handshake, CheckCircle2, Plus, ArrowRight } from "lucide-react";
 
 export default function Contact({ go }) {
@@ -37,7 +37,7 @@ export default function Contact({ go }) {
             <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>Whether you are looking to optimize your facilities, enhance food services, implement healthcare technology, or build your workforce, our team is ready to help.</p>
 
             <div data-reveal data-delay="3" style={{ marginTop: 36, display: "flex", flexDirection: "column", gap: 20 }}>
-              {[[MapPin, "Office Locations", "India — National Footprint"], [Mail, "Business Inquiries", "Connect with our solutions team"], [Handshake, "Partnerships", "Building long-term relationships"]].map(([Icon, label, val], i) => (
+              {[[MapPin, "Office Locations", "India â€” National Footprint"], [Mail, "Business Inquiries", "Connect with our solutions team"], [Handshake, "Partnerships", "Building long-term relationships"]].map(([Icon, label, val], i) => (
                 <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 16 }}>
                   <div style={{ width: 46, height: 46, borderRadius: 16, background: "rgba(3,115,255,0.1)", border: "1px solid rgba(3,115,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "#0373ff", flexShrink: 0 }}>
                     <Icon size={20} />
@@ -54,7 +54,7 @@ export default function Contact({ go }) {
               <div style={{ position: "absolute", inset: 0, background: "radial-gradient(60% 60% at 80% 20%,rgba(3,115,255,.2),transparent 60%)" }}></div>
               <div style={{ position: "relative" }}>
                 <div style={{ fontFamily: "Outfit", fontSize: 18, fontWeight: 600, color: "#fff" }}>Wherever you operate,<br />we can help you thrive.</div>
-                <div style={{ marginTop: 12, fontSize: 14, color: "rgba(255,255,255,.65)", lineHeight: 1.6 }}>ISO 9001 · ISO 14001 · ISO 45001 · FSSAI · NABH-Aligned</div>
+                <div style={{ marginTop: 12, fontSize: 14, color: "rgba(255,255,255,.65)", lineHeight: 1.6 }}>ISO 9001 Â· ISO 14001 Â· ISO 45001 Â· FSSAI Â· NABH-Aligned</div>
               </div>
             </div>
           </div>

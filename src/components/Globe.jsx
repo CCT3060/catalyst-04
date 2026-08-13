@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+﻿import { useEffect, useRef } from "react";
 import createGlobe from "cobe";
 
 /**
@@ -31,7 +31,7 @@ export function Globe({
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // ── pointer interaction ───────────────────────────────────────────────
+    // â”€â”€ pointer interaction â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     const onPointerDown = (e) => {
       draggingRef.current = e.clientX - movementRef.current;
       canvas.style.cursor = "grabbing";
@@ -50,7 +50,7 @@ export function Globe({
     window.addEventListener("pointerup", onPointerUp);
     window.addEventListener("pointermove", onPointerMove, { passive: true });
 
-    // ── globe init ────────────────────────────────────────────────────────
+    // â”€â”€ globe init â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     const init = () => {
       const w = canvas.offsetWidth;
       if (!w || globeRef.current) return;
@@ -88,7 +88,7 @@ export function Globe({
     if (canvas.offsetWidth > 0) {
       init();
     } else {
-      // canvas not yet laid out — wait for ResizeObserver
+      // canvas not yet laid out â€” wait for ResizeObserver
       const ro = new ResizeObserver((entries) => {
         if (entries[0]?.contentRect.width > 0) { ro.disconnect(); init(); }
       });
@@ -101,7 +101,7 @@ export function Globe({
       window.removeEventListener("pointermove", onPointerMove);
       if (globeRef.current) { globeRef.current.destroy(); globeRef.current = null; }
     };
-  }, []); // intentionally empty — globe is created once on mount
+  }, []); // intentionally empty â€” globe is created once on mount
 
   return (
     <div style={{ position: "relative", aspectRatio: "1 / 1", userSelect: "none", ...style }}>

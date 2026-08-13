@@ -1,4 +1,4 @@
-export default function Footer({ go }) {
+ï»¿export default function Footer({ go }) {
   return (
     <footer style={{background:"rgb(249, 247, 243)",color:"#040404",padding:"clamp(60px,7vw,90px) clamp(20px,4vw,56px) 36px",position:"relative",overflow:"hidden"}}>
       <div style={{position:"absolute",inset:0,background:"radial-gradient(40% 60% at 90% 0%,rgba(67,147,74,.12),transparent 60%)"}}></div>
@@ -37,8 +37,8 @@ export default function Footer({ go }) {
           </div>
         </div>
         <div style={{marginTop:54,paddingTop:26,borderTop:"1px solid rgba(0,0,0,.1)",display:"flex",flexWrap:"wrap",gap:14,justifyContent:"space-between",fontSize:13,color:"rgba(0,0,0,.5)"}}>
-          <span>© 2026 Catalyst Service Solutions. All rights reserved.</span>
-          <span>ISO 9001 · ISO 14001 · ISO 45001 · FSSAI · NABH-Aligned</span>
+          <span>Â© 2026 Catalyst Service Solutions. All rights reserved.</span>
+          <span>ISO 9001 Â· ISO 14001 Â· ISO 45001 Â· FSSAI Â· NABH-Aligned</span>
         </div>
       </div>
     </footer>

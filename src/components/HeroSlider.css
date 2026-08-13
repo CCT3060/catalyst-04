@@ -1,10 +1,10 @@
-/* ─────────────────────────────────────────────
-   HeroSlider — cinematic full-bleed hero.
+﻿/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   HeroSlider â€” cinematic full-bleed hero.
    One photographic environment per service line,
    clip-path wipe transitions, Ken Burns settle,
    and a right-edge service index rail that shows
    position + autoplay progress.
-   ───────────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .hx-hero {
   position: relative;
@@ -15,7 +15,7 @@
   --hx-wipe: cubic-bezier(.77, 0, .18, 1);
 }
 
-/* ── Image stack ── */
+/* â”€â”€ Image stack â”€â”€ */
 .hx-stack {
   position: absolute;
   inset: 0;
@@ -83,7 +83,7 @@
     linear-gradient(to top, rgba(10, 9, 7, .62), transparent 32%);
 }
 
-/* ── Copy slides ── */
+/* â”€â”€ Copy slides â”€â”€ */
 .hx-slide {
   position: absolute;
   inset: 0;
@@ -263,7 +263,7 @@
   transform: translateY(-3px);
 }
 
-/* ── Service index rail ── */
+/* â”€â”€ Service index rail â”€â”€ */
 .hx-rail {
   position: absolute;
   right: clamp(20px, 3.4vw, 52px);
@@ -337,7 +337,7 @@
   100% { transform: scaleX(1) }
 }
 
-/* ── Footer controls (arrows + counter) ── */
+/* â”€â”€ Footer controls (arrows + counter) â”€â”€ */
 .hx-foot {
   position: absolute;
   z-index: 6;
@@ -395,7 +395,7 @@
   margin-left: 5px;
 }
 
-/* ── Scroll cue ── */
+/* â”€â”€ Scroll cue â”€â”€ */
 .hx-cue {
   position: absolute;
   left: 50%;
@@ -441,7 +441,7 @@
   color: rgba(255, 255, 255, .55);
 }
 
-/* ── Responsive ── */
+/* â”€â”€ Responsive â”€â”€ */
 @media (max-width: 1160px) {
   .hx-copy {
     max-width: 620px;
@@ -523,7 +523,7 @@
   }
 }
 
-/* ── Reduced motion ── */
+/* â”€â”€ Reduced motion â”€â”€ */
 @media (prefers-reduced-motion: reduce) {
 
   .hx-layer.on,

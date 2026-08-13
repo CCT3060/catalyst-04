@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import CTA from "../components/CTA";
 import HeroSlider from "../components/HeroSlider";
 import partnerImg from "../assets/Partnerwithus.png";
@@ -21,7 +21,7 @@ const SECTORS = [
   { num: "01", name: "Corporate & Commercial Spaces", desc: "Workplaces are more than buildings, they are where ideas grow, teams connect, and performance takes shape. We help organizations create engaging, high-performing environments that elevate employee experiences and support business success.", bg: "#191919", img: "corporate.jpg", page: null },
   { num: "02", name: "Manufacturing, Industrial & Infrastructure", desc: "Powering the environments that drive industry forward. From manufacturing facilities to logistics networks and critical infrastructure, we create high-performing environments that strengthen operational continuity, workforce experience, and business resilience.", bg: "#43934A", img: "manufacturing.jpg", page: null },
   { num: "03", name: "Infrastructure, Public Sector & Smart Cities", desc: "As cities and public spaces continue to evolve, organizations require trusted partners who can support large-scale infrastructure and community environments. Our approach focuses on creating sustainable environments that support future-ready communities.", bg: "#242424", img: "infrastructure.jpg", page: null },
-  { num: "04", name: "Education", desc: "Educational institutions are more than places of learning—they are environments that shape future generations. From schools and universities to student residences, Catalyst creates safe, hygienic, and inspiring campuses that foster academic excellence, student well-being, and seamless day-to-day operations. Our integrated solutions help educators focus on what matters most: empowering students to learn, grow, and thrive.", bg: "#0258cc", img: "education.jpg", page: null },
+  { num: "04", name: "Education", desc: "Educational institutions are more than places of learningâ€”they are environments that shape future generations. From schools and universities to student residences, Catalyst creates safe, hygienic, and inspiring campuses that foster academic excellence, student well-being, and seamless day-to-day operations. Our integrated solutions help educators focus on what matters most: empowering students to learn, grow, and thrive.", bg: "#0258cc", img: "education.jpg", page: null },
   { num: "05", name: "Community Living", desc: "Communities flourish when people feel safe, connected, and cared for. Catalyst partners with residential communities and integrated townships to deliver thoughtfully managed environments that prioritize comfort, safety, sustainability, and operational excellence. Through integrated facility management, food services, infrastructure support, and community-focused solutions, we help create vibrant living spaces where residents can enjoy a higher quality of life.", bg: "#FFB800", img: "education.jpg", page: null },
   { num: "06", name: "Healthcare Technology Management", desc: "Supporting better care through people, technology, and operational excellence. We support hospitals, healthcare institutions, and life sciences organizations enhance patient experiences, optimize clinical operations, and maximize the performance of critical healthcare technologies while maintaining the highest standards of safety, compliance, and care quality.", bg: "#2E5D33", img: "healthcare.jpg", page: "htm" },
 ];
@@ -29,10 +29,10 @@ const SECTORS = [
 
 
 const SOLUTIONS = [
-  { page: "food", name: "Food Services", icon: UtensilsCrossed, img: foodServiceImg, tagline: "Safe, nutritious, and memorable dining experiences — crafted for workplaces, hospitals, campuses, and communities, delivered at scale." },
+  { page: "food", name: "Food Services", icon: UtensilsCrossed, img: foodServiceImg, tagline: "Safe, nutritious, and memorable dining experiences â€” crafted for workplaces, hospitals, campuses, and communities, delivered at scale." },
   { page: "ifm", name: "Integrated Facilities Management", icon: Building2, img: fmImg, tagline: "Technical, soft, and business support services working as one system, so every environment performs seamlessly, every day." },
-  { page: "infra", name: "Infrastructure Solutions", icon: Factory, img: "/sectors/infrastructure.jpg", tagline: "Design, build, and upkeep of the physical backbone that keeps organizations moving — reliably, safely, and sustainably." },
-  { page: "htm", name: "Healthcare Technology Management", icon: Stethoscope, img: "/sectors/healthcare.jpg", tagline: "Lifecycle management of critical medical technology — maximizing uptime, compliance, and the quality of patient care." },
+  { page: "infra", name: "Infrastructure Solutions", icon: Factory, img: "/sectors/infrastructure.jpg", tagline: "Design, build, and upkeep of the physical backbone that keeps organizations moving â€” reliably, safely, and sustainably." },
+  { page: "htm", name: "Healthcare Technology Management", icon: Stethoscope, img: "/sectors/healthcare.jpg", tagline: "Lifecycle management of critical medical technology â€” maximizing uptime, compliance, and the quality of patient care." },
   { page: "workforce", name: "Workforce Solutions", icon: Users, img: workforceImg, tagline: "Trained, verified, and dependable teams that bring service excellence to every environment we serve." },
 ];
 
@@ -42,9 +42,9 @@ const CERTS = [
   { name: "ISO 45001", image: iso45001Img, detail: "Occupational health and safety management system ensuring safe work environments and a zero-harm culture across all sites." },
   { name: "FSSAI", image: fssaiImg, detail: "Food Safety and Standards Authority of India certified operations ensuring the highest standards in food safety and hygiene." },
   { name: "NABH", image: nabhImg, detail: "Aligned with National Accreditation Board for Hospitals standards, supporting clinical environments with precision and compliance." },
-  { name: "ESG", image: esgImg, detail: "Commitment to Environmental, Social, and Governance principles—driving responsible business and sustainable long-term value creation." },
+  { name: "ESG", image: esgImg, detail: "Commitment to Environmental, Social, and Governance principlesâ€”driving responsible business and sustainable long-term value creation." },
   { name: "Regulatory", image: regulatoryComplianceImg, detail: "Comprehensive regulatory compliance framework aligned to statutory requirements, industry standards, and governance best practices." },
-  { name: "Safety", image: iso45001Img, detail: "Robust safety protocols tailored to each environment—healthcare, hospitality, corporate, and industrial—ensuring protection and accountability." },
+  { name: "Safety", image: iso45001Img, detail: "Robust safety protocols tailored to each environmentâ€”healthcare, hospitality, corporate, and industrialâ€”ensuring protection and accountability." },
 ];
 
 export default function Home({ go }) {
@@ -98,7 +98,7 @@ export default function Home({ go }) {
         </div>
       </section>
 
-      {/* Solutions Ecosystem — expanding capability strip */}
+      {/* Solutions Ecosystem â€” expanding capability strip */}
       <section style={{ padding: "clamp(50px,7vw,90px) clamp(20px,4vw,56px)", background: "#F9F7F3", overflow: "hidden" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: "28px 60px", flexWrap: "wrap", marginBottom: "clamp(36px,4.5vw,60px)" }}>
@@ -106,10 +106,10 @@ export default function Home({ go }) {
               <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Solutions Ecosystem</div>
               <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(30px,4vw,52px)", color: "#191919" }}>Five capabilities. One integrated system.</h2>
             </div>
-            <p data-reveal data-delay="2" style={{ maxWidth: 400, fontSize: 16.5, lineHeight: 1.7, color: "#6E6A61", paddingBottom: 8 }}>When specialized expertise works in harmony, performance improves and meaningful outcomes follow — explore each capability to see how.</p>
+            <p data-reveal data-delay="2" style={{ maxWidth: 400, fontSize: 16.5, lineHeight: 1.7, color: "#6E6A61", paddingBottom: 8 }}>When specialized expertise works in harmony, performance improves and meaningful outcomes follow â€” explore each capability to see how.</p>
           </div>
 
-          {/* Desktop / tablet — interactive expanding panels */}
+          {/* Desktop / tablet â€” interactive expanding panels */}
           <div data-reveal data-ecostrip className="eco-strip">
             {SOLUTIONS.map((s, i) => {
               const Icon = s.icon;
@@ -142,7 +142,7 @@ export default function Home({ go }) {
             })}
           </div>
 
-          {/* Mobile — stacked capability cards */}
+          {/* Mobile â€” stacked capability cards */}
           <div data-reveal data-solutions-mobile style={{ display: "none", flexDirection: "column", gap: 14 }}>
             {SOLUTIONS.map(s => {
               const Icon = s.icon;
@@ -165,7 +165,7 @@ export default function Home({ go }) {
         </div>
       </section>
 
-      {/* Sectors — editorial index + sticky visual */}
+      {/* Sectors â€” editorial index + sticky visual */}
       <section style={{ background: "#F9F7F3", position: "relative" }}>
         <div style={{ padding: "clamp(50px,7vw,90px) clamp(20px,4vw,56px) 0" }}>
           <div style={{ maxWidth: 1240, margin: "0 auto" }}>
@@ -178,7 +178,7 @@ export default function Home({ go }) {
             </div>
 
             <div className="sec-grid" data-reveal data-delay="2">
-              {/* Left — sector index */}
+              {/* Left â€” sector index */}
               <div>
                 {SECTORS.map((s, i) => (
                   <div key={i} className={`sec-row${activeSector === i ? " on" : ""}`}>
@@ -198,7 +198,7 @@ export default function Home({ go }) {
                 ))}
               </div>
 
-              {/* Right — sticky crossfading visual */}
+              {/* Right â€” sticky crossfading visual */}
               <div data-sector-sticky style={{ position: "sticky", top: 96 }}>
                 <div style={{ position: "relative", height: "clamp(460px,60vh,580px)", borderRadius: 28, overflow: "hidden", boxShadow: "0 30px 80px rgba(25,25,25,.16)" }}>
                   {SECTORS.map((s, i) => (
@@ -219,7 +219,7 @@ export default function Home({ go }) {
         </div>
       </section>
 
-      {/* Foundations — dark metrics board */}
+      {/* Foundations â€” dark metrics board */}
       <section style={{ padding: "clamp(50px,7vw,90px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
           <div data-reveal className="fdn-panel">
@@ -228,7 +228,7 @@ export default function Home({ go }) {
                 <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#8FBCFF", fontWeight: 600, fontSize: 24, marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Our Foundations</div>
                 <h2 style={{ fontSize: "clamp(28px,3.6vw,46px)", color: "#fff" }}>People are at the heart of every great experience</h2>
               </div>
-              <p style={{ maxWidth: 400, fontSize: 15.5, lineHeight: 1.7, color: "rgba(255,255,255,.62)", paddingBottom: 6 }}>Our foundations define how we create value — a commitment to operational excellence, innovation, and responsibility towards people, communities, and the environment.</p>
+              <p style={{ maxWidth: 400, fontSize: 15.5, lineHeight: 1.7, color: "rgba(255,255,255,.62)", paddingBottom: 6 }}>Our foundations define how we create value â€” a commitment to operational excellence, innovation, and responsibility towards people, communities, and the environment.</p>
             </div>
 
             <div style={{ position: "relative" }}>
@@ -295,7 +295,7 @@ export default function Home({ go }) {
           </div>
 
           <div style={{ display: "flex", justifyContent: "center" }}>
-            {/* Center — Interactive Cobe Globe */}
+            {/* Center â€” Interactive Cobe Globe */}
             <div data-reveal style={{ width: "100%", maxWidth: 800, borderRadius: 24, overflow: "hidden", background: "#fff", boxShadow: "0 20px 60px rgba(0,0,0,.08)", display: "flex", alignItems: "center", justifyContent: "center", padding: "clamp(16px,3vw,40px)" }}>
               <div style={{ width: "100%", maxWidth: 450, aspectRatio: "1" }}>
                 <Globe
@@ -304,7 +304,7 @@ export default function Home({ go }) {
                       id: "india",
                       location: [20.6, 78.96],
                       label: "India",
-                      details: `India Office\nCatalyst Service Solutions Partners Private Limited\n\n401/402, Yash Tower, Opp. D.A.V Public\nSchool, Aundh, Pune – 411007\n\nEmail: sales@catalystsolutions.eco`
+                      details: `India Office\nCatalyst Service Solutions Partners Private Limited\n\n401/402, Yash Tower, Opp. D.A.V Public\nSchool, Aundh, Pune â€“ 411007\n\nEmail: sales@catalystsolutions.eco`
                     },
                     {
                       id: "dubai",
@@ -316,7 +316,7 @@ export default function Home({ go }) {
                       id: "singapore",
                       location: [1.35, 103.82],
                       label: "Singapore",
-                      details: `Singapore Office\nComprehensive Support Services Pte. Ltd\n\n12 Woodlands Square, #02-75, Woods\nSquare Tower 1, Singapore – 737715\n\nEmail: sales@catalystsolutions.eco`
+                      details: `Singapore Office\nComprehensive Support Services Pte. Ltd\n\n12 Woodlands Square, #02-75, Woods\nSquare Tower 1, Singapore â€“ 737715\n\nEmail: sales@catalystsolutions.eco`
                     },
                   ]}
                   focusLocation={null}
@@ -339,7 +339,7 @@ export default function Home({ go }) {
         </div>
       </section>
 
-      <CTA go={go} title="Let's Create Impact Together" subtitle="" primaryLabel="Partner With Us →" primaryPage="contact" secondaryLabel="Explore Sectors" secondaryPage="sectors" image={partnerImg} />
+      <CTA go={go} title="Let's Create Impact Together" subtitle="" primaryLabel="Partner With Us â†’" primaryPage="contact" secondaryLabel="Explore Sectors" secondaryPage="sectors" image={partnerImg} />
     </div>
   );
 }

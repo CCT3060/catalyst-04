@@ -1,4 +1,4 @@
-import CTA from "../components/CTA";
+ï»¿import CTA from "../components/CTA";
 import { Kicker, SectionHead, NumberedIndex, ServiceHero, PhoneFrame, BrowserFrame, CutoutArch, StatStrip } from "../components/SolutionsKit";
 import healthcareBg from "../assets/Gemini_Generated_Image_sf1puasf1puasf1p.png";
 import clinicalImg from "../assets/4.png";
@@ -8,7 +8,7 @@ import { ShieldCheck, Activity } from "lucide-react";
 
 const CAPABILITIES = [
   ["Biomedical Engineering Talent", "Dedicated on-site biomedical engineers manage equipment performance, troubleshoot issues, coordinate with OEMs, and support clinical teams across the hospital."],
-  ["Asset Lifecycle Management", "From inventory creation and digital tagging to utilization monitoring and replacement planning — complete visibility into every medical asset throughout its lifecycle."],
+  ["Asset Lifecycle Management", "From inventory creation and digital tagging to utilization monitoring and replacement planning â€” complete visibility into every medical asset throughout its lifecycle."],
   ["Preventive, Corrective & Calibration Services", "Structured preventive maintenance, responsive breakdown support, calibration management, and technical inspections that improve reliability and extend operational life."],
   ["Digital CMMS & Leadership Dashboards", "Real-time dashboards, service analytics, maintenance schedules, complaint tracking, and asset intelligence for complete operational visibility."],
   ["Vendor & Contract Management", "A single point of accountability coordinating OEMs, AMCs, CAMCs, spare parts, warranties, and service partners across multiple manufacturers."],
@@ -26,7 +26,7 @@ const DELIVERS = [
 ];
 
 const OUTCOMES = [
-  ["95–98%", "Equipment Availability", "Sustained uptime across the biomedical ecosystem."],
+  ["95â€“98%", "Equipment Availability", "Sustained uptime across the biomedical ecosystem."],
   ["100%", "Preventive Maintenance", "Scheduled preventive maintenance completion."],
   ["100%", "Calibration Compliance", "Annual calibration completion."],
   ["SLA", "Faster Response", "Critical equipment response within defined SLA windows."],
@@ -45,31 +45,31 @@ const WHY = [
   ["Digital-led Operations", "Integrated CMMS, leadership dashboards, barcode tracking, and analytics provide complete visibility across the biomedical ecosystem."],
   ["Clinical Engineering Excellence", "Experienced biomedical engineers supporting operational reliability, regulatory compliance, and clinical continuity."],
   ["Single Point of Accountability", "One partner coordinating multiple OEMs, vendors, maintenance providers, and clinical stakeholders."],
-  ["A Partner in Better Care", "Beyond maintaining equipment — we help build environments where technology, infrastructure, and support services improve patient outcomes."],
+  ["A Partner in Better Care", "Beyond maintaining equipment â€” we help build environments where technology, infrastructure, and support services improve patient outcomes."],
 ];
 
 export default function HealthcareTech({ go }) {
   return (
     <div data-screen-label="Healthcare Technology Management">
-      {/* Hero — light editorial */}
+      {/* Hero â€” light editorial */}
       <ServiceHero
         go={go}
         kicker="Healthcare Technology Management"
         title="One hospital. One ecosystem. Uninterrupted care."
-        sub="Expertise that keeps healthcare moving — ensuring every medical device is available, safe, compliant, and performing whenever clinicians need it."
+        sub="Expertise that keeps healthcare moving â€” ensuring every medical device is available, safe, compliant, and performing whenever clinicians need it."
         img={healthcareBg}
         imgAlt="Clinical technology managed by Catalyst"
         note="every device, ready when care needs it"
-        chips={[[Activity, "95–98% equipment availability"], [ShieldCheck, "NABH · JCI · NABL compliance support"]]}
+        chips={[[Activity, "95â€“98% equipment availability"], [ShieldCheck, "NABH Â· JCI Â· NABL compliance support"]]}
       />
 
-      {/* Intro — clinical cutout */}
+      {/* Intro â€” clinical cutout */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1.05fr 1fr", gap: "clamp(40px,6vw,80px)", alignItems: "center" }} data-2col>
           <div>
             <Kicker>Healthcare Technology Management</Kicker>
             <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>Expertise That Keeps Healthcare Moving.</h2>
-            <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.75, color: "#46433C" }}>Healthcare Technology Management is more than maintaining biomedical equipment. Catalyst delivers comprehensive HTM as an Independent Service Organization — integrating clinical engineering, preventive and breakdown maintenance, digital asset data management, vendor coordination, calibration, and lifecycle planning into one accountable service model.</p>
+            <p data-reveal data-delay="2" style={{ marginTop: 22, fontSize: 17, lineHeight: 1.75, color: "#46433C" }}>Healthcare Technology Management is more than maintaining biomedical equipment. Catalyst delivers comprehensive HTM as an Independent Service Organization â€” integrating clinical engineering, preventive and breakdown maintenance, digital asset data management, vendor coordination, calibration, and lifecycle planning into one accountable service model.</p>
             <p data-reveal data-delay="3" style={{ marginTop: 16, fontSize: 17, lineHeight: 1.75, color: "#6E6A61" }}>By bringing together people, processes, technology, and data, we help hospitals maximize equipment uptime, optimize lifecycle costs, simplify compliance, and enable uninterrupted patient care.</p>
           </div>
           <div data-reveal data-delay="1">
@@ -78,7 +78,7 @@ export default function HealthcareTech({ go }) {
         </div>
       </section>
 
-      {/* Capabilities — numbered index */}
+      {/* Capabilities â€” numbered index */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#fff" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
           <SectionHead kicker="Our Capabilities" title="Everything Your Biomedical Ecosystem Needs" maxWidth={680} />
@@ -107,7 +107,7 @@ export default function HealthcareTech({ go }) {
         </div>
       </section>
 
-      {/* Product spotlight — CMMS dashboard + HTM mobile app */}
+      {/* Product spotlight â€” CMMS dashboard + HTM mobile app */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#191919", color: "#fff", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(55% 65% at 12% 18%,rgba(3,115,255,.14),transparent 60%),radial-gradient(45% 55% at 92% 80%,rgba(67,147,74,.12),transparent 60%)" }}></div>
         <div style={{ position: "relative", maxWidth: 1240, margin: "0 auto" }}>
@@ -116,26 +116,26 @@ export default function HealthcareTech({ go }) {
             kicker="Digital CMMS & Leadership Dashboards"
             kickerColor="#0373ff"
             title="Digital Intelligence for Smarter Hospitals"
-            sub="Real-time dashboards, service analytics, maintenance schedules, complaint tracking, and asset intelligence give hospital leadership a connected view of their technology ecosystem — while engineers raise, track, and resolve issues from the ward floor."
+            sub="Real-time dashboards, service analytics, maintenance schedules, complaint tracking, and asset intelligence give hospital leadership a connected view of their technology ecosystem â€” while engineers raise, track, and resolve issues from the ward floor."
             maxWidth={820}
           />
           <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr", gap: "clamp(30px,5vw,70px)", alignItems: "center" }} data-2col>
             <div data-reveal>
               {/* TODO (follow-up): replace this dashboard screenshot with a version that removes the "ASHA" client name */}
-              <BrowserFrame src={dashboardImg} alt="Catalyst CMMS leadership dashboard" url="Catalyst CMMS — Leadership Dashboard" />
+              <BrowserFrame src={dashboardImg} alt="Catalyst CMMS leadership dashboard" url="Catalyst CMMS â€” Leadership Dashboard" />
             </div>
             <div data-reveal data-delay="1" style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 26 }}>
-              <PhoneFrame src={htmAppImg} alt="Catalyst HTM mobile app — asset details and issue reporting" width="clamp(190px,19vw,240px)" />
+              <PhoneFrame src={htmAppImg} alt="Catalyst HTM mobile app â€” asset details and issue reporting" width="clamp(190px,19vw,240px)" />
               <div style={{ textAlign: "center", maxWidth: 300 }}>
                 <div style={{ fontFamily: "Outfit, sans-serif", fontWeight: 600, fontSize: 17 }}>Every asset, in your pocket</div>
-                <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "rgba(255,255,255,.62)", marginTop: 8 }}>Scan an asset, see its history, and report an issue in seconds — from any ward, any shift.</p>
+                <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "rgba(255,255,255,.62)", marginTop: 8 }}>Scan an asset, see its history, and report an issue in seconds â€” from any ward, any shift.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Outcomes — stat strip */}
+      {/* Outcomes â€” stat strip */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#fff" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
           <SectionHead
@@ -148,7 +148,7 @@ export default function HealthcareTech({ go }) {
         </div>
       </section>
 
-      {/* Beyond equipment — ruled columns */}
+      {/* Beyond equipment â€” ruled columns */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
           <SectionHead
@@ -170,7 +170,7 @@ export default function HealthcareTech({ go }) {
         </div>
       </section>
 
-      {/* Why Catalyst — ruled columns */}
+      {/* Why Catalyst â€” ruled columns */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#fff" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
           <SectionHead kicker="Why Catalyst" kickerColor="#377B3D" dashColor="#43934A" title="The Catalyst Advantage" maxWidth={680} />

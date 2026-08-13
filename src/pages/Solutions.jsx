@@ -1,4 +1,4 @@
-import CTA from "../components/CTA";
+﻿import CTA from "../components/CTA";
 import { UtensilsCrossed, Building2, Factory, Stethoscope, Users, Puzzle, Star, Lightbulb, Leaf, TrendingUp, Target, ArrowRight } from "lucide-react";
 
 export default function Solutions({ go }) {
@@ -17,7 +17,7 @@ export default function Solutions({ go }) {
       <section style={{padding:"clamp(70px,8vw,110px) clamp(20px,4vw,56px)",background:"#fff"}}>
         <div style={{maxWidth:1240,margin:"0 auto"}}>
           <p data-reveal style={{maxWidth:900,fontSize:"clamp(18px,2vw,26px)",fontFamily:"Outfit",fontWeight:500,lineHeight:1.5,color:"#191919"}}>Catalyst brings together specialized expertise, operational excellence, and innovation to create integrated solutions that strengthen organizations, elevate experiences, and enable sustainable growth.</p>
-          <p data-reveal data-delay="1" style={{marginTop:18,fontSize:17,color:"#6E6A61",maxWidth:760,lineHeight:1.7}}>Because the true measure of a solution is not what it delivers�it's the impact it creates.</p>
+          <p data-reveal data-delay="1" style={{marginTop:18,fontSize:17,color:"#6E6A61",maxWidth:760,lineHeight:1.7}}>Because the true measure of a solution is not what it delivers—it's the impact it creates.</p>
 
           <div style={{display:"grid",gridTemplateColumns:"repeat(6,1fr)",gap:20,marginTop:60}} data-3col>
             <div data-reveal onClick={() => go("food")} className="lift" style={{gridColumn:"span 4",position:"relative",minHeight:300,borderRadius:32,overflow:"hidden",background:"linear-gradient(135deg,#191919,#242424)",padding:36,display:"flex",flexDirection:"column",justifyContent:"space-between",cursor:"pointer"}}>

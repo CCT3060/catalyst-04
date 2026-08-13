@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+ï»¿import { useEffect, useRef, useState } from "react";
 
 const sectors = [
   {
@@ -24,7 +24,7 @@ const sectors = [
   },
   {
     num: "04", color: "#0373ff", labelColor: "#0258cc", label: "EDUCATION", title: "Education",
-    desc: "Educational institutions are more than places of learning—they are environments that shape future generations. From schools and universities to student residences, Catalyst creates safe, hygienic, and inspiring campuses that foster academic excellence, student well-being, and seamless day-to-day operations. Our integrated solutions help educators focus on what matters most: empowering students to learn, grow, and thrive.",
+    desc: "Educational institutions are more than places of learningâ€”they are environments that shape future generations. From schools and universities to student residences, Catalyst creates safe, hygienic, and inspiring campuses that foster academic excellence, student well-being, and seamless day-to-day operations. Our integrated solutions help educators focus on what matters most: empowering students to learn, grow, and thrive.",
     tags: ["Campus Experience", "Safety & Compliance", "Student Well-Being", "Operational Excellence", "Sustainable Campuses"],
     tagline: "Supporting environments where curiosity grows and futures take shape.",
     img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=1200"
@@ -88,7 +88,7 @@ export default function Sectors({ go, hash }) {
         </div>
       </section>
 
-      {/* Sectors — sticky visual scrollytelling */}
+      {/* Sectors â€” sticky visual scrollytelling */}
       <section style={{ padding: "clamp(70px,9vw,120px) clamp(20px,4vw,56px)", background: "#fff" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
 
@@ -104,7 +104,7 @@ export default function Sectors({ go, hash }) {
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(40px,6vw,80px)", alignItems: "start" }} data-2col>
 
-            {/* left — content blocks, consistently aligned */}
+            {/* left â€” content blocks, consistently aligned */}
             <div>
               {sectors.map((s, i) => (
                 <article key={i} ref={el => { blocksRef.current[i] = el; }} style={{ minHeight: "58vh", display: "flex", flexDirection: "column", justifyContent: "center", padding: "clamp(36px,5vh,60px) 0", borderBottom: i < sectors.length - 1 ? "1px solid rgba(25,25,25,.07)" : "none", opacity: active === i ? 1 : 0.35, transition: "opacity .5s ease" }}>
@@ -130,7 +130,7 @@ export default function Sectors({ go, hash }) {
               ))}
             </div>
 
-            {/* right — sticky image stage with the sitewide curtain wipe */}
+            {/* right â€” sticky image stage with the sitewide curtain wipe */}
             <div data-sector-sticky style={{ position: "sticky", top: 104, height: "calc(100vh - 170px)", minHeight: 440, borderRadius: 36, overflow: "hidden", background: "#191919" }}>
               {sectors.map((s, i) => (
                 <div key={i} aria-hidden={active !== i} style={{ position: "absolute", inset: 0, clipPath: i <= active ? "inset(0% 0 0 0)" : "inset(100% 0 0 0)", transition: "clip-path .9s cubic-bezier(.77,0,.18,1)", willChange: "clip-path" }}>

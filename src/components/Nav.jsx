@@ -98,7 +98,7 @@ export default function Nav({ go, darkHero, activeNav, mobileOpen, setMobileOpen
               ["sectors?section=2", Landmark, "Infrastructure, Public Sector & Smart Cities"],
               ["sectors?section=3", GraduationCap, "Education"],
               ["sectors?section=4", Home, "Community Living"],
-              ["htm", Stethoscope, "Healthcare Technology Management"],
+              ["sectors?section=5", Stethoscope, "Healthcare"]
             ].map(([id, Icon, name]) => (
               <div key={id} onClick={() => go(id)} className="menu-item">
                 <span className="menu-ico"><Icon size={16} /></span>

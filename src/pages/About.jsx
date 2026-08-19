@@ -140,7 +140,7 @@ export default function About({ go }) {
         </div>
 
         <div style={{ maxWidth: 1240, margin: "70px auto 0" }}>
-          <StatStrip stats={[["100+", "Locations", "Supporting diverse industries through integrated service excellence."], ["6500+", "Workforce", "Delivering expertise, care, and commitment every day."], ["100+", "Client Partnerships", "Built on trust, performance, and shared success."], ["2Lakhs+", "Meals Served", "Nourishing communities and workplaces."], ["75+", "Sq. Ft. Managed", "Creating safe, efficient, and future-ready spaces."]]} />
+          <StatStrip stats={[["100+", "Locations", "Supporting diverse industries through integrated service excellence."], ["6500+", "Workforce", "Delivering expertise, care, and commitment every day."], ["100+", "Client Partnerships", "Built on trust, performance, and shared success."], ["2Lac+", "Meals Served", "Nourishing communities and workplaces."], ["75+", "Sq. Ft. Managed", "Creating safe, efficient, and future-ready spaces."]]} />
         </div>
       </section>
 

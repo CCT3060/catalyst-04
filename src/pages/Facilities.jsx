@@ -1,6 +1,6 @@
 ﻿import CTA from "../components/CTA";
 import { Kicker, SectionHead, ServiceHero, IndustriesMarquee, PhoneFrame, BrowserFrame, CutoutArch } from "../components/SolutionsKit";
-import fmImage from "../assets/fm.png";
+import fmImage from "../assets/ifmpage.jpg";
 import ifmTeamImg from "../assets/3.png";
 import ecleanAppImg from "../assets/image copy.png";
 import portalImg from "../assets/image copy 2.png";
@@ -76,7 +76,7 @@ export default function Facilities({ go }) {
         img={fmImage}
         imgAlt="Catalyst facility teams keeping environments running"
         note="one team, every service"
-        chips={[[ShieldCheck, "ISO-certified operations"], [Building2, "XX M+ sq. ft. managed"]]}
+        chips={[[ShieldCheck, "ISO-certified operations"], [Building2, "75+ sq. ft. managed"]]}
       />
 
       {/* Overview — cutout crew on arch */}

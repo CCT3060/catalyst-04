@@ -3,7 +3,7 @@ import { Kicker, SectionHead, IndustriesMarquee, PhoneFrame, CutoutArch } from "
 import foodTeamImg from "../assets/2.png";
 import chefImg from "../assets/Gemini_Generated_Image_56k6u556k6u556k6.png";
 import joiFoodImg from "../assets/WhatsApp Image 2026-07-07 at 4.39.50 PM.jpeg";
-import foodHeroImg from "../assets/Gemini_Generated_Image_313s4z313s4z313s.png";
+import foodHeroImg from "../assets/foodbg.jpg";
 import { ArrowRight, ArrowUpRight, Zap, HeartPulse, GraduationCap, Users, BadgeCheck, UtensilsCrossed } from "lucide-react";
 
 const MENU = [

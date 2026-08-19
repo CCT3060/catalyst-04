@@ -3,7 +3,7 @@ import CTA from "../components/CTA";
 import HeroSlider from "../components/HeroSlider";
 import partnerImg from "../assets/Partnerwithus.png";
 import { Globe } from "@/components/ui/cobe-globe";
-import aboutusImg from "../assets/aboutus.png";
+import aboutusImg from "../assets/about1.jpg";
 import iso14001Img from "../assets/certificate/iso14001.jpg";
 import iso45001Img from "../assets/certificate/ISO45001.png";
 import fssaiImg from "../assets/certificate/fssai.png";
@@ -12,17 +12,20 @@ import esgImg from "../assets/certificate/ESG.jpg";
 import iso9001Img from "../assets/certificate/ISO9001.jpg";
 import regulatoryComplianceImg from "../assets/certificate/Regulatory.png";
 import { UtensilsCrossed, Building2, Factory, Stethoscope, Users, ArrowRight, ArrowUpRight } from "lucide-react";
-import foodServiceImg from "../assets/food_services_gen.png";
-import fmImg from "../assets/ifm_gen.png";
+import foodServiceImg from "../assets/foodhome.jpg";
+import fmImg from "../assets/ifmhome.jpg";
 import workforceImg from "../assets/workforce_gen.png";
 import AnimatedNumber from "../components/AnimatedNumber";
+import about2 from "../assets/about2.jpg";
+import about3 from "../assets/about3.jpg";
+import about4 from "../assets/about4.jpg";
 
 const SECTORS = [
   { num: "01", name: "Corporate & Commercial Spaces", desc: "Workplaces are more than buildings, they are where ideas grow, teams connect, and performance takes shape. We help organizations create engaging, high-performing environments that elevate employee experiences and support business success.", bg: "#191919", img: "corporate.jpg", page: null },
   { num: "02", name: "Manufacturing, Industrial & Infrastructure", desc: "Powering the environments that drive industry forward. From manufacturing facilities to logistics networks and critical infrastructure, we create high-performing environments that strengthen operational continuity, workforce experience, and business resilience.", bg: "#43934A", img: "manufacturing.jpg", page: null },
   { num: "03", name: "Infrastructure, Public Sector & Smart Cities", desc: "As cities and public spaces continue to evolve, organizations require trusted partners who can support large-scale infrastructure and community environments. Our approach focuses on creating sustainable environments that support future-ready communities.", bg: "#242424", img: "infrastructure.jpg", page: null },
-  { num: "04", name: "Education", desc: "Educational institutions are more than places of learningâ€”they are environments that shape future generations. From schools and universities to student residences, Catalyst creates safe, hygienic, and inspiring campuses that foster academic excellence, student well-being, and seamless day-to-day operations. Our integrated solutions help educators focus on what matters most: empowering students to learn, grow, and thrive.", bg: "#0258cc", img: "education.jpg", page: null },
-  { num: "05", name: "Community Living", desc: "Communities flourish when people feel safe, connected, and cared for. Catalyst partners with residential communities and integrated townships to deliver thoughtfully managed environments that prioritize comfort, safety, sustainability, and operational excellence. Through integrated facility management, food services, infrastructure support, and community-focused solutions, we help create vibrant living spaces where residents can enjoy a higher quality of life.", bg: "#FFB800", img: "education.jpg", page: null },
+  { num: "04", name: "Education", desc: "Educational institutions are more than places of learningâ€”they are environments that shape future generations. From schools and universities to student residences, Catalyst creates safe, hygienic, and inspiring campuses that foster academic excellence, student well-being, and seamless day-to-day operations. Our integrated solutions help educators focus on what matters most: empowering students to learn, grow, and thrive.", bg: "#0258cc", img: "cmunity.png", page: null },
+  { num: "05", name: "Community Living", desc: "Communities flourish when people feel safe, connected, and cared for. Catalyst partners with residential communities and integrated townships to deliver thoughtfully managed environments that prioritize comfort, safety, sustainability, and operational excellence. Through integrated facility management, food services, infrastructure support, and community-focused solutions, we help create vibrant living spaces where residents can enjoy a higher quality of life.", bg: "#FFB800", img: "community.png", page: null },
   { num: "06", name: "Healthcare Technology Management", desc: "Supporting better care through people, technology, and operational excellence. We support hospitals, healthcare institutions, and life sciences organizations enhance patient experiences, optimize clinical operations, and maximize the performance of critical healthcare technologies while maintaining the highest standards of safety, compliance, and care quality.", bg: "#2E5D33", img: "healthcare.jpg", page: "htm" },
 ];
 
@@ -77,15 +80,15 @@ export default function Home({ go }) {
             </div>
             {/* Box 2 (Middle Right) */}
             <div style={{ position: "absolute", top: "15%", right: 0, width: "55%", height: "55%", borderRadius: 24, overflow: "hidden", border: "6px solid #F9F7F3", boxShadow: "0 20px 40px rgba(0,0,0,0.12)", zIndex: 2 }}>
-              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800" alt="Team Collaboration" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <img src={about2} alt="Team Collaboration" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </div>
             {/* Box 3 (Bottom Left) */}
             <div style={{ position: "absolute", bottom: "10%", left: "5%", width: "42%", height: "42%", borderRadius: 24, overflow: "hidden", border: "6px solid #F9F7F3", boxShadow: "0 20px 40px rgba(0,0,0,0.08)", zIndex: 3 }}>
-              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" alt="Meeting" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <img src={about3} alt="Meeting" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </div>
             {/* Box 4 (Bottom Right) */}
             <div style={{ position: "absolute", bottom: 0, right: "10%", width: "45%", height: "30%", borderRadius: 24, overflow: "hidden", border: "6px solid #F9F7F3", boxShadow: "0 20px 40px rgba(0,0,0,0.08)", zIndex: 4 }}>
-              <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800" alt="Office Space" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <img src={about4} alt="Office Space" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </div>
           </div>
           <div>
@@ -246,7 +249,7 @@ export default function Home({ go }) {
 
               <div className="fdn-cap" style={{ marginTop: "clamp(26px,3vw,40px)" }}>THE IMPACT WE DELIVER, EVERY YEAR</div>
               <div className="fdn-grid">
-                {[["2Lakhs+", "Meals Served", "Nourishing workplaces, communities, and institutions every day."], ["75+", "Sq. Ft. Managed", "Maintaining safe, efficient, and high-performing environments."]].map(([num, label, desc], i) => (
+                {[["2Lac+", "Meals Served", "Nourishing workplaces, communities, and institutions every day."], ["75+", "Sq. Ft. Managed", "Maintaining safe, efficient, and high-performing environments."]].map(([num, label, desc], i) => (
                   <div key={i} className={`fdn-cell ${i === 0 ? "lg:col-start-2" : ""}`}>
                     <div className="fdn-tick"></div>
                     <div className="fdn-num"><AnimatedNumber value={num} /></div>

@@ -93,7 +93,7 @@ export default function HeroSlider({ go }) {
 
   const goTo = useCallback((i) => {
     setState(s => {
-      const next = ((i % N) + N) % N;
+        const next = ((i % N) + N) % N;
       if (next === s.current) return s;
       booted.current = true;
       return { current: next, leaving: s.current };

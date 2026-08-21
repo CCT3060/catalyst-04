@@ -5,6 +5,7 @@ import whyInfrastructureBg from "../assets/road.jpg";
 import constructionImg from "../assets/buldong.jpg";
 import siteEngineersImg from "../assets/5.png";
 import innovation from "../assets/innovation.jpg";
+import infrabottomBg from "../assets/infrabottom.jpg";
 import { ShieldCheck, Leaf, Building2 } from "lucide-react";
 
 export default function Infrastructure({ go }) {
@@ -173,6 +174,7 @@ export default function Infrastructure({ go }) {
         primaryPage="contact"
         secondaryLabel="Start With Your Vision"
         secondaryPage="contact"
+        image={infrabottomBg}
       />
     </div>
   );

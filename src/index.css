@@ -477,6 +477,21 @@ button { font-family: inherit; border: none; cursor: pointer }
 }
 .fs-why-card:hover::before { width: 100% }
 .fs-why-card.blue::before { background: #0373ff }
+.fs-joi-thumb {
+  position: relative;
+  width: 100%; aspect-ratio: 3/4;
+  border-radius: 12px; overflow: hidden;
+  border: 1px solid rgba(255,255,255,.14);
+  cursor: pointer;
+  transition: border-color .3s;
+}
+.fs-joi-thumb img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform .4s cubic-bezier(.16,.84,.44,1), opacity .3s;
+}
+.fs-joi-thumb:hover img { transform: scale(1.08) }
+.fs-joi-thumb.active { border-color: #0373ff }
+.fs-joi-thumb.active img { opacity: .55 }
 
 /* -- Nav: CTA pill + dropdown menus -- */
 .nav-cta {

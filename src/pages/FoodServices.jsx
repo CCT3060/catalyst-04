@@ -1,9 +1,15 @@
-﻿import CTA from "../components/CTA";
+﻿import { useState } from "react";
+import CTA from "../components/CTA";
 import { Kicker, SectionHead, IndustriesMarquee, PhoneFrame, CutoutArch } from "../components/SolutionsKit";
-import foodTeamImg from "../assets/2.png";
+import foodTeamImg from "../assets/food2.jpg";
 import chefImg from "../assets/Gemini_Generated_Image_56k6u556k6u556k6.png";
-import joiFoodImg from "../assets/WhatsApp Image 2026-07-07 at 4.39.50 PM.jpeg";
-import foodHeroImg from "../assets/foodbg.jpg";
+import joiFoodImg from "../assets/joimain.jpg";
+import joi1Img from "../assets/joi1.jpg";
+import joi2Img from "../assets/joi2.jpg";
+import joi3Img from "../assets/joi3.jpg";
+import joi4Img from "../assets/joi4.jpg";
+import foodHeroImg from "../assets/food1.jpg";
+import foodBottomImg from "../assets/foodbottom.jpg";
 import { ArrowRight, ArrowUpRight, Zap, HeartPulse, GraduationCap, Users, BadgeCheck, UtensilsCrossed } from "lucide-react";
 
 const MENU = [
@@ -44,7 +50,10 @@ const INDUSTRIES = [
   "Power & Energy", "IT & ITeS", "Corporate Workplaces", "Healthcare & Patient Dining", "Educational Institutions",
 ];
 
+const JOI_GALLERY = [joiFoodImg, joi1Img, joi2Img, joi3Img, joi4Img];
+
 export default function FoodServices({ go }) {
+  const [joiScreen, setJoiScreen] = useState(0);
   return (
     <div data-screen-label="Food Services">
 
@@ -153,8 +162,15 @@ export default function FoodServices({ go }) {
               ))}
             </div>
           </div>
-          <div data-reveal data-delay="1" style={{ display: "flex", justifyContent: "center" }}>
-            <PhoneFrame src={joiFoodImg} alt="JOI Food app" width="clamp(230px,24vw,290px)" />
+          <div data-reveal data-delay="1" style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 22 }}>
+            <PhoneFrame src={JOI_GALLERY[joiScreen]} alt="JOI Food app" width="clamp(230px,24vw,290px)" />
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(5,1fr)", gap: 8, width: "clamp(230px,24vw,290px)" }}>
+              {JOI_GALLERY.map((img, i) => (
+                <div key={i} className={`fs-joi-thumb${joiScreen === i ? " active" : ""}`} onClick={() => setJoiScreen(i)}>
+                  <img src={img} alt={`JOI Food ${i + 1}`} data-no-reveal />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -202,7 +218,7 @@ export default function FoodServices({ go }) {
         </div>
       </section>
 
-      <CTA go={go} title="Let's Reimagine Everyday Dining" subtitle="Whether you're managing a corporate workplace, an industrial facility, a healthcare institution, or an educational campus, Catalyst partners with you to create dining experiences that bring together nutrition, hospitality, and operational excellence." primaryLabel="Explore Food Solutions â†’" primaryPage="contact" secondaryLabel="Connect with Our Food Experts" secondaryPage="contact" />
+      <CTA go={go} title="Let's Reimagine Everyday Dining" subtitle="Whether you're managing a corporate workplace, an industrial facility, a healthcare institution, or an educational campus, Catalyst partners with you to create dining experiences that bring together nutrition, hospitality, and operational excellence." primaryLabel="Explore Food Solutions â†’" primaryPage="contact" secondaryLabel="Connect with Our Food Experts" secondaryPage="contact" image={foodBottomImg} />
     </div>
   );
 }

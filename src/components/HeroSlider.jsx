@@ -4,7 +4,8 @@ import "./HeroSlider.css";
 
 const AUTO_MS = 7000;
 
-import hero1Img from "../assets/ChatGPT Image Aug 11, 2026, 11_44_50 AM.png";
+import hero1Img from "../assets/catalysthome1.png";
+import hero4Img from "../assets/homeworkspace.jpg";
 
 // Full-bleed cinematic hero. Each slide is one service line: a photographic
 // environment (remote imagery), the slide's brand accent, and the client copy.
@@ -15,7 +16,7 @@ const SLIDES = [
     accent: "#0373ff",
     lines: [
       [{ t: "People at the Heart of" }],
-      [{ t: "Everything We " }, { t: "Do.", a: true }],
+      [{ t: "Everything We " }, { t: "Do", a: true }],
     ],
     para: "We partner organizations build healthier workplaces, safer communities, smarter infrastructure, and exceptional everyday experiences through integrated solutions that enhance well-being and drive performance.",
     img: hero1Img,
@@ -27,7 +28,7 @@ const SLIDES = [
     accent: "#FF8F2A",
     lines: [
       [{ t: "Food experiences" }],
-      [{ t: "that " }, { t: "elevate.", a: true }],
+      [{ t: "that " }, { t: "elevate", a: true }],
     ],
     para: "Food has the power to shape experiences far beyond the dining table. We design dining environments that combine nutrition, hospitality, and innovation — from workplaces to healthcare institutions and educational campuses.",
     img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2400&q=80",
@@ -39,7 +40,7 @@ const SLIDES = [
     accent: "#7CC584",
     lines: [
       [{ t: "Spaces that" }],
-      [{ t: "perform.", a: true }],
+      [{ t: "perform", a: true }],
     ],
     para: "We deliver integrated facility management solutions that create safe, efficient and sustainable environments, enhancing occupant experience while maximizing operational performance.",
     img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=80",
@@ -51,10 +52,10 @@ const SLIDES = [
     accent: "#FFC14A",
     lines: [
       [{ t: "People who make" }],
-      [{ t: "the " }, { t: "difference.", a: true }],
+      [{ t: "the " }, { t: "difference", a: true }],
     ],
     para: "We provide skilled workforce solutions that empower organizations with the right talent to deliver exceptional service, operational excellence and sustainable growth.",
-    img: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=2400&q=80",
+    img: hero4Img,
     alt: "Team of professionals collaborating around a table",
   },
   {
@@ -63,7 +64,7 @@ const SLIDES = [
     accent: "#F5913D",
     lines: [
       [{ t: "Infrastructure that" }],
-      [{ t: "stands " }, { t: "resilient.", a: true }],
+      [{ t: "stands " }, { t: "resilient", a: true }],
     ],
     para: "We design, build and maintain resilient infrastructure that supports business continuity, enables growth and delivers long-term value through future-ready solutions.",
     img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2400&q=80",
@@ -75,7 +76,7 @@ const SLIDES = [
     accent: "#7CC584",
     lines: [
       [{ t: "One ecosystem." }],
-      [{ t: "Uninterrupted " }, { t: "care.", a: true }],
+      [{ t: "Uninterrupted " }, { t: "care", a: true }],
     ],
     para: "We manage the complete lifecycle of biomedical equipment across every department through a single point of accountability, maximizing equipment uptime and enabling uninterrupted patient care.",
     img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=2400&q=80",

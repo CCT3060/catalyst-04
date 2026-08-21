@@ -3,6 +3,7 @@ import { Kicker, SectionHead, NumberedIndex, ServiceHero, CutoutArch } from "../
 import staffingBg from "../assets/12.png";
 import workforceImg from "../assets/1.png";
 import futureImg from "../assets/workforce_future_1784028629761.png";
+import workforceBottomImg from "../assets/workforcebottom.jpg";
 import { Users, MapPin } from "lucide-react";
 
 const SOLUTIONS = [
@@ -265,6 +266,7 @@ export default function Workforce({ go }) {
         primaryPage="contact"
         secondaryLabel="Talk to Our Workforce Solutions Team"
         secondaryPage="contact"
+        image={workforceBottomImg}
       />
     </div>
   );

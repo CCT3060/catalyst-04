@@ -1,10 +1,11 @@
 ﻿import CTA from "../components/CTA";
 import { Kicker, SectionHead, ServiceHero, IndustriesMarquee, PhoneFrame, BrowserFrame, CutoutArch } from "../components/SolutionsKit";
-import fmImage from "../assets/ifmpage.jpg";
+import fmImage from "../assets/ifm1.jpg";
 import ifmTeamImg from "../assets/3.png";
 import ecleanAppImg from "../assets/image copy.png";
 import portalImg from "../assets/image copy 2.png";
 import innovationImg from "../assets/Gemini_Generated_Image_e5koqpe5koqpe5ko.png";
+import ifmBottomImg from "../assets/ifmbottom.jpg";
 import { ShieldCheck, Building2 } from "lucide-react";
 
 const SERVICES = [
@@ -202,6 +203,7 @@ export default function Facilities({ go }) {
         primaryPage="contact"
         secondaryLabel="Contact Us"
         secondaryPage="contact"
+        image={ifmBottomImg}
       />
     </div>
   );

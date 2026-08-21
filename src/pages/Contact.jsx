@@ -100,6 +100,53 @@ export default function Contact({ go }) {
         </div>
       </section>
 
+      {/* Our Offices */}
+      <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#fff" }}>
+        <div style={{ maxWidth: 1240, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: "clamp(44px,5vw,70px)" }}>
+            <h2 data-reveal style={{ fontSize: "clamp(36px,4.5vw,56px)", color: "#1E3B24", fontFamily: "Outfit", fontWeight: 500 }}>
+              Our <span style={{ color: "#0258cc", fontFamily: "Caveat, cursive", borderBottom: "3px solid #0258cc", paddingBottom: 6 }}>Offices</span>
+            </h2>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "clamp(20px,3vw,34px)" }}>
+            {[
+              {
+                region: "Middle East",
+                company: "Catalyst Catering Services LLC (CCS)",
+                address: "Darwish Compound, Warehouse No.4,\nBuilding No: 3, DIP-2,\nDubai",
+                email: "info@catalystgroupme.com"
+              },
+              {
+                region: "India Office",
+                company: "Catalyst Service Solutions Partners Private\nLimited",
+                address: "401/402, Yash Tower, Opp. D.A.V Public\nSchool, Aundh, Pune – 411007",
+                email: "sales@catalystsolutions.eco"
+              },
+              {
+                region: "Singapore Office",
+                company: "Comprehensive Support Services Pte. Ltd",
+                address: "12 Woodlands Square, #02-75, Woods\nSquare Tower 1, Singapore – 737715",
+                email: "sales@catalystsolutions.eco"
+              }
+            ].map((office, i) => (
+              <div key={i} data-reveal data-delay={String(i)} className="lift" style={{ background: "#FDFBF8", border: "1px solid rgba(25,25,25,.06)", borderRadius: 16, padding: "clamp(30px,4vw,44px)", display: "flex", flexDirection: "column", gap: 16, boxShadow: "0 10px 40px rgba(0,0,0,0.03)" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+                  <MapPin size={22} color="#E91E63" fill="#E91E63" />
+                  <h3 style={{ fontSize: 20, color: "#1E3B24", fontFamily: "Outfit", fontWeight: 500 }}>{office.region}</h3>
+                </div>
+                <div style={{ fontSize: 14, color: "#6E6A61", lineHeight: 1.7, flex: 1, display: "flex", flexDirection: "column" }}>
+                  <p style={{ marginBottom: 20, whiteSpace: "pre-line" }}>{office.company}</p>
+                  <p style={{ whiteSpace: "pre-line", marginBottom: 24 }}>{office.address}</p>
+                  <div style={{ borderTop: "1px solid rgba(25,25,25,.08)", paddingTop: 18, marginTop: "auto" }}>
+                    <p style={{ fontWeight: 600, color: "#191919" }}>Email: <span style={{ fontWeight: 400 }}>{office.email}</span></p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 50 }}>

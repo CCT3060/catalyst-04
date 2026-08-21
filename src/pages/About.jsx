@@ -2,7 +2,7 @@
 import CTA from "../components/CTA";
 import { StatStrip } from "../components/SolutionsKit";
 import { BeamsBackground } from "@/components/ui/beams-background";
-import partnerImg from "../assets/Partnerwithus.png";
+import aboutBottomImg from "../assets/aboutusbottom.jpg";
 import { ProfileCard } from "@/components/ui/profile-card";
 import IndiaMap from "../components/IndiaMap";
 import sankar from "../assets/sankar.png";
@@ -67,15 +67,15 @@ export default function About({ go }) {
   }, []);
 
   const leaders = [
-    { name: 'Ram Mankari', role: 'Chairman & Managing Director', quote: '"Insert personal leadership quote/strength here."', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2023/06/1-Ram-Mankari.png', featured: true },
-    { name: 'Sekhar Seshan', role: 'Strategy Advisor & Mentor', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2023/06/3-Shekar-Seshan.png', featured: true },
-    { name: 'Dinesh Lamsal', role: 'Chief Executive Officer', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2023/06/2-Dinesh-Lamsal.jpg' },
-    { name: 'Sachin Desai', role: 'Chief Human Resource Officer', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2023/06/6-Sachin-Desai.png' },
-    { name: 'Parimal Dabhade', role: 'Chief Financial Officer', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2023/06/5-Parimal-Dabhade.png' },
-    { name: 'Tarun Malik', role: 'Director – IFM', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2023/09/Tarun.pic-PP.jpg' },
-    { name: 'Santosh Lal', role: 'Chief Business Officer – IFM', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2026/06/santosh-1.png' },
-    { name: 'Sudeep Suren', role: 'Vice President – Food Solutions', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2024/06/sudeep.jpg' },
-    { name: 'Sankar Sreedharan', role: 'Vice President - Strategy & New Market', quote: '', image: sankar },
+    { name: 'Ram Mankari', role: 'Chairman & Managing Director', quote: '"Insert personal leadership quote/strength here."', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2023/06/1-Ram-Mankari.png', featured: true, linkedin: 'https://www.linkedin.com/in/ram-mankari-6b969b15/' },
+    { name: 'Sekhar Seshan', role: 'Strategy Advisor & Mentor', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2023/06/3-Shekar-Seshan.png', featured: true, linkedin: 'https://www.linkedin.com/in/sekhar-seshan-24635032/' },
+    { name: 'Dinesh Lamsal', role: 'Chief Executive Officer', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2023/06/2-Dinesh-Lamsal.jpg', linkedin: 'https://www.linkedin.com/in/dinesh-lamsal-6708245/' },
+    { name: 'Sachin Desai', role: 'Chief Human Resource Officer', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2023/06/6-Sachin-Desai.png', linkedin: 'https://www.linkedin.com/in/sachin-desai-bb722858/' },
+    { name: 'Parimal Dabhade', role: 'Chief Financial Officer', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2023/06/5-Parimal-Dabhade.png', linkedin: 'https://www.linkedin.com/in/parimal-dabhade-a99bb9178/' },
+    { name: 'Tarun Malik', role: 'Director – IFM', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2023/09/Tarun.pic-PP.jpg', linkedin: 'https://www.linkedin.com/in/tarun-malik-46872a17/' },
+    { name: 'Santosh Lal', role: 'Chief Business Officer – IFM', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2026/06/santosh-1.png', linkedin: 'https://www.linkedin.com/in/santosh-n-lal-33b6957b/' },
+    { name: 'Sudeep Suren', role: 'Vice President – Food Solutions', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2024/06/sudeep.jpg', linkedin: 'https://www.linkedin.com/in/sudeep-suren-42b47554/' },
+    { name: 'Sankar Sreedharan', role: 'Vice President - Strategy & New Market', quote: '', image: sankar, linkedin: 'https://www.linkedin.com/in/sankarsreedharan/' },
 
   ];
 
@@ -174,7 +174,7 @@ export default function About({ go }) {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(250px,1fr))", gap: 22 }}>
             {leaders.map((ldr, i) => (
               <div key={i} data-reveal data-delay={i > 0 ? String(Math.min(i, 3)) : undefined}>
-                <ProfileCard name={ldr.name} role={ldr.role} image={ldr.image} onConnect={() => window.location.href = '#connect'} />
+                <ProfileCard name={ldr.name} role={ldr.role} image={ldr.image} onConnect={() => window.open(ldr.linkedin, '_blank', 'noopener,noreferrer')} />
               </div>
             ))}
           </div>
@@ -323,7 +323,7 @@ export default function About({ go }) {
         </div>
       </section>
 
-      <CTA go={go} title="Let's Create Impact Together" primaryLabel="Partner With Us →" primaryPage="contact" secondaryLabel="Explore Solutions" secondaryPage="solutions" image={partnerImg} />
+      <CTA go={go} title="Let's Create Impact Together" primaryLabel="Partner With Us →" primaryPage="contact" secondaryLabel="Explore Solutions" secondaryPage="solutions" image={aboutBottomImg} />
     </div>
   );
 }

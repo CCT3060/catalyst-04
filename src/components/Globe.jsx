@@ -88,7 +88,7 @@ export function Globe({
     if (canvas.offsetWidth > 0) {
       init();
     } else {
-      // canvas not yet laid out â€” wait for ResizeObserver
+      // canvas not yet laid out — wait for ResizeObserver
       const ro = new ResizeObserver((entries) => {
         if (entries[0]?.contentRect.width > 0) { ro.disconnect(); init(); }
       });
@@ -101,7 +101,7 @@ export function Globe({
       window.removeEventListener("pointermove", onPointerMove);
       if (globeRef.current) { globeRef.current.destroy(); globeRef.current = null; }
     };
-  }, []); // intentionally empty â€” globe is created once on mount
+  }, []); // intentionally empty — globe is created once on mount
 
   return (
     <div style={{ position: "relative", aspectRatio: "1 / 1", userSelect: "none", ...style }}>

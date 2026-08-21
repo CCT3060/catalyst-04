@@ -16,7 +16,7 @@ export default function Technologies({ go }) {
       process: ["Pre-Meal Booking", "QSR Platform", "KOT & Pantry"]
     },
     {
-      name: "ERP FOR FOOD",
+      name: "Tech Platform For Food",
       category: "Food Tech",
       icon: Box,
       color: "#10B981",
@@ -25,7 +25,7 @@ export default function Technologies({ go }) {
       process: ["Demand Forecasting", "Production Planning", "Fulfillment"]
     },
     {
-      name: "Facility E-Checklist",
+      name: "Facility Management Tech Platform",
       category: "Operations",
       icon: ShieldCheck,
       color: "#3B82F6",
@@ -34,7 +34,7 @@ export default function Technologies({ go }) {
       process: ["Audit Assignment", "Digital Execution", "Compliance Report"]
     },
     {
-      name: "HTM",
+      name: "Assetpro For Healthcare",
       category: "Health Care",
       icon: Stethoscope,
       color: "#F43F5E",

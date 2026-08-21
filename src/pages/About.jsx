@@ -87,10 +87,7 @@ export default function About({ go }) {
         <div style={{ position: "relative", maxWidth: 1240, margin: "0 auto" }}>
           <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, marginBottom: 24 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>About Catalyst</div>
           <h1 data-reveal data-delay="1" className="shown" style={{ fontSize: "clamp(38px,5.6vw,80px)", color: "#191919", maxWidth: 1080, lineHeight: 1.08 }}>
-            Environments where people work<img className="abt-chip" src="/sectors/corporate.jpg" alt="" aria-hidden="true" data-no-reveal />{", "}
-            heal<img className="abt-chip r2" src="/sectors/healthcare.jpg" alt="" aria-hidden="true" data-no-reveal />{", "}
-            learn<img className="abt-chip" src="/sectors/education.jpg" alt="" aria-hidden="true" data-no-reveal />{", "}
-            and live<img className="abt-chip r2" src="/sectors/manufacturing.jpg" alt="" aria-hidden="true" data-no-reveal />.
+            Environments where people work, heal, learn, and live.
           </h1>
           <p data-reveal data-delay="2" className="shown" style={{ marginTop: 28, maxWidth: 680, fontSize: "clamp(16px,1.3vw,19px)", lineHeight: 1.7, color: "#46433C" }}>Behind every productive workplace, every efficient facility, every well-managed healthcare institution, and every thriving community is an ecosystem designed to support people.</p>
         </div>
@@ -140,7 +137,7 @@ export default function About({ go }) {
         </div>
 
         <div style={{ maxWidth: 1240, margin: "70px auto 0" }}>
-          <StatStrip stats={[["100+", "Locations", "Supporting diverse industries through integrated service excellence."], ["6500+", "Workforce", "Delivering expertise, care, and commitment every day."], ["100+", "Client Partnerships", "Built on trust, performance, and shared success."], ["2Lac+", "Meals Served", "Nourishing communities and workplaces."], ["75+", "Sq. Ft. Managed", "Creating safe, efficient, and future-ready spaces."]]} />
+          <StatStrip stats={[["100+", "Locations", "Supporting diverse industries through integrated service excellence."], ["6500+", "Workforce", "Delivering expertise, care, and commitment every day."], ["100+", "Client Partnerships", "Built on trust, performance, and shared success."], ["2Lac+", "Meals Served", "Nourishing communities and workplaces."], ["75MN+", "Sq. Ft. Managed", "Creating safe, efficient, and future-ready spaces."]]} />
         </div>
       </section>
 

@@ -4,7 +4,7 @@ export default function CTA({ go, title, subtitle, primaryLabel = "Partner With 
   const clean = label => (label ? label.replace(/â†’/g, "").trim() : null);
   const support = subtitle && subtitle.trim()
     ? subtitle
-    : "One conversation is all it takes â€” tell us where you are and where you want to go, and we'll bring the right expertise together.";
+    : "One conversation is all it takes — tell us where you are and where you want to go, and we'll bring the right expertise together.";
 
   return (
     <section style={{ padding: "clamp(20px,4vw,56px)" }}>

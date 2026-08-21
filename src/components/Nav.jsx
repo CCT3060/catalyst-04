@@ -38,27 +38,7 @@ export default function Nav({ go, darkHero, activeNav, mobileOpen, setMobileOpen
       </div>
 
       <div style={{ display: "flex", alignItems: "center", gap: 34 }} data-desktopnav>
-        <div className="sol-wrap" style={{ position: "relative", padding: "8px 0" }}>
-          <span className={`navlink${activeNav === "home" ? " active" : ""}`} onClick={() => go("home")} style={{ display: "flex", alignItems: "center", gap: 5, cursor: "pointer" }}>
-            Home <ChevronDown size={14} style={{ opacity: .8, transition: "transform .2s" }} />
-          </span>
-          <div style={{ position: "absolute", top: "100%", left: 0, right: 0, height: 14 }} />
-          <div className="sol-menu" style={{ position: "absolute", top: "100%", left: "50%", transform: "translateX(-50%)", marginTop: 14, width: 200, background: "rgba(255,255,255,.96)", backdropFilter: "blur(24px)", border: "1px solid rgba(25,25,25,.08)", borderRadius: 20, boxShadow: "0 24px 60px rgba(25,25,25,.16)", padding: 8 }}>
-            <div className="menu-cap">VERSIONS</div>
-            <a href="https://catalyst-chi-puce.vercel.app/" target="_blank" className="menu-item">
-              <div><div className="menu-name">Home 1</div></div>
-              <ArrowUpRight className="menu-arr" size={14} />
-            </a>
-            <div onClick={() => go("home")} className="menu-item">
-              <div><div className="menu-name">Home 2</div></div>
-              <ArrowUpRight className="menu-arr" size={14} />
-            </div>
-            <a href="https://catalyst-03.vercel.app/" target="_blank" className="menu-item">
-              <div><div className="menu-name">Home 3</div></div>
-              <ArrowUpRight className="menu-arr" size={14} />
-            </a>
-          </div>
-        </div>
+        <span className={`navlink${activeNav === "home" ? " active" : ""}`} onClick={() => go("home")} style={{ cursor: "pointer" }}>Home</span>
         <span className={`navlink${activeNav === "about" ? " active" : ""}`} onClick={() => go("about")}>About Us</span>
         <div className="sol-wrap" style={{ position: "relative", padding: "8px 0" }}>
           <span className={`navlink${activeNav === "solutions" ? " active" : ""}`} style={{ display: "flex", alignItems: "center", gap: 5, cursor: "pointer" }}>

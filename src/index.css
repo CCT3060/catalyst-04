@@ -517,20 +517,6 @@ button { font-family: inherit; border: none; cursor: pointer }
   .fs-menu-name { white-space: normal }
 }
 
-/* -- About: hero with inline image chips + vision/mission panel -- */
-.abt-chip {
-  display: inline-block;
-  height: .74em; width: 1.35em;
-  border-radius: 999px;
-  object-fit: cover;
-  vertical-align: -0.08em;
-  margin: 0 .1em;
-  box-shadow: 0 6px 18px rgba(25,25,25,.18);
-  transform: rotate(-3deg);
-  transition: transform .35s cubic-bezier(.16,.84,.44,1);
-}
-.abt-chip.r2 { transform: rotate(2.5deg) }
-.abt-chip:hover { transform: rotate(0deg) scale(1.12) }
 .ovw-cap {
   font-family: "Outfit", sans-serif;
   font-size: 11.5px; font-weight: 600; letter-spacing: .18em;

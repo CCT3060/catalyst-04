@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import "./HeroSlider.css";
+import heroheath from "../assets/herohealth.png";
 
 const AUTO_MS = 7000;
 
@@ -85,7 +86,7 @@ const SLIDES = [
       [{ t: "Uninterrupted " }, { t: "care", a: true }],
     ],
     para: "We manage the complete lifecycle of biomedical equipment across every department through a single point of accountability, maximizing equipment uptime and enabling uninterrupted patient care.",
-    img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=2400&q=80",
+    img: heroheath,
     alt: "Surgical team at work in a modern operating theatre",
   },
 ];
@@ -100,7 +101,7 @@ export default function HeroSlider({ go }) {
 
   const goTo = useCallback((i) => {
     setState(s => {
-        const next = ((i % N) + N) % N;
+      const next = ((i % N) + N) % N;
       if (next === s.current) return s;
       booted.current = true;
       return { current: next, leaving: s.current };

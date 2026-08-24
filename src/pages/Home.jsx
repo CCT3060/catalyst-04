@@ -19,6 +19,10 @@ import AnimatedNumber from "../components/AnimatedNumber";
 import about2 from "../assets/about2.jpg";
 import about3 from "../assets/about3.jpg";
 import about4 from "../assets/about4.jpg";
+import liPost1 from "../assets/joi1.jpg";
+import liPost2 from "../assets/joi2.jpg";
+import liPost3 from "../assets/joi3.jpg";
+import liPost4 from "../assets/joi4.jpg";
 
 const SECTORS = [
   { num: "01", name: "Corporate & Commercial Spaces", desc: "Workplaces are more than buildings, they are where ideas grow, teams connect, and performance takes shape. We help organizations create engaging, high-performing environments that elevate employee experiences and support business success.", bg: "#191919", img: "corporate.jpg", page: null },
@@ -37,6 +41,43 @@ const SOLUTIONS = [
   { page: "infra", name: "Infrastructure Solutions", icon: Factory, img: "/sectors/infrastructure.jpg", tagline: "Design, build, and upkeep of the physical backbone that keeps organizations moving — reliably, safely, and sustainably." },
   { page: "htm", name: "Healthcare Technology Management", icon: Stethoscope, img: "/sectors/healthcare.jpg", tagline: "Lifecycle management of critical medical technology — maximizing uptime, compliance, and the quality of patient care." },
   { page: "workforce", name: "Workforce Solutions", icon: Users, img: workforceImg, tagline: "Trained, verified, and dependable teams that bring service excellence to every environment we serve." },
+];
+
+const COMPANY_PAGE = "https://www.linkedin.com/company/catalyst-service-solutions-partners-pvt-ltd/";
+
+const LI_POSTS = [
+  {
+    id: 1,
+    time: "2 days ago",
+    text: "At Catalyst, we believe that great food isn't just about taste — it's about trust, nutrition, and the experience it creates. Our food services are crafted to nourish people, power performance, and bring communities together, one meal at a time.",
+    img: liPost1,
+    likes: 42,
+    comments: 5,
+  },
+  {
+    id: 2,
+    time: "4 days ago",
+    text: "Integrated Facility Management is about more than maintaining buildings — it's about creating environments where people can do their best work. Explore how Catalyst brings every support service together under one roof.",
+    img: liPost2,
+    likes: 31,
+    comments: 3,
+  },
+  {
+    id: 3,
+    time: "1 week ago",
+    text: "Healthcare Technology Management requires precision, trust, and zero tolerance for downtime. At Catalyst, we manage the complete lifecycle of biomedical equipment, ensuring uninterrupted care across every department.",
+    img: liPost3,
+    likes: 58,
+    comments: 8,
+  },
+  {
+    id: 4,
+    time: "2 weeks ago",
+    text: "From skilled technicians to trained support staff — our Workforce Solutions ensure that every client environment is powered by dependable, verified, and trained professionals who make a real difference on the ground.",
+    img: liPost4,
+    likes: 37,
+    comments: 4,
+  },
 ];
 
 const CERTS = [
@@ -285,6 +326,22 @@ export default function Home({ go }) {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* LinkedIn Posts – Elfsight feed */}
+      <section style={{ padding: "clamp(56px,7vw,96px) 0", background: "#F4F2EF" }}>
+        <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 clamp(20px,4vw,56px)" }}>
+          <div style={{ textAlign: "center", marginBottom: "clamp(32px,4vw,52px)" }}>
+            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 10, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, marginBottom: 10, justifyContent: "center" }}>
+              <span style={{ width: 28, height: 2, background: "#0373ff" }}></span>LATEST UPDATES<span style={{ width: 28, height: 2, background: "#43934A" }}></span>
+            </div>
+            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(26px,3.4vw,44px)", color: "#191919", lineHeight: 1.05 }}>Follow us on LinkedIn</h2>
+            <p data-reveal data-delay="2" style={{ marginTop: 12, fontSize: 17, color: "#6E6A61" }}>Stay connected with our latest insights, news and updates.</p>
+          </div>
+
+          {/* Elfsight LinkedIn Feed Widget */}
+          <div className="elfsight-app-27cd089a-31fe-4ff6-ba97-6b66b797f294" data-elfsight-app-lazy></div>
         </div>
       </section>
 

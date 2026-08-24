@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { X, ChevronDown, ArrowUpRight } from "lucide-react";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import FloatingActions from "./components/FloatingActions";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import FoodServices from "./pages/FoodServices";
@@ -171,6 +172,7 @@ export default function App() {
       <main>
         <PageComp go={go} hash={hash} />
       </main>
+      <FloatingActions go={go} />
       <Footer go={go} />
     </div>
   );

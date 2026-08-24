@@ -1,4 +1,4 @@
-﻿import CTA from "../components/CTA";
+import CTA from "../components/CTA";
 import { Kicker, SectionHead, NumberedIndex, ServiceHero, PhoneFrame, BrowserFrame, CutoutArch, StatStrip } from "../components/SolutionsKit";
 import healthcareBg from "../assets/healthbg.jpg";
 import clinicalImg from "../assets/healthcare2.jpg";
@@ -199,7 +199,7 @@ export default function HealthcareTech({ go }) {
         title="Empowering Better Care Through Smarter Technology"
         subtitle="HEALTHCARE TECHNOLOGY MANAGEMENT"
         primaryLabel="Explore Healthcare Technology Management"
-        primaryPage="contact"
+        primaryPage="technologies"
         secondaryLabel="Speak with Our Healthcare Experts"
         secondaryPage="contact"
         image={htmBottomImg}

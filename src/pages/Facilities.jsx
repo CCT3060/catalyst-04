@@ -1,9 +1,9 @@
-﻿import CTA from "../components/CTA";
+import CTA from "../components/CTA";
 import { Kicker, SectionHead, ServiceHero, IndustriesMarquee, PhoneFrame, BrowserFrame, CutoutArch } from "../components/SolutionsKit";
 import fmImage from "../assets/ifm1.jpg";
-import ifmTeamImg from "../assets/3.png";
-import ecleanAppImg from "../assets/image copy.png";
-import portalImg from "../assets/image copy 2.png";
+import ifmTeamImg from "../assets/imf2.png";
+import ecleanAppImg from "../assets/Media.jpg";
+import portalImg from "../assets/web.png";
 import innovationImg from "../assets/Gemini_Generated_Image_e5koqpe5koqpe5ko.png";
 import ifmBottomImg from "../assets/ifmbottom.jpg";
 import { ShieldCheck, Building2 } from "lucide-react";
@@ -77,7 +77,7 @@ export default function Facilities({ go }) {
         img={fmImage}
         imgAlt="Catalyst facility teams keeping environments running"
         note="one team, every service"
-        chips={[[ShieldCheck, "ISO-certified operations"], [Building2, "75+ sq. ft. managed"]]}
+        chips={[[ShieldCheck, "ISO-certified operations"], [Building2, "75MN+ sq. ft. managed"]]}
       />
 
       {/* Overview — cutout crew on arch */}
@@ -91,7 +91,7 @@ export default function Facilities({ go }) {
             <p data-reveal data-delay="4" style={{ marginTop: 16, fontSize: 17, lineHeight: 1.75, color: "#6E6A61" }}>Whether it's a manufacturing plant operating around the clock, a healthcare institution where reliability is critical, or a modern corporate workplace focused on employee experience, Catalyst delivers customized IFM solutions that keep your operations running without interruption.</p>
           </div>
           <div data-reveal data-delay="1">
-            <CutoutArch src={ifmTeamImg} alt="Catalyst facility teams at work" tint="rgba(67,147,74,.1)" />
+            <CutoutArch src={ifmTeamImg} alt="Catalyst facility teams at work" />
           </div>
         </div>
       </section>
@@ -160,7 +160,7 @@ export default function Facilities({ go }) {
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(40px,6vw,80px)", alignItems: "center" }} data-2col>
           <div data-reveal style={{ position: "relative", borderRadius: 36, overflow: "hidden" }}>
-            <img src={innovationImg} alt="Modern cleaning technology" data-no-reveal style={{ width: "100%", height: "auto", display: "block" }} />
+            <img src={innovationImg} alt="Modern cleaning technology" data-no-reveal style={{ width: "100%", height: "450px", display: "block" }} />
           </div>
           <div>
             <Kicker>Innovation</Kicker>
@@ -200,7 +200,7 @@ export default function Facilities({ go }) {
         title="Let's Create Spaces That Work Better"
         subtitle="For your people and your business — Catalyst delivers integrated facility management that enhances operational performance, workplace experiences, and long-term value."
         primaryLabel="Explore Integrated Facilities Management"
-        primaryPage="contact"
+        primaryPage="technologies"
         secondaryLabel="Contact Us"
         secondaryPage="contact"
         image={ifmBottomImg}

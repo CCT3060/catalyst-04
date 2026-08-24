@@ -1,4 +1,4 @@
-﻿import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 
 /* Shared building blocks for the five solution pages.
    Everything follows the site tokens: ink #191919, cream #F9F7F3,
@@ -45,7 +45,7 @@ export function ServiceHero({ go, kicker, kickerColor = "#0258cc", dash = "#0373
           )}
         </div>
         <div data-reveal data-delay="2" className="shown" style={{ position: "relative" }}>
-          <div className="fs-arch" style={{ height: "clamp(380px,52vh,540px)", boxShadow: "0 30px 80px rgba(25,25,25,.16)" }}>
+          <div className="fs-arch" style={{ height: "clamp(480px,65vh,640px)", boxShadow: "0 30px 80px rgba(25,25,25,.16)" }}>
             <img src={img} alt={imgAlt} data-no-reveal style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
           </div>
           {note && <div style={{ position: "absolute", right: "clamp(0px,2vw,18px)", bottom: -14, fontFamily: "Caveat, cursive", fontWeight: 600, fontSize: 23, color: noteColor, transform: "rotate(-3deg)" }}>{note}</div>}
@@ -128,7 +128,7 @@ export function BrowserFrame({ src, alt = "", url = "portal.catalystsolutions.ec
 export function CutoutArch({ src, alt = "", tint = "rgba(3,115,255,.1)", height = "clamp(360px,40vw,500px)", style }) {
   return (
     <div style={{ position: "relative", height, display: "flex", alignItems: "flex-end", justifyContent: "center", ...style }}>
-      <div style={{ position: "absolute", left: "50%", bottom: 0, transform: "translateX(-50%)", width: "92%", height: "74%", background: tint, borderRadius: "999px 999px 32px 32px" }}></div>
+      <div style={{ position: "absolute", left: "50%", bottom: 0, transform: "translateX(-50%)", width: "92%", height: "74%", background: tint, borderRadius: "28px" }}></div>
       <img src={src} alt={alt} data-no-reveal style={{ position: "relative", width: "100%", maxHeight: "100%", objectFit: "contain", objectPosition: "bottom" }} />
     </div>
   );

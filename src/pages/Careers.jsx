@@ -1,10 +1,12 @@
-﻿import CTA from "../components/CTA";
+import CTA from "../components/CTA";
 import { Sprout, Users, Award, Search, Lightbulb, Globe, TrendingUp, ArrowRight } from "lucide-react";
+import careerBg from "../assets/career.png";
+import caFooterImg from "../assets/cafooter.png";
 
 export default function Careers({ go }) {
   return (
     <div data-screen-label="Careers">
-      <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", padding: "120px clamp(20px,4vw,56px) 60px", overflow: "hidden", backgroundImage: "linear-gradient(rgba(25, 25, 25, 0.17), rgba(25, 25, 25, 0.13)), url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=2000)", backgroundSize: "cover", backgroundPosition: "center" }}>
+      <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", padding: "120px clamp(20px,4vw,56px) 60px", overflow: "hidden", backgroundImage: `linear-gradient(rgba(25, 25, 25, 0.45), rgba(25, 25, 25, 0.45)), url(${careerBg})`, backgroundSize: "cover", backgroundPosition: "center" }}>
         <div style={{ position: "relative", maxWidth: 1240, width: "100%", margin: "0 auto" }}>
           <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0373ff", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 22 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Careers</div>
           <h1 data-reveal data-delay="1" className="shown" style={{ fontSize: "clamp(36px,5.4vw,76px)", color: "#fff", maxWidth: 1000 }}>Life at <span className="gradtext">Catalyst</span></h1>
@@ -73,7 +75,7 @@ export default function Careers({ go }) {
         </div>
       </section>
 
-      <CTA go={go} title="Ready to Make an Impact?" primaryLabel="Explore Opportunities ?" primaryPage="contact" secondaryLabel="Learn About Us" secondaryPage="about" />
+      <CTA go={go} title="Ready to Make an Impact?" primaryLabel="Explore Opportunities" primaryPage="contact" secondaryLabel="Learn About Us" secondaryPage="about" image={caFooterImg} />
     </div>
   );
 }

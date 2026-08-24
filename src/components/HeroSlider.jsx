@@ -1,4 +1,4 @@
-﻿import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import "./HeroSlider.css";
 
@@ -14,6 +14,7 @@ const SLIDES = [
     id: "overview",
     kicker: "Catalyst",
     accent: "#0373ff",
+    page: "food",
     lines: [
       [{ t: "People at the Heart of" }],
       [{ t: "Everything We " }, { t: "Do", a: true }],
@@ -26,6 +27,7 @@ const SLIDES = [
     id: "food",
     kicker: "Food Services",
     accent: "#FF8F2A",
+    page: "food",
     lines: [
       [{ t: "Food experiences" }],
       [{ t: "that " }, { t: "elevate", a: true }],
@@ -38,6 +40,7 @@ const SLIDES = [
     id: "facilities",
     kicker: "Facility Management",
     accent: "#7CC584",
+    page: "ifm",
     lines: [
       [{ t: "Spaces that" }],
       [{ t: "perform", a: true }],
@@ -50,6 +53,7 @@ const SLIDES = [
     id: "people",
     kicker: "Workforce Solutions",
     accent: "#FFC14A",
+    page: "workforce",
     lines: [
       [{ t: "People who make" }],
       [{ t: "the " }, { t: "difference", a: true }],
@@ -62,6 +66,7 @@ const SLIDES = [
     id: "infra",
     kicker: "Infrastructure Solutions",
     accent: "#F5913D",
+    page: "infra",
     lines: [
       [{ t: "Infrastructure that" }],
       [{ t: "stands " }, { t: "resilient", a: true }],
@@ -74,6 +79,7 @@ const SLIDES = [
     id: "healthcare",
     kicker: "Healthcare Technology",
     accent: "#7CC584",
+    page: "htm",
     lines: [
       [{ t: "One ecosystem." }],
       [{ t: "Uninterrupted " }, { t: "care", a: true }],
@@ -159,7 +165,7 @@ export default function HeroSlider({ go }) {
                 </h1>
                 <p className="hx-para">{s.para}</p>
                 <div className="hx-btns">
-                  <button className="hx-btn-fill mag" onClick={() => go("solutions")}>
+                  <button className="hx-btn-fill mag" onClick={() => go(s.page || "food")}>
                     Explore solutions <ArrowRight size={16} />
                   </button>
                   <button className="hx-btn-ghost mag" onClick={() => go("contact")}>Partner with us</button>

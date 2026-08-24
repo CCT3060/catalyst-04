@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import CTA from "../components/CTA";
 import HeroSlider from "../components/HeroSlider";
 import partnerImg from "../assets/Partnerwithus.png";
@@ -288,61 +288,7 @@ export default function Home({ go }) {
         </div>
       </section>
 
-      {/* Our Presence */}
-      <section style={{ padding: "clamp(50px,7vw,90px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
-        <div style={{ maxWidth: 1240, margin: "0 auto" }}>
-          <div style={{ maxWidth: 680, marginBottom: 56 }}>
-            <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Our Presence</div>
-            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(30px,4vw,52px)", color: "#191919" }}>Delivering Impact Across Borders</h2>
-            <p data-reveal data-delay="2" style={{ marginTop: 20, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>Present across India, the Middle East, and Southeast Asia, Catalyst brings integrated expertise to diverse environments worldwide.</p>
-          </div>
-
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            {/* Center — Interactive Cobe Globe */}
-            <div data-reveal style={{ width: "100%", maxWidth: 800, borderRadius: 24, overflow: "hidden", background: "#fff", boxShadow: "0 20px 60px rgba(0,0,0,.08)", display: "flex", alignItems: "center", justifyContent: "center", padding: "clamp(16px,3vw,40px)" }}>
-              <div style={{ width: "100%", maxWidth: 450, aspectRatio: "1" }}>
-                <Globe
-                  markers={[
-                    {
-                      id: "india",
-                      location: [20.6, 78.96],
-                      label: "India",
-                      details: `India Office\nCatalyst Service Solutions Partners Private Limited\n\n401/402, Yash Tower, Opp. D.A.V Public\nSchool, Aundh, Pune â€“ 411007\n\nEmail: sales@catalystsolutions.eco`
-                    },
-                    {
-                      id: "dubai",
-                      location: [25.2, 55.27],
-                      label: "Dubai, UAE",
-                      details: `Middle East\nCatalyst Catering Services LLC (CCS)\n\nDarwish Compound, Warehouse No.4,\nBuilding No: 3, DIP-2,\nDubai\n\nEmail: info@catalystgroupme.com`
-                    },
-                    {
-                      id: "singapore",
-                      location: [1.35, 103.82],
-                      label: "Singapore",
-                      details: `Singapore Office\nComprehensive Support Services Pte. Ltd\n\n12 Woodlands Square, #02-75, Woods\nSquare Tower 1, Singapore â€“ 737715\n\nEmail: sales@catalystsolutions.eco`
-                    },
-                  ]}
-                  focusLocation={null}
-                  markerColor={[1, 0.498, 0]}
-                  baseColor={[1, 1, 1]}
-                  glowColor={[0.9, 0.9, 0.9]}
-                  dark={0}
-                  mapBrightness={10}
-                  markerSize={0.07}
-                  markerElevation={0.01}
-                  speed={0}
-                  initialPhi={3.33}
-                  theta={0.3}
-                  diffuse={1.2}
-                  mapSamples={16000}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <CTA go={go} title="Let's Create Impact Together" subtitle="" primaryLabel="Partner With Us â†’" primaryPage="contact" secondaryLabel="Explore Sectors" secondaryPage="sectors" image={partnerImg} />
+      <CTA go={go} title="Let's Create Impact Together" subtitle="" primaryLabel="Partner With Us" primaryPage="contact" secondaryLabel="Explore Sectors" secondaryPage="sectors" image={partnerImg} />
     </div>
   );
 }

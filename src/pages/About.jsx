@@ -1,10 +1,11 @@
-﻿import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CTA from "../components/CTA";
 import { StatStrip } from "../components/SolutionsKit";
 import { BeamsBackground } from "@/components/ui/beams-background";
 import aboutBottomImg from "../assets/aboutusbottom.jpg";
+import aboutHeroBg from "../assets/1.png";
 import { ProfileCard } from "@/components/ui/profile-card";
-import IndiaMap from "../components/IndiaMap";
+import WorldMap from "../components/WorldMap";
 import sankar from "../assets/sankar.png";
 import { ShieldCheck, Heart, Star, Lightbulb, Leaf, MapPin, Plus, ArrowUpRight, UtensilsCrossed, Building2, Factory, Stethoscope, Users } from "lucide-react";
 
@@ -81,15 +82,24 @@ export default function About({ go }) {
 
   return (
     <div data-screen-label="About">
-      {/* Hero — light editorial, inline image chips */}
-      <section style={{ position: "relative", background: "#F9F7F3", padding: "clamp(150px,18vh,200px) clamp(20px,4vw,56px) clamp(60px,8vw,100px)", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(45% 55% at 92% 8%, rgba(3,115,255,.07), transparent 70%), radial-gradient(40% 50% at 4% 96%, rgba(67,147,74,.06), transparent 70%)" }}></div>
-        <div style={{ position: "relative", maxWidth: 1240, margin: "0 auto" }}>
-          <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, marginBottom: 24 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>About Catalyst</div>
-          <h1 data-reveal data-delay="1" className="shown" style={{ fontSize: "clamp(38px,5.6vw,80px)", color: "#191919", maxWidth: 1080, lineHeight: 1.08 }}>
+      {/* Hero — full screen background with text at bottom */}
+      <section style={{ 
+        position: "relative", 
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "flex-end",
+        background: `url(${aboutHeroBg}) center/cover no-repeat`, 
+        padding: "160px clamp(20px,4vw,56px) 60px", 
+        overflow: "hidden" 
+      }}>
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.2) 100%)" }}></div>
+        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(45% 55% at 92% 8%, rgba(3,115,255,.25), transparent 70%), radial-gradient(40% 50% at 4% 96%, rgba(67,147,74,.25), transparent 70%)" }}></div>
+        <div style={{ position: "relative", maxWidth: 1240, width: "100%", margin: "0 auto", paddingBottom: 20 }}>
+          <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#60A5FA", fontWeight: 600, fontSize: 24, marginBottom: 16 }}><span style={{ width: 26, height: 2, background: "#3B82F6" }}></span>About Catalyst</div>
+          <h1 data-reveal data-delay="1" className="shown" style={{ fontSize: "clamp(34px,5vw,72px)", color: "#fff", maxWidth: 1080, lineHeight: 1.08 }}>
             Environments where people work, heal, learn, and live.
           </h1>
-          <p data-reveal data-delay="2" className="shown" style={{ marginTop: 28, maxWidth: 680, fontSize: "clamp(16px,1.3vw,19px)", lineHeight: 1.7, color: "#46433C" }}>Behind every productive workplace, every efficient facility, every well-managed healthcare institution, and every thriving community is an ecosystem designed to support people.</p>
+          <p data-reveal data-delay="2" className="shown" style={{ marginTop: 20, maxWidth: 680, fontSize: "clamp(15px,1.25vw,18px)", lineHeight: 1.7, color: "rgba(255,255,255,0.9)" }}>Behind every productive workplace, every efficient facility, every well-managed healthcare institution, and every thriving community is an ecosystem designed to support people.</p>
         </div>
       </section>
 
@@ -98,7 +108,7 @@ export default function About({ go }) {
         <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1.05fr 1fr", gap: "clamp(40px,6vw,80px)", alignItems: "stretch" }} data-2col>
           <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
             <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Company Overview</div>
-            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>Five disciplines. One standard of care.</h2>
+            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>Multiple Disciplines. Multipal Standard of Care.</h2>
             <p data-reveal data-delay="2" style={{ marginTop: 20, fontSize: 17, lineHeight: 1.7, color: "#46433C", maxWidth: 540 }}>By aligning operational excellence with human wellbeing, Catalyst creates environments that inspire confidence, comfort, safety, and growth.</p>
             <div data-reveal data-delay="3" style={{ marginTop: 34 }}>
               <div className="ovw-cap">WHAT WE BRING TOGETHER</div>
@@ -123,15 +133,15 @@ export default function About({ go }) {
           <div data-reveal data-delay="1" style={{ position: "relative", borderRadius: 36, overflow: "hidden", background: "#161616", padding: "clamp(26px,3vw,38px)", display: "flex", flexDirection: "column", minHeight: 520 }}>
             <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(46% 55% at 88% 4%, rgba(3,115,255,.15), transparent 70%), radial-gradient(45% 45% at 8% 96%, rgba(67,147,74,.16), transparent 65%)" }}></div>
             <div style={{ position: "relative", display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 16, flexWrap: "wrap" }}>
-              <div style={{ fontFamily: "Outfit", fontSize: 11.5, letterSpacing: ".18em", fontWeight: 600, color: "rgba(255,255,255,.55)" }}>OUR PRESENCE · INDIA</div>
+              <div style={{ fontFamily: "Outfit", fontSize: 11.5, letterSpacing: ".18em", fontWeight: 600, color: "rgba(255,255,255,.55)" }}>OUR PRESENCE · GLOBAL</div>
               <div style={{ fontFamily: "Caveat, cursive", fontWeight: 600, fontSize: 21, color: "#8FBCFF", transform: "rotate(-2deg)" }}>and growing</div>
             </div>
             <div style={{ position: "relative", flex: 1, marginTop: 14, display: "flex", justifyContent: "center", minHeight: 340 }}>
-              <IndiaMap style={{ height: "100%", maxHeight: 420, width: "auto" }} />
+              <WorldMap style={{ height: "100%", maxHeight: 420, width: "100%" }} />
             </div>
             <div style={{ position: "relative", marginTop: 16, borderTop: "1px solid rgba(255,255,255,.12)", paddingTop: 16, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 14, flexWrap: "wrap" }}>
-              <span style={{ fontSize: 13.5, color: "rgba(255,255,255,.66)" }}>Five offices, one shared standard — wherever we operate.</span>
-              <span style={{ display: "inline-flex", alignItems: "center", gap: 7, fontFamily: "Outfit", fontSize: 12, fontWeight: 600, letterSpacing: ".1em", color: "#fff" }}><MapPin size={13} /> 5 CITIES</span>
+              <span style={{ fontSize: 13.5, color: "rgba(255,255,255,.66)" }}>Delivering integrated solutions across 16 countries globally.</span>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 7, fontFamily: "Outfit", fontSize: 12, fontWeight: 600, letterSpacing: ".1em", color: "#fff" }}><MapPin size={13} /> 16 COUNTRIES</span>
             </div>
           </div>
         </div>

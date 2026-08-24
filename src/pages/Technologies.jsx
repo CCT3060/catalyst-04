@@ -1,8 +1,8 @@
-﻿import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import CTA from "../components/CTA";
 import heroBg from "../assets/12.png";
-import partnerImg from "../assets/Partnerwithus.png";
-import { Utensils, Box, ShieldCheck, TrendingUp, Package, Contact, Stethoscope, MessageSquare } from "lucide-react";
+import partnerImg from "../assets/techfooter.png";
+import { Utensils, Box, ShieldCheck, TrendingUp, Package, Contact, Stethoscope, MessageSquare, FolderKanban, ClipboardCheck } from "lucide-react";
 
 export default function Technologies({ go }) {
   const products = [
@@ -12,8 +12,14 @@ export default function Technologies({ go }) {
       icon: Utensils,
       color: "#F59E0B",
       description: "An all-in-one operating system for modern food service and corporate cafeterias. It unifies pre-meal bookings to eliminate waste, omni-channel QSR operations, and precise KOT & Pantry inventory management.",
-      features: ["Zero-Waste & Pre-Booking", "Omni-Channel QSR", "Precision KOT & Inventory"],
-      process: ["Pre-Meal Booking", "QSR Platform", "KOT & Pantry"]
+      features: [
+        "Zero-Waste & Pre-Booking",
+        "Omni-Channel QSR Operations",
+        "Precision KOT & Pantry Inventory",
+        "Real-Time Cafeteria Analytics",
+        "Digital Meal Tokens & Kiosks",
+        "Automated Stock Replenishment"
+      ]
     },
     {
       name: "Tech Platform For Food",
@@ -21,8 +27,14 @@ export default function Technologies({ go }) {
       icon: Box,
       color: "#10B981",
       description: "End-to-end visibility and control for food manufacturing, distribution, and catering. Streamlines your entire food supply chain from recipe management to batch tracking and procurement.",
-      features: ["Recipe Management", "Batch Traceability", "Procurement Automation"],
-      process: ["Demand Forecasting", "Production Planning", "Fulfillment"]
+      features: [
+        "Recipe Management & Standardization",
+        "Batch Traceability & Quality Audit",
+        "Procurement Automation",
+        "Demand Forecasting",
+        "Production Planning & Yield Analytics",
+        "Supply Chain Visibility"
+      ]
     },
     {
       name: "Facility Management Tech Platform",
@@ -30,8 +42,14 @@ export default function Technologies({ go }) {
       icon: ShieldCheck,
       color: "#3B82F6",
       description: "Paperless facility management offering Geo-tagged and Time-stamped proof of maintenance activities with instant escalation. Ensures 100% compliance.",
-      features: ["Geo-Fenced Audits", "Photo Proof", "Auto-Escalation"],
-      process: ["Audit Assignment", "Digital Execution", "Compliance Report"]
+      features: [
+        "Geo-Fenced Audits & Time-Stamping",
+        "Real-Time Photo Proof Verification",
+        "Auto-Escalation & SLA Tracking",
+        "Paperless Preventive Maintenance",
+        "Asset History & Barcode/QR Tagging",
+        "100% Compliance & Audit Reports"
+      ]
     },
     {
       name: "Assetpro For Healthcare",
@@ -39,8 +57,14 @@ export default function Technologies({ go }) {
       icon: Stethoscope,
       color: "#F43F5E",
       description: "Comprehensive app designed to manage hospital machines, equipment maintenance, and soft services, ensuring seamless healthcare operations.",
-      features: ["Machine Maintenance", "Soft Services Management", "Real-time Dashboards"],
-      process: ["Asset Registration", "Service Scheduling", "Monitoring & Reporting"]
+      features: [
+        "Biomedical Machine Maintenance",
+        "Soft Services & Ward Management",
+        "Real-Time Leadership Dashboards",
+        "Asset Registration & QR Tagging",
+        "Preventive & Corrective SLA Tracking",
+        "NABH, JCI & NABL Audit Readiness"
+      ]
     },
     {
       name: "Feedback Management",
@@ -48,8 +72,44 @@ export default function Technologies({ go }) {
       icon: MessageSquare,
       color: "#6366F1",
       description: "Customized platform to collect, analyze, and act on customer feedback in real-time across various industries. Turn feedback into business growth.",
-      features: ["Customizable Forms", "Omni-Channel Collection", "Real-Time Analytics"],
-      process: ["Collect", "Analyze", "Act"]
+      features: [
+        "Customizable Multi-Touchpoint Forms",
+        "Omni-Channel Collection (QR, Kiosk, Web)",
+        "Real-Time Analytics & Sentiment Trends",
+        "Automated Issue Escalation & Workflows",
+        "CSAT & NPS Benchmarking",
+        "Actionable Operational Intelligence"
+      ]
+    },
+    {
+      name: "Project Management",
+      category: "Projects & Engineering",
+      icon: FolderKanban,
+      color: "#0284C7",
+      description: "Integrated project planning, execution tracking, and milestone management platform for industrial, commercial, and infrastructure builds.",
+      features: [
+        "End-to-End Milestone Tracking",
+        "Real-Time Site Progress Dashboards",
+        "Resource & Manpower Allocation",
+        "Vendor & Subcontractor Coordination",
+        "Budget & BOQ Variance Analytics",
+        "Digital Snag List & Handover Reports"
+      ]
+    },
+    {
+      name: "HSEQ Audit Tech Platform",
+      category: "Safety & Quality",
+      icon: ClipboardCheck,
+      color: "#8B5CF6",
+      description: "Comprehensive Health, Safety, Environment, and Quality (HSEQ) audit platform empowering teams to conduct paperless inspections, log incidents, and track CAPA in real-time.",
+      features: [
+        "Mobile HSEQ Digital Audits",
+        "Instant Incident Reporting & CAPA",
+        "Geo-Tagged & Time-Stamped Inspections",
+        "ISO 9001, 14001 & 45001 Compliance",
+        "Risk Assessment & Hazard Mapping",
+        "Automated Audit Analytics & Dashboards"
+      ]
     }
   ];
 
@@ -94,25 +154,13 @@ export default function Technologies({ go }) {
                     {prod.description}
                   </p>
 
-                  <div style={{ marginBottom: 24 }}>
-                    <h4 style={{ fontSize: 14, fontWeight: 600, color: "#191919", marginBottom: 10 }}>Key Features</h4>
+                  <div>
+                    <h4 style={{ fontSize: 14, fontWeight: 600, color: "#191919", marginBottom: 12 }}>Key Features</h4>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
                       {prod.features.map((feat, fi) => (
-                        <div key={fi} style={{ fontSize: 13, color: "#46433C", background: "#fff", border: "1px solid rgba(25,25,25,.08)", padding: "4px 10px", borderRadius: 6 }}>
+                        <div key={fi} style={{ fontSize: 13, color: "#46433C", background: "#fff", border: "1px solid rgba(25,25,25,.09)", padding: "6px 12px", borderRadius: 8, fontWeight: 500, boxShadow: "0 1px 2px rgba(0,0,0,0.02)" }}>
                           {feat}
                         </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div style={{ borderTop: "1px solid rgba(25,25,25,.06)", paddingTop: 20 }}>
-                    <h4 style={{ fontSize: 13, fontWeight: 600, color: "#191919", marginBottom: 12, letterSpacing: ".05em", textTransform: "uppercase" }}>Process Flow</h4>
-                    <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 13, color: "#6E6A61" }}>
-                      {prod.process.map((step, si) => (
-                        <React.Fragment key={si}>
-                          <span style={{ fontWeight: 500, color: "#46433C" }}>{step}</span>
-                          {si < prod.process.length - 1 && <span style={{ color: "#0373ff" }}>?</span>}
-                        </React.Fragment>
                       ))}
                     </div>
                   </div>

@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import CTA from "../components/CTA";
 import { Kicker, SectionHead, IndustriesMarquee, PhoneFrame, CutoutArch } from "../components/SolutionsKit";
 import foodTeamImg from "../assets/food2.jpg";
@@ -71,11 +71,11 @@ export default function FoodServices({ go }) {
             </div>
             <div data-reveal data-delay="4" className="shown" style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 34 }}>
               <span className="fs-chip"><BadgeCheck size={15} /> FSSAI-certified kitchens</span>
-              <span className="fs-chip"><UtensilsCrossed size={15} /> XX M+ meals served annually</span>
+              <span className="fs-chip"><UtensilsCrossed size={15} />  2Lac+ meals served annually</span>
             </div>
           </div>
           <div data-reveal data-delay="2" className="shown" style={{ position: "relative" }}>
-            <div className="fs-arch" style={{ height: "clamp(380px,52vh,540px)", boxShadow: "0 30px 80px rgba(25,25,25,.16)" }}>
+            <div className="fs-arch" style={{ height: "clamp(480px,65vh,640px)", boxShadow: "0 30px 80px rgba(25,25,25,.16)" }}>
               <img src={foodHeroImg} alt="Fresh food prepared by Catalyst kitchens" data-no-reveal style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
             </div>
             <div style={{ position: "absolute", right: "clamp(0px,2vw,18px)", bottom: -14, fontFamily: "Caveat, cursive", fontWeight: 600, fontSize: 23, color: "#377B3D", transform: "rotate(-3deg)" }}>fresh from our kitchens, every day</div>
@@ -218,7 +218,7 @@ export default function FoodServices({ go }) {
         </div>
       </section>
 
-      <CTA go={go} title="Let's Reimagine Everyday Dining" subtitle="Whether you're managing a corporate workplace, an industrial facility, a healthcare institution, or an educational campus, Catalyst partners with you to create dining experiences that bring together nutrition, hospitality, and operational excellence." primaryLabel="Explore Food Solutions â†’" primaryPage="contact" secondaryLabel="Connect with Our Food Experts" secondaryPage="contact" image={foodBottomImg} />
+      <CTA go={go} title="Let's Reimagine Everyday Dining" subtitle="Whether you're managing a corporate workplace, an industrial facility, a healthcare institution, or an educational campus, Catalyst partners with you to create dining experiences that bring together nutrition, hospitality, and operational excellence." primaryLabel="Explore Food Solutions →" primaryPage="technologies" secondaryLabel="Connect with Our Food Experts" secondaryPage="contact" image={foodBottomImg} />
     </div>
   );
 }

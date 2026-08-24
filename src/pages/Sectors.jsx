@@ -1,5 +1,8 @@
 ﻿import { useEffect, useRef, useState } from "react";
-
+import healthcare from "../assets/sohealth.jpg";
+import infra from "../assets/soinfra.jpg"
+import education from "../assets/cmunity.png"
+import living from "../assets/soliving.png"
 const sectors = [
   {
     num: "01", color: "#0373ff", labelColor: "#0258cc", label: "CORPORATE", title: "Corporate & Commercial Spaces",
@@ -20,28 +23,28 @@ const sectors = [
     desc: "As cities and public spaces continue to evolve, organizations require trusted partners who can support large-scale infrastructure and community environments. Our approach focuses on creating sustainable environments that support future-ready communities.",
     tags: ["Community Engagement", "Destination Management", "Experience Design", "Service Excellence", "Future-Ready"],
     tagline: "Helping create memorable experiences that people return to again and again.",
-    img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1200"
+    img: infra
   },
   {
     num: "04", color: "#0373ff", labelColor: "#0258cc", label: "EDUCATION", title: "Education",
     desc: "Educational institutions are more than places of learning—they are environments that shape future generations. From schools and universities to student residences, Catalyst creates safe, hygienic, and inspiring campuses that foster academic excellence, student well-being, and seamless day-to-day operations. Our integrated solutions help educators focus on what matters most: empowering students to learn, grow, and thrive.",
     tags: ["Campus Experience", "Safety & Compliance", "Student Well-Being", "Operational Excellence", "Sustainable Campuses"],
     tagline: "Supporting environments where curiosity grows and futures take shape.",
-    img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=1200"
+    img: education
   },
   {
     num: "05", color: "#43934A", labelColor: "#377B3D", label: "LIVING", title: "Community Living",
     desc: "Communities flourish when people feel safe, connected, and cared for. Catalyst partners with residential communities and integrated townships to deliver thoughtfully managed environments that prioritize comfort, safety, sustainability, and operational excellence. Through integrated facility management, food services, infrastructure support, and community-focused solutions, we help create vibrant living spaces where residents can enjoy a higher quality of life.",
     tags: ["Community Experience", "Resident Well-Being", "Sustainable Living", "Safety & Comfort", "Long-Term Value Creation"],
     tagline: "Creating spaces that foster belonging and enrich everyday living.",
-    img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=1200"
+    img: living
   },
   {
     num: "06", color: "#FFB800", labelColor: "#b07c00", label: "HEALTHCARE", title: "Healthcare Technology Management",
     desc: "Supporting better care through people, technology, and operational excellence. We support hospitals, healthcare institutions, and life sciences organizations enhance patient experiences, optimize clinical operations, and maximize the performance of critical healthcare technologies while maintaining the highest standards of safety, compliance, and care quality.",
     tags: ["Clinical Support Environments", "Patient Experience", "Technology Reliability", "Safety & Compliance", "Operational Continuity"],
     tagline: "Supporting environments where care, trust, and excellence come together.",
-    img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1200"
+    img: healthcare
   },
 ];
 
@@ -72,7 +75,7 @@ export default function Sectors({ go, hash }) {
         setTimeout(() => jumpTo(idx), 200);
       }
     } else {
-      try { window.scrollTo({ top: 0, behavior: "auto" }); } catch(e){}
+      try { window.scrollTo({ top: 0, behavior: "auto" }); } catch (e) { }
     }
   }, [hash]);
 

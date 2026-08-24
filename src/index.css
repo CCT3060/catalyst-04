@@ -1,4 +1,4 @@
-﻿@import "tailwindcss";
+@import "tailwindcss";
 @config "../tailwind.config.js";
 
 * { box-sizing: border-box }
@@ -426,7 +426,7 @@ button { font-family: inherit; border: none; cursor: pointer }
 }
 
 /* -- Food Services page -- */
-.fs-arch { border-radius: 999px 999px 32px 32px; overflow: hidden }
+.fs-arch { border-radius: 28px; overflow: hidden }
 .fs-chip {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 9px 16px; border-radius: 999px;

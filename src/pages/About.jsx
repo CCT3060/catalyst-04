@@ -83,14 +83,14 @@ export default function About({ go }) {
   return (
     <div data-screen-label="About">
       {/* Hero — full screen background with text at bottom */}
-      <section style={{ 
-        position: "relative", 
+      <section style={{
+        position: "relative",
         minHeight: "100vh",
         display: "flex",
         alignItems: "flex-end",
-        background: `url(${aboutHeroBg}) center/cover no-repeat`, 
-        padding: "160px clamp(20px,4vw,56px) 60px", 
-        overflow: "hidden" 
+        background: `url(${aboutHeroBg}) center/cover no-repeat`,
+        padding: "160px clamp(20px,4vw,56px) 60px",
+        overflow: "hidden"
       }}>
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.2) 100%)" }}></div>
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(45% 55% at 92% 8%, rgba(3,115,255,.25), transparent 70%), radial-gradient(40% 50% at 4% 96%, rgba(67,147,74,.25), transparent 70%)" }}></div>
@@ -108,7 +108,7 @@ export default function About({ go }) {
         <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1.05fr 1fr", gap: "clamp(40px,6vw,80px)", alignItems: "stretch" }} data-2col>
           <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
             <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Company Overview</div>
-            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>Multiple Disciplines. Multipal Standard of Care.</h2>
+            <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>Multiple Disciplines. One Standard of Care.</h2>
             <p data-reveal data-delay="2" style={{ marginTop: 20, fontSize: 17, lineHeight: 1.7, color: "#46433C", maxWidth: 540 }}>By aligning operational excellence with human wellbeing, Catalyst creates environments that inspire confidence, comfort, safety, and growth.</p>
             <div data-reveal data-delay="3" style={{ marginTop: 34 }}>
               <div className="ovw-cap">WHAT WE BRING TOGETHER</div>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import mapImage from "../assets/woldmap.png";
 
 const REGIONS = [
   { name: "India", category: "South Asia", desc: "Headquarters & primary operations center" },
@@ -13,15 +14,15 @@ export default function WorldMap({ style }) {
 
   return (
     <div style={{ position: "relative", width: "100%", height: "100%", display: "flex", flexDirection: "column", ...style }}>
-      <div style={{ position: "relative", flex: 1, borderRadius: 20, overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)", background: "#fff" }}>
+      <div style={{ position: "relative", flex: 1, borderRadius: 20, overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)", background: "#fff", display: "flex", justifyContent: "center", alignItems: "center" }}>
         <img 
-          src="/world_map_presence.jpg" 
+          src={mapImage} 
           alt="Catalyst Global Presence World Map" 
-          style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} 
+          style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }} 
         />
       </div>
 
-      <div style={{ marginTop: 14, display: "flex", flexWrap: "wrap", gap: "8px 14px", alignItems: "center" }}>
+      <div style={{ marginTop: 14, display: "flex", flexWrap: "wrap", gap: "8px 14px", alignItems: "center", justifyContent: "center" }}>
         {REGIONS.map((r, i) => (
           <span 
             key={i} 

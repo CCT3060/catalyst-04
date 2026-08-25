@@ -59,8 +59,9 @@ export default function About({ go }) {
       const el = jnyRef.current;
       if (!el) return;
       const r = el.getBoundingClientRect();
-      const passed = Math.min(r.height, Math.max(0, window.innerHeight * 0.6 - r.top));
-      setJnyProg(passed / r.height);
+      // Fill faster: complete when 75% of section has scrolled through
+      const passed = Math.min(r.height, Math.max(0, window.innerHeight * 0.75 - r.top));
+      setJnyProg(Math.min(1, passed / (r.height * 0.75)));
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
@@ -89,12 +90,12 @@ export default function About({ go }) {
         display: "flex",
         alignItems: "flex-end",
         background: `url(${aboutHeroBg}) center/cover no-repeat`,
-        padding: "160px clamp(20px,4vw,56px) 60px",
+        padding: "160px clamp(20px,4vw,56px) 20px",
         overflow: "hidden"
       }}>
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.2) 100%)" }}></div>
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(45% 55% at 92% 8%, rgba(3,115,255,.25), transparent 70%), radial-gradient(40% 50% at 4% 96%, rgba(67,147,74,.25), transparent 70%)" }}></div>
-        <div style={{ position: "relative", maxWidth: 1240, width: "100%", margin: "0 auto", paddingBottom: 20 }}>
+        <div style={{ position: "relative", maxWidth: 1240, width: "100%", margin: "0 auto", paddingBottom: 0 }}>
           <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#60A5FA", fontWeight: 600, fontSize: 24, marginBottom: 16 }}><span style={{ width: 26, height: 2, background: "#3B82F6" }}></span>About Catalyst</div>
           <h1 data-reveal data-delay="1" className="shown" style={{ fontSize: "clamp(34px,5vw,72px)", color: "#fff", maxWidth: 1080, lineHeight: 1.08 }}>
             Environments where people work, heal, learn, and live.
@@ -204,9 +205,9 @@ export default function About({ go }) {
       </BeamsBackground>
 
       {/* Journey — dated spine timeline */}
-      <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#fff" }}>
+      <section style={{ padding: "clamp(50px,6vw,80px) clamp(20px,4vw,56px)", background: "#fff" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
-          <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: "24px 60px", flexWrap: "wrap", marginBottom: "clamp(44px,5vw,70px)" }}>
+          <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: "20px 60px", flexWrap: "wrap", marginBottom: "clamp(28px,3vw,44px)" }}>
             <div style={{ maxWidth: 600 }}>
               <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Our Journey</div>
               <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(30px,3.8vw,50px)", color: "#191919" }}>Every journey leaves a mark</h2>
@@ -232,7 +233,7 @@ export default function About({ go }) {
             ))}
           </div>
 
-          <div data-reveal style={{ marginTop: "clamp(50px,6vw,80px)", textAlign: "center", fontFamily: "Outfit", fontSize: "clamp(20px,2.4vw,30px)", fontWeight: 500, color: "#191919" }}>Creating a better everyday experience for people everywhere.</div>
+
         </div>
       </section>
 

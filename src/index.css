@@ -631,62 +631,63 @@ button { font-family: inherit; border: none; cursor: pointer }
 .jny-fill {
   width: 100%; height: 0;
   background: linear-gradient(to bottom, #0373ff, #43934A);
+  transition: height .05s linear;
 }
 .jny-row {
-  display: grid; grid-template-columns: 1fr 64px 1fr;
-  align-items: start;
-  margin-bottom: clamp(44px,5vw,70px);
+  display: grid; grid-template-columns: 1fr 56px 1fr;
+  align-items: center;
+  margin-bottom: clamp(16px,2vw,24px);
 }
 .jny-row:last-child { margin-bottom: 0 }
-.jny-year-cell { grid-column: 1; grid-row: 1; justify-self: end; text-align: right; padding-top: 4px }
-.jny-dot-cell { grid-column: 2; grid-row: 1; display: flex; justify-content: center; padding-top: 20px }
-.jny-content { grid-column: 3; grid-row: 1; max-width: 460px }
+.jny-year-cell { grid-column: 1; grid-row: 1; justify-self: end; text-align: right; padding-top: 0 }
+.jny-dot-cell { grid-column: 2; grid-row: 1; display: flex; justify-content: center; padding-top: 0 }
+.jny-content { grid-column: 3; grid-row: 1; max-width: 440px }
 .jny-row.flip .jny-year-cell { grid-column: 3; justify-self: start; text-align: left }
 .jny-row.flip .jny-content { grid-column: 1; justify-self: end; text-align: right }
 .jny-row.flip .jny-img { margin-left: auto }
 .jny-row.flip .jny-content p { margin-left: auto }
 .jny-year {
   font-family: "Outfit", sans-serif;
-  font-weight: 700; font-size: clamp(40px,4.4vw,62px);
+  font-weight: 700; font-size: clamp(28px,3vw,44px);
   line-height: 1; letter-spacing: -.02em;
-  color: transparent; -webkit-text-stroke: 1.5px rgba(25,25,25,.32);
-  transition: -webkit-text-stroke-color .4s, color .4s;
+  color: transparent; -webkit-text-stroke: 1.5px rgba(25,25,25,.28);
+  transition: -webkit-text-stroke-color .35s, color .35s;
 }
 .jny-row:hover .jny-year { -webkit-text-stroke-color: #0373ff }
 .jny-year.hero { color: #0373ff; -webkit-text-stroke: 1.5px #0373ff }
 .jny-note {
   font-family: "Caveat", cursive; font-weight: 600;
-  font-size: 21px; color: #43934A;
-  transform: rotate(-2deg); margin-top: 10px;
+  font-size: 18px; color: #43934A;
+  transform: rotate(-2deg); margin-top: 6px;
 }
 .jny-dot {
-  width: 14px; height: 14px; border-radius: 50%;
+  width: 12px; height: 12px; border-radius: 50%;
   background: #fff; border: 2px solid rgba(25,25,25,.28);
-  transition: background .4s, border-color .4s, box-shadow .4s;
+  transition: background .35s, border-color .35s, box-shadow .35s, transform .35s;
 }
-.jny-dot.lit { background: #0373ff; border-color: #0373ff; box-shadow: 0 0 0 6px rgba(3,115,255,.14) }
+.jny-dot.lit { background: #0373ff; border-color: #0373ff; box-shadow: 0 0 0 5px rgba(3,115,255,.15); transform: scale(1.2) }
 .jny-img {
-  display: block; width: clamp(150px,15vw,196px);
-  border-radius: 18px;
-  box-shadow: 0 14px 34px rgba(25,25,25,.12);
+  display: block; width: clamp(90px,9vw,130px);
+  border-radius: 14px;
+  box-shadow: 0 10px 26px rgba(25,25,25,.10);
 }
 .jny-content h4 {
-  font-size: clamp(18px,1.5vw,20px); color: #191919;
-  margin-top: 18px; line-height: 1.3;
+  font-size: clamp(15px,1.3vw,17px); color: #191919;
+  margin-top: 10px; line-height: 1.3;
 }
 .jny-content p {
-  font-size: 15px; line-height: 1.65; color: #6E6A61;
-  margin-top: 8px; max-width: 400px;
+  font-size: 13.5px; line-height: 1.6; color: #6E6A61;
+  margin-top: 6px; max-width: 380px;
 }
 @media(max-width:860px){
   .jny-spine { left: 19px; transform: none }
-  .jny-row, .jny-row.flip { grid-template-columns: 40px 1fr; margin-bottom: 44px }
+  .jny-row, .jny-row.flip { grid-template-columns: 40px 1fr; margin-bottom: 30px }
   .jny-dot-cell { grid-column: 1; grid-row: 1; justify-content: flex-start; padding-top: 8px; padding-left: 12px }
   .jny-year-cell, .jny-row.flip .jny-year-cell { grid-column: 2; grid-row: 1; justify-self: start; text-align: left; padding-top: 0 }
-  .jny-content, .jny-row.flip .jny-content { grid-column: 2; grid-row: 2; justify-self: start; text-align: left; margin-top: 14px }
+  .jny-content, .jny-row.flip .jny-content { grid-column: 2; grid-row: 2; justify-self: start; text-align: left; margin-top: 10px }
   .jny-row.flip .jny-img { margin-left: 0 }
   .jny-row.flip .jny-content p { margin-left: 0 }
-  .jny-year { font-size: 34px }
+  .jny-year { font-size: 26px }
   .jny-note { display: inline-block; margin-top: 4px; margin-left: 10px }
 }
 

@@ -82,7 +82,7 @@ const SLIDES = [
     accent: "#7CC584",
     page: "htm",
     lines: [
-      [{ t: "One ecosystem." }],
+      [{ t: "One ecosystem" }],
       [{ t: "Uninterrupted " }, { t: "care", a: true }],
     ],
     para: "We manage the complete lifecycle of biomedical equipment across every department through a single point of accountability, maximizing equipment uptime and enabling uninterrupted patient care.",

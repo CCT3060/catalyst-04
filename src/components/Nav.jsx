@@ -48,11 +48,12 @@ export default function Nav({ go, darkHero, activeNav, mobileOpen, setMobileOpen
           <div className="sol-menu" style={{ position: "absolute", top: "100%", left: "50%", transform: "translateX(-50%)", marginTop: 14, width: 330, background: "rgba(255,255,255,.96)", backdropFilter: "blur(24px)", border: "1px solid rgba(25,25,25,.08)", borderRadius: 20, boxShadow: "0 24px 60px rgba(25,25,25,.16)", padding: 8 }}>
             <div className="menu-cap">SOLUTIONS</div>
             {[
-              ["food", UtensilsCrossed, "Food Services", "Dining programs designed at scale"],
               ["ifm", Building2, "Integrated Facilities Management", "Engineering, soft & support services"],
               ["infra", Factory, "Infrastructure Solutions", "Projects from plan to handover"],
-              ["htm", Stethoscope, "Healthcare Technology", "Biomedical & clinical engineering"],
+              ["food", UtensilsCrossed, "Food Services", "Dining programs designed at scale"],
               ["workforce", Users, "Workforce Solutions", "Staffing, payroll & compliance"],
+              ["htm", Stethoscope, "Healthcare Technology", "Biomedical & clinical engineering"],
+
             ].map(([p, Icon, name, sub]) => (
               <div key={p} onClick={() => go(p)} className="menu-item">
                 <span className="menu-ico"><Icon size={17} /></span>
@@ -74,8 +75,8 @@ export default function Nav({ go, darkHero, activeNav, mobileOpen, setMobileOpen
             <div className="menu-cap">SECTORS WE SERVE</div>
             {[
               ["sectors?section=0", Briefcase, "Corporate & Commercial Spaces"],
-              ["sectors?section=1", Factory, "Manufacturing, Industrial & Infrastructure"],
-              ["sectors?section=2", Landmark, "Infrastructure, Public Sector & Smart Cities"],
+              ["sectors?section=1", Factory, "Manufacturing & Industrial Infrastructure"],
+              ["sectors?section=2", Landmark, "Public Sector & Smart Cities"],
               ["sectors?section=3", GraduationCap, "Education"],
               ["sectors?section=4", Home, "Community Living"],
               ["sectors?section=5", Stethoscope, "Healthcare"]

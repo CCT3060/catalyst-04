@@ -1,4 +1,4 @@
-﻿import CTA from "../components/CTA";
+import CTA from "../components/CTA";
 import { NumberedIndex, ServiceHero, IndustriesMarquee, CutoutArch } from "../components/SolutionsKit";
 import infrastructureBg from "../assets/infra.jpg";
 import whyInfrastructureBg from "../assets/road.jpg";
@@ -21,7 +21,7 @@ export default function Infrastructure({ go }) {
         img={infrastructureBg}
         imgAlt="Infrastructure projects delivered by Catalyst"
         note="built to serve its purpose"
-        chips={[[Building2, "100+ projects delivered"], [ShieldCheck, "Zero Harm safety culture"]]}
+        chips={[[ShieldCheck, "Zero Harm safety culture"]]}
       />
 
       {/* Intro Description */}
@@ -93,10 +93,6 @@ export default function Infrastructure({ go }) {
           <div style={{ order: 1 }}>
             <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#377B3D", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#43934A" }}></span>Project Experience</div>
             <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>Experience From Being Where Complexity Happens</h2>
-            <div data-reveal data-delay="2" style={{ marginTop: 26, display: "flex", alignItems: "baseline", gap: 14 }}>
-              <span style={{ fontSize: "clamp(48px,6vw,72px)", fontWeight: 700, color: "#191919", lineHeight: 1 }}>100<span style={{ color: "#43934A" }}>+</span></span>
-              <span style={{ fontSize: 17, color: "#6E6A61", lineHeight: 1.5, maxWidth: 240 }}>industrial &amp; commercial projects delivered across India and overseas</span>
-            </div>
             <p data-reveal data-delay="3" style={{ marginTop: 24, fontSize: 17, lineHeight: 1.7, color: "#46433C" }}>Our portfolio spans specialised and large-scale environments—industrial facilities, specialised infrastructure, large-scale kitchens, data centre environments, and other complex developments where infrastructure must perform reliably under demanding conditions.</p>
             <p data-reveal data-delay="4" style={{ marginTop: 16, fontSize: 17, lineHeight: 1.7, color: "#6E6A61" }}>Each project deepens our understanding of what it takes to coordinate multiple disciplines, manage site realities, and deliver infrastructure that meets the requirements of the organisation it serves.</p>
           </div>

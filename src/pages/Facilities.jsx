@@ -1,11 +1,11 @@
 import CTA from "../components/CTA";
 import { Kicker, SectionHead, ServiceHero, IndustriesMarquee, PhoneFrame, BrowserFrame, CutoutArch } from "../components/SolutionsKit";
 import fmImage from "../assets/ifm1.jpg";
-import ifmTeamImg from "../assets/imf2.png";
+import ifmTeamImg from "../assets/imf2.jpg";
 import ecleanAppImg from "../assets/Media.jpg";
 import portalImg from "../assets/web.png";
 import innovationImg from "../assets/Gemini_Generated_Image_e5koqpe5koqpe5ko.png";
-import ifmBottomImg from "../assets/ifmbottom.jpg";
+import ifmBottomImg from "../assets/ifmbuttom.jpg";
 import { ShieldCheck, Building2 } from "lucide-react";
 
 const SERVICES = [

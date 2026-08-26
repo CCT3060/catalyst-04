@@ -8,7 +8,7 @@ import joi1Img from "../assets/joi1.jpg";
 import joi2Img from "../assets/joi2.jpg";
 import joi3Img from "../assets/joi3.jpg";
 import joi4Img from "../assets/joi4.jpg";
-import foodHeroImg from "../assets/food1.jpg";
+import foodHeroImg from "../assets/foodhero.png";
 import foodBottomImg from "../assets/foodbottom.jpg";
 import { ArrowRight, ArrowUpRight, Zap, HeartPulse, GraduationCap, Users, BadgeCheck, UtensilsCrossed } from "lucide-react";
 
@@ -71,7 +71,7 @@ export default function FoodServices({ go }) {
             </div>
             <div data-reveal data-delay="4" className="shown" style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 34 }}>
               <span className="fs-chip"><BadgeCheck size={15} /> FSSAI-certified kitchens</span>
-              <span className="fs-chip"><UtensilsCrossed size={15} />  2Lac+ meals served annually</span>
+              <span className="fs-chip"><UtensilsCrossed size={15} />  2Lac+ meals served daily</span>
             </div>
           </div>
           <div data-reveal data-delay="2" className="shown" style={{ position: "relative" }}>

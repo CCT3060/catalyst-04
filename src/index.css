@@ -795,3 +795,6 @@ button { font-family: inherit; border: none; cursor: pointer }
   .ldr-card,.ldr-quote-card{height:20rem}
   .ldr-title{font-size:18px}
 }
+
+/* Hide Elfsight logo */
+.jhdeAs a{ display:none!important }

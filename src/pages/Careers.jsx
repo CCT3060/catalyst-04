@@ -1,7 +1,7 @@
 import CTA from "../components/CTA";
 import { Sprout, Users, Award, Search, Lightbulb, Globe, TrendingUp, ArrowRight } from "lucide-react";
 import careerBg from "../assets/career.png";
-import caFooterImg from "../assets/cafooter.png";
+import caFooterImg from "../assets/cafooter.jpg";
 
 export default function Careers({ go }) {
   return (

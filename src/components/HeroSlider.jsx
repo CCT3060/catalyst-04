@@ -25,19 +25,6 @@ const SLIDES = [
     alt: "People at the heart of everything we do",
   },
   {
-    id: "food",
-    kicker: "Food Services",
-    accent: "#FF8F2A",
-    page: "food",
-    lines: [
-      [{ t: "Food experiences" }],
-      [{ t: "that " }, { t: "elevate", a: true }],
-    ],
-    para: "Food has the power to shape experiences far beyond the dining table. We design dining environments that combine nutrition, hospitality, and innovation — from workplaces to healthcare institutions and educational campuses.",
-    img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2400&q=80",
-    alt: "Elegant restaurant dining room prepared for evening service",
-  },
-  {
     id: "facilities",
     kicker: "Facility Management",
     accent: "#7CC584",
@@ -49,19 +36,6 @@ const SLIDES = [
     para: "We deliver integrated facility management solutions that create safe, efficient and sustainable environments, enhancing occupant experience while maximizing operational performance.",
     img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=80",
     alt: "Modern glass office towers seen from below",
-  },
-  {
-    id: "people",
-    kicker: "Workforce Solutions",
-    accent: "#FFC14A",
-    page: "workforce",
-    lines: [
-      [{ t: "People who make" }],
-      [{ t: "the " }, { t: "difference", a: true }],
-    ],
-    para: "We provide skilled workforce solutions that empower organizations with the right talent to deliver exceptional service, operational excellence and sustainable growth.",
-    img: hero4Img,
-    alt: "Team of professionals collaborating around a table",
   },
   {
     id: "infra",
@@ -76,6 +50,34 @@ const SLIDES = [
     img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2400&q=80",
     alt: "Construction site with steel framework rising",
   },
+  {
+    id: "food",
+    kicker: "Food Services",
+    accent: "#FF8F2A",
+    page: "food",
+    lines: [
+      [{ t: "Food experiences" }],
+      [{ t: "that " }, { t: "elevate", a: true }],
+    ],
+    para: "Food has the power to shape experiences far beyond the dining table. We design dining environments that combine nutrition, hospitality, and innovation — from workplaces to healthcare institutions and educational campuses.",
+    img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2400&q=80",
+    alt: "Elegant restaurant dining room prepared for evening service",
+  },
+
+  {
+    id: "people",
+    kicker: "Workforce Solutions",
+    accent: "#FFC14A",
+    page: "workforce",
+    lines: [
+      [{ t: "People who make" }],
+      [{ t: "the " }, { t: "difference", a: true }],
+    ],
+    para: "We provide skilled workforce solutions that empower organizations with the right talent to deliver exceptional service, operational excellence and sustainable growth.",
+    img: hero4Img,
+    alt: "Team of professionals collaborating around a table",
+  },
+
   {
     id: "healthcare",
     kicker: "Healthcare Technology",

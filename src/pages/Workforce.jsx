@@ -1,7 +1,7 @@
 ﻿import CTA from "../components/CTA";
 import { Kicker, SectionHead, NumberedIndex, ServiceHero, CutoutArch } from "../components/SolutionsKit";
 import staffingBg from "../assets/workhome.jpg";
-import workforceImg from "../assets/work2.png";
+import workforceImg from "../assets/work2.jpg";
 import futureImg from "../assets/workforce_future_1784028629761.png";
 import workforceBottomImg from "../assets/workforcebottom.jpg";
 import { Users, MapPin } from "lucide-react";

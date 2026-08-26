@@ -15,9 +15,8 @@ import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import Technologies from "./pages/Technologies";
 import { initImageReveal, killImageReveal } from "./lib/imageReveal";
-
 function useDarkHero(page) {
-  return ["home","about","sectors","careers","contact","technologies"].includes(page);
+  return ["home", "about", "sectors", "careers", "contact", "technologies"].includes(page);
 }
 
 export default function App() {
@@ -34,7 +33,7 @@ export default function App() {
     setMobileSolOpen(false);
     setMobileSecOpen(false);
     window.history.pushState(null, "", "#" + p);
-    if (!p.includes("?")) { try { window.scrollTo({ top: 0, behavior: "auto" }); } catch(e){} }
+    if (!p.includes("?")) { try { window.scrollTo({ top: 0, behavior: "auto" }); } catch (e) { } }
   }, []);
 
   useEffect(() => {
@@ -78,19 +77,19 @@ export default function App() {
 
   const darkHero = useDarkHero(page);
 
-  const navMap = { home:"home", about:"about", solutions:"solutions", food:"solutions", ifm:"solutions", infra:"solutions", htm:"solutions", workforce:"solutions", sectors:"sectors", careers:"careers", contact:"contact", technologies:"technologies" };
+  const navMap = { home: "home", about: "about", solutions: "solutions", food: "solutions", ifm: "solutions", infra: "solutions", htm: "solutions", workforce: "solutions", sectors: "sectors", careers: "careers", contact: "contact", technologies: "technologies" };
   const activeNav = navMap[page] || "home";
 
   const pages = { home: Home, about: About, solutions: FoodServices, food: FoodServices, ifm: Facilities, infra: Infrastructure, htm: HealthcareTech, workforce: Workforce, sectors: Sectors, careers: Careers, contact: Contact, technologies: Technologies };
   const PageComp = pages[page] || Home;
 
   return (
-    <div style={{position:"relative",width:"100%"}}>
+    <div style={{ position: "relative", width: "100%" }}>
       <Nav go={go} darkHero={darkHero} activeNav={activeNav} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
       {mobileOpen && (
         <div style={{ position: "fixed", inset: 0, zIndex: 999, background: "rgba(20,20,20,.98)", backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)", display: "flex", flexDirection: "column", padding: "80px 28px 40px", overflowY: "auto" }}>
-          <button 
-            onClick={() => setMobileOpen(false)} 
+          <button
+            onClick={() => setMobileOpen(false)}
             aria-label="Close menu"
             style={{ position: "absolute", top: 22, right: 24, background: "rgba(255,255,255,.1)", border: "1px solid rgba(255,255,255,.2)", width: 42, height: 42, borderRadius: "50%", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}
           >
@@ -100,11 +99,11 @@ export default function App() {
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             <span className="navlink nav-dark" onClick={() => go("home")} style={{ fontSize: 26, fontWeight: 600, fontFamily: "Outfit", padding: "8px 0", color: "#fff" }}>Home</span>
             <span className="navlink nav-dark" onClick={() => go("about")} style={{ fontSize: 26, fontWeight: 600, fontFamily: "Outfit", padding: "8px 0", color: "#fff" }}>About Us</span>
-            
+
             {/* Solutions Accordion */}
             <div>
-              <div 
-                onClick={() => setMobileSolOpen(s => !s)} 
+              <div
+                onClick={() => setMobileSolOpen(s => !s)}
                 style={{ fontSize: 26, fontWeight: 600, fontFamily: "Outfit", padding: "8px 0", color: "#fff", display: "flex", alignItems: "center", justifyContent: "space-between", cursor: "pointer" }}
               >
                 <span>Solutions</span>
@@ -129,8 +128,8 @@ export default function App() {
 
             {/* Sectors Accordion */}
             <div>
-              <div 
-                onClick={() => setMobileSecOpen(s => !s)} 
+              <div
+                onClick={() => setMobileSecOpen(s => !s)}
                 style={{ fontSize: 26, fontWeight: 600, fontFamily: "Outfit", padding: "8px 0", color: "#fff", display: "flex", alignItems: "center", justifyContent: "space-between", cursor: "pointer" }}
               >
                 <span>Sectors</span>

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import CTA from "../components/CTA";
-import heroBg from "../assets/12.png";
-import partnerImg from "../assets/techfooter.png";
+import heroBg from "../assets/techhome.jpg";
+import partnerImg from "../assets/techfooter.jpg";
 import { Utensils, Box, ShieldCheck, TrendingUp, Package, Contact, Stethoscope, MessageSquare, FolderKanban, ClipboardCheck } from "lucide-react";
 
 export default function Technologies({ go }) {

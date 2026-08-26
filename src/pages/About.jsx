@@ -40,7 +40,10 @@ const JOURNEY = [
   { year: "2017", img: "j5.svg", title: "Chartering, crew & a Malta branch", desc: "Vessel chartering, marine crew services, and FM join the portfolio, with a new branch in Malta." },
   { year: "2018", img: "j6.svg", title: "Supply & vending solutions", desc: "New supply and vending capabilities — sealed with a contract from an automobile giant." },
   { year: "2019", img: "j7.svg", title: "Facility management services", desc: "Facility management commences as a dedicated service line." },
-  { year: "2023", img: "j8.svg", title: "CSS becomes Catalyst", desc: "Rebranded as Catalyst to represent a holistic, integrated service offering.", note: "a new identity", hero: true },
+  { year: "2023", img: "j8.svg", title: "CSS becomes Catalyst", desc: "Rebranded as Catalyst to represent a holistic, integrated service offering.", hero: true },
+  { year: "2025", img: "j8.svg", title: "Beginning of Healthcare Technology Management & Acquisition of GOMS", desc: "Rebranded as Catalyst to represent a holistic, integrated service offering.", hero: true },
+  { year: "2026", img: "j8.svg", title: "New subsidiary in UAE", desc: "Rebranded as Catalyst to represent a holistic, integrated service offering.", hero: true },
+
 ];
 
 export default function About({ go }) {
@@ -78,7 +81,7 @@ export default function About({ go }) {
     { name: 'Santosh Lal', role: 'Chief Business Officer – IFM', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2026/06/santosh-1.png', linkedin: 'https://www.linkedin.com/in/santosh-n-lal-33b6957b/' },
     { name: 'Sudeep Suren', role: 'Vice President – Food Solutions', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2024/06/sudeep.jpg', linkedin: 'https://www.linkedin.com/in/sudeep-suren-42b47554/' },
     { name: 'Sankar Sreedharan', role: 'Vice President - Strategy & New Market', quote: '', image: sankar, linkedin: 'https://www.linkedin.com/in/sankarsreedharan/' },
-
+    { name: 'Venkat Patil', role: 'Infrastructure Solutions', quote: '', image: sankar, linkedin: 'https://www.linkedin.com/in/sankarsreedharan/' },
   ];
 
   return (
@@ -160,7 +163,7 @@ export default function About({ go }) {
             <div className="vm-grid" style={{ position: "relative" }}>
               <div className="vm-cell">
                 <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#8FBCFF", fontWeight: 600, fontSize: 24 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Vision</div>
-                <h3 style={{ color: "#fff", fontSize: "clamp(22px,2.4vw,32px)", marginTop: 18, lineHeight: 1.3, fontWeight: 500 }}>To create environments where wellbeing thrives.</h3>
+                <h3 style={{ color: "#fff", fontSize: "clamp(22px,2.4vw,32px)", marginTop: 18, lineHeight: 1.3, fontWeight: 500 }}>To create environments where <br />well-being thrives.</h3>
               </div>
               <div className="vm-cell">
                 <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#8FBCFF", fontWeight: 600, fontSize: 24 }}><span style={{ width: 26, height: 2, background: "#43934A" }}></span>Mission</div>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import CTA from "../components/CTA";
 import { Kicker, SectionHead, IndustriesMarquee, PhoneFrame, CutoutArch } from "../components/SolutionsKit";
 import foodTeamImg from "../assets/food2.png";
-import chefImg from "../assets/Gemini_Generated_Image_56k6u556k6u556k6.png";
+import chefImg from "../assets/2.png";
 import joiFoodImg from "../assets/joimain.jpg";
 import joi1Img from "../assets/joi1.jpg";
 import joi2Img from "../assets/joi2.jpg";
@@ -78,7 +78,7 @@ export default function FoodServices({ go }) {
             <div className="fs-arch" style={{ height: "clamp(480px,65vh,640px)", boxShadow: "0 30px 80px rgba(25,25,25,.16)" }}>
               <img src={foodHeroImg} alt="Fresh food prepared by Catalyst kitchens" data-no-reveal style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
             </div>
-            <div style={{ position: "absolute", right: "clamp(0px,2vw,18px)", bottom: -14, fontFamily: "Caveat, cursive", fontWeight: 600, fontSize: 23, color: "#377B3D", transform: "rotate(-3deg)" }}>fresh from our kitchens, every day</div>
+            <div style={{ position: "absolute", right: "clamp(0px,2vw,18px)", bottom: -14, fontFamily: "Caveat, cursive", fontWeight: 600, fontSize: 23, color: "#377B3D", transform: "rotate(-3deg)" }}></div>
           </div>
         </div>
       </section>

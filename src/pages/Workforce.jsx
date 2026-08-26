@@ -123,7 +123,7 @@ export default function Workforce({ go }) {
         img={staffingBg}
         imgAlt="The people behind every Catalyst workforce"
         note="people first, always"
-        chips={[[Users, "6,500+ workforce nationwide"], [MapPin, "Pan-India deployment"]]}
+        chips={[[Users, "8,000+ workforce nationwide"], [MapPin, "Pan-India deployment"]]}
       />
 
       {/* About Staffing — people cutout on arch */}

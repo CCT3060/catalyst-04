@@ -42,8 +42,8 @@ const JOURNEY = [
   { year: "2018", img: "j6.svg", title: "Supply & vending solutions", desc: "New supply and vending capabilities — sealed with a contract from an automobile giant." },
   { year: "2019", img: "j7.svg", title: "Facility management services", desc: "Facility management commences as a dedicated service line." },
   { year: "2023", img: "j8.svg", title: "CSS becomes Catalyst", desc: "Rebranded as Catalyst to represent a holistic, integrated service offering.", hero: true },
-  { year: "2025", img: "j8.svg", title: "Beginning of Healthcare Technology Management & Acquisition of GOMS", desc: "Rebranded as Catalyst to represent a holistic, integrated service offering.", hero: true },
-  { year: "2026", img: "j8.svg", title: "New subsidiary in UAE", desc: "Rebranded as Catalyst to represent a holistic, integrated service offering.", hero: true },
+  { year: "2025", img: "j8.svg", title: "Beginning of Healthcare Technology Management & Acquisition of GIFM", desc: "", hero: true },
+  { year: "2026", img: "j8.svg", title: <>Stated Service of Middle East <br />With State of Art Central Kitchen</>, desc: "", hero: true },
 
 ];
 
@@ -118,14 +118,15 @@ export default function About({ go }) {
             <div data-reveal data-delay="3" style={{ marginTop: 34 }}>
               <div className="ovw-cap">WHAT WE BRING TOGETHER</div>
               {[
-                [UtensilsCrossed, "Food Services", "Dining programs designed at scale", "food"],
-                [Building2, "Integrated Facilities Management", "Engineering, soft & support services", "ifm"],
-                [Factory, "Infrastructure Solutions", "Projects from plan to handover", "infra"],
-                [Stethoscope, "Healthcare Technology ", "Biomedical & clinical engineering", "htm"],
-                [Users, "Workforce Solutions", "Staffing, payroll & compliance", "workforce"],
-              ].map(([Icon, name, sub, page]) => (
+                ["01", "Integrated Facilities Management", "Engineering, soft & support services", "ifm"],
+                ["02", "Infrastructure Solutions", "Projects from plan to handover", "infra"],
+                ["03", "Food Services", "Dining programs designed at scale", "food"],
+                ["04", "Workforce Solutions", "Staffing, payroll & compliance", "workforce"],
+                ["05", "Healthcare Technology", "Biomedical & clinical engineering", "htm"],
+
+              ].map(([num, name, sub, page]) => (
                 <div key={page} className="ovw-row" onClick={() => go(page)} role="link" tabIndex={0} onKeyDown={e => { if (e.key === "Enter") go(page); }}>
-                  <span className="ovw-ico"><Icon size={17} /></span>
+                  <div className="ovw-num">{num}</div>
                   <div>
                     <div className="ovw-name">{name}</div>
                     <div className="ovw-sub">{sub}</div>
@@ -152,7 +153,7 @@ export default function About({ go }) {
         </div>
 
         <div style={{ maxWidth: 1240, margin: "70px auto 0" }}>
-          <StatStrip stats={[["100+", "Locations", "Supporting diverse industries through integrated service excellence."], ["6500+", "Workforce", "Delivering expertise, care, and commitment every day."], ["100+", "Client Partnerships", "Built on trust, performance, and shared success."], ["2Lac+", "Meals Served", "Nourishing communities and workplaces."], ["75MN+", "Sq. Ft. Managed", "Creating safe, efficient, and future-ready spaces."]]} />
+          <StatStrip stats={[["15+", "States", "Across India"], ["150+", "Locations", "Supporting diverse industries through integrated service excellence."], ["8000+", "Workforce", "Delivering expertise, care, and commitment every day."], ["2Lac+", "Meals Served Daily", "Nourishing communities and workplaces."], ["75MN+", "Sq. Ft. Managed", "Creating safe, efficient, and future-ready spaces."]]} />
         </div>
       </section>
 
@@ -296,7 +297,7 @@ export default function About({ go }) {
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "clamp(44px,5vw,70px)" }}>
             <h2 data-reveal style={{ fontSize: "clamp(36px,4.5vw,56px)", color: "#1E3B24", fontFamily: "Outfit", fontWeight: 500 }}>
-              Our <span style={{ color: "#0258cc", fontFamily: "Caveat, cursive", borderBottom: "3px solid #0258cc", paddingBottom: 6 }}>Offices</span>
+              Our Offices
             </h2>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "clamp(20px,3vw,34px)" }}>
@@ -311,7 +312,7 @@ export default function About({ go }) {
                 region: "India Office",
                 company: "Catalyst Service Solutions Partners Private\nLimited",
                 address: "401/402, Yash Tower, Opp. D.A.V Public\nSchool, Aundh, Pune – 411007",
-                email: "sales@catalystsolutions.eco"
+                email: "sales@catalystgroupindia.com"
               },
               {
                 region: "Singapore Office",

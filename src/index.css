@@ -1242,22 +1242,23 @@ button {
   padding-left: 18px
 }
 
-.ovw-ico {
-  width: 38px;
-  height: 38px;
-  border-radius: 12px;
+.ovw-num {
+  font-family: "Outfit", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(25, 25, 25, 0.2);
+  width: 42px;
   flex-shrink: 0;
-  background: rgba(3, 115, 255, .08);
-  color: #0258cc;
   display: flex;
   align-items: center;
-  justify-content: center;
-  transition: background .25s, color .25s;
+  transition: color .3s, -webkit-text-stroke .3s, transform .3s;
 }
 
-.ovw-row:hover .ovw-ico {
-  background: #0373ff;
-  color: #fff
+.ovw-row:hover .ovw-num {
+  color: #0373ff;
+  -webkit-text-stroke: 1px #0373ff;
+  transform: scale(1.1) translateX(4px);
 }
 
 .ovw-name {

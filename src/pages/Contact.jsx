@@ -105,7 +105,7 @@ export default function Contact({ go }) {
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "clamp(44px,5vw,70px)" }}>
             <h2 data-reveal style={{ fontSize: "clamp(36px,4.5vw,56px)", color: "#1E3B24", fontFamily: "Outfit", fontWeight: 500 }}>
-              Our <span style={{ color: "#0258cc", fontFamily: "Caveat, cursive", borderBottom: "3px solid #0258cc", paddingBottom: 6 }}>Offices</span>
+              Our Offices
             </h2>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "clamp(20px,3vw,34px)" }}>
@@ -120,7 +120,7 @@ export default function Contact({ go }) {
                 region: "India Office",
                 company: "Catalyst Service Solutions Partners Private\nLimited",
                 address: "401/402, Yash Tower, Opp. D.A.V Public\nSchool, Aundh, Pune – 411007",
-                email: "sales@catalystsolutions.eco"
+                email: "sales@catalystgroupindia.com"
               },
               {
                 region: "Singapore Office",

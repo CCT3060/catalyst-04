@@ -4,13 +4,13 @@ import HeroSlider from "../components/HeroSlider";
 import partnerImg from "../assets/Partnerwithus.jpg";
 import { Globe } from "@/components/ui/cobe-globe";
 import aboutusImg from "../assets/about1.jpg";
-import iso14001Img from "../assets/certificate/iso14001.jpg";
-import iso45001Img from "../assets/certificate/ISO45001.png";
-import fssaiImg from "../assets/certificate/fssai.png";
-import nabhImg from "../assets/certificate/nabh-accreditation-consultants-service-500x500.webp";
-import esgImg from "../assets/certificate/ESG.jpg";
-import iso9001Img from "../assets/certificate/ISO9001.jpg";
-import regulatoryComplianceImg from "../assets/certificate/Regulatory.png";
+import imgCert1 from "../assets/certificate/12db7e13-6038-4d36-a1d1-effa675dbf02.jpg";
+import imgCert2 from "../assets/certificate/ISO-logo-1.webp";
+import imgCert3 from "../assets/certificate/images (1).png";
+import imgCert4 from "../assets/certificate/images (2).png";
+import imgCert5 from "../assets/certificate/images (3).png";
+import imgCert6 from "../assets/certificate/images (4).png";
+import imgCert7 from "../assets/certificate/images (5).png";
 import { UtensilsCrossed, Building2, Factory, Stethoscope, Users, ArrowRight, ArrowUpRight } from "lucide-react";
 import foodServiceImg from "../assets/foodhome.jpg";
 import fmImg from "../assets/ifmhome.jpg";
@@ -84,14 +84,14 @@ const LI_POSTS = [
 ];
 
 const CERTS = [
-  { name: "ISO 9001", image: iso9001Img, detail: "Certified Quality Management System ensuring consistent service delivery, process efficiency, and continuous improvement across all operations." },
-  { name: "ISO 14001", image: iso14001Img, detail: "Environmental management framework guiding responsible stewardship, sustainability practices, and minimized ecological impact." },
-  { name: "ISO 45001", image: iso45001Img, detail: "Occupational health and safety management system ensuring safe work environments and a zero-harm culture across all sites." },
-  { name: "FSSAI", image: fssaiImg, detail: "Food Safety and Standards Authority of India certified operations ensuring the highest standards in food safety and hygiene." },
-  { name: "NABH", image: nabhImg, detail: "Aligned with National Accreditation Board for Hospitals standards, supporting clinical environments with precision and compliance." },
-  { name: "ESG", image: esgImg, detail: "Commitment to Environmental, Social, and Governance principles—driving responsible business and sustainable long-term value creation." },
-  { name: "Regulatory", image: regulatoryComplianceImg, detail: "Comprehensive regulatory compliance framework aligned to statutory requirements, industry standards, and governance best practices." },
-  { name: "Safety", image: iso45001Img, detail: "Robust safety protocols tailored to each environment—healthcare, hospitality, corporate, and industrial—ensuring protection and accountability." },
+  { name: "ISO 9001", image: imgCert1, detail: "Certified Quality Management System ensuring consistent service delivery, process efficiency, and continuous improvement across all operations." },
+  { name: "ISO 14001", image: imgCert2, detail: "Environmental management framework guiding responsible stewardship, sustainability practices, and minimized ecological impact." },
+  { name: "ISO 45001", image: imgCert3, detail: "Occupational health and safety management system ensuring safe work environments and a zero-harm culture across all sites." },
+  { name: "FSSAI", image: imgCert4, detail: "Food Safety and Standards Authority of India certified operations ensuring the highest standards in food safety and hygiene." },
+  { name: "NABH", image: imgCert5, detail: "Aligned with National Accreditation Board for Hospitals standards, supporting clinical environments with precision and compliance." },
+  { name: "ESG", image: imgCert6, detail: "Commitment to Environmental, Social, and Governance principles—driving responsible business and sustainable long-term value creation." },
+  { name: "Regulatory", image: imgCert7, detail: "Comprehensive regulatory compliance framework aligned to statutory requirements, industry standards, and governance best practices." },
+  { name: "Safety", image: imgCert3, detail: "Robust safety protocols tailored to each environment—healthcare, hospitality, corporate, and industrial—ensuring protection and accountability." },
 ];
 
 export default function Home({ go }) {
@@ -281,7 +281,7 @@ export default function Home({ go }) {
             <div style={{ position: "relative" }}>
               <div className="fdn-cap">THE SCALE WE OPERATE AT</div>
               <div className="fdn-grid">
-                {[["13+", "Years", "Delivering integrated solutions across diverse industries."], ["100+", "Locations", "Supporting organizations across India."], ["6,500+", "Workforce", "Driving excellence through skilled and dedicated professionals."], ["100+", "Client Partnerships", "Built on trust, performance, and long-term collaboration."]].map(([num, label, desc], i) => (
+                {[["15+", "States", "Built on trust, performance, and long-term collaboration."], ["13+", "Years", "Delivering integrated solutions across diverse industries."], ["150+", "Locations", "Supporting organizations across India."], ["8,000+", "Workforce", "Driving excellence through skilled and dedicated professionals."]].map(([num, label, desc], i) => (
                   <div key={i} className="fdn-cell">
                     <div className="fdn-tick"></div>
                     <div className="fdn-num"><AnimatedNumber value={num} /></div>
@@ -318,13 +318,9 @@ export default function Home({ go }) {
         <div className="cert-marquee" data-reveal style={{ padding: "10px 0 4px" }}>
           <div className="cert-track" style={{ gap: 26, paddingLeft: 12 }}>
             {[...CERTS, ...CERTS].map((cert, i) => (
-              <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 18, padding: "18px 18px 16px", flex: "none", width: "clamp(215px,18vw,260px)", height: 160, borderRadius: 24, border: "1px solid rgba(25,25,25,.12)", background: "#fff", boxShadow: "0 1px 0 rgba(25,25,25,.02)" }}>
-                <div style={{ height: 74, width: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <img src={cert.image} alt={cert.name} style={{ maxWidth: "100%", maxHeight: 74, width: "auto", objectFit: "contain", display: "block" }} />
-                </div>
-                <div style={{ textAlign: "center", width: "100%" }}>
-                  <div style={{ fontFamily: "Outfit", fontWeight: 600, fontSize: 16, color: "#666", lineHeight: 1.15 }}>{cert.name}</div>
-                  <div style={{ fontSize: 12, color: "#A8A39B", marginTop: 6, lineHeight: 1.3 }}>{cert.sub}</div>
+              <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "18px", flex: "none", width: "clamp(215px,18vw,260px)", height: 160, borderRadius: 24, border: "1px solid rgba(25,25,25,.12)", background: "#fff", boxShadow: "0 1px 0 rgba(25,25,25,.02)" }}>
+                <div style={{ height: "100%", width: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <img src={cert.image} alt={cert.name} style={{ maxWidth: "100%", maxHeight: 110, width: "auto", objectFit: "contain", display: "block" }} />
                 </div>
               </div>
             ))}

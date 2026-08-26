@@ -18,7 +18,7 @@ import workforceImg from "../assets/workforce_gen.jpg";
 import AnimatedNumber from "../components/AnimatedNumber";
 import about2 from "../assets/about2.jpg";
 import about3 from "../assets/about3.jpg";
-import about4 from "../assets/about4.jpg";
+import about4 from "../assets/about4.png";
 import liPost1 from "../assets/joi1.jpg";
 import liPost2 from "../assets/joi2.jpg";
 import liPost3 from "../assets/joi3.jpg";
@@ -32,14 +32,14 @@ const SECTORS = [
   { num: "03", name: " Public Sector & Smart Cities", desc: "As cities and public spaces continue to evolve, organizations require trusted partners who can support large-scale infrastructure and community environments. Our approach focuses on creating sustainable environments that support future-ready communities.", bg: "#242424", img: "homepub.jpg", page: null },
   { num: "04", name: "Education", desc: "Educational institutions are more than places of learning—they are environments that shape future generations. From schools and universities to student residences, Catalyst creates safe, hygienic, and inspiring campuses that foster academic excellence, student well-being, and seamless day-to-day operations. Our integrated solutions help educators focus on what matters most: empowering students to learn, grow, and thrive.", bg: "#0258cc", img: "education1.jpg", page: null },
   { num: "05", name: "Community Living", desc: "Communities flourish when people feel safe, connected, and cared for. Catalyst partners with residential communities and integrated townships to deliver thoughtfully managed environments that prioritize comfort, safety, sustainability, and operational excellence. Through integrated facility management, food services, infrastructure support, and community-focused solutions, we help create vibrant living spaces where residents can enjoy a higher quality of life.", bg: "#FFB800", img: "living.jpg", page: null },
-  { num: "06", name: "Healthcare Technology Management", desc: "Supporting better care through people, technology, and operational excellence. We support hospitals, healthcare institutions, and life sciences organizations enhance patient experiences, optimize clinical operations, and maximize the performance of critical healthcare technologies while maintaining the highest standards of safety, compliance, and care quality.", bg: "#2E5D33", img: "healthcare.jpg", page: "htm" },
+  { num: "06", name: "Healthcare ", desc: "Supporting better care through people, technology, and operational excellence. We support hospitals, healthcare institutions, and life sciences organizations enhance patient experiences, optimize clinical operations, and maximize the performance of critical healthcare technologies while maintaining the highest standards of safety, compliance, and care quality.", bg: "#2E5D33", img: "healthcare.jpg", page: "htm" },
 ];
 
 
 
 const SOLUTIONS = [
   { page: "ifm", name: "Integrated Facilities Management", icon: Building2, img: fmImg, tagline: "Technical, soft, and business support services working as one system, so every environment performs seamlessly, every day." },
-  { page: "infra", name: "Infrastructure Solutions", icon: Factory, img: "/sectors/infrastructure.jpg", tagline: "Design, build, and upkeep of the physical backbone that keeps organizations moving — reliably, safely, and sustainably." },
+  { page: "infra", name: "Infrastructure Solutions", icon: Factory, img: "/sectors/infrastructure.png", tagline: "Design, build, and upkeep of the physical backbone that keeps organizations moving — reliably, safely, and sustainably." },
   { page: "food", name: "Food Services", icon: UtensilsCrossed, img: foodServiceImg, tagline: "Safe, nutritious, and memorable dining experiences — crafted for workplaces, hospitals, campuses, and communities, delivered at scale." },
   { page: "workforce", name: "Workforce Solutions", icon: Users, img: workforceImg, tagline: "Trained, verified, and dependable teams that bring service excellence to every environment we serve." },
   { page: "htm", name: "Healthcare Technology Management", icon: Stethoscope, img: "/sectors/healthcare.jpg", tagline: "Lifecycle management of critical medical technology — maximizing uptime, compliance, and the quality of patient care." },
@@ -151,7 +151,7 @@ export default function Home({ go }) {
           <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: "28px 60px", flexWrap: "wrap", marginBottom: "clamp(36px,4.5vw,60px)" }}>
             <div style={{ maxWidth: 620 }}>
               <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Solutions Ecosystem</div>
-              <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(30px,4vw,52px)", color: "#191919" }}>Multiple capabilities. Multiple integrated system.</h2>
+              <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(30px,4vw,52px)", color: "#191919" }}>Multiple capabilities. One integrated system.</h2>
             </div>
             <p data-reveal data-delay="2" style={{ maxWidth: 400, fontSize: 16.5, lineHeight: 1.7, color: "#6E6A61", paddingBottom: 8 }}>When specialized expertise works in harmony, performance improves and meaningful outcomes follow — explore each capability to see how.</p>
           </div>

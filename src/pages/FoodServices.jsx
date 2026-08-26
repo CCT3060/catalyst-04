@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CTA from "../components/CTA";
 import { Kicker, SectionHead, IndustriesMarquee, PhoneFrame, CutoutArch } from "../components/SolutionsKit";
-import foodTeamImg from "../assets/food2.jpg";
+import foodTeamImg from "../assets/food2.png";
 import chefImg from "../assets/Gemini_Generated_Image_56k6u556k6u556k6.png";
 import joiFoodImg from "../assets/joimain.jpg";
 import joi1Img from "../assets/joi1.jpg";
@@ -9,7 +9,7 @@ import joi2Img from "../assets/joi2.jpg";
 import joi3Img from "../assets/joi3.jpg";
 import joi4Img from "../assets/joi4.jpg";
 import foodHeroImg from "../assets/foodhero.png";
-import foodBottomImg from "../assets/foodbottom.jpg";
+import foodBottomImg from "../assets/foodbottom.jpeg";
 import { ArrowRight, ArrowUpRight, Zap, HeartPulse, GraduationCap, Users, BadgeCheck, UtensilsCrossed } from "lucide-react";
 
 const MENU = [

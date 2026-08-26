@@ -1,10 +1,10 @@
 import CTA from "../components/CTA";
 import { NumberedIndex, ServiceHero, IndustriesMarquee, CutoutArch } from "../components/SolutionsKit";
-import infrastructureBg from "../assets/infra.jpg";
-import whyInfrastructureBg from "../assets/road.jpg";
-import constructionImg from "../assets/buldong.jpg";
-import siteEngineersImg from "../assets/5.png";
-import innovation from "../assets/innovation.jpg";
+import infrastructureBg from "../assets/infra.jpeg";
+import whyInfrastructureBg from "../assets/road.png";
+import constructionImg from "../assets/buldong.jpeg";
+import siteEngineersImg from "../assets/5.jpeg";
+import innovation from "../assets/innovation.jpeg";
 import infrabottomBg from "../assets/infrabottom.jpg";
 import { ShieldCheck, Leaf, Building2 } from "lucide-react";
 

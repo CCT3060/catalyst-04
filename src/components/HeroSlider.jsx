@@ -6,7 +6,7 @@ import heroheath from "../assets/herohealth.png";
 const AUTO_MS = 7000;
 
 import hero1Img from "../assets/catalysthome1.png";
-import hero4Img from "../assets/homeworkspace.jpg";
+import hero4Img from "../assets/homeworkspace.png";
 
 // Full-bleed cinematic hero. Each slide is one service line: a photographic
 // environment (remote imagery), the slide's brand accent, and the client copy.

@@ -7,6 +7,7 @@ import aboutHeroBg from "../assets/1.png";
 import { ProfileCard } from "@/components/ui/profile-card";
 import WorldMap from "../components/WorldMap";
 import sankar from "../assets/sankar.png";
+import venket from "../assets/venket.png";
 import { ShieldCheck, Heart, Star, Lightbulb, Leaf, MapPin, Plus, ArrowUpRight, UtensilsCrossed, Building2, Factory, Stethoscope, Users } from "lucide-react";
 
 function initTilt(card) {
@@ -81,7 +82,7 @@ export default function About({ go }) {
     { name: 'Santosh Lal', role: 'Chief Business Officer – IFM', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2026/06/santosh-1.png', linkedin: 'https://www.linkedin.com/in/santosh-n-lal-33b6957b/' },
     { name: 'Sudeep Suren', role: 'Vice President – Food Solutions', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2024/06/sudeep.jpg', linkedin: 'https://www.linkedin.com/in/sudeep-suren-42b47554/' },
     { name: 'Sankar Sreedharan', role: 'Vice President - Strategy & New Market', quote: '', image: sankar, linkedin: 'https://www.linkedin.com/in/sankarsreedharan/' },
-    { name: 'Venkat Patil', role: 'Infrastructure Solutions', quote: '', image: sankar, linkedin: 'https://www.linkedin.com/in/sankarsreedharan/' },
+    { name: 'Venkat Patil', role: 'CEO-Industry & Infra Project Division', quote: '', image: venket, linkedin: 'https://www.linkedin.com/in/venkat-patil-16a678a3/' },
   ];
 
   return (
@@ -120,7 +121,7 @@ export default function About({ go }) {
                 [UtensilsCrossed, "Food Services", "Dining programs designed at scale", "food"],
                 [Building2, "Integrated Facilities Management", "Engineering, soft & support services", "ifm"],
                 [Factory, "Infrastructure Solutions", "Projects from plan to handover", "infra"],
-                [Stethoscope, "Healthcare Technology Management", "Biomedical & clinical engineering", "htm"],
+                [Stethoscope, "Healthcare Technology ", "Biomedical & clinical engineering", "htm"],
                 [Users, "Workforce Solutions", "Staffing, payroll & compliance", "workforce"],
               ].map(([Icon, name, sub, page]) => (
                 <div key={page} className="ovw-row" onClick={() => go(page)} role="link" tabIndex={0} onKeyDown={e => { if (e.key === "Enter") go(page); }}>

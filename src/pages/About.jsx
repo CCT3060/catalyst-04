@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import CTA from "../components/CTA";
 import { StatStrip } from "../components/SolutionsKit";
 import { BeamsBackground } from "@/components/ui/beams-background";
-import aboutBottomImg from "../assets/aboutusbottom.jpg";
+import aboutBottomImg from "../assets/aboutfooter.png";
 import aboutHeroBg from "../assets/1.png";
 import { ProfileCard } from "@/components/ui/profile-card";
 import WorldMap from "../components/WorldMap";

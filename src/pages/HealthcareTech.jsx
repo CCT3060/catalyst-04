@@ -1,10 +1,10 @@
 import CTA from "../components/CTA";
 import { Kicker, SectionHead, NumberedIndex, ServiceHero, PhoneFrame, BrowserFrame, CutoutArch, StatStrip } from "../components/SolutionsKit";
-import healthcareBg from "../assets/healthbg.jpg";
-import clinicalImg from "../assets/healthcare2.jpg";
-import dashboardImg from "../assets/Screenshot 2026-07-13 161017.png";
-import htmAppImg from "../assets/image.png";
-import htmBottomImg from "../assets/healthcarebottom.jpg";
+import healthcareBg from "../assets/healthbg.webp";
+import clinicalImg from "../assets/healthcare2.webp";
+import dashboardImg from "../assets/Screenshot 2026-07-13 161017.webp";
+import htmAppImg from "../assets/image.webp";
+import htmBottomImg from "../assets/healthcarebottom.webp";
 import { ShieldCheck, Activity } from "lucide-react";
 
 const CAPABILITIES = [

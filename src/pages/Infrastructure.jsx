@@ -1,11 +1,11 @@
 import CTA from "../components/CTA";
 import { NumberedIndex, ServiceHero, IndustriesMarquee, CutoutArch } from "../components/SolutionsKit";
-import infrastructureBg from "../assets/infra.jpeg";
-import whyInfrastructureBg from "../assets/road.png";
-import constructionImg from "../assets/buldong.jpeg";
-import siteEngineersImg from "../assets/5.jpeg";
-import innovation from "../assets/innovation.jpeg";
-import infrabottomBg from "../assets/infrabottom.jpg";
+import infrastructureBg from "../assets/infra.webp";
+import whyInfrastructureBg from "../assets/road.webp";
+import constructionImg from "../assets/buldong.webp";
+import siteEngineersImg from "../assets/5.webp";
+import innovation from "../assets/innovation.webp";
+import infrabottomBg from "../assets/infrabottom.webp";
 import { ShieldCheck, Leaf, Building2 } from "lucide-react";
 
 export default function Infrastructure({ go }) {
@@ -72,7 +72,7 @@ export default function Infrastructure({ go }) {
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#fff" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(40px,6vw,80px)", alignItems: "center" }} data-2col>
           <div data-reveal style={{ position: "relative", minHeight: 420, display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <img src={constructionImg} alt="Construction" style={{ width: "100%", maxHeight: 520, objectFit: "contain" }} />
+            <img loading="lazy" src={constructionImg} alt="Construction" style={{ width: "100%", maxHeight: 520, objectFit: "contain" }} />
           </div>
           <div>
             <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Integrated Execution</div>
@@ -103,7 +103,7 @@ export default function Infrastructure({ go }) {
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#fff" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(40px,6vw,80px)", alignItems: "center" }} data-2col>
           <div data-reveal style={{ position: "relative", borderRadius: 36, overflow: "hidden", minHeight: 420 }}>
-            <img src={innovation} alt="Construction" style={{ width: "130%", maxHeight: 520, objectFit: "contain" }} />
+            <img loading="lazy" src={innovation} alt="Construction" style={{ width: "130%", maxHeight: 520, objectFit: "contain" }} />
           </div>
           <div>
             <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><ShieldCheck size={20} color="#0373ff" />Safety & Responsible Execution</div>

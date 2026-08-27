@@ -1,19 +1,19 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, lazy, Suspense } from "react";
 import { X, ChevronDown, ArrowUpRight } from "lucide-react";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import FloatingActions from "./components/FloatingActions";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import FoodServices from "./pages/FoodServices";
-import Facilities from "./pages/Facilities";
-import Infrastructure from "./pages/Infrastructure";
-import HealthcareTech from "./pages/HealthcareTech";
-import Workforce from "./pages/Workforce";
-import Sectors from "./pages/Sectors";
-import Careers from "./pages/Careers";
-import Contact from "./pages/Contact";
-import Technologies from "./pages/Technologies";
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const FoodServices = lazy(() => import("./pages/FoodServices"));
+const Facilities = lazy(() => import("./pages/Facilities"));
+const Infrastructure = lazy(() => import("./pages/Infrastructure"));
+const HealthcareTech = lazy(() => import("./pages/HealthcareTech"));
+const Workforce = lazy(() => import("./pages/Workforce"));
+const Sectors = lazy(() => import("./pages/Sectors"));
+const Careers = lazy(() => import("./pages/Careers"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Technologies = lazy(() => import("./pages/Technologies"));
 import { initImageReveal, killImageReveal } from "./lib/imageReveal";
 function useDarkHero(page) {
   return ["home", "about", "sectors", "careers", "contact", "technologies"].includes(page);
@@ -169,7 +169,9 @@ export default function App() {
         </div>
       )}
       <main>
-        <PageComp go={go} hash={hash} />
+        <Suspense fallback={<div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}><div style={{ width: 36, height: 36, border: "3px solid rgba(3,115,255,.15)", borderTopColor: "#0373ff", borderRadius: "50%", animation: "spin .8s linear infinite" }} /></div>}>
+          <PageComp go={go} hash={hash} />
+        </Suspense>
       </main>
       <FloatingActions go={go} />
       <Footer go={go} />

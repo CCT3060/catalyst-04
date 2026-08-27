@@ -18,7 +18,7 @@ export default function Footer({ go }) {
         <div style={{ display: "grid", gridTemplateColumns: "1.6fr 1fr 1fr 1fr", gap: 40 }} data-footgrid>
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 11, cursor: "pointer" }} onClick={() => go("home")}>
-              <img src="/logo.webp" alt="Catalyst Logo" style={{ height: 38, width: "auto" }} />
+              <img loading="lazy" src="/logo.webp" alt="Catalyst Logo" style={{ height: 38, width: "auto" }} />
             </div>
             <p style={{ marginTop: 22, maxWidth: 340, fontSize: 15, lineHeight: 1.7, color: "rgba(0, 0, 0, 0.6)" }}>An integrated services partner creating environments where people work, heal, learn, live, and connect.</p>
             <div style={{ marginTop: 24, fontFamily: "Outfit", fontSize: 20, fontWeight: 600, color: "#000000" }}>People at the Heart of Everything We Do</div>

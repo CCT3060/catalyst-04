@@ -52,7 +52,7 @@ export const ProfileCard = ({ name, role, image, onConnect }) => {
       <div className="w-full">
         <div className="bg-white dark:bg-zinc-900 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-2xl dark:shadow-black/80 overflow-hidden hover-scale border border-gray-100">
           <div className="relative overflow-hidden image-container">
-            <img 
+            <img loading="lazy" 
               src={image || "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg"}
               alt={name} 
               className="w-full aspect-square object-cover image-scale"

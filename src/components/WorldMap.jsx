@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import mapImage from "../assets/woldmap.png";
+import mapImage from "../assets/woldmap.webp";
 
 const REGIONS = [
   { name: "India", category: "South Asia", desc: "Headquarters & primary operations center" },
@@ -15,7 +15,7 @@ export default function WorldMap({ style }) {
   return (
     <div style={{ position: "relative", width: "100%", height: "100%", display: "flex", flexDirection: "column", ...style }}>
       <div style={{ position: "relative", flex: 1, borderRadius: 20, overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)", background: "#fff", display: "flex", justifyContent: "center", alignItems: "center" }}>
-        <img 
+        <img loading="lazy" 
           src={mapImage} 
           alt="Catalyst Global Presence World Map" 
           style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }} 

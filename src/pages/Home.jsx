@@ -1,48 +1,48 @@
 import { useState, useEffect } from "react";
 import CTA from "../components/CTA";
 import HeroSlider from "../components/HeroSlider";
-import partnerImg from "../assets/Partnerwithus.jpg";
+import partnerImg from "../assets/Partnerwithus.webp";
 import { Globe } from "@/components/ui/cobe-globe";
-import aboutusImg from "../assets/about1.jpg";
-import imgCert1 from "../assets/certificate/12db7e13-6038-4d36-a1d1-effa675dbf02.jpg";
+import aboutusImg from "../assets/about1.webp";
+import imgCert1 from "../assets/certificate/12db7e13-6038-4d36-a1d1-effa675dbf02.webp";
 import imgCert2 from "../assets/certificate/ISO-logo-1.webp";
-import imgCert3 from "../assets/certificate/images (1).png";
-import imgCert4 from "../assets/certificate/images (2).png";
-import imgCert5 from "../assets/certificate/images (3).png";
-import imgCert6 from "../assets/certificate/images (4).png";
-import imgCert7 from "../assets/certificate/images (5).png";
+import imgCert3 from "../assets/certificate/images (1).webp";
+import imgCert4 from "../assets/certificate/images (2).webp";
+import imgCert5 from "../assets/certificate/images (3).webp";
+import imgCert6 from "../assets/certificate/images (4).webp";
+import imgCert7 from "../assets/certificate/images (5).webp";
 import { UtensilsCrossed, Building2, Factory, Stethoscope, Users, ArrowRight, ArrowUpRight } from "lucide-react";
-import foodServiceImg from "../assets/foodhome.jpg";
-import fmImg from "../assets/ifmhome.jpg";
-import workforceImg from "../assets/workforce_gen.jpg";
+import foodServiceImg from "../assets/foodhome.webp";
+import fmImg from "../assets/ifmhome.webp";
+import workforceImg from "../assets/workforce_gen.webp";
 import AnimatedNumber from "../components/AnimatedNumber";
-import about2 from "../assets/about2.jpg";
-import about3 from "../assets/about3.jpg";
-import about4 from "../assets/about4.png";
-import liPost1 from "../assets/joi1.jpg";
-import liPost2 from "../assets/joi2.jpg";
-import liPost3 from "../assets/joi3.jpg";
-import liPost4 from "../assets/joi4.jpg";
+import about2 from "../assets/about2.webp";
+import about3 from "../assets/about3.webp";
+import about4 from "../assets/about4.webp";
+import liPost1 from "../assets/joi1.webp";
+import liPost2 from "../assets/joi2.webp";
+import liPost3 from "../assets/joi3.webp";
+import liPost4 from "../assets/joi4.webp";
 
 
 
 const SECTORS = [
-  { num: "01", name: "Corporate & Commercial Spaces", desc: "Workplaces are more than buildings, they are where ideas grow, teams connect, and performance takes shape. We help organizations create engaging, high-performing environments that elevate employee experiences and support business success.", bg: "#191919", img: "homecor.jpg", page: null },
-  { num: "02", name: "Manufacturing & Industrial Infrastructure", desc: "Powering the environments that drive industry forward. From manufacturing facilities to logistics networks and critical infrastructure, we create high-performing environments that strengthen operational continuity, workforce experience, and business resilience.", bg: "#43934A", img: "homemane.jpg", page: null },
-  { num: "03", name: " Public Sector & Smart Cities", desc: "As cities and public spaces continue to evolve, organizations require trusted partners who can support large-scale infrastructure and community environments. Our approach focuses on creating sustainable environments that support future-ready communities.", bg: "#242424", img: "homepub.jpg", page: null },
-  { num: "04", name: "Education", desc: "Educational institutions are more than places of learning—they are environments that shape future generations. From schools and universities to student residences, Catalyst creates safe, hygienic, and inspiring campuses that foster academic excellence, student well-being, and seamless day-to-day operations. Our integrated solutions help educators focus on what matters most: empowering students to learn, grow, and thrive.", bg: "#0258cc", img: "education1.jpg", page: null },
-  { num: "05", name: "Community Living", desc: "Communities flourish when people feel safe, connected, and cared for. Catalyst partners with residential communities and integrated townships to deliver thoughtfully managed environments that prioritize comfort, safety, sustainability, and operational excellence. Through integrated facility management, food services, infrastructure support, and community-focused solutions, we help create vibrant living spaces where residents can enjoy a higher quality of life.", bg: "#FFB800", img: "living.jpg", page: null },
-  { num: "06", name: "Healthcare ", desc: "Supporting better care through people, technology, and operational excellence. We support hospitals, healthcare institutions, and life sciences organizations enhance patient experiences, optimize clinical operations, and maximize the performance of critical healthcare technologies while maintaining the highest standards of safety, compliance, and care quality.", bg: "#2E5D33", img: "healthcare.jpg", page: "htm" },
+  { num: "01", name: "Corporate & Commercial Spaces", desc: "Workplaces are more than buildings, they are where ideas grow, teams connect, and performance takes shape. We help organizations create engaging, high-performing environments that elevate employee experiences and support business success.", bg: "#191919", img: "homecor.webp", page: null },
+  { num: "02", name: "Manufacturing & Industrial Infrastructure", desc: "Powering the environments that drive industry forward. From manufacturing facilities to logistics networks and critical infrastructure, we create high-performing environments that strengthen operational continuity, workforce experience, and business resilience.", bg: "#43934A", img: "homemane.webp", page: null },
+  { num: "03", name: " Public Sector & Smart Cities", desc: "As cities and public spaces continue to evolve, organizations require trusted partners who can support large-scale infrastructure and community environments. Our approach focuses on creating sustainable environments that support future-ready communities.", bg: "#242424", img: "homepub.webp", page: null },
+  { num: "04", name: "Education", desc: "Educational institutions are more than places of learning—they are environments that shape future generations. From schools and universities to student residences, Catalyst creates safe, hygienic, and inspiring campuses that foster academic excellence, student well-being, and seamless day-to-day operations. Our integrated solutions help educators focus on what matters most: empowering students to learn, grow, and thrive.", bg: "#0258cc", img: "education1.webp", page: null },
+  { num: "05", name: "Community Living", desc: "Communities flourish when people feel safe, connected, and cared for. Catalyst partners with residential communities and integrated townships to deliver thoughtfully managed environments that prioritize comfort, safety, sustainability, and operational excellence. Through integrated facility management, food services, infrastructure support, and community-focused solutions, we help create vibrant living spaces where residents can enjoy a higher quality of life.", bg: "#FFB800", img: "living.webp", page: null },
+  { num: "06", name: "Healthcare ", desc: "Supporting better care through people, technology, and operational excellence. We support hospitals, healthcare institutions, and life sciences organizations enhance patient experiences, optimize clinical operations, and maximize the performance of critical healthcare technologies while maintaining the highest standards of safety, compliance, and care quality.", bg: "#2E5D33", img: "healthcare.webp", page: "htm" },
 ];
 
 
 
 const SOLUTIONS = [
   { page: "ifm", name: "Integrated Facilities Management", icon: Building2, img: fmImg, tagline: "Technical, soft, and business support services working as one system, so every environment performs seamlessly, every day." },
-  { page: "infra", name: "Infrastructure Solutions", icon: Factory, img: "/sectors/infrastructure.png", tagline: "Design, build, and upkeep of the physical backbone that keeps organizations moving — reliably, safely, and sustainably." },
+  { page: "infra", name: "Infrastructure Solutions", icon: Factory, img: "/sectors/infrastructure.webp", tagline: "Design, build, and upkeep of the physical backbone that keeps organizations moving — reliably, safely, and sustainably." },
   { page: "food", name: "Food Services", icon: UtensilsCrossed, img: foodServiceImg, tagline: "Safe, nutritious, and memorable dining experiences — crafted for workplaces, hospitals, campuses, and communities, delivered at scale." },
   { page: "workforce", name: "Workforce Solutions", icon: Users, img: workforceImg, tagline: "Trained, verified, and dependable teams that bring service excellence to every environment we serve." },
-  { page: "htm", name: "Healthcare Technology Management", icon: Stethoscope, img: "/sectors/healthcare.jpg", tagline: "Lifecycle management of critical medical technology — maximizing uptime, compliance, and the quality of patient care." },
+  { page: "htm", name: "Healthcare Technology Management", icon: Stethoscope, img: "/sectors/healthcare.webp", tagline: "Lifecycle management of critical medical technology — maximizing uptime, compliance, and the quality of patient care." },
 
 ];
 
@@ -120,19 +120,19 @@ export default function Home({ go }) {
           <div style={{ position: "relative", height: 520 }}>
             {/* Box 1 (Top Left) */}
             <div style={{ position: "absolute", top: 0, left: 0, width: "48%", height: "48%", borderRadius: 24, overflow: "hidden", border: "6px solid #F9F7F3", boxShadow: "0 20px 40px rgba(0,0,0,0.08)", zIndex: 1 }}>
-              <img src={aboutusImg} alt="About Catalyst" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <img loading="lazy" src={aboutusImg} alt="About Catalyst" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </div>
             {/* Box 2 (Middle Right) */}
             <div style={{ position: "absolute", top: "15%", right: 0, width: "55%", height: "55%", borderRadius: 24, overflow: "hidden", border: "6px solid #F9F7F3", boxShadow: "0 20px 40px rgba(0,0,0,0.12)", zIndex: 2 }}>
-              <img src={about2} alt="Team Collaboration" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <img loading="lazy" src={about2} alt="Team Collaboration" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </div>
             {/* Box 3 (Bottom Left) */}
             <div style={{ position: "absolute", bottom: "10%", left: "5%", width: "42%", height: "42%", borderRadius: 24, overflow: "hidden", border: "6px solid #F9F7F3", boxShadow: "0 20px 40px rgba(0,0,0,0.08)", zIndex: 3 }}>
-              <img src={about3} alt="Meeting" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <img loading="lazy" src={about3} alt="Meeting" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </div>
             {/* Box 4 (Bottom Right) */}
             <div style={{ position: "absolute", bottom: 0, right: "10%", width: "45%", height: "30%", borderRadius: 24, overflow: "hidden", border: "6px solid #F9F7F3", boxShadow: "0 20px 40px rgba(0,0,0,0.08)", zIndex: 4 }}>
-              <img src={about4} alt="Office Space" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <img loading="lazy" src={about4} alt="Office Space" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </div>
           </div>
           <div>
@@ -320,7 +320,7 @@ export default function Home({ go }) {
             {[...CERTS, ...CERTS].map((cert, i) => (
               <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "18px", flex: "none", width: "clamp(215px,18vw,260px)", height: 160, borderRadius: 24, border: "1px solid rgba(25,25,25,.12)", background: "#fff", boxShadow: "0 1px 0 rgba(25,25,25,.02)" }}>
                 <div style={{ height: "100%", width: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <img src={cert.image} alt={cert.name} style={{ maxWidth: "100%", maxHeight: 110, width: "auto", objectFit: "contain", display: "block" }} />
+                  <img loading="lazy" src={cert.image} alt={cert.name} style={{ maxWidth: "100%", maxHeight: 110, width: "auto", objectFit: "contain", display: "block" }} />
                 </div>
               </div>
             ))}

@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import "./HeroSlider.css";
-import heroheath from "../assets/herohealth.png";
+import heroheath from "../assets/herohealth.webp";
 
 const AUTO_MS = 7000;
 
-import hero1Img from "../assets/catalysthome1.png";
-import hero4Img from "../assets/homeworkspace.png";
+import hero1Img from "../assets/catalysthome1.webp";
+import hero4Img from "../assets/homeworkspace.webp";
 
 // Full-bleed cinematic hero. Each slide is one service line: a photographic
 // environment (remote imagery), the slide's brand accent, and the client copy.

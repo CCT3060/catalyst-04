@@ -1,8 +1,8 @@
 ﻿import { useEffect, useRef, useState } from "react";
-import healthcare from "../assets/sohealth.jpg";
-import infra from "../assets/soinfra.jpg"
-import education from "../assets/education.jpg"
-import living from "../assets/soliving.jpg"
+import healthcare from "../assets/sohealth.webp";
+import infra from "../assets/soinfra.webp"
+import education from "../assets/education.webp"
+import living from "../assets/soliving.webp"
 const sectors = [
   {
     num: "01", color: "#0373ff", labelColor: "#0258cc", label: "CORPORATE", title: "Corporate & Commercial Spaces",

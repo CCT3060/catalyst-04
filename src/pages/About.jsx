@@ -2,12 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import CTA from "../components/CTA";
 import { StatStrip } from "../components/SolutionsKit";
 import { BeamsBackground } from "@/components/ui/beams-background";
-import aboutBottomImg from "../assets/aboutfooter.png";
-import aboutHeroBg from "../assets/1.png";
+import aboutBottomImg from "../assets/aboutfooter.webp";
+import aboutHeroBg from "../assets/1.webp";
 import { ProfileCard } from "@/components/ui/profile-card";
 import WorldMap from "../components/WorldMap";
-import sankar from "../assets/sankar.png";
-import venket from "../assets/venket.png";
+import sankar from "../assets/sankar.webp";
+import venket from "../assets/venket.webp";
 import { ShieldCheck, Heart, Star, Lightbulb, Leaf, MapPin, Plus, ArrowUpRight, UtensilsCrossed, Building2, Factory, Stethoscope, Users } from "lucide-react";
 
 function initTilt(card) {

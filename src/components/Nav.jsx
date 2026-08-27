@@ -34,7 +34,7 @@ export default function Nav({ go, darkHero, activeNav, mobileOpen, setMobileOpen
     <nav ref={navRef} data-nav className={darkHero ? "nav-dark" : ""}
       style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "18px clamp(20px,4vw,56px)", transition: "background .4s,backdrop-filter .4s,box-shadow .4s,padding .4s" }}>
       <div onClick={() => go("home")} style={{ display: "flex", alignItems: "center", gap: 11, cursor: "pointer" }}>
-        <img src="/logo.webp" alt="Catalyst Logo" className="nav-logo" style={{ height: 38, width: "auto", flex: "none", transition: "filter 0.4s" }} />
+        <img loading="lazy" src="/logo.webp" alt="Catalyst Logo" className="nav-logo" style={{ height: 38, width: "auto", flex: "none", transition: "filter 0.4s" }} />
       </div>
 
       <div style={{ display: "flex", alignItems: "center", gap: 34 }} data-desktopnav>

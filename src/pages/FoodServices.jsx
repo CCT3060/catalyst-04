@@ -1,15 +1,15 @@
 import { useState } from "react";
 import CTA from "../components/CTA";
 import { Kicker, SectionHead, IndustriesMarquee, PhoneFrame, CutoutArch } from "../components/SolutionsKit";
-import foodTeamImg from "../assets/food2.png";
-import chefImg from "../assets/2.png";
-import joiFoodImg from "../assets/joimain.jpg";
-import joi1Img from "../assets/joi1.jpg";
-import joi2Img from "../assets/joi2.jpg";
-import joi3Img from "../assets/joi3.jpg";
-import joi4Img from "../assets/joi4.jpg";
-import foodHeroImg from "../assets/foodhero.png";
-import foodBottomImg from "../assets/foodbottom.jpeg";
+import foodTeamImg from "../assets/food2.webp";
+import chefImg from "../assets/2.webp";
+import joiFoodImg from "../assets/joimain.webp";
+import joi1Img from "../assets/joi1.webp";
+import joi2Img from "../assets/joi2.webp";
+import joi3Img from "../assets/joi3.webp";
+import joi4Img from "../assets/joi4.webp";
+import foodHeroImg from "../assets/foodhero.webp";
+import foodBottomImg from "../assets/foodbottom.webp";
 import { ArrowRight, ArrowUpRight, Zap, HeartPulse, GraduationCap, Users, BadgeCheck, UtensilsCrossed } from "lucide-react";
 
 const MENU = [

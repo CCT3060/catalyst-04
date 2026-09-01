@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import CTA from "../components/CTA";
 import HeroSlider from "../components/HeroSlider";
 import partnerImg from "../assets/Partnerwithus.webp";
 import { Globe } from "@/components/ui/cobe-globe";
-import aboutusImg from "../assets/about1.webp";
+import aboutusImg from "../assets/image.png";
 import imgCert1 from "../assets/certificate/12db7e13-6038-4d36-a1d1-effa675dbf02.webp";
 import imgCert2 from "../assets/certificate/ISO-logo-1.webp";
 import imgCert3 from "../assets/certificate/images (1).webp";
@@ -11,25 +11,25 @@ import imgCert4 from "../assets/certificate/images (2).webp";
 import imgCert5 from "../assets/certificate/images (3).webp";
 import imgCert6 from "../assets/certificate/images (4).webp";
 import imgCert7 from "../assets/certificate/images (5).webp";
+import isoImg14001 from "../assets/certificate/iso-14001-2015-certification-250x250.webp";
+import isoImg45001 from "../assets/certificate/45001 2015.png";
+import isoImg9001 from "../assets/certificate/9001 2015.png";
 import { UtensilsCrossed, Building2, Factory, Stethoscope, Users, ArrowRight, ArrowUpRight } from "lucide-react";
 import foodServiceImg from "../assets/foodhome.webp";
 import fmImg from "../assets/ifmhome.webp";
 import workforceImg from "../assets/workforce_gen.webp";
 import AnimatedNumber from "../components/AnimatedNumber";
-import about2 from "../assets/about2.webp";
+import about2 from "../assets/image2.png";
 import about3 from "../assets/about3.webp";
 import about4 from "../assets/about4.webp";
-import liPost1 from "../assets/joi1.webp";
-import liPost2 from "../assets/joi2.webp";
-import liPost3 from "../assets/joi3.webp";
-import liPost4 from "../assets/joi4.webp";
+import LinkedInPosts from "../components/LinkedInPosts";
 
 
 
 const SECTORS = [
   { num: "01", name: "Corporate & Commercial Spaces", desc: "Workplaces are more than buildings, they are where ideas grow, teams connect, and performance takes shape. We help organizations create engaging, high-performing environments that elevate employee experiences and support business success.", bg: "#191919", img: "homecor.webp", page: null },
   { num: "02", name: "Manufacturing & Industrial Infrastructure", desc: "Powering the environments that drive industry forward. From manufacturing facilities to logistics networks and critical infrastructure, we create high-performing environments that strengthen operational continuity, workforce experience, and business resilience.", bg: "#43934A", img: "homemane.webp", page: null },
-  { num: "03", name: " Public Sector & Smart Cities", desc: "As cities and public spaces continue to evolve, organizations require trusted partners who can support large-scale infrastructure and community environments. Our approach focuses on creating sustainable environments that support future-ready communities.", bg: "#242424", img: "homepub.webp", page: null },
+  { num: "03", name: " Public Sector & Smart Cities", desc: "As cities and public spaces continue to evolve, organizations require trusted partners who can support large-scale infrastructure and community environments. Our approach focuses on creating sustainable environments that support future-ready communities.", bg: "#242424", img: "image3.png", page: null },
   { num: "04", name: "Education", desc: "Educational institutions are more than places of learning—they are environments that shape future generations. From schools and universities to student residences, Catalyst creates safe, hygienic, and inspiring campuses that foster academic excellence, student well-being, and seamless day-to-day operations. Our integrated solutions help educators focus on what matters most: empowering students to learn, grow, and thrive.", bg: "#0258cc", img: "education1.webp", page: null },
   { num: "05", name: "Community Living", desc: "Communities flourish when people feel safe, connected, and cared for. Catalyst partners with residential communities and integrated townships to deliver thoughtfully managed environments that prioritize comfort, safety, sustainability, and operational excellence. Through integrated facility management, food services, infrastructure support, and community-focused solutions, we help create vibrant living spaces where residents can enjoy a higher quality of life.", bg: "#FFB800", img: "living.webp", page: null },
   { num: "06", name: "Healthcare ", desc: "Supporting better care through people, technology, and operational excellence. We support hospitals, healthcare institutions, and life sciences organizations enhance patient experiences, optimize clinical operations, and maximize the performance of critical healthcare technologies while maintaining the highest standards of safety, compliance, and care quality.", bg: "#2E5D33", img: "healthcare.webp", page: "htm" },
@@ -46,57 +46,107 @@ const SOLUTIONS = [
 
 ];
 
-const COMPANY_PAGE = "https://www.linkedin.com/company/catalyst-service-solutions-partners-pvt-ltd/";
 
-const LI_POSTS = [
-  {
-    id: 1,
-    time: "2 days ago",
-    text: "At Catalyst, we believe that great food isn't just about taste — it's about trust, nutrition, and the experience it creates. Our food services are crafted to nourish people, power performance, and bring communities together, one meal at a time.",
-    img: liPost1,
-    likes: 42,
-    comments: 5,
-  },
-  {
-    id: 2,
-    time: "4 days ago",
-    text: "Integrated Facility Management is about more than maintaining buildings — it's about creating environments where people can do their best work. Explore how Catalyst brings every support service together under one roof.",
-    img: liPost2,
-    likes: 31,
-    comments: 3,
-  },
-  {
-    id: 3,
-    time: "1 week ago",
-    text: "Healthcare Technology Management requires precision, trust, and zero tolerance for downtime. At Catalyst, we manage the complete lifecycle of biomedical equipment, ensuring uninterrupted care across every department.",
-    img: liPost3,
-    likes: 58,
-    comments: 8,
-  },
-  {
-    id: 4,
-    time: "2 weeks ago",
-    text: "From skilled technicians to trained support staff — our Workforce Solutions ensure that every client environment is powered by dependable, verified, and trained professionals who make a real difference on the ground.",
-    img: liPost4,
-    likes: 37,
-    comments: 4,
-  },
-];
 
 const CERTS = [
-  { name: "ISO 9001", image: imgCert1, detail: "Certified Quality Management System ensuring consistent service delivery, process efficiency, and continuous improvement across all operations." },
-  { name: "ISO 14001", image: imgCert2, detail: "Environmental management framework guiding responsible stewardship, sustainability practices, and minimized ecological impact." },
-  { name: "ISO 45001", image: imgCert3, detail: "Occupational health and safety management system ensuring safe work environments and a zero-harm culture across all sites." },
-  { name: "FSSAI", image: imgCert4, detail: "Food Safety and Standards Authority of India certified operations ensuring the highest standards in food safety and hygiene." },
-  { name: "NABH", image: imgCert5, detail: "Aligned with National Accreditation Board for Hospitals standards, supporting clinical environments with precision and compliance." },
-  { name: "ESG", image: imgCert6, detail: "Commitment to Environmental, Social, and Governance principles—driving responsible business and sustainable long-term value creation." },
-  { name: "Regulatory", image: imgCert7, detail: "Comprehensive regulatory compliance framework aligned to statutory requirements, industry standards, and governance best practices." },
-  { name: "Safety", image: imgCert3, detail: "Robust safety protocols tailored to each environment—healthcare, hospitality, corporate, and industrial—ensuring protection and accountability." },
+  { name: "ISO 9001:2015", image: isoImg9001, label: "Quality Management System" },
+  { name: "ISO 45001:2018", image: isoImg45001, label: "Health & Safety Management Systems" },
+  { name: "ISO 14001:2015", image: isoImg14001, label: "Environmental Management Systems" },
+  { name: "ISO 9001", image: imgCert1 },
+  { name: "ISO 14001", image: imgCert2 },
+  { name: "ISO 45001", image: imgCert3 },
+  { name: "FSSAI", image: imgCert4 },
+  { name: "NABH", image: imgCert5 },
+  { name: "ESG", image: imgCert6 },
+  { name: "Regulatory", image: imgCert7 },
 ];
 
 export default function Home({ go }) {
   const [activeSector, setActiveSector] = useState(0);
   const [activeSolution, setActiveSolution] = useState(0);
+
+  // ── Cert scroll: auto-scroll + drag-to-scroll ──
+  const certScrollRef = useRef(null);
+  const dragState = useRef({ dragging: false, startX: 0, scrollLeft: 0, resumeTimer: null });
+
+  useEffect(() => {
+    const el = certScrollRef.current;
+    if (!el) return;
+    const speed = 0.7;
+    let rafId;
+    let paused = false;
+
+    const tick = () => {
+      if (!paused) {
+        el.scrollLeft += speed;
+        // infinite loop: when we reach the halfway point reset to start
+        if (el.scrollLeft >= el.scrollWidth / 2) el.scrollLeft = 0;
+      }
+      rafId = requestAnimationFrame(tick);
+    };
+    rafId = requestAnimationFrame(tick);
+
+    const pause = () => { paused = true; };
+    const resume = () => { paused = false; };
+
+    // Mouse drag
+    const onMouseDown = e => {
+      dragState.current.dragging = true;
+      dragState.current.startX = e.pageX - el.offsetLeft;
+      dragState.current.scrollLeft = el.scrollLeft;
+      el.style.cursor = "grabbing";
+      pause();
+      clearTimeout(dragState.current.resumeTimer);
+    };
+    const onMouseMove = e => {
+      if (!dragState.current.dragging) return;
+      e.preventDefault();
+      const x = e.pageX - el.offsetLeft;
+      const walk = (x - dragState.current.startX) * 1.4;
+      el.scrollLeft = dragState.current.scrollLeft - walk;
+    };
+    const onMouseUp = () => {
+      dragState.current.dragging = false;
+      el.style.cursor = "grab";
+      dragState.current.resumeTimer = setTimeout(resume, 1200);
+    };
+
+    // Touch drag
+    const onTouchStart = e => {
+      dragState.current.startX = e.touches[0].pageX;
+      dragState.current.scrollLeft = el.scrollLeft;
+      pause();
+      clearTimeout(dragState.current.resumeTimer);
+    };
+    const onTouchMove = e => {
+      const x = e.touches[0].pageX;
+      const walk = (dragState.current.startX - x) * 1.2;
+      el.scrollLeft = dragState.current.scrollLeft + walk;
+    };
+    const onTouchEnd = () => {
+      dragState.current.resumeTimer = setTimeout(resume, 1200);
+    };
+
+    el.addEventListener("mousedown", onMouseDown);
+    el.addEventListener("mousemove", onMouseMove);
+    el.addEventListener("mouseup", onMouseUp);
+    el.addEventListener("mouseleave", onMouseUp);
+    el.addEventListener("touchstart", onTouchStart, { passive: true });
+    el.addEventListener("touchmove", onTouchMove, { passive: true });
+    el.addEventListener("touchend", onTouchEnd);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      clearTimeout(dragState.current.resumeTimer);
+      el.removeEventListener("mousedown", onMouseDown);
+      el.removeEventListener("mousemove", onMouseMove);
+      el.removeEventListener("mouseup", onMouseUp);
+      el.removeEventListener("mouseleave", onMouseUp);
+      el.removeEventListener("touchstart", onTouchStart);
+      el.removeEventListener("touchmove", onTouchMove);
+      el.removeEventListener("touchend", onTouchEnd);
+    };
+  }, []);
 
   useEffect(() => {
     const onMove = e => {
@@ -315,20 +365,48 @@ export default function Home({ go }) {
             <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.6vw,46px)", color: "#191919", lineHeight: 1.05 }}>Built on standards you can trust</h2>
           </div>
         </div>
-        <div className="cert-marquee" data-reveal style={{ padding: "10px 0 4px" }}>
-          <div className="cert-track" style={{ gap: 26, paddingLeft: 12 }}>
-            {[...CERTS, ...CERTS].map((cert, i) => (
-              <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "18px", flex: "none", width: "clamp(215px,18vw,260px)", height: 160, borderRadius: 24, border: "1px solid rgba(25,25,25,.12)", background: "#fff", boxShadow: "0 1px 0 rgba(25,25,25,.02)" }}>
-                <div style={{ height: "100%", width: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <img loading="lazy" src={cert.image} alt={cert.name} style={{ maxWidth: "100%", maxHeight: 110, width: "auto", objectFit: "contain", display: "block" }} />
-                </div>
+
+        {/* Drag-scroll track */}
+        <div
+          ref={certScrollRef}
+          data-reveal
+          style={{
+            display: "flex",
+            overflowX: "scroll",
+            gap: 26,
+            paddingLeft: 24,
+            paddingRight: 24,
+            paddingTop: 10,
+            paddingBottom: 18,
+            cursor: "grab",
+            userSelect: "none",
+            scrollbarWidth: "none",          /* Firefox */
+            msOverflowStyle: "none",         /* IE/Edge */
+            maskImage: "linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent)",
+            WebkitMaskImage: "linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent)",
+          }}
+          className="cert-drag-track"
+        >
+          {[...CERTS, ...CERTS].map((cert, i) => (
+            <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: cert.label ? "flex-start" : "center", padding: cert.label ? "16px 18px 14px" : "18px", flex: "none", width: "clamp(215px,18vw,260px)", height: cert.label ? 180 : 160, borderRadius: 24, background: "transparent", gap: 0, pointerEvents: "none" }}>
+              <div style={{ flex: 1, width: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <img loading="lazy" src={cert.image} alt={cert.name} style={{ maxWidth: "100%", maxHeight: 110, width: "auto", objectFit: "contain", display: "block" }} />
               </div>
-            ))}
-          </div>
+              {cert.label && (
+                <div style={{ width: "100%", textAlign: "center", fontSize: 12, fontWeight: 600, color: "#46433C", letterSpacing: ".01em", lineHeight: 1.35, paddingTop: 8 }}>{cert.label}</div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Drag hint */}
+        <div style={{ textAlign: "center", marginTop: 14 }}>
+          <span style={{ fontSize: 12, color: "#9E9A93", fontWeight: 500, letterSpacing: ".06em", display: "inline-flex", alignItems: "center", gap: 6 }}>
+          </span>
         </div>
       </section>
 
-      {/* LinkedIn Posts – Elfsight feed */}
+      {/* LinkedIn Posts – Official API */}
       <section style={{ padding: "clamp(56px,7vw,96px) 0", background: "#F4F2EF" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 clamp(20px,4vw,56px)" }}>
           <div style={{ textAlign: "center", marginBottom: "clamp(32px,4vw,52px)" }}>
@@ -338,9 +416,7 @@ export default function Home({ go }) {
             <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(26px,3.4vw,44px)", color: "#191919", lineHeight: 1.05 }}>Follow us on LinkedIn</h2>
             <p data-reveal data-delay="2" style={{ marginTop: 12, fontSize: 17, color: "#6E6A61" }}>Stay connected with our latest insights, news and updates.</p>
           </div>
-
-          {/* Elfsight LinkedIn Feed Widget */}
-          <div className="elfsight-app-27cd089a-31fe-4ff6-ba97-6b66b797f294" data-elfsight-app-lazy ></div>
+          <LinkedInPosts limit={6} />
         </div>
       </section>
 

@@ -12,14 +12,14 @@ const sectors = [
     img: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200"
   },
   {
-    num: "02", color: "#43934A", labelColor: "#377B3D", label: "MANUFACTURING", title: "Manufacturing, Industrial & Infrastructure",
+    num: "02", color: "#43934A", labelColor: "#377B3D", label: "MANUFACTURING", title: "Manufacturing &Industrial Infrastructure",
     desc: "Powering the environments that drive industry forward. From manufacturing facilities to logistics networks and critical infrastructure, we create high-performing environments that strengthen operational continuity, workforce experience, and business resilience.",
     tags: ["Critical Operations Support", "Infrastructure Reliability", "Safety & Risk Management", "Environmental Responsibility", "Sustainable Growth"],
     tagline: "Supporting the systems that power industries, communities, and progress.",
     img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=1200"
   },
   {
-    num: "03", color: "#FFB800", labelColor: "#b07c00", label: "INFRASTRUCTURE", title: "Infrastructure, Public Sector & Smart Cities",
+    num: "03", color: "#FFB800", labelColor: "#b07c00", label: "Public Sector", title: "Public Sector & Smart Cities",
     desc: "As cities and public spaces continue to evolve, organizations require trusted partners who can support large-scale infrastructure and community environments. Our approach focuses on creating sustainable environments that support future-ready communities.",
     tags: ["Community Engagement", "Destination Management", "Experience Design", "Service Excellence", "Future-Ready"],
     tagline: "Helping create memorable experiences that people return to again and again.",

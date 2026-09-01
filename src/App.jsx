@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef, useCallback, lazy, Suspense } from "react";
 import { X, ChevronDown, ArrowUpRight } from "lucide-react";
+import Lenis from "lenis";
+import { AnimatePresence, motion } from "framer-motion";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import FloatingActions from "./components/FloatingActions";
@@ -20,7 +22,7 @@ function useDarkHero(page) {
 }
 
 export default function App() {
-  const [hash, setHash] = useState(() => window.location.hash.replace("#", "") || "home");
+  const [hash, setHash] = useState(() => window.location.pathname.substring(1) || "home");
   const page = hash.split("?")[0] || "home";
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSolOpen, setMobileSolOpen] = useState(false);
@@ -32,16 +34,39 @@ export default function App() {
     setMobileOpen(false);
     setMobileSolOpen(false);
     setMobileSecOpen(false);
-    window.history.pushState(null, "", "#" + p);
+    window.history.pushState(null, "", "/" + p);
     if (!p.includes("?")) { try { window.scrollTo({ top: 0, behavior: "auto" }); } catch (e) { } }
   }, []);
 
   useEffect(() => {
-    const onHashChange = () => {
-      setHash(window.location.hash.replace("#", "") || "home");
+    const onPopState = () => {
+      setHash(window.location.pathname.substring(1) || "home");
     };
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
+    window.addEventListener("popstate", onPopState);
+
+    // Initialize Lenis for smooth scrolling
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+      infinite: false,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    return () => {
+      window.removeEventListener("popstate", onPopState);
+      lenis.destroy();
+    };
   }, []);
 
   const reveal = useCallback(() => {
@@ -112,11 +137,11 @@ export default function App() {
               {mobileSolOpen && (
                 <div style={{ display: "flex", flexDirection: "column", gap: 12, paddingLeft: 14, paddingTop: 8, paddingBottom: 12, borderLeft: "2px solid rgba(3,115,255,0.6)", marginTop: 4 }}>
                   {[
-                    ["food", "Food Services"],
                     ["ifm", "Integrated Facilities Management"],
                     ["infra", "Infrastructure Solutions"],
-                    ["htm", "Healthcare Technology"],
+                    ["food", "Food Services"],
                     ["workforce", "Workforce Solutions"],
+                    ["htm", "Healthcare Technology"],
                   ].map(([p, label]) => (
                     <span key={p} onClick={() => go(p)} style={{ fontSize: 16, color: "rgba(255,255,255,0.85)", fontFamily: "Outfit", fontWeight: 500, cursor: "pointer", display: "flex", alignItems: "center", gap: 6 }}>
                       {label}
@@ -139,8 +164,8 @@ export default function App() {
                 <div style={{ display: "flex", flexDirection: "column", gap: 12, paddingLeft: 14, paddingTop: 8, paddingBottom: 12, borderLeft: "2px solid rgba(67,147,74,0.6)", marginTop: 4 }}>
                   {[
                     ["sectors?section=0", "Corporate & Commercial Spaces"],
-                    ["sectors?section=1", "Manufacturing, Industrial & Infrastructure"],
-                    ["sectors?section=2", "Infrastructure, Public Sector & Smart Cities"],
+                    ["sectors?section=1", "Manufacturing & Industrial Infrastructure"],
+                    ["sectors?section=2", "Public Sector & Smart Cities"],
                     ["sectors?section=3", "Education"],
                     ["sectors?section=4", "Community Living"],
                     ["sectors?section=5", "Healthcare"],
@@ -162,16 +187,31 @@ export default function App() {
           </div>
 
           <div style={{ marginTop: 32, paddingTop: 20, borderTop: "1px solid rgba(255,255,255,0.12)" }}>
-            <button onClick={() => go("contact")} style={{ width: "100%", background: "#0373ff", color: "#fff", fontWeight: 600, fontSize: 16, padding: "15px", borderRadius: 999, border: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 8 }}>
+            <button onClick={() => go("contact?service=general")} style={{ width: "100%", background: "#0373ff", color: "#fff", fontWeight: 600, fontSize: 16, padding: "15px", borderRadius: 999, border: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 8 }}>
               Partner With Us <ArrowUpRight size={17} />
             </button>
           </div>
         </div>
       )}
       <main>
-        <Suspense fallback={<div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}><div style={{ width: 36, height: 36, border: "3px solid rgba(3,115,255,.15)", borderTopColor: "#0373ff", borderRadius: "50%", animation: "spin .8s linear infinite" }} /></div>}>
-          <PageComp go={go} hash={hash} />
-        </Suspense>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={page}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Suspense fallback={
+              <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "24px" }}>
+                <img src="/logo.webp" alt="Catalyst Logo" style={{ height: "48px", width: "auto" }} />
+                <div style={{ width: 36, height: 36, border: "3px solid rgba(3,115,255,.15)", borderTopColor: "#0373ff", borderRadius: "50%", animation: "spin .8s linear infinite" }} />
+              </div>
+            }>
+              <PageComp go={go} hash={hash} />
+            </Suspense>
+          </motion.div>
+        </AnimatePresence>
       </main>
       <FloatingActions go={go} />
       <Footer go={go} />

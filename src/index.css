@@ -249,6 +249,37 @@ button {
   color: #0373ff
 }
 
+/* -- Cert drag track: hide native scrollbar -- */
+.cert-drag-track::-webkit-scrollbar { display: none; }
+
+/* -- Certifications ISO Cards -- */
+.cert-iso-card {
+  transition: transform 0.35s cubic-bezier(0.16, 0.84, 0.44, 1), box-shadow 0.35s ease;
+}
+.cert-iso-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(25, 25, 25, 0.13) !important;
+}
+.cert-iso-card:hover img {
+  filter: none !important;
+  transform: scale(1.04);
+  transition: transform 0.4s ease;
+}
+.cert-iso-card img {
+  transition: transform 0.4s ease;
+}
+
+@media (max-width: 860px) {
+  .cert-iso-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+@media (min-width: 541px) and (max-width: 860px) {
+  .cert-iso-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
 /* -- Certifications marquee -- */
 .cert-marquee {
   overflow: hidden;
@@ -1912,8 +1943,212 @@ button {
   .ldr-quote-card {
     height: 20rem
   }
+}
+
+.cta-ghost::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  bottom: 9px;
+  width: calc(100% - 8px);
+  height: 1px;
+  background: rgba(255, 255, 255, .35);
+  transition: background .3s;
+}
+
+.cta-ghost:hover {
+  color: #fff
+}
+
+.cta-ghost:hover::after {
+  background: #fff
+}
+
+.cta-ghost svg {
+  transition: transform .3s
+}
+
+.cta-ghost:hover svg {
+  transform: translateX(4px)
+}
+
+.cta-ghost:focus-visible {
+  outline: 2px solid #0373ff;
+  outline-offset: 3px;
+  border-radius: 6px
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .eco-panel,
+  .eco-bg,
+  .eco-body,
+  .eco-vtitle,
+  .sec-body,
+  .sec-arr,
+  .fdn-tick,
+  .cta-btn,
+  .cta-chip {
+    transition: none !important
+  }
+}
+
+/* -- Spotlight / glow card -- */
+[data-glow-card] {
+  --x: -9999;
+  --y: -9999;
+  --glow-hue: 28;
+  background-color: #fff;
+  background-image: radial-gradient(260px 260px at calc(var(--x) * 1px) calc(var(--y) * 1px),
+      hsla(var(--glow-hue), 90%, 55%, 0.10),
+      transparent 80%);
+  background-attachment: fixed;
+  transition: border-color .3s, box-shadow .3s;
+}
+
+[data-glow-card]:hover {
+  box-shadow: 0 8px 36px rgba(25, 25, 25, .09);
+}
+
+[data-glow-card]::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border: 1.5px solid transparent;
+  border-radius: inherit;
+  background-attachment: fixed;
+  background-image: radial-gradient(150px 150px at calc(var(--x) * 1px) calc(var(--y) * 1px),
+      hsla(var(--glow-hue), 90%, 50%, 0.6),
+      transparent 100%);
+  mask: linear-gradient(transparent, transparent), linear-gradient(white, white);
+  mask-clip: padding-box, border-box;
+  mask-composite: intersect;
+  -webkit-mask: linear-gradient(transparent, transparent), linear-gradient(white, white);
+  -webkit-mask-clip: padding-box, border-box;
+  -webkit-mask-composite: destination-in;
+}
+
+@media(max-width:1024px) {
+  [data-sector-sticky] {
+    display: none !important
+  }
+
+  [data-sector-inline-img] {
+    display: block !important
+  }
+
+  .sec-grid {
+    grid-template-columns: 1fr !important
+  }
+
+  .sec-body-in {
+    padding-left: 0
+  }
+
+  [data-desktopnav] {
+    display: none !important
+  }
+
+  [data-burger] {
+    display: flex !important;
+    align-items: center;
+    justify-content: center
+  }
+
+  [data-herogrid],
+  [data-split],
+  [data-wheelgrid],
+  [data-whygrid],
+  [data-2col] {
+    grid-template-columns: 1fr !important
+  }
+
+  [data-herocards] {
+    display: none !important
+  }
+
+  [data-metricgrid],
+  [data-certgrid],
+  [data-3col],
+  [data-4col] {
+    grid-template-columns: repeat(2, 1fr) !important
+  }
+
+  [data-certslider] {
+    flex-direction: column !important
+  }
+
+  [data-sectorgrid] {
+    grid-template-columns: 1fr !important
+  }
+
+  [data-sectorgrid]>* {
+    grid-column: auto !important
+  }
+
+  [data-footgrid] {
+    grid-template-columns: 1fr 1fr !important
+  }
+
+  [data-whygrid]>div:first-child {
+    position: static !important
+  }
+
+  .ldr-card,
+  .ldr-quote-card {
+    height: 22rem
+  }
+}
+
+@media(max-width:640px) {
+  [data-navcta] {
+    display: none !important
+  }
+}
+
+@media(max-width:768px) {
+  [data-ecostrip] {
+    display: none !important
+  }
+
+  [data-solutions-mobile] {
+    display: flex !important
+  }
+}
+
+@media(max-width:600px) {
+
+  [data-metricgrid],
+  [data-certgrid],
+  [data-footgrid],
+  [data-3col],
+  [data-4col] {
+    grid-template-columns: 1fr !important
+  }
+
+  [data-certslider] {
+    flex-direction: column !important
+  }
+
+  [data-certslider]>div:last-child {
+    min-height: 260px !important;
+    position: relative !important
+  }
+
+  .ldr-card,
+  .ldr-quote-card {
+    height: 20rem
+  }
 
   .ldr-title {
     font-size: 18px
   }
+}
+
+
+
+.nav-dark [data-burger] {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
 }

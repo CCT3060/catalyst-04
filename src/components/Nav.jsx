@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ChevronDown, Menu, X, UtensilsCrossed, Building2, Factory, Stethoscope, Users, Briefcase, Landmark, GraduationCap, Home, Zap, ArrowUpRight } from "lucide-react";
 
 export default function Nav({ go, darkHero, activeNav, mobileOpen, setMobileOpen }) {
@@ -38,6 +38,7 @@ export default function Nav({ go, darkHero, activeNav, mobileOpen, setMobileOpen
       </div>
 
       <div style={{ display: "flex", alignItems: "center", gap: 34 }} data-desktopnav>
+        <div className="nav-separator"></div>
         <span className={`navlink${activeNav === "home" ? " active" : ""}`} onClick={() => go("home")} style={{ cursor: "pointer" }}>Home</span>
         <span className={`navlink${activeNav === "about" ? " active" : ""}`} onClick={() => go("about")}>About Us</span>
         <div className="sol-wrap" style={{ position: "relative", padding: "8px 0" }}>
@@ -100,7 +101,7 @@ export default function Nav({ go, darkHero, activeNav, mobileOpen, setMobileOpen
       </div>
 
       <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-        <button className="nav-cta" data-navcta onClick={() => go("contact")}>Partner With Us <ArrowUpRight size={15} /></button>
+        <button className="nav-cta" data-navcta onClick={() => go("contact?service=general")}>Partner With Us <ArrowUpRight size={15} /></button>
         <button onClick={() => setMobileOpen(m => !m)} data-burger style={{ display: "none", background: "transparent", width: 42, height: 42, borderRadius: 999, border: "1px solid rgba(25,25,25,.12)", color: "#191919", alignItems: "center", justifyContent: "center" }}>
           {mobileOpen ? <X size={20} /> : <Menu size={20} />}
         </button>

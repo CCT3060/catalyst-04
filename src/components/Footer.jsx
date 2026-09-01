@@ -42,9 +42,7 @@ export default function Footer({ go }) {
           <div>
             <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: ".1em", color: "#0373ff", marginBottom: 18 }}>GET IN TOUCH</div>
             <div style={{ display: "flex", flexDirection: "column", gap: 12, fontSize: "14.5px", color: "rgba(0, 0, 0, 0.75)" }}>
-              <span>Business Inquiries</span>
-              <span>Office Locations</span>
-              <button className="mag" onClick={() => go("contact")} style={{ marginTop: 8, background: "#0373ff", color: "#fff", fontWeight: 600, fontSize: 14, padding: "12px 22px", borderRadius: 999, alignSelf: "flex-start" }}>Partner With Us</button>
+
               <a href="mailto:sales@catalystsgroupindia.com" style={{ display: "flex", alignItems: "center", gap: 9, marginTop: 10, color: "rgba(0, 0, 0, 0.75)" }}>
                 <Mail size={16} color="#0373ff" /> sales@catalystsgroupindia.com
               </a>

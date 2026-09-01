@@ -3,7 +3,7 @@ import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import "./HeroSlider.css";
 import heroheath from "../assets/herohealth.webp";
 
-const AUTO_MS = 7000;
+const AUTO_MS = 13000;
 
 import hero1Img from "../assets/catalysthome1.webp";
 import hero4Img from "../assets/homeworkspace.webp";
@@ -20,7 +20,7 @@ const SLIDES = [
       [{ t: "People at the Heart of" }],
       [{ t: "Everything We " }, { t: "Do", a: true }],
     ],
-    para: "We partner organizations build healthier workplaces, safer communities, smarter infrastructure, and exceptional everyday experiences through integrated solutions that enhance well-being and drive performance.",
+    para: "We partner organisations that build healthier workplaces, safer communities, smarter infrastructure, and exceptional everyday experiences through integrated solutions that enhance well-being and drive performance.",
     img: hero1Img,
     alt: "People at the heart of everything we do",
   },
@@ -73,7 +73,7 @@ const SLIDES = [
       [{ t: "People who make" }],
       [{ t: "the " }, { t: "difference", a: true }],
     ],
-    para: "We provide skilled workforce solutions that empower organizations with the right talent to deliver exceptional service, operational excellence and sustainable growth.",
+    para: "We provide skilled workforce solutions that empower organisations with the right talent to deliver exceptional service, operational excellence and sustainable growth.",
     img: hero4Img,
     alt: "Team of professionals collaborating around a table",
   },

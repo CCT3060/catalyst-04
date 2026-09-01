@@ -12,6 +12,12 @@ export default defineConfig({
   },
   server: {
     port: process.env.PORT ? Number(process.env.PORT) : 5173,
+    proxy: {
+      '/admin': {
+        target: 'http://localhost:8080',
+        changeOrigin: true
+      }
+    }
   },
   build: {
     chunkSizeWarningLimit: 600,

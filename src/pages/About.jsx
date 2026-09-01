@@ -43,7 +43,7 @@ const JOURNEY = [
   { year: "2019", img: "j7.svg", title: "Facility management services", desc: "Facility management commences as a dedicated service line." },
   { year: "2023", img: "j8.svg", title: "CSS becomes Catalyst", desc: "Rebranded as Catalyst to represent a holistic, integrated service offering.", hero: true },
   { year: "2025", img: "j8.svg", title: "Beginning of Healthcare Technology Management & Acquisition of GIFM", desc: "", hero: true },
-  { year: "2026", img: "j8.svg", title: <>Stated Service of Middle East <br />With State of Art Central Kitchen</>, desc: "", hero: true },
+  { year: "2026", img: "j8.svg", title: <>Started Service of Middle East <br />With State of Art Central Kitchen</>, desc: "", hero: true },
 
 ];
 
@@ -165,11 +165,11 @@ export default function About({ go }) {
             <div className="vm-grid" style={{ position: "relative" }}>
               <div className="vm-cell">
                 <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#8FBCFF", fontWeight: 600, fontSize: 24 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Vision</div>
-                <h3 style={{ color: "#fff", fontSize: "clamp(22px,2.4vw,32px)", marginTop: 18, lineHeight: 1.3, fontWeight: 500 }}>To create environments where <br />well-being thrives.</h3>
+                <h3 style={{ color: "#fff", fontSize: "clamp(22px,2.4vw,32px)", marginTop: 18, lineHeight: 1.3, fontWeight: 500 }}>To create environments where <br />well-being thrives</h3>
               </div>
               <div className="vm-cell">
                 <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#8FBCFF", fontWeight: 600, fontSize: 24 }}><span style={{ width: 26, height: 2, background: "#43934A" }}></span>Mission</div>
-                <h3 style={{ color: "#fff", fontSize: "clamp(20px,1.9vw,26px)", marginTop: 18, lineHeight: 1.4, fontWeight: 500 }}>We partner with organizations to build safe, sustainable, socially empowering environments that deliver exceptional experiences through integrated solutions.</h3>
+                <h3 style={{ color: "#fff", fontSize: "clamp(20px,1.9vw,26px)", marginTop: 18, lineHeight: 1.4, fontWeight: 500 }}>We partner with organizations to build safe, sustainable, socially empowering environments that deliver exceptional experiences through integrated solutions</h3>
               </div>
             </div>
           </div>
@@ -306,7 +306,8 @@ export default function About({ go }) {
                 region: "Middle East",
                 company: "Catalyst Catering Services LLC (CCS)",
                 address: "Darwish Compound, Warehouse No.4,\nBuilding No: 3, DIP-2,\nDubai",
-                email: "info@catalystgroupme.com"
+                email: "info@catalystgroupme.com",
+                website: "https://catalystgroupme.com/"
               },
               {
                 region: "India Office",
@@ -329,8 +330,11 @@ export default function About({ go }) {
                 <div style={{ fontSize: 14, color: "#6E6A61", lineHeight: 1.7, flex: 1, display: "flex", flexDirection: "column" }}>
                   <p style={{ marginBottom: 20, whiteSpace: "pre-line" }}>{office.company}</p>
                   <p style={{ whiteSpace: "pre-line", marginBottom: 24 }}>{office.address}</p>
-                  <div style={{ borderTop: "1px solid rgba(25,25,25,.08)", paddingTop: 18, marginTop: "auto" }}>
+                  <div style={{ borderTop: "1px solid rgba(25,25,25,.08)", paddingTop: 18, marginTop: "auto", display: "flex", flexDirection: "column", gap: 6 }}>
                     <p style={{ fontWeight: 600, color: "#191919" }}>Email: <span style={{ fontWeight: 400 }}>{office.email}</span></p>
+                    {office.website && (
+                      <p style={{ fontWeight: 600, color: "#191919" }}>Website: <a href={office.website} target="_blank" rel="noreferrer" style={{ fontWeight: 400, color: "#0373ff", textDecoration: "none" }}>catalystgroupme.com</a></p>
+                    )}
                   </div>
                 </div>
               </div>

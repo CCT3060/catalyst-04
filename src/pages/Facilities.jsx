@@ -1,9 +1,9 @@
 import CTA from "../components/CTA";
 import { Kicker, SectionHead, ServiceHero, IndustriesMarquee, PhoneFrame, BrowserFrame, CutoutArch } from "../components/SolutionsKit";
-import fmImage from "../assets/ifm1.webp";
+import fmImage from "../assets/image4.png";
 import ifmTeamImg from "../assets/imf2.webp";
-import ecleanAppImg from "../assets/Media.webp";
-import portalImg from "../assets/web.webp";
+import ecleanAppImg from "../assets/Media.jpg";
+import portalImg from "../assets/web.png";
 import innovationImg from "../assets/Gemini_Generated_Image_e5koqpe5koqpe5ko.webp";
 import ifmBottomImg from "../assets/ifmbuttom.webp";
 import { ShieldCheck, Building2 } from "lucide-react";

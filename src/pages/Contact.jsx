@@ -1,10 +1,31 @@
-﻿import { useState } from "react";
-import { MapPin, Mail, Handshake, CheckCircle2, Plus, ArrowRight } from "lucide-react";
+import { useState, useEffect } from "react";
+import { MapPin, Mail, Handshake, CheckCircle2, Plus, ArrowRight, AlertCircle } from "lucide-react";
 
-export default function Contact({ go }) {
+const API_BASE = "/admin/api";
+
+export default function Contact({ go, hash }) {
   const [form, setForm] = useState({ name: "", company: "", email: "", phone: "", service: "", message: "" });
-  const [sent, setSent] = useState(false);
+  const [state, setState] = useState("idle"); // idle | loading | success | error
+  const [errorMsg, setErrorMsg] = useState("");
   const [openFaq, setOpenFaq] = useState(-1);
+
+  // Parse query params from the hash prop to pre-select options
+  useEffect(() => {
+    if (hash && hash.includes("?")) {
+      const query = hash.split("?")[1];
+      const params = new URLSearchParams(query);
+      const serviceParam = params.get("service");
+      if (serviceParam) {
+        setForm(f => ({ ...f, service: serviceParam }));
+        // Scroll to form automatically
+        setTimeout(() => {
+          const formEl = document.getElementById("contact-form");
+          if (formEl) formEl.scrollIntoView({ behavior: "smooth", block: "start" });
+          else window.scrollTo({ top: document.body.scrollHeight / 2, behavior: 'smooth' });
+        }, 500);
+      }
+    }
+  }, [hash]);
 
   const faqs = [
     ["What industries does Catalyst serve?", "Catalyst serves corporate & commercial spaces, manufacturing & industrial, infrastructure & smart cities, education & community living, and healthcare environments across India."],
@@ -14,13 +35,40 @@ export default function Contact({ go }) {
     ["What certifications does Catalyst hold?", "Catalyst holds ISO 9001:2015, ISO 14001:2015, ISO 45001:2018, FSSAI Certified Operations, and aligns with NABH Healthcare Support Practices."],
   ];
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSent(true);
+    setState("loading");
+    setErrorMsg("");
+
+    try {
+      const res = await fetch(`${API_BASE}/contact.php`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setState("success");
+      } else {
+        setErrorMsg(data.error || "Something went wrong. Please try again.");
+        setState("error");
+      }
+    } catch {
+      setErrorMsg("Unable to connect to server. Please check your connection and try again.");
+      setState("error");
+    }
+  };
+
+  const inputStyle = {
+    width: "100%", padding: "14px 18px", borderRadius: 16,
+    border: "1px solid rgba(25,25,25,.12)", fontSize: 15,
+    fontFamily: "inherit", outline: "none", boxSizing: "border-box",
+    transition: "border-color .2s",
   };
 
   return (
     <div data-screen-label="Contact">
+      {/* Hero */}
       <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", padding: "120px clamp(20px,4vw,56px) 60px", overflow: "hidden", backgroundImage: "linear-gradient(rgba(25, 25, 25, 0.19), rgba(25, 25, 25, 0.24)), url(https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=2000)", backgroundSize: "cover", backgroundPosition: "center" }}>
         <div style={{ position: "relative", maxWidth: 1240, width: "100%", margin: "0 auto" }}>
           <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0373ff", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 22 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Contact</div>
@@ -29,8 +77,10 @@ export default function Contact({ go }) {
         </div>
       </section>
 
+      {/* Form Section */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#fff" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(40px,6vw,80px)" }} data-2col>
+          {/* Left: Info */}
           <div>
             <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 18 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Business Inquiries</div>
             <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>Partner with Catalyst</h2>
@@ -59,29 +109,39 @@ export default function Contact({ go }) {
             </div>
           </div>
 
+          {/* Right: Form */}
           <div data-reveal data-delay="1">
-            {sent ? (
-              <div style={{ background: "#F9F7F3", border: "1px solid rgba(25,25,25,.08)", borderRadius: 32, padding: "clamp(30px,4vw,50px)", textAlign: "center" }}>
+            {state === "success" ? (
+              <div id="contact-form" style={{ background: "#F9F7F3", border: "1px solid rgba(25,25,25,.08)", borderRadius: 32, padding: "clamp(30px,4vw,50px)", textAlign: "center" }}>
                 <div style={{ display: "flex", justifyContent: "center", marginBottom: 16, color: "#43934A" }}>
                   <CheckCircle2 size={56} />
                 </div>
                 <h3 style={{ fontSize: 24, color: "#191919" }}>Message Sent!</h3>
                 <p style={{ fontSize: 16, color: "#6E6A61", marginTop: 12, lineHeight: 1.7 }}>Thank you for reaching out. Our team will get back to you shortly.</p>
-                <button className="mag" onClick={() => setSent(false)} style={{ marginTop: 24, background: "#191919", color: "#fff", fontWeight: 600, fontSize: 14, padding: "12px 26px", borderRadius: 999 }}>Send Another Message</button>
+                <button className="mag" onClick={() => { setState("idle"); setForm({ name: "", company: "", email: "", phone: "", service: "", message: "" }); }} style={{ marginTop: 24, background: "#191919", color: "#fff", fontWeight: 600, fontSize: 14, padding: "12px 26px", borderRadius: 999 }}>Send Another Message</button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 18 }}>
+              <form id="contact-form" onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 18 }}>
+                {state === "error" && (
+                  <div style={{ background: "rgba(239,68,68,.08)", border: "1px solid rgba(239,68,68,.2)", borderRadius: 14, padding: "13px 16px", display: "flex", gap: 10, alignItems: "flex-start", color: "#ef4444", fontSize: 14 }}>
+                    <AlertCircle size={16} style={{ flexShrink: 0, marginTop: 1 }} />
+                    {errorMsg}
+                  </div>
+                )}
+
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
                   {[["name", "Full Name", "text"], ["company", "Company Name", "text"]].map(([field, placeholder, type]) => (
                     <div key={field}>
-                      <input type={type} placeholder={placeholder} value={form[field]} onChange={e => setForm(f => ({ ...f, [field]: e.target.value }))} required style={{ width: "100%", padding: "14px 18px", borderRadius: 16, border: "1px solid rgba(25,25,25,.12)", fontSize: 15, fontFamily: "inherit", outline: "none", boxSizing: "border-box", transition: "border-color .2s" }} onFocus={e => e.target.style.borderColor = "#0373ff"} onBlur={e => e.target.style.borderColor = "rgba(25,25,25,.12)"} />
+                      <input type={type} placeholder={placeholder} value={form[field]} onChange={(e) => setForm((f) => ({ ...f, [field]: e.target.value }))} required={field === "name"} style={inputStyle} onFocus={(e) => (e.target.style.borderColor = "#0373ff")} onBlur={(e) => (e.target.style.borderColor = "rgba(25,25,25,.12)")} />
                     </div>
                   ))}
                 </div>
+
                 {[["email", "Business Email", "email"], ["phone", "Phone Number", "tel"]].map(([field, placeholder, type]) => (
-                  <input key={field} type={type} placeholder={placeholder} value={form[field]} onChange={e => setForm(f => ({ ...f, [field]: e.target.value }))} required={field === "email"} style={{ width: "100%", padding: "14px 18px", borderRadius: 16, border: "1px solid rgba(25,25,25,.12)", fontSize: 15, fontFamily: "inherit", outline: "none", boxSizing: "border-box", transition: "border-color .2s" }} onFocus={e => e.target.style.borderColor = "#0373ff"} onBlur={e => e.target.style.borderColor = "rgba(25,25,25,.12)"} />
+                  <input key={field} type={type} placeholder={placeholder} value={form[field]} onChange={(e) => setForm((f) => ({ ...f, [field]: e.target.value }))} required={field === "email"} style={inputStyle} onFocus={(e) => (e.target.style.borderColor = "#0373ff")} onBlur={(e) => (e.target.style.borderColor = "rgba(25,25,25,.12)")} />
                 ))}
-                <select value={form.service} onChange={e => setForm(f => ({ ...f, service: e.target.value }))} style={{ width: "100%", padding: "14px 18px", borderRadius: 16, border: "1px solid rgba(25,25,25,.12)", fontSize: 15, fontFamily: "inherit", outline: "none", boxSizing: "border-box", background: "#fff", transition: "border-color .2s" }} onFocus={e => e.target.style.borderColor = "#0373ff"} onBlur={e => e.target.style.borderColor = "rgba(25,25,25,.12)"}>
+
+                <select value={form.service} onChange={(e) => setForm((f) => ({ ...f, service: e.target.value }))} style={{ ...inputStyle, background: "#fff" }} onFocus={(e) => (e.target.style.borderColor = "#0373ff")} onBlur={(e) => (e.target.style.borderColor = "rgba(25,25,25,.12)")}>
                   <option value="">Select a Service Area</option>
                   <option value="food">Food Services</option>
                   <option value="ifm">Integrated Facilities Management</option>
@@ -90,9 +150,15 @@ export default function Contact({ go }) {
                   <option value="workforce">Workforce Solutions</option>
                   <option value="general">General Inquiry</option>
                 </select>
-                <textarea placeholder="Tell us about your requirements..." value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))} rows={5} style={{ width: "100%", padding: "14px 18px", borderRadius: 16, border: "1px solid rgba(25,25,25,.12)", fontSize: 15, fontFamily: "inherit", outline: "none", resize: "vertical", boxSizing: "border-box", transition: "border-color .2s" }} onFocus={e => e.target.style.borderColor = "#0373ff"} onBlur={e => e.target.style.borderColor = "rgba(25,25,25,.12)"}></textarea>
-                <button type="submit" className="mag" style={{ background: "#0373ff", color: "#fff", fontWeight: 600, fontSize: 16, padding: "16px 32px", borderRadius: 999, boxShadow: "0 8px 24px rgba(3,115,255,.35)", display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8 }}>
-                  Send Message <ArrowRight size={18} />
+
+                <textarea placeholder="Tell us about your requirements..." value={form.message} onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))} required rows={5} style={{ ...inputStyle, resize: "vertical" }} onFocus={(e) => (e.target.style.borderColor = "#0373ff")} onBlur={(e) => (e.target.style.borderColor = "rgba(25,25,25,.12)")}></textarea>
+
+                <button
+                  type="submit" className="mag"
+                  disabled={state === "loading"}
+                  style={{ background: "#0373ff", color: "#fff", fontWeight: 600, fontSize: 16, padding: "16px 32px", borderRadius: 999, boxShadow: "0 8px 24px rgba(3,115,255,.35)", display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8, opacity: state === "loading" ? .7 : 1 }}
+                >
+                  {state === "loading" ? "Sending…" : <> Send Message <ArrowRight size={18} /> </>}
                 </button>
               </form>
             )}
@@ -104,30 +170,13 @@ export default function Contact({ go }) {
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#fff" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "clamp(44px,5vw,70px)" }}>
-            <h2 data-reveal style={{ fontSize: "clamp(36px,4.5vw,56px)", color: "#1E3B24", fontFamily: "Outfit", fontWeight: 500 }}>
-              Our Offices
-            </h2>
+            <h2 data-reveal style={{ fontSize: "clamp(36px,4.5vw,56px)", color: "#1E3B24", fontFamily: "Outfit", fontWeight: 500 }}>Our Offices</h2>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "clamp(20px,3vw,34px)" }}>
             {[
-              {
-                region: "Middle East",
-                company: "Catalyst Catering Services LLC (CCS)",
-                address: "Darwish Compound, Warehouse No.4,\nBuilding No: 3, DIP-2,\nDubai",
-                email: "info@catalystgroupme.com"
-              },
-              {
-                region: "India Office",
-                company: "Catalyst Service Solutions Partners Private\nLimited",
-                address: "401/402, Yash Tower, Opp. D.A.V Public\nSchool, Aundh, Pune – 411007",
-                email: "sales@catalystgroupindia.com"
-              },
-              {
-                region: "Singapore Office",
-                company: "Comprehensive Support Services Pte. Ltd",
-                address: "12 Woodlands Square, #02-75, Woods\nSquare Tower 1, Singapore – 737715",
-                email: "sales@catalystsolutions.eco"
-              }
+              { region: "Middle East", company: "Catalyst Catering Services LLC (CCS)", address: "Darwish Compound, Warehouse No.4,\nBuilding No: 3, DIP-2,\nDubai", email: "info@catalystgroupme.com", website: "https://catalystgroupme.com/" },
+              { region: "India Office", company: "Catalyst Service Solutions Partners Private\nLimited", address: "401/402, Yash Tower, Opp. D.A.V Public\nSchool, Aundh, Pune – 411007", email: "sales@catalystgroupindia.com" },
+              { region: "Singapore Office", company: "Comprehensive Support Services Pte. Ltd", address: "12 Woodlands Square, #02-75, Woods\nSquare Tower 1, Singapore – 737715", email: "sales@catalystsolutions.eco" },
             ].map((office, i) => (
               <div key={i} data-reveal data-delay={String(i)} className="lift" style={{ background: "#FDFBF8", border: "1px solid rgba(25,25,25,.06)", borderRadius: 16, padding: "clamp(30px,4vw,44px)", display: "flex", flexDirection: "column", gap: 16, boxShadow: "0 10px 40px rgba(0,0,0,0.03)" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
@@ -137,8 +186,11 @@ export default function Contact({ go }) {
                 <div style={{ fontSize: 14, color: "#6E6A61", lineHeight: 1.7, flex: 1, display: "flex", flexDirection: "column" }}>
                   <p style={{ marginBottom: 20, whiteSpace: "pre-line" }}>{office.company}</p>
                   <p style={{ whiteSpace: "pre-line", marginBottom: 24 }}>{office.address}</p>
-                  <div style={{ borderTop: "1px solid rgba(25,25,25,.08)", paddingTop: 18, marginTop: "auto" }}>
+                  <div style={{ borderTop: "1px solid rgba(25,25,25,.08)", paddingTop: 18, marginTop: "auto", display: "flex", flexDirection: "column", gap: 6 }}>
                     <p style={{ fontWeight: 600, color: "#191919" }}>Email: <span style={{ fontWeight: 400 }}>{office.email}</span></p>
+                    {office.website && (
+                      <p style={{ fontWeight: 600, color: "#191919" }}>Website: <a href={office.website} target="_blank" rel="noreferrer" style={{ fontWeight: 400, color: "#0373ff", textDecoration: "none" }}>catalystgroupme.com</a></p>
+                    )}
                   </div>
                 </div>
               </div>
@@ -147,6 +199,7 @@ export default function Contact({ go }) {
         </div>
       </section>
 
+      {/* FAQs */}
       <section style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#F9F7F3" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 50 }}>

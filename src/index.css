@@ -996,6 +996,10 @@ button {
   padding-right: 22px
 }
 
+.fs-menu-row--hover {
+  cursor: none;
+}
+
 .fs-menu-top {
   display: flex;
   align-items: baseline;

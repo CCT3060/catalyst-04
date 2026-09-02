@@ -1,102 +1,26 @@
-import { useState, useRef, useEffect } from "react";
-import { motion } from "motion/react";
-import gsap from "gsap";
+import { useState } from "react";
 import CTA from "../components/CTA";
 import { Kicker, SectionHead, IndustriesMarquee, PhoneFrame, CutoutArch } from "../components/SolutionsKit";
 import foodTeamImg from "../assets/food2.webp";
-import chefImg from "../assets/3.jpg";
-import joiFoodImg from "../assets/joimain.png";
-import joi1Img from "../assets/joi1.png";
-import joi2Img from "../assets/joi2.png";
-import joi3Img from "../assets/joi3.png";
-import joi4Img from "../assets/joi4.png";
+import chefImg from "../assets/2.webp";
+import joiFoodImg from "../assets/joimain.webp";
+import joi1Img from "../assets/joi1.webp";
+import joi2Img from "../assets/joi2.webp";
+import joi3Img from "../assets/joi3.webp";
+import joi4Img from "../assets/joi4.webp";
 import foodHeroImg from "../assets/foodhero.webp";
 import foodBottomImg from "../assets/foodbottom.webp";
-import menuWorkplace from "../assets/12.png";
-import menuIndustrial from "../assets/13.png";
-import menuPatient from "../assets/11.png";
-import menuEducation from "../assets/14.png";
-import menuFoodcourt from "../assets/15.png";
-import menuEvent from "../assets/16.png";
-import menuGuesthouse from "../assets/17.png";
 import { ArrowRight, ArrowUpRight, Zap, HeartPulse, GraduationCap, Users, BadgeCheck, UtensilsCrossed } from "lucide-react";
 
 const MENU = [
-  ["Workplace Dining", "Contemporary dining programs that enhance employee wellbeing through diverse menus, healthy choices, and engaging workplace experiences.", "CORPORATE", "our most-loved program", menuWorkplace],
-  ["Industrial & Manufacturing Catering", "Reliable, high-volume catering designed for manufacturing plants, automobile facilities, heavy engineering, pharmaceuticals, chemical industries, and power sectors.", "INDUSTRIAL", null, menuIndustrial],
-  ["Patient Dining", "Nutrition-focused meal programs that support recovery while meeting clinical dietary requirements and the highest standards of food safety.", "HEALTHCARE", null, menuPatient],
-  ["Educational Institutions", "Balanced, nutritious dining experiences for schools, colleges, and universities that promote healthy eating and student wellbeing.", "EDUCATION", null, menuEducation],
-  ["Cafeterias & Food Courts", "Modern dining spaces offering multiple cuisines, cafe concepts, grab-and-go options, and flexible food experiences.", "ALL CAMPUSES", null, menuFoodcourt],
-  ["Events & Conferences", "Professional catering services for conferences, corporate events, business meetings, and special occasions with seamless execution.", "EVENTS", null, menuEvent],
-  ["Guest House Management", "Complete dining and hospitality management designed to provide premium guest experiences with personalized service and quality cuisine.", "HOSPITALITY", null, menuGuesthouse],
+  ["Workplace Dining", "Contemporary dining programs that enhance employee wellbeing through diverse menus, healthy choices, and engaging workplace experiences.", "CORPORATE", "our most-loved program"],
+  ["Industrial & Manufacturing Catering", "Reliable, high-volume catering designed for manufacturing plants, automobile facilities, heavy engineering, pharmaceuticals, chemical industries, and power sectors.", "INDUSTRIAL"],
+  ["Patient Dining", "Nutrition-focused meal programs that support recovery while meeting clinical dietary requirements and the highest standards of food safety.", "HEALTHCARE"],
+  ["Educational Institutions", "Balanced, nutritious dining experiences for schools, colleges, and universities that promote healthy eating and student wellbeing.", "EDUCATION"],
+  ["Cafeterias & Food Courts", "Modern dining spaces offering multiple cuisines, cafÃ© concepts, grab-and-go options, and flexible food experiences.", "ALL CAMPUSES"],
+  ["Events & Conferences", "Professional catering services for conferences, corporate events, business meetings, and special occasions with seamless execution.", "EVENTS"],
+  ["Guest House Management", "Complete dining and hospitality management designed to provide premium guest experiences with personalized service and quality cuisine.", "HOSPITALITY"],
 ];
-
-const scaleAnimation = {
-  initial: { scale: 0, x: "-50%", y: "-50%" },
-  enter: { scale: 1, x: "-50%", y: "-50%", transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] } },
-  closed: { scale: 0, x: "-50%", y: "-50%", transition: { duration: 0.4, ease: [0.32, 0, 0.67, 0] } },
-};
-
-function MenuModal({ modal, items }) {
-  const { active, index } = modal;
-  const modalContainer = useRef(null);
-
-  useEffect(() => {
-    const xMoveContainer = gsap.quickTo(modalContainer.current, "left", { duration: 0.8, ease: "power3" });
-    const yMoveContainer = gsap.quickTo(modalContainer.current, "top", { duration: 0.8, ease: "power3" });
-
-    const handleMouseMove = (e) => {
-      xMoveContainer(e.clientX);
-      yMoveContainer(e.clientY);
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
-  return (
-    <>
-      <motion.div
-        ref={modalContainer}
-        variants={scaleAnimation}
-        initial="initial"
-        animate={active ? "enter" : "closed"}
-        style={{
-          pointerEvents: "none",
-          position: "fixed",
-          top: 0, left: 0,
-          width: 320, height: 220,
-          overflow: "hidden",
-          borderRadius: 16,
-          zIndex: 9999,
-          boxShadow: "0 24px 60px rgba(25,25,25,.22)",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            width: "100%",
-            height: "100%",
-            top: `${index * -100}%`,
-            transition: "top 0.5s cubic-bezier(0.76,0,0.24,1)",
-          }}
-        >
-          {items.map(([name, , , , img], idx) => (
-            <div
-              key={idx}
-              style={{ width: "100%", height: 220, display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}
-            >
-              <img
-                src={img}
-                alt={name}
-                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-              />
-            </div>
-          ))}
-        </div>
-      </motion.div>
-    </>
-  );
-}
 
 const IMPACTS = [
   [Zap, "Energizes workforces", "Dining programs that fuel productivity and team performance."],
@@ -108,7 +32,7 @@ const IMPACTS = [
 const JOI_FEATURES = [
   ["Pre-meal ordering", "Order ahead for a seamless, queue-free dining experience."],
   ["Quick service restaurants", "Fast, quality food across multiple cuisine concepts."],
-  ["Cafe & grab-and-go", "Flexible counter formats for every pace of workday."],
+  ["CafÃ© & grab-and-go", "Flexible counter formats for every pace of workday."],
   ["Digital food ordering", "Smart platforms that simplify choices and speed service."],
 ];
 
@@ -130,7 +54,6 @@ const JOI_GALLERY = [joiFoodImg, joi1Img, joi2Img, joi3Img, joi4Img];
 
 export default function FoodServices({ go }) {
   const [joiScreen, setJoiScreen] = useState(0);
-  const [menuModal, setMenuModal] = useState({ active: false, index: 0 });
   return (
     <div data-screen-label="Food Services">
 
@@ -207,14 +130,9 @@ export default function FoodServices({ go }) {
             </div>
             <p data-reveal data-delay="2" style={{ maxWidth: 380, fontSize: 16, lineHeight: 1.7, color: "#6E6A61", paddingBottom: 8 }}>Seven dining programs, each designed around the pace, people, and purpose of the place it serves.</p>
           </div>
-          <div data-reveal style={{ position: "relative" }}>
+          <div data-reveal>
             {MENU.map(([name, desc, tag, note], i) => (
-              <div
-                key={i}
-                className="fs-menu-row fs-menu-row--hover"
-                onMouseEnter={() => setMenuModal({ active: true, index: i })}
-                onMouseLeave={() => setMenuModal({ active: false, index: i })}
-              >
+              <div key={i} className="fs-menu-row">
                 <div className="fs-menu-top">
                   <span className="fs-menu-name">{name}{note && <span className="fs-menu-note">{note}</span>}</span>
                   <span className="fs-menu-dots"></span>
@@ -223,7 +141,6 @@ export default function FoodServices({ go }) {
                 <p className="fs-menu-desc">{desc}</p>
               </div>
             ))}
-            <MenuModal modal={menuModal} items={MENU} />
           </div>
         </div>
       </section>

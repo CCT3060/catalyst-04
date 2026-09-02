@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import healthcare from "../assets/sohealth.webp";
 import infra from "../assets/soinfra.webp"
 import education from "../assets/education.webp"
 import living from "../assets/soliving.webp"
-import secHeroImg from "../assets/sechero.png"
 const sectors = [
   {
     num: "01", color: "#0373ff", labelColor: "#0258cc", label: "CORPORATE", title: "Corporate & Commercial Spaces",
@@ -83,7 +82,7 @@ export default function Sectors({ go, hash }) {
   return (
     <div data-screen-label="Sectors">
       {/* Hero */}
-      <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", padding: "120px clamp(20px,4vw,56px) 60px", overflow: "hidden", backgroundImage: `linear-gradient(rgba(25, 25, 25, 0.74), rgba(25, 25, 25, 0.21)), url(${secHeroImg})`, backgroundSize: "cover", backgroundPosition: "center" }}>
+      <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", padding: "120px clamp(20px,4vw,56px) 60px", overflow: "hidden", backgroundImage: "linear-gradient(rgba(25, 25, 25, 0.74), rgba(25, 25, 25, 0.21)), url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000)", backgroundSize: "cover", backgroundPosition: "center" }}>
         <div style={{ position: "relative", maxWidth: 1240, width: "100%", margin: "0 auto" }}>
           <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#0373ff", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 22 }}><span style={{ width: 26, height: 2, background: "#0373ff" }}></span>Sectors</div>
           <h1 data-reveal data-delay="1" className="shown" style={{ fontSize: "clamp(32px,4.4vw,64px)", color: "#fff", maxWidth: 1080 }}>Every Environment Has a Purpose. Every Purpose Deserves the <span className="gradtext">Right Ecosystem.</span></h1>

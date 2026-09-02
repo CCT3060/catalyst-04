@@ -20,7 +20,7 @@ const SLIDES = [
       [{ t: "People at the Heart of" }],
       [{ t: "Everything We " }, { t: "Do", a: true }],
     ],
-    para: "We partner with organisations that build healthier workplaces, safer communities, smarter infrastructure, and exceptional everyday experiences through integrated solutions that enhance well-being and drive performance.",
+    para: "We partner organisations that build healthier workplaces, safer communities, smarter infrastructure, and exceptional everyday experiences through integrated solutions that enhance well-being and drive performance.",
     img: hero1Img,
     alt: "People at the heart of everything we do",
   },

@@ -1,6 +1,6 @@
 import CTA from "../components/CTA";
 import { Kicker, SectionHead, ServiceHero, IndustriesMarquee, PhoneFrame, BrowserFrame, CutoutArch } from "../components/SolutionsKit";
-import fmImage from "../assets/image4.png";
+import fmImage from "../assets/ifm1.webp";
 import ifmTeamImg from "../assets/imf2.webp";
 import ecleanAppImg from "../assets/Media.jpg";
 import portalImg from "../assets/web.png";

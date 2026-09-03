@@ -3,7 +3,7 @@ import CTA from "../components/CTA";
 import HeroSlider from "../components/HeroSlider";
 import partnerImg from "../assets/Partnerwithus.webp";
 import { Globe } from "@/components/ui/cobe-globe";
-import aboutusImg from "../assets/image.png";
+import aboutusImg from "../assets/about1.webp";
 import imgCert1 from "../assets/certificate/12db7e13-6038-4d36-a1d1-effa675dbf02.webp";
 import imgCert2 from "../assets/certificate/ISO-logo-1.webp";
 import imgCert3 from "../assets/certificate/images (1).webp";
@@ -19,7 +19,7 @@ import foodServiceImg from "../assets/foodhome.webp";
 import fmImg from "../assets/ifmhome.webp";
 import workforceImg from "../assets/workforce_gen.webp";
 import AnimatedNumber from "../components/AnimatedNumber";
-import about2 from "../assets/image2.png";
+import about2 from "../assets/about2.png";
 import about3 from "../assets/about3.webp";
 import about4 from "../assets/about4.webp";
 import LinkedInPosts from "../components/LinkedInPosts";
@@ -29,7 +29,7 @@ import LinkedInPosts from "../components/LinkedInPosts";
 const SECTORS = [
   { num: "01", name: "Corporate & Commercial Spaces", desc: "Workplaces are more than buildings, they are where ideas grow, teams connect, and performance takes shape. We help organizations create engaging, high-performing environments that elevate employee experiences and support business success.", bg: "#191919", img: "homecor.webp", page: null },
   { num: "02", name: "Manufacturing & Industrial Infrastructure", desc: "Powering the environments that drive industry forward. From manufacturing facilities to logistics networks and critical infrastructure, we create high-performing environments that strengthen operational continuity, workforce experience, and business resilience.", bg: "#43934A", img: "homemane.webp", page: null },
-  { num: "03", name: " Public Sector & Smart Cities", desc: "As cities and public spaces continue to evolve, organizations require trusted partners who can support large-scale infrastructure and community environments. Our approach focuses on creating sustainable environments that support future-ready communities.", bg: "#242424", img: "image3.png", page: null },
+  { num: "03", name: " Public Sector & Smart Cities", desc: "As cities and public spaces continue to evolve, organizations require trusted partners who can support large-scale infrastructure and community environments. Our approach focuses on creating sustainable environments that support future-ready communities.", bg: "#242424", img: "homepub.webp", page: null },
   { num: "04", name: "Education", desc: "Educational institutions are more than places of learning—they are environments that shape future generations. From schools and universities to student residences, Catalyst creates safe, hygienic, and inspiring campuses that foster academic excellence, student well-being, and seamless day-to-day operations. Our integrated solutions help educators focus on what matters most: empowering students to learn, grow, and thrive.", bg: "#0258cc", img: "education1.webp", page: null },
   { num: "05", name: "Community Living", desc: "Communities flourish when people feel safe, connected, and cared for. Catalyst partners with residential communities and integrated townships to deliver thoughtfully managed environments that prioritize comfort, safety, sustainability, and operational excellence. Through integrated facility management, food services, infrastructure support, and community-focused solutions, we help create vibrant living spaces where residents can enjoy a higher quality of life.", bg: "#FFB800", img: "living.webp", page: null },
   { num: "06", name: "Healthcare ", desc: "Supporting better care through people, technology, and operational excellence. We support hospitals, healthcare institutions, and life sciences organizations enhance patient experiences, optimize clinical operations, and maximize the performance of critical healthcare technologies while maintaining the highest standards of safety, compliance, and care quality.", bg: "#2E5D33", img: "healthcare.webp", page: "htm" },
@@ -312,7 +312,7 @@ export default function Home({ go }) {
           </div>
         </div>
         <div style={{ padding: "clamp(50px,6vw,80px) clamp(20px,4vw,56px)" }}>
-          <div data-reveal style={{ textAlign: "center", fontSize: "clamp(18px,2vw,26px)", fontFamily: "Outfit", fontWeight: 500, color: "#46433C", maxWidth: 900, margin: "0 auto", lineHeight: 1.5 }}>Wherever people work, learn, heal, live, or connect, Catalyst creates environments that enable well-being, inspire performance, and deliver lasting value.</div>
+          <div data-reveal style={{ textAlign: "center", fontSize: "clamp(18px,2vw,26px)", fontFamily: "Outfit", fontWeight: 500, color: "#46433C", maxWidth: 900, margin: "0 auto", lineHeight: 1.5 }}>Wherever people work, learn, heal, live, or connect, Catalyst creates environments that enable well-being, inspire performance, and deliver lasting value</div>
         </div>
       </section>
 
@@ -358,7 +358,7 @@ export default function Home({ go }) {
       </section>
 
       {/* Certifications */}
-      <section style={{ padding: "clamp(50px,7vw,90px) 0", background: "#fff", borderTop: "1px solid rgba(25,25,25,.06)" }}>
+      <section style={{ paddingTop: "clamp(50px,7vw,90px)", paddingBottom: "clamp(16px,2vw,28px)", background: "#fff", borderTop: "1px solid rgba(25,25,25,.06)" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 clamp(20px,4vw,56px)" }}>
           <div style={{ textAlign: "center", marginBottom: "clamp(30px,4vw,48px)" }}>
             <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 10, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, letterSpacing: "0", marginBottom: 10, justifyContent: "center" }}><span style={{ width: 28, height: 2, background: "#0373ff" }}></span>CERTIFICATIONS &amp; ACCREDITATIONS<span style={{ width: 28, height: 2, background: "#43934A" }}></span></div>
@@ -400,14 +400,14 @@ export default function Home({ go }) {
         </div>
 
         {/* Drag hint */}
-        <div style={{ textAlign: "center", marginTop: 14 }}>
+        <div style={{ textAlign: "center", marginTop: 4 }}>
           <span style={{ fontSize: 12, color: "#9E9A93", fontWeight: 500, letterSpacing: ".06em", display: "inline-flex", alignItems: "center", gap: 6 }}>
           </span>
         </div>
       </section>
 
       {/* LinkedIn Posts – Official API */}
-      <section style={{ padding: "clamp(56px,7vw,96px) 0", background: "#F4F2EF" }}>
+      {/* <section style={{ padding: "clamp(56px,7vw,96px) 0", background: "#F4F2EF" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 clamp(20px,4vw,56px)" }}>
           <div style={{ textAlign: "center", marginBottom: "clamp(32px,4vw,52px)" }}>
             <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 10, fontFamily: "Caveat, cursive", color: "#0258cc", fontWeight: 600, fontSize: 24, marginBottom: 10, justifyContent: "center" }}>
@@ -418,7 +418,7 @@ export default function Home({ go }) {
           </div>
           <LinkedInPosts limit={6} />
         </div>
-      </section>
+      </section> */}
 
       <CTA go={go} title="Let's Create Impact Together" subtitle="" primaryLabel="Partner With Us" primaryPage="contact" secondaryLabel="Explore Sectors" secondaryPage="sectors" image={partnerImg} />
     </div>

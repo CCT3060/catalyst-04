@@ -8,6 +8,14 @@ import { ProfileCard } from "@/components/ui/profile-card";
 import WorldMap from "../components/WorldMap";
 import sankar from "../assets/sankar.webp";
 import venket from "../assets/venket.webp";
+import ram from "../assets/ram.webp";
+import sachin from "../assets/Sachin.jpg";
+import parimal from "../assets/Parimal.png";
+import dinesh from "../assets/dinesh.webp";
+import shekar from "../assets/shekar.webp";
+import tarun from "../assets/Tarun.webp";
+import santosh from "../assets/santosh.png";
+import sudeep from "../assets/sudeep.png";
 import { ShieldCheck, Heart, Star, Lightbulb, Leaf, MapPin, Plus, ArrowUpRight, UtensilsCrossed, Building2, Factory, Stethoscope, Users } from "lucide-react";
 
 function initTilt(card) {
@@ -73,14 +81,14 @@ export default function About({ go }) {
   }, []);
 
   const leaders = [
-    { name: 'Ram Mankari', role: 'Chairman & Managing Director', quote: '"Insert personal leadership quote/strength here."', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2023/06/1-Ram-Mankari.png', featured: true, linkedin: 'https://www.linkedin.com/in/ram-mankari-6b969b15/' },
-    { name: 'Sekhar Seshan', role: 'Strategy Advisor & Mentor', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2023/06/3-Shekar-Seshan.png', featured: true, linkedin: 'https://www.linkedin.com/in/sekhar-seshan-24635032/' },
-    { name: 'Dinesh Lamsal', role: 'Chief Executive Officer', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2023/06/2-Dinesh-Lamsal.jpg', linkedin: 'https://www.linkedin.com/in/dinesh-lamsal-6708245/' },
-    { name: 'Sachin Desai', role: 'Chief Human Resource Officer', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2023/06/6-Sachin-Desai.png', linkedin: 'https://www.linkedin.com/in/sachin-desai-bb722858/' },
-    { name: 'Parimal Dabhade', role: 'Chief Financial Officer', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2023/06/5-Parimal-Dabhade.png', linkedin: 'https://www.linkedin.com/in/parimal-dabhade-a99bb9178/' },
-    { name: 'Tarun Malik', role: 'Director – IFM', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2023/09/Tarun.pic-PP.jpg', linkedin: 'https://www.linkedin.com/in/tarun-malik-46872a17/' },
-    { name: 'Santosh Lal', role: 'Chief Business Officer – IFM', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2026/06/santosh-1.png', linkedin: 'https://www.linkedin.com/in/santosh-n-lal-33b6957b/' },
-    { name: 'Sudeep Suren', role: 'Vice President – Food Solutions', quote: '', image: 'https://www.catalystsolutions.eco/wp-content/uploads/2024/06/sudeep.jpg', linkedin: 'https://www.linkedin.com/in/sudeep-suren-42b47554/' },
+    { name: 'Ram Mankari', role: 'Chairman & Managing Director', quote: '"Insert personal leadership quote/strength here."', image: ram, featured: true, linkedin: 'https://www.linkedin.com/in/ram-mankari-6b969b15/' },
+    { name: 'Sekhar Seshan', role: 'Strategy Advisor & Mentor', quote: '', image: shekar, featured: true, linkedin: 'https://www.linkedin.com/in/sekhar-seshan-24635032/' },
+    { name: 'Dinesh Lamsal', role: 'Chief Executive Officer', quote: '', image: dinesh, linkedin: 'https://www.linkedin.com/in/dinesh-lamsal-6708245/' },
+    { name: 'Sachin Desai', role: 'Chief Human Resource Officer', quote: '', image: sachin, linkedin: 'https://www.linkedin.com/in/sachin-desai-bb722858/' },
+    { name: 'Parimal Dabhade', role: 'Chief Financial Officer', quote: '', image: parimal, linkedin: 'https://www.linkedin.com/in/parimal-dabhade-a99bb9178/' },
+    { name: 'Tarun Malik', role: 'Director – IFM', quote: '', image: tarun, linkedin: 'https://www.linkedin.com/in/tarun-malik-46872a17/' },
+    { name: 'Santosh Lal', role: 'Chief Business Officer – IFM', quote: '', image: santosh, linkedin: 'https://www.linkedin.com/in/santosh-n-lal-33b6957b/' },
+    { name: 'Sudeep Suren', role: 'Vice President – Food Solutions', quote: '', image: sudeep, linkedin: 'https://www.linkedin.com/in/sudeep-suren-42b47554/' },
     { name: 'Sankar Sreedharan', role: 'Vice President - Strategy & New Market', quote: '', image: sankar, linkedin: 'https://www.linkedin.com/in/sankarsreedharan/' },
     { name: 'Venkat Patil', role: 'CEO-Industry & Infra Project Division', quote: '', image: venket, linkedin: 'https://www.linkedin.com/in/venkat-patil-16a678a3/' },
   ];
@@ -102,9 +110,9 @@ export default function About({ go }) {
         <div style={{ position: "relative", maxWidth: 1240, width: "100%", margin: "0 auto", paddingBottom: 0 }}>
           <div data-reveal className="shown" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "Caveat, cursive", color: "#60A5FA", fontWeight: 600, fontSize: 24, marginBottom: 16 }}><span style={{ width: 26, height: 2, background: "#3B82F6" }}></span>About Catalyst</div>
           <h1 data-reveal data-delay="1" className="shown" style={{ fontSize: "clamp(34px,5vw,72px)", color: "#fff", maxWidth: 1080, lineHeight: 1.08 }}>
-            Environments where people work, heal, learn, and live.
+            Environments where people work, heal, learn, and live
           </h1>
-          <p data-reveal data-delay="2" className="shown" style={{ marginTop: 20, maxWidth: 680, fontSize: "clamp(15px,1.25vw,18px)", lineHeight: 1.7, color: "rgba(255,255,255,0.9)" }}>Behind every productive workplace, every efficient facility, every well-managed healthcare institution, and every thriving community is an ecosystem designed to support people.</p>
+          <p data-reveal data-delay="2" className="shown" style={{ marginTop: 20, maxWidth: 680, fontSize: "clamp(15px,1.25vw,18px)", lineHeight: 1.7, color: "rgba(255,255,255,0.9)" }}>Behind every productive workplace, every efficient facility, every well-managed healthcare institution, and every thriving community is an ecosystem designed to support people</p>
         </div>
       </section>
 

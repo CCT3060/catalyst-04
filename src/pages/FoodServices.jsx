@@ -10,16 +10,23 @@ import joi3Img from "../assets/joi3.webp";
 import joi4Img from "../assets/joi4.webp";
 import foodHeroImg from "../assets/foodhero.webp";
 import foodBottomImg from "../assets/foodbottom.webp";
+import menuWorkplaceImg from "../assets/12.png";
+import menuIndustrialImg from "../assets/11.png";
+import menuPatientImg from "../assets/17.png";
+import menuEducationImg from "../assets/13.png";
+import menuFoodcourtImg from "../assets/15.png";
+import menuEventImg from "../assets/16.png";
+import menuGuesthouseImg from "../assets/14.png";
 import { ArrowRight, ArrowUpRight, Zap, HeartPulse, GraduationCap, Users, BadgeCheck, UtensilsCrossed } from "lucide-react";
 
 const MENU = [
-  ["Workplace Dining", "Contemporary dining programs that enhance employee wellbeing through diverse menus, healthy choices, and engaging workplace experiences.", "CORPORATE", "our most-loved program"],
-  ["Industrial & Manufacturing Catering", "Reliable, high-volume catering designed for manufacturing plants, automobile facilities, heavy engineering, pharmaceuticals, chemical industries, and power sectors.", "INDUSTRIAL"],
-  ["Patient Dining", "Nutrition-focused meal programs that support recovery while meeting clinical dietary requirements and the highest standards of food safety.", "HEALTHCARE"],
-  ["Educational Institutions", "Balanced, nutritious dining experiences for schools, colleges, and universities that promote healthy eating and student wellbeing.", "EDUCATION"],
-  ["Cafeterias & Food Courts", "Modern dining spaces offering multiple cuisines, cafÃ© concepts, grab-and-go options, and flexible food experiences.", "ALL CAMPUSES"],
-  ["Events & Conferences", "Professional catering services for conferences, corporate events, business meetings, and special occasions with seamless execution.", "EVENTS"],
-  ["Guest House Management", "Complete dining and hospitality management designed to provide premium guest experiences with personalized service and quality cuisine.", "HOSPITALITY"],
+  ["Workplace Dining", "Contemporary dining programs that enhance employee wellbeing through diverse menus, healthy choices, and engaging workplace experiences.", "CORPORATE", "our most-loved program", menuWorkplaceImg],
+  ["Industrial & Manufacturing Catering", "Reliable, high-volume catering designed for manufacturing plants, automobile facilities, heavy engineering, pharmaceuticals, chemical industries, and power sectors.", "INDUSTRIAL", null, menuIndustrialImg],
+  ["Patient Dining", "Nutrition-focused meal programs that support recovery while meeting clinical dietary requirements and the highest standards of food safety.", "HEALTHCARE", null, menuPatientImg],
+  ["Educational Institutions", "Balanced, nutritious dining experiences for schools, colleges, and universities that promote healthy eating and student wellbeing.", "EDUCATION", null, menuEducationImg],
+  ["Cafeterias & Food Courts", "Modern dining spaces offering multiple cuisines, café concepts, grab-and-go options, and flexible food experiences.", "ALL CAMPUSES", null, menuFoodcourtImg],
+  ["Events & Conferences", "Professional catering services for conferences, corporate events, business meetings, and special occasions with seamless execution.", "EVENTS", null, menuEventImg],
+  ["Guest House Management", "Complete dining and hospitality management designed to provide premium guest experiences with personalized service and quality cuisine.", "HOSPITALITY", null, menuGuesthouseImg],
 ];
 
 const IMPACTS = [
@@ -54,6 +61,7 @@ const JOI_GALLERY = [joiFoodImg, joi1Img, joi2Img, joi3Img, joi4Img];
 
 export default function FoodServices({ go }) {
   const [joiScreen, setJoiScreen] = useState(0);
+  const [hoveredMenu, setHoveredMenu] = useState(0);
   return (
     <div data-screen-label="Food Services">
 
@@ -120,27 +128,55 @@ export default function FoodServices({ go }) {
         </div>
       </section>
 
-      {/* The Menu — dotted-leader service index */}
+      {/* The Menu — split layout: sticky image left + hoverable menu list right */}
       <section id="food-menu" style={{ padding: "clamp(80px,10vw,140px) clamp(20px,4vw,56px)", background: "#F9F7F3", borderTop: "1px solid rgba(25,25,25,.06)" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
-          <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: "24px 60px", flexWrap: "wrap", marginBottom: "clamp(30px,4vw,48px)" }}>
-            <div style={{ maxWidth: 620 }}>
-              <Kicker color="#377B3D" dash="#43934A">Our Food Solutions</Kicker>
-              <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919" }}>A menu for every environment</h2>
+          {/* Section header */}
+          <div style={{ marginBottom: "clamp(40px,5vw,64px)" }}>
+            <Kicker color="#377B3D" dash="#43934A">Our Food Solutions</Kicker>
+            <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: "20px 60px", flexWrap: "wrap", marginTop: 8 }}>
+              <h2 data-reveal data-delay="1" style={{ fontSize: "clamp(28px,3.4vw,46px)", color: "#191919", margin: 0 }}>A menu for every environment</h2>
+              <p data-reveal data-delay="2" style={{ maxWidth: 360, fontSize: 16, lineHeight: 1.7, color: "#6E6A61", margin: 0, paddingBottom: 4 }}>Seven dining programs, each designed around the pace, people, and purpose of the place it serves.</p>
             </div>
-            <p data-reveal data-delay="2" style={{ maxWidth: 380, fontSize: 16, lineHeight: 1.7, color: "#6E6A61", paddingBottom: 8 }}>Seven dining programs, each designed around the pace, people, and purpose of the place it serves.</p>
           </div>
-          <div data-reveal>
-            {MENU.map(([name, desc, tag, note], i) => (
-              <div key={i} className="fs-menu-row">
-                <div className="fs-menu-top">
-                  <span className="fs-menu-name">{name}{note && <span className="fs-menu-note">{note}</span>}</span>
-                  <span className="fs-menu-dots"></span>
-                  <span className="fs-menu-tag">{tag}</span>
-                </div>
-                <p className="fs-menu-desc">{desc}</p>
+
+          {/* Two-column: sticky image | menu list */}
+          <div className="fs-solutions-grid">
+            {/* Left — sticky image panel */}
+            <div className="fs-solutions-img-wrap">
+              {MENU.map(([, , , , img], i) => (
+                <img
+                  key={i}
+                  src={img}
+                  alt={MENU[i][0]}
+                  data-no-reveal
+                  className={`fs-solutions-img${hoveredMenu === i ? " active" : ""}`}
+                />
+              ))}
+              {/* Floating label */}
+              <div className="fs-solutions-label">
+                <span className="fs-solutions-label-tag">{MENU[hoveredMenu][2]}</span>
+                <span className="fs-solutions-label-name">{MENU[hoveredMenu][0]}</span>
               </div>
-            ))}
+            </div>
+
+            {/* Right — menu list */}
+            <div data-reveal>
+              {MENU.map(([name, desc, tag, note, img], i) => (
+                <div
+                  key={i}
+                  className={`fs-menu-row fs-menu-row--img${hoveredMenu === i ? " hovered" : ""}`}
+                  onMouseEnter={() => setHoveredMenu(i)}
+                >
+                  <div className="fs-menu-top">
+                    <span className="fs-menu-name">{name}{note && <span className="fs-menu-note">{note}</span>}</span>
+                    <span className="fs-menu-dots"></span>
+                    <span className="fs-menu-tag">{tag}</span>
+                  </div>
+                  <p className="fs-menu-desc">{desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

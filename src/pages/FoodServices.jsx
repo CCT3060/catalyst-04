@@ -39,7 +39,7 @@ const IMPACTS = [
 const JOI_FEATURES = [
   ["Pre-meal ordering", "Order ahead for a seamless, queue-free dining experience."],
   ["Quick service restaurants", "Fast, quality food across multiple cuisine concepts."],
-  ["CafÃ© & grab-and-go", "Flexible counter formats for every pace of workday."],
+  ["Grab-and-go", "Flexible counter formats for every pace of workday."],
   ["Digital food ordering", "Smart platforms that simplify choices and speed service."],
 ];
 

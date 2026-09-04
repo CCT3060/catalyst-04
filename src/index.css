@@ -1997,6 +1997,10 @@ button {
     position: static !important
   }
 
+  [data-2col]>div[style*="sticky"] {
+    position: static !important
+  }
+
   .ldr-card,
   .ldr-quote-card {
     height: 22rem
@@ -2191,6 +2195,10 @@ button {
   }
 
   [data-whygrid]>div:first-child {
+    position: static !important
+  }
+
+  [data-2col]>div[style*="sticky"] {
     position: static !important
   }
 

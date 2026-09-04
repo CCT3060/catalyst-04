@@ -1,5 +1,5 @@
-﻿import { useEffect, useRef, useState } from "react";
-import healthcare from "../assets/sohealth.webp";
+import { useEffect, useRef, useState } from "react";
+import healthcare from "../assets/image4.png";
 import infra from "../assets/soinfra.webp"
 import education from "../assets/education.webp"
 import living from "../assets/soliving.webp"
@@ -137,7 +137,7 @@ export default function Sectors({ go, hash }) {
             {/* right — sticky image stage with the sitewide curtain wipe */}
             <div data-sector-sticky style={{ position: "sticky", top: 104, height: "calc(100vh - 170px)", minHeight: 440, borderRadius: 36, overflow: "hidden", background: "#191919" }}>
               {sectors.map((s, i) => (
-                <div key={i} aria-hidden={active !== i} style={{ position: "absolute", inset: 0, clipPath: i <= active ? "inset(0% 0 0 0)" : "inset(100% 0 0 0)", transition: "clip-path .9s cubic-bezier(.77,0,.18,1)", willChange: "clip-path" }}>
+                <div key={i} aria-hidden={active !== i} style={{ position: "absolute", inset: 0, opacity: active === i ? 1 : 0, transform: active === i ? "scale(1)" : "scale(1.04)", transition: "opacity .75s cubic-bezier(.4,0,.2,1), transform .75s cubic-bezier(.4,0,.2,1)", willChange: "opacity, transform", zIndex: active === i ? 1 : 0 }}>
                   <img src={s.img} alt="" loading={i === 0 ? "eager" : "lazy"} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(15,15,15,.55) 0%, transparent 40%)" }}></div>
                   <div style={{ position: "absolute", top: 22, right: 30, fontFamily: "Outfit", fontWeight: 600, fontSize: "clamp(64px,7vw,110px)", lineHeight: 1, color: "rgba(255,255,255,.22)", userSelect: "none" }}>{s.num}</div>

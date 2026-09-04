@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import healthcare from "../assets/image4.png";
+import healthcare from "../assets/19.png";
 import infra from "../assets/soinfra.webp"
 import education from "../assets/education.webp"
 import living from "../assets/soliving.webp"
